@@ -1,0 +1,10 @@
+[
+  {"student_id": 1, "name": "Alice Johnson", "age": 20, "city": "Warsaw", "scores": {"math": 88, "python": 92, "statistics": 81}, "attendance": 0.91, "status": "active"},
+  {"student_id": 2, "name": "Bob Smith", "age": 17, "city": "Krakow", "scores": {"math": 65, "python": 70, "statistics": null}, "attendance": 0.78, "status": "active"},
+  {"student_id": 3, "name": "Charlie Brown", "age": 22, "city": "Warsaw", "scores": {"math": 95, "python": 98, "statistics": 94}, "attendance": 0.97, "status": "inactive"},
+  {"student_id": 4, "name": "Diana Prince", "age": 21, "city": "Gdansk", "scores": {"math": 72, "python": 85, "statistics": 79}, "attendance": 0.88, "status": "active"},
+  {"student_id": 5, "name": "Eve Adams", "age": 19, "city": "Warsaw", "scores": {"math": 90, "python": 87, "statistics": 91}, "attendance": 0.95, "status": "active"},
+  {"student_id": 6, "name": "Frank Miller", "age": 23, "city": "Warsaw", "scores": {"math": 40, "python": 55, "statistics": 60}, "attendance": 0.67, "status": "active"},
+  {"student_id": 7, "name": "Grace Lee", "age": 20, "city": "Krakow", "scores": {"math": 84, "python": 89, "statistics": 86}, "attendance": 0.9, "status": "active"},
+  {"student_id": 8, "name": "Henry Ford", "age": 18, "city": "Warsaw", "scores": {"math": null, "python": 76, "statistics": 80}, "attendance": 0.82, "status": "active"}
+]

@@ -1,0 +1,21 @@
+-- Coding order
+SELECT
+FROM 
+JOIN 
+WHERE 
+GROUP BY 
+HAVING 
+ORDER BY 
+LIMIT 
+
+
+-- Execution order
+FROM 
+JOIN 
+WHERE 
+GROUP BY 
+HAVING 
+SELECT 
+DISTINCT 
+ORDER BY 
+LIMIT 

@@ -1,0 +1,8 @@
+[
+  {"name": "Alice", "age": 25, "city": "Warsaw", "points": 120},
+  {"name": "Bob", "age": 17, "city": "Krakow", "points": 80},
+  {"name": "Charlie", "age": 30, "city": "Warsaw", "points": null},
+  {"name": "David", "age": 22, "city": "Gdansk", "points": 200},
+  {"name": "Eve", "age": 19, "city": "Warsaw", "points": 150},
+  {"name": "Ali", "age": 29, "city": "Lods"}
+]

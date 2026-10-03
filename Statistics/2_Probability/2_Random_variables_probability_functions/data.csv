@@ -1,0 +1,1201 @@
+session_id,region,age_group,traffic_source,experiment_group,premium_member,used_mobile_app,ad_clicked,email_opened,coupon_used,visit_count_30d,engagement_level,purchased,payment_method,order_value_usd,returned_order,support_contacted,churned,fraudulent_transaction,fraud_alert
+S0001,North,18-24,Social Media,A,Yes,Yes,No,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0002,West,45+,Organic,A,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0003,East,35-44,Organic,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0004,East,35-44,Paid Search,A,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0005,East,35-44,Organic,B,Yes,No,Yes,No,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0006,East,35-44,Social Media,B,No,No,No,No,No,4,Medium,Yes,Digital Wallet,44.53,No,No,No,No,No
+S0007,East,25-34,Referral,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0008,East,25-34,Referral,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0009,North,35-44,Organic,B,Yes,No,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0010,South,25-34,Social Media,A,No,Yes,Yes,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0011,North,45+,Organic,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0012,North,45+,Referral,B,No,No,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0013,North,25-34,Paid Search,B,No,No,Yes,No,No,2,Low,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0014,West,35-44,Organic,A,Yes,No,No,No,No,2,Low,Yes,Card,51.4,No,No,No,No,No
+S0015,South,18-24,Organic,B,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0016,South,45+,Organic,B,Yes,Yes,Yes,Yes,No,8,High,Yes,Card,85.7,No,No,No,No,No
+S0017,West,45+,Organic,A,No,Yes,No,Yes,Yes,0,Low,Yes,Card,317.88,No,No,Yes,No,No
+S0018,East,45+,Referral,B,Yes,No,Yes,No,No,1,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0019,West,25-34,Social Media,A,No,Yes,No,Yes,Yes,4,Medium,Yes,Bank Transfer,130.49,No,No,No,No,No
+S0020,West,18-24,Referral,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0021,East,25-34,Organic,B,No,Yes,Yes,Yes,No,8,High,Yes,Cash on Delivery,74.85,Yes,No,No,No,No
+S0022,East,18-24,Paid Search,B,No,No,No,Yes,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0023,East,18-24,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0024,North,18-24,Paid Search,A,No,No,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0025,West,45+,Organic,B,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0026,North,18-24,Organic,A,No,Yes,No,Yes,Yes,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0027,North,18-24,Paid Search,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0028,East,45+,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0029,North,35-44,Paid Search,B,No,Yes,No,Yes,No,1,Low,Yes,Card,79.59,No,No,No,No,No
+S0030,East,35-44,Social Media,A,No,No,No,Yes,No,6,High,Yes,Card,49.33,No,No,No,No,No
+S0031,North,35-44,Organic,A,No,Yes,No,Yes,No,6,High,Yes,Cash on Delivery,79.38,Yes,No,No,No,No
+S0032,South,45+,Referral,A,Yes,No,No,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0033,West,35-44,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0034,East,35-44,Social Media,A,No,Yes,No,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0035,North,35-44,Social Media,B,No,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0036,South,25-34,Social Media,A,No,Yes,No,No,No,5,Medium,Yes,Card,199.4,No,No,Yes,No,No
+S0037,East,25-34,Social Media,B,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0038,East,25-34,Referral,B,No,No,No,No,No,2,Low,Yes,Bank Transfer,88.59,No,No,Yes,No,No
+S0039,West,18-24,Paid Search,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0040,South,45+,Organic,A,Yes,No,No,Yes,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0041,South,25-34,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0042,West,18-24,Paid Search,B,No,Yes,Yes,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0043,South,25-34,Organic,A,No,Yes,No,Yes,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0044,West,45+,Organic,B,No,No,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0045,North,25-34,Organic,B,Yes,Yes,Yes,No,No,2,Low,Yes,Digital Wallet,181.23,No,No,No,No,No
+S0046,West,35-44,Paid Search,B,Yes,Yes,No,No,No,4,Medium,Yes,Bank Transfer,166.79,No,No,No,No,No
+S0047,South,45+,Organic,B,Yes,Yes,No,Yes,Yes,3,Medium,Yes,Card,337.93,No,No,No,No,Yes
+S0048,West,18-24,Paid Search,A,No,No,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0049,East,35-44,Social Media,A,Yes,Yes,No,No,No,7,High,Yes,Card,164.95,Yes,No,No,No,No
+S0050,South,25-34,Social Media,B,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0051,West,25-34,Organic,B,No,No,No,Yes,Yes,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0052,North,35-44,Paid Search,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0053,East,45+,Paid Search,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0054,West,25-34,Paid Search,B,No,Yes,No,No,No,0,Low,Yes,Card,284.08,No,No,No,No,No
+S0055,East,35-44,Social Media,B,Yes,Yes,Yes,Yes,No,6,High,Yes,Card,189.51,No,No,No,No,No
+S0056,South,25-34,Organic,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0057,South,35-44,Referral,B,Yes,Yes,Yes,Yes,No,6,High,Yes,Card,123.12,No,No,No,No,No
+S0058,West,35-44,Organic,A,Yes,Yes,No,Yes,No,7,High,Yes,Cash on Delivery,58.94,No,No,No,No,No
+S0059,West,35-44,Social Media,B,Yes,Yes,Yes,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0060,South,35-44,Paid Search,B,No,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0061,East,18-24,Organic,A,Yes,Yes,No,Yes,No,5,Medium,Yes,Card,180.58,No,No,No,No,No
+S0062,South,35-44,Social Media,A,No,Yes,Yes,No,Yes,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0063,North,35-44,Organic,A,No,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0064,North,35-44,Social Media,B,No,No,Yes,No,No,2,Low,Yes,Card,166.49,No,No,No,No,No
+S0065,East,18-24,Paid Search,A,Yes,Yes,No,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0066,South,25-34,Organic,B,Yes,Yes,Yes,Yes,No,3,Medium,Yes,Card,193.05,Yes,Yes,Yes,No,No
+S0067,North,25-34,Organic,A,No,Yes,Yes,No,No,3,Medium,Yes,Card,4.97,No,No,No,No,No
+S0068,East,18-24,Social Media,B,Yes,Yes,Yes,Yes,Yes,10,High,Yes,Digital Wallet,87.08,No,No,No,No,No
+S0069,East,25-34,Organic,A,No,Yes,No,Yes,No,2,Low,Yes,Card,117.45,No,No,Yes,No,No
+S0070,West,25-34,Referral,B,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0071,East,35-44,Social Media,A,No,Yes,No,No,No,3,Medium,Yes,Bank Transfer,63.79,No,No,No,No,No
+S0072,North,25-34,Social Media,B,Yes,Yes,Yes,Yes,Yes,6,High,Yes,Bank Transfer,82.37,No,No,No,No,No
+S0073,North,45+,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0074,West,35-44,Social Media,A,Yes,Yes,Yes,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0075,West,35-44,Referral,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0076,North,25-34,Organic,A,Yes,No,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0077,East,25-34,Organic,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0078,East,35-44,Organic,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0079,West,45+,Paid Search,B,Yes,Yes,No,No,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0080,West,25-34,Social Media,A,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0081,South,35-44,Paid Search,A,Yes,No,Yes,Yes,No,5,Medium,Yes,Card,62.54,No,No,No,No,No
+S0082,North,35-44,Paid Search,B,Yes,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0083,North,35-44,Organic,A,Yes,No,Yes,No,No,3,Medium,Yes,Bank Transfer,30.16,No,No,No,No,No
+S0084,North,18-24,Organic,B,No,Yes,No,Yes,No,5,Medium,Yes,Card,113.21,No,No,No,No,No
+S0085,North,35-44,Organic,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0086,West,25-34,Referral,A,Yes,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0087,East,45+,Paid Search,B,No,No,Yes,No,Yes,2,Low,No,None,0.0,Not Applicable,No,Yes,No,Yes
+S0088,East,25-34,Paid Search,A,Yes,Yes,No,Yes,Yes,9,High,Yes,Card,79.01,No,No,No,No,Yes
+S0089,East,25-34,Social Media,B,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0090,North,45+,Organic,A,Yes,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0091,West,25-34,Organic,B,No,Yes,No,Yes,No,2,Low,Yes,Cash on Delivery,61.57,No,No,No,No,No
+S0092,North,25-34,Organic,A,No,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0093,East,25-34,Referral,B,Yes,Yes,No,Yes,No,8,High,Yes,Bank Transfer,91.28,No,No,No,No,No
+S0094,West,18-24,Social Media,B,Yes,Yes,Yes,Yes,Yes,7,High,Yes,Card,158.79,No,No,No,No,No
+S0095,East,18-24,Paid Search,B,No,Yes,Yes,Yes,No,7,High,Yes,Digital Wallet,102.03,No,No,No,No,No
+S0096,East,25-34,Organic,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0097,North,35-44,Organic,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0098,West,35-44,Social Media,A,No,Yes,No,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0099,East,18-24,Paid Search,B,No,Yes,Yes,No,Yes,6,High,Yes,Card,110.76,No,No,No,Yes,Yes
+S0100,East,35-44,Referral,A,No,No,No,Yes,Yes,4,Medium,Yes,Digital Wallet,21.55,No,No,No,No,No
+S0101,North,18-24,Social Media,B,No,Yes,Yes,Yes,Yes,4,Medium,Yes,Digital Wallet,172.26,Yes,No,No,Yes,Yes
+S0102,East,45+,Paid Search,B,No,No,Yes,No,No,4,Medium,Yes,Card,239.5,No,No,No,No,No
+S0103,South,18-24,Social Media,A,No,No,No,Yes,Yes,5,Medium,Yes,Bank Transfer,108.88,No,No,Yes,No,No
+S0104,East,35-44,Referral,B,Yes,Yes,Yes,Yes,Yes,6,High,Yes,Bank Transfer,58.55,No,Yes,No,No,No
+S0105,North,25-34,Paid Search,A,No,No,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0106,West,35-44,Social Media,A,Yes,Yes,Yes,Yes,Yes,13,High,Yes,Card,83.65,No,No,No,No,No
+S0107,South,25-34,Referral,B,Yes,Yes,No,Yes,No,6,High,Yes,Bank Transfer,48.14,No,No,No,No,No
+S0108,North,35-44,Organic,A,No,Yes,No,No,No,3,Medium,Yes,Bank Transfer,221.62,No,No,No,No,No
+S0109,East,25-34,Referral,B,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0110,North,45+,Organic,B,Yes,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0111,South,35-44,Social Media,A,Yes,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0112,South,35-44,Social Media,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0113,North,45+,Paid Search,A,No,No,No,Yes,No,5,Medium,Yes,Card,61.32,No,No,No,No,No
+S0114,East,45+,Paid Search,B,Yes,No,No,No,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0115,South,25-34,Paid Search,A,Yes,Yes,No,Yes,No,6,High,Yes,Digital Wallet,118.85,No,No,No,No,No
+S0116,West,25-34,Organic,B,No,Yes,No,Yes,No,6,High,Yes,Bank Transfer,72.63,No,No,No,No,No
+S0117,West,25-34,Organic,B,No,Yes,No,No,Yes,2,Low,Yes,Cash on Delivery,134.01,No,No,No,No,No
+S0118,North,25-34,Organic,A,Yes,Yes,No,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0119,North,35-44,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0120,East,45+,Paid Search,B,No,Yes,No,Yes,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0121,West,45+,Organic,A,Yes,Yes,Yes,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0122,West,35-44,Referral,A,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0123,East,35-44,Paid Search,A,No,Yes,Yes,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0124,East,45+,Paid Search,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0125,South,45+,Paid Search,B,No,No,No,Yes,Yes,2,Low,Yes,Card,55.59,No,No,No,No,No
+S0126,West,25-34,Organic,B,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0127,West,35-44,Social Media,A,No,Yes,Yes,No,No,6,High,Yes,Digital Wallet,97.3,No,No,No,No,No
+S0128,North,45+,Paid Search,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0129,South,25-34,Organic,A,No,Yes,No,Yes,Yes,5,Medium,Yes,Bank Transfer,73.77,No,No,No,No,No
+S0130,South,25-34,Referral,B,No,Yes,No,Yes,Yes,4,Medium,Yes,Cash on Delivery,186.32,Yes,No,No,No,No
+S0131,East,45+,Social Media,B,No,No,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,Yes
+S0132,South,45+,Social Media,B,No,Yes,No,Yes,No,3,Medium,Yes,Card,10.72,No,No,No,No,No
+S0133,South,45+,Referral,A,Yes,No,No,Yes,No,4,Medium,Yes,Digital Wallet,82.59,Yes,Yes,No,No,Yes
+S0134,West,45+,Referral,B,Yes,Yes,Yes,Yes,Yes,11,High,Yes,Bank Transfer,198.83,No,No,No,No,No
+S0135,North,25-34,Organic,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0136,South,25-34,Paid Search,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0137,North,35-44,Paid Search,A,Yes,Yes,Yes,No,Yes,4,Medium,Yes,Card,185.74,No,No,No,No,No
+S0138,North,35-44,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0139,North,35-44,Organic,B,Yes,Yes,No,Yes,No,4,Medium,Yes,Card,32.02,No,No,No,No,No
+S0140,East,35-44,Organic,B,Yes,Yes,No,Yes,Yes,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0141,North,25-34,Social Media,B,No,Yes,No,Yes,Yes,2,Low,Yes,Digital Wallet,152.36,No,No,No,No,No
+S0142,East,35-44,Social Media,A,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0143,South,25-34,Social Media,B,No,No,Yes,Yes,Yes,2,Low,Yes,Digital Wallet,52.33,No,No,No,No,No
+S0144,South,25-34,Organic,A,Yes,No,No,Yes,Yes,6,High,Yes,Digital Wallet,76.13,No,No,No,No,No
+S0145,South,18-24,Organic,B,No,No,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0146,West,25-34,Paid Search,B,Yes,Yes,No,Yes,No,6,High,Yes,Card,180.63,No,No,No,No,No
+S0147,West,45+,Paid Search,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0148,East,25-34,Referral,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0149,North,25-34,Referral,B,Yes,Yes,No,Yes,No,10,High,Yes,Bank Transfer,81.43,No,No,No,No,No
+S0150,West,35-44,Referral,A,Yes,Yes,Yes,No,No,3,Medium,Yes,Card,30.25,No,No,No,No,No
+S0151,West,35-44,Referral,A,Yes,Yes,No,Yes,Yes,4,Medium,Yes,Bank Transfer,55.08,No,No,No,No,No
+S0152,South,18-24,Referral,A,No,Yes,No,Yes,Yes,5,Medium,Yes,Card,99.24,No,No,No,No,No
+S0153,South,25-34,Paid Search,B,No,No,No,No,No,2,Low,Yes,Card,64.35,No,No,Yes,No,No
+S0154,North,18-24,Organic,A,No,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0155,North,35-44,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0156,East,25-34,Paid Search,A,No,Yes,Yes,Yes,Yes,6,High,Yes,Cash on Delivery,75.45,Yes,No,No,No,No
+S0157,North,18-24,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0158,West,18-24,Organic,B,No,Yes,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0159,West,35-44,Referral,A,No,Yes,No,Yes,Yes,3,Medium,Yes,Bank Transfer,132.57,No,No,No,No,No
+S0160,East,18-24,Organic,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0161,West,45+,Referral,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0162,North,18-24,Social Media,A,No,Yes,Yes,No,No,9,High,Yes,Card,106.12,No,Yes,No,No,No
+S0163,West,35-44,Social Media,B,Yes,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0164,North,25-34,Social Media,B,Yes,Yes,No,Yes,No,6,High,Yes,Card,83.52,No,Yes,Yes,No,No
+S0165,West,25-34,Organic,A,No,Yes,Yes,No,No,6,High,Yes,Digital Wallet,152.86,No,No,No,No,No
+S0166,South,18-24,Social Media,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0167,East,45+,Organic,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0168,South,45+,Referral,B,No,No,Yes,Yes,Yes,10,High,No,None,0.0,Not Applicable,Yes,No,No,No
+S0169,East,18-24,Organic,A,No,Yes,Yes,No,No,8,High,Yes,Cash on Delivery,121.27,No,No,No,No,No
+S0170,East,18-24,Organic,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0171,North,45+,Social Media,A,Yes,Yes,No,Yes,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0172,South,35-44,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0173,South,18-24,Paid Search,B,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0174,North,25-34,Social Media,A,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0175,South,35-44,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0176,North,35-44,Social Media,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0177,East,35-44,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0178,West,45+,Organic,B,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0179,West,25-34,Organic,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0180,East,25-34,Organic,B,No,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0181,North,25-34,Organic,B,No,Yes,No,No,No,4,Medium,Yes,Card,101.78,No,No,No,No,No
+S0182,North,25-34,Paid Search,A,Yes,Yes,Yes,No,No,7,High,Yes,Cash on Delivery,71.24,No,No,No,No,Yes
+S0183,East,25-34,Organic,B,Yes,Yes,No,No,No,4,Medium,Yes,Card,192.53,Yes,No,No,No,No
+S0184,West,18-24,Organic,B,No,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0185,East,25-34,Paid Search,A,Yes,Yes,Yes,Yes,Yes,14,High,Yes,Digital Wallet,89.99,Yes,No,No,No,No
+S0186,West,35-44,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0187,East,18-24,Social Media,B,No,No,No,Yes,Yes,1,Low,Yes,Card,79.27,No,No,Yes,No,No
+S0188,East,25-34,Referral,B,No,Yes,No,No,No,3,Medium,Yes,Card,224.83,No,Yes,No,No,Yes
+S0189,East,35-44,Paid Search,B,Yes,Yes,No,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0190,North,35-44,Referral,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0191,South,35-44,Organic,B,Yes,Yes,No,Yes,Yes,6,High,Yes,Cash on Delivery,66.52,No,Yes,No,No,No
+S0192,South,45+,Organic,A,No,Yes,No,Yes,No,5,Medium,Yes,Card,41.68,No,No,No,No,No
+S0193,North,35-44,Social Media,A,No,No,Yes,No,Yes,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0194,West,18-24,Social Media,B,Yes,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0195,South,25-34,Social Media,B,Yes,Yes,Yes,Yes,No,9,High,Yes,Cash on Delivery,85.04,No,No,No,No,No
+S0196,West,35-44,Organic,A,Yes,Yes,No,Yes,No,4,Medium,Yes,Card,46.23,No,No,No,No,No
+S0197,West,25-34,Social Media,A,No,Yes,No,Yes,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0198,South,18-24,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0199,East,25-34,Organic,A,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0200,East,25-34,Organic,B,Yes,Yes,No,Yes,No,7,High,Yes,Card,47.14,No,Yes,No,No,No
+S0201,South,25-34,Referral,A,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0202,North,18-24,Organic,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0203,West,45+,Social Media,B,No,No,Yes,No,Yes,2,Low,Yes,Cash on Delivery,232.66,No,No,Yes,No,No
+S0204,South,45+,Social Media,A,No,Yes,Yes,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0205,East,25-34,Social Media,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0206,North,45+,Social Media,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0207,North,18-24,Referral,A,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0208,North,45+,Organic,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0209,East,45+,Organic,A,Yes,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0210,West,18-24,Paid Search,A,Yes,Yes,Yes,No,No,3,Medium,Yes,Digital Wallet,84.13,No,No,No,No,No
+S0211,North,35-44,Paid Search,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0212,East,45+,Organic,A,Yes,Yes,No,Yes,No,6,High,Yes,Card,123.29,No,No,No,No,No
+S0213,South,45+,Organic,A,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0214,East,45+,Organic,A,No,No,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0215,North,35-44,Organic,B,No,Yes,No,Yes,No,4,Medium,Yes,Digital Wallet,25.06,No,No,No,No,No
+S0216,South,18-24,Organic,A,No,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0217,South,45+,Referral,A,No,No,No,Yes,Yes,3,Medium,Yes,Card,51.23,No,No,No,No,No
+S0218,West,35-44,Organic,A,No,Yes,No,No,No,1,Low,Yes,Bank Transfer,240.34,No,No,Yes,No,No
+S0219,West,35-44,Referral,B,Yes,No,Yes,Yes,Yes,4,Medium,Yes,Card,58.56,No,No,No,No,No
+S0220,West,25-34,Referral,B,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0221,West,35-44,Organic,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0222,South,18-24,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0223,South,35-44,Paid Search,B,No,No,Yes,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0224,South,18-24,Social Media,B,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0225,North,35-44,Organic,B,No,Yes,No,No,No,1,Low,Yes,Digital Wallet,106.38,No,No,Yes,No,No
+S0226,East,45+,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0227,North,25-34,Organic,A,Yes,Yes,No,Yes,Yes,3,Medium,Yes,Card,20.14,Yes,No,Yes,No,No
+S0228,North,35-44,Paid Search,A,No,No,No,Yes,Yes,2,Low,Yes,Digital Wallet,35.35,No,No,No,No,No
+S0229,South,25-34,Referral,A,Yes,Yes,No,No,No,4,Medium,Yes,Cash on Delivery,83.23,No,No,No,No,No
+S0230,East,45+,Social Media,B,Yes,Yes,No,Yes,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0231,South,35-44,Social Media,B,No,Yes,No,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0232,South,25-34,Referral,A,Yes,No,No,Yes,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0233,West,18-24,Social Media,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0234,East,25-34,Organic,A,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0235,East,25-34,Referral,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0236,North,45+,Paid Search,A,Yes,No,No,No,No,1,Low,Yes,Bank Transfer,172.27,No,No,Yes,No,No
+S0237,North,35-44,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0238,North,25-34,Paid Search,B,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Card,113.15,No,No,No,No,No
+S0239,South,45+,Referral,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0240,West,25-34,Organic,A,Yes,Yes,No,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0241,South,45+,Paid Search,B,Yes,Yes,No,No,No,4,Medium,Yes,Card,88.25,No,No,No,No,No
+S0242,East,25-34,Organic,B,No,Yes,Yes,No,No,5,Medium,Yes,Card,127.9,No,No,No,No,No
+S0243,East,35-44,Organic,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0244,North,45+,Organic,A,No,No,No,Yes,No,7,High,Yes,Bank Transfer,96.31,No,No,No,No,No
+S0245,West,25-34,Social Media,B,Yes,Yes,No,No,No,7,High,Yes,Card,25.71,Yes,No,Yes,No,No
+S0246,West,35-44,Referral,B,Yes,Yes,No,No,No,4,Medium,Yes,Digital Wallet,96.89,No,Yes,No,No,No
+S0247,North,45+,Organic,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0248,North,18-24,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0249,West,18-24,Organic,B,Yes,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0250,South,35-44,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0251,North,25-34,Paid Search,B,No,Yes,No,Yes,No,6,High,Yes,Card,57.8,Yes,No,No,No,No
+S0252,West,18-24,Social Media,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0253,West,25-34,Social Media,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0254,West,35-44,Paid Search,B,No,Yes,No,Yes,Yes,3,Medium,Yes,Cash on Delivery,82.16,No,No,No,No,No
+S0255,East,25-34,Paid Search,B,Yes,No,No,Yes,No,4,Medium,Yes,Digital Wallet,70.86,No,No,No,No,No
+S0256,North,25-34,Organic,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0257,South,45+,Organic,B,Yes,No,No,Yes,Yes,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0258,East,35-44,Referral,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0259,South,45+,Social Media,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0260,South,25-34,Referral,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0261,West,45+,Referral,B,Yes,No,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0262,East,35-44,Social Media,B,Yes,No,No,Yes,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0263,South,18-24,Referral,B,No,Yes,No,No,Yes,0,Low,Yes,Digital Wallet,92.7,No,No,Yes,No,No
+S0264,South,45+,Paid Search,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0265,North,25-34,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0266,East,18-24,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0267,North,18-24,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0268,North,35-44,Organic,B,Yes,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0269,South,18-24,Paid Search,A,No,Yes,Yes,No,No,7,High,Yes,Bank Transfer,108.89,No,No,No,No,No
+S0270,North,25-34,Social Media,B,Yes,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0271,East,18-24,Social Media,B,No,Yes,No,No,No,3,Medium,Yes,Cash on Delivery,27.93,No,No,No,No,No
+S0272,East,25-34,Paid Search,B,Yes,Yes,Yes,Yes,Yes,8,High,Yes,Digital Wallet,73.0,No,No,No,No,No
+S0273,East,25-34,Organic,B,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Bank Transfer,157.93,No,No,No,No,No
+S0274,North,35-44,Social Media,B,No,Yes,Yes,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0275,South,25-34,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0276,West,18-24,Organic,B,Yes,Yes,Yes,No,No,8,High,Yes,Digital Wallet,157.39,No,No,No,No,No
+S0277,West,35-44,Organic,B,Yes,Yes,Yes,Yes,No,3,Medium,Yes,Card,225.98,No,No,No,No,No
+S0278,West,25-34,Organic,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0279,North,35-44,Organic,A,Yes,Yes,No,Yes,No,7,High,Yes,Card,102.47,No,No,No,No,No
+S0280,West,18-24,Social Media,B,Yes,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0281,West,18-24,Social Media,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0282,South,25-34,Social Media,A,Yes,Yes,Yes,Yes,No,10,High,Yes,Digital Wallet,58.54,Yes,Yes,No,No,No
+S0283,North,25-34,Organic,A,No,Yes,No,Yes,Yes,1,Low,Yes,Digital Wallet,60.48,No,No,No,No,No
+S0284,North,25-34,Social Media,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0285,South,45+,Social Media,B,Yes,No,Yes,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0286,West,25-34,Organic,A,Yes,Yes,No,No,No,6,High,Yes,Card,100.36,No,No,No,No,No
+S0287,West,35-44,Social Media,A,Yes,Yes,No,No,No,7,High,Yes,Card,51.02,No,No,No,No,No
+S0288,South,35-44,Paid Search,B,Yes,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0289,South,18-24,Paid Search,A,No,Yes,No,No,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0290,West,35-44,Organic,A,No,Yes,No,Yes,No,0,Low,No,None,0.0,Not Applicable,No,No,No,Yes
+S0291,North,25-34,Paid Search,A,No,Yes,Yes,No,No,5,Medium,Yes,Digital Wallet,191.88,No,No,No,No,Yes
+S0292,West,25-34,Organic,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0293,North,18-24,Organic,B,No,Yes,No,Yes,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0294,East,45+,Organic,A,No,No,Yes,No,No,1,Low,Yes,Card,56.24,No,No,Yes,No,No
+S0295,West,45+,Referral,A,No,Yes,Yes,Yes,Yes,5,Medium,Yes,Digital Wallet,186.67,No,No,No,No,No
+S0296,East,18-24,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0297,North,35-44,Paid Search,B,Yes,Yes,No,Yes,No,7,High,Yes,Bank Transfer,46.2,No,Yes,No,No,No
+S0298,West,35-44,Organic,B,Yes,Yes,No,No,No,2,Low,Yes,Card,86.32,No,No,No,No,No
+S0299,West,25-34,Referral,A,Yes,Yes,No,Yes,Yes,6,High,Yes,Card,89.81,No,Yes,No,No,No
+S0300,South,45+,Paid Search,B,Yes,No,No,Yes,No,6,High,Yes,Card,33.72,No,No,No,No,No
+S0301,North,35-44,Referral,B,No,No,No,No,Yes,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0302,East,45+,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0303,South,45+,Organic,B,Yes,No,No,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0304,North,18-24,Paid Search,A,No,Yes,Yes,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0305,North,25-34,Paid Search,A,No,Yes,Yes,No,No,4,Medium,Yes,Card,66.41,No,Yes,No,No,No
+S0306,North,35-44,Social Media,B,No,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0307,West,18-24,Referral,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0308,South,25-34,Paid Search,A,Yes,Yes,No,No,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0309,East,45+,Referral,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0310,North,18-24,Paid Search,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0311,North,25-34,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0312,South,45+,Paid Search,A,No,Yes,No,No,No,2,Low,Yes,Digital Wallet,96.06,No,No,No,No,No
+S0313,East,25-34,Organic,A,No,Yes,Yes,No,No,3,Medium,Yes,Digital Wallet,9.85,No,Yes,No,No,No
+S0314,West,25-34,Social Media,A,Yes,Yes,No,No,No,3,Medium,Yes,Bank Transfer,135.93,No,No,No,No,No
+S0315,East,45+,Organic,B,Yes,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0316,North,25-34,Organic,B,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0317,West,18-24,Paid Search,A,Yes,Yes,Yes,No,No,5,Medium,Yes,Card,120.79,No,No,No,No,No
+S0318,East,18-24,Organic,A,No,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0319,West,45+,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0320,South,25-34,Social Media,A,No,Yes,No,Yes,Yes,5,Medium,Yes,Digital Wallet,91.35,Yes,No,Yes,No,Yes
+S0321,West,35-44,Organic,A,Yes,Yes,Yes,Yes,No,8,High,Yes,Card,153.06,Yes,No,No,No,No
+S0322,South,18-24,Paid Search,B,No,Yes,Yes,No,No,3,Medium,Yes,Bank Transfer,137.85,No,Yes,No,No,No
+S0323,South,25-34,Organic,B,Yes,Yes,No,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0324,South,45+,Organic,B,Yes,No,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0325,East,35-44,Organic,A,Yes,Yes,No,Yes,No,11,High,No,None,0.0,Not Applicable,No,No,No,No
+S0326,West,45+,Social Media,A,No,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0327,West,25-34,Referral,A,No,Yes,No,Yes,No,4,Medium,Yes,Card,373.34,No,No,Yes,Yes,Yes
+S0328,South,35-44,Organic,A,Yes,No,No,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0329,North,45+,Referral,B,No,No,No,No,Yes,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0330,East,25-34,Paid Search,A,Yes,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0331,West,25-34,Social Media,B,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0332,South,45+,Social Media,B,Yes,No,No,Yes,No,6,High,Yes,Digital Wallet,32.36,No,No,No,No,No
+S0333,West,25-34,Social Media,B,No,Yes,Yes,No,No,2,Low,Yes,Digital Wallet,210.28,No,No,No,No,No
+S0334,North,35-44,Social Media,B,No,No,No,No,Yes,2,Low,Yes,Card,166.78,Yes,No,No,No,No
+S0335,North,45+,Paid Search,B,No,Yes,Yes,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0336,East,25-34,Paid Search,B,Yes,Yes,Yes,Yes,Yes,9,High,Yes,Cash on Delivery,132.74,No,No,Yes,No,No
+S0337,West,25-34,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0338,South,18-24,Organic,A,No,Yes,Yes,No,No,1,Low,Yes,Card,35.53,No,No,No,No,No
+S0339,East,25-34,Social Media,A,No,No,Yes,Yes,No,4,Medium,Yes,Card,59.34,No,Yes,No,No,No
+S0340,East,25-34,Organic,A,No,Yes,No,No,No,3,Medium,Yes,Digital Wallet,53.08,No,No,No,No,No
+S0341,East,35-44,Organic,A,No,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0342,South,25-34,Organic,A,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0343,East,35-44,Organic,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0344,East,25-34,Social Media,B,Yes,Yes,No,No,Yes,7,High,Yes,Digital Wallet,101.85,No,Yes,Yes,No,No
+S0345,West,25-34,Social Media,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0346,East,25-34,Paid Search,B,Yes,Yes,Yes,Yes,No,5,Medium,Yes,Card,149.39,No,No,No,No,Yes
+S0347,East,35-44,Organic,B,Yes,No,No,Yes,Yes,5,Medium,Yes,Card,221.6,No,No,No,No,No
+S0348,East,25-34,Paid Search,B,No,No,No,Yes,Yes,0,Low,Yes,Card,261.23,No,No,No,No,No
+S0349,North,25-34,Paid Search,A,No,Yes,No,Yes,No,0,Low,Yes,Bank Transfer,59.69,No,No,Yes,No,No
+S0350,North,45+,Social Media,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0351,South,35-44,Paid Search,A,No,Yes,Yes,Yes,No,4,Medium,Yes,Digital Wallet,90.87,No,No,No,No,Yes
+S0352,South,25-34,Paid Search,A,Yes,No,Yes,No,Yes,6,High,Yes,Card,65.57,No,No,No,No,No
+S0353,South,45+,Paid Search,B,Yes,No,Yes,Yes,Yes,5,Medium,Yes,Card,194.54,No,Yes,No,No,No
+S0354,North,25-34,Referral,B,No,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0355,South,18-24,Social Media,B,No,Yes,No,Yes,Yes,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0356,West,25-34,Paid Search,A,No,No,Yes,No,No,5,Medium,Yes,Bank Transfer,106.28,No,No,No,No,No
+S0357,West,18-24,Paid Search,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0358,North,25-34,Organic,A,No,Yes,No,No,No,4,Medium,Yes,Bank Transfer,68.66,No,No,No,No,No
+S0359,North,35-44,Referral,B,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0360,East,18-24,Organic,B,No,Yes,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0361,North,45+,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0362,North,45+,Referral,A,No,No,No,No,No,2,Low,Yes,Card,21.94,Yes,No,No,No,No
+S0363,South,35-44,Social Media,A,Yes,Yes,No,No,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0364,North,35-44,Organic,B,Yes,Yes,No,Yes,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0365,South,35-44,Organic,B,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0366,West,45+,Organic,B,Yes,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0367,North,25-34,Paid Search,B,No,Yes,No,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0368,East,18-24,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0369,North,35-44,Referral,B,No,No,No,Yes,Yes,1,Low,Yes,Digital Wallet,103.76,No,No,No,No,No
+S0370,West,35-44,Referral,A,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0371,South,18-24,Paid Search,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0372,North,35-44,Paid Search,A,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0373,South,18-24,Organic,A,Yes,Yes,No,Yes,Yes,8,High,Yes,Card,129.29,No,No,No,No,No
+S0374,East,45+,Organic,B,Yes,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0375,South,25-34,Social Media,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0376,North,18-24,Organic,A,No,No,No,Yes,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0377,South,18-24,Organic,B,No,Yes,No,Yes,No,2,Low,Yes,Card,16.05,No,No,No,No,No
+S0378,North,25-34,Organic,B,Yes,Yes,No,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0379,South,25-34,Organic,B,Yes,Yes,No,Yes,No,10,High,Yes,Bank Transfer,38.41,No,No,No,No,No
+S0380,North,18-24,Paid Search,A,No,Yes,No,No,No,8,High,No,None,0.0,Not Applicable,Yes,No,No,No
+S0381,South,25-34,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0382,East,25-34,Social Media,A,No,No,No,Yes,No,6,High,Yes,Bank Transfer,90.19,No,No,No,No,No
+S0383,West,25-34,Paid Search,B,No,Yes,Yes,No,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0384,North,25-34,Social Media,A,No,No,Yes,No,No,1,Low,Yes,Card,235.45,No,No,No,No,No
+S0385,North,25-34,Paid Search,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0386,West,25-34,Social Media,A,No,Yes,No,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0387,West,18-24,Paid Search,B,No,No,Yes,No,Yes,1,Low,Yes,Bank Transfer,182.5,No,No,No,No,No
+S0388,West,18-24,Organic,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0389,North,25-34,Referral,B,No,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0390,South,35-44,Organic,A,Yes,No,No,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0391,North,45+,Organic,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0392,East,45+,Organic,B,No,No,No,No,No,1,Low,Yes,Bank Transfer,70.1,No,Yes,Yes,No,No
+S0393,West,35-44,Paid Search,A,No,Yes,No,Yes,No,4,Medium,Yes,Bank Transfer,62.53,No,No,No,No,No
+S0394,West,35-44,Paid Search,B,Yes,No,No,Yes,No,3,Medium,Yes,Bank Transfer,59.71,No,No,No,No,No
+S0395,West,25-34,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0396,West,35-44,Referral,A,No,Yes,No,Yes,No,2,Low,Yes,Digital Wallet,42.92,No,No,No,No,No
+S0397,East,35-44,Organic,B,Yes,No,Yes,No,No,5,Medium,Yes,Cash on Delivery,81.44,Yes,No,No,No,No
+S0398,North,45+,Paid Search,B,Yes,Yes,Yes,Yes,Yes,5,Medium,Yes,Card,321.22,No,No,Yes,No,No
+S0399,North,45+,Paid Search,B,Yes,No,No,Yes,Yes,4,Medium,Yes,Digital Wallet,89.2,No,No,Yes,No,No
+S0400,East,25-34,Social Media,A,Yes,Yes,No,Yes,Yes,8,High,Yes,Card,109.82,No,No,No,No,No
+S0401,East,35-44,Organic,B,No,No,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0402,West,45+,Organic,A,No,No,No,Yes,Yes,1,Low,Yes,Bank Transfer,42.12,No,No,Yes,No,No
+S0403,North,25-34,Paid Search,B,No,Yes,No,No,No,4,Medium,Yes,Card,118.85,No,No,Yes,No,No
+S0404,South,45+,Social Media,B,Yes,Yes,No,No,No,2,Low,Yes,Card,96.73,No,No,Yes,No,No
+S0405,South,18-24,Social Media,A,No,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0406,South,45+,Paid Search,A,Yes,No,No,Yes,No,6,High,Yes,Bank Transfer,74.15,No,No,No,No,No
+S0407,South,35-44,Social Media,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0408,South,18-24,Paid Search,A,No,No,No,Yes,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0409,East,35-44,Organic,B,Yes,Yes,No,Yes,No,7,High,Yes,Card,48.09,No,No,No,No,No
+S0410,South,18-24,Organic,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0411,South,35-44,Organic,B,Yes,No,Yes,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0412,West,45+,Organic,B,No,No,No,No,No,3,Medium,Yes,Card,44.6,No,No,No,No,No
+S0413,South,35-44,Paid Search,B,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0414,South,45+,Paid Search,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0415,North,18-24,Paid Search,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0416,West,25-34,Paid Search,B,No,Yes,No,Yes,No,5,Medium,Yes,Card,56.48,No,No,No,No,No
+S0417,South,25-34,Social Media,B,Yes,Yes,No,Yes,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0418,South,18-24,Social Media,B,No,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0419,East,25-34,Organic,A,No,Yes,No,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0420,West,25-34,Paid Search,A,Yes,No,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0421,West,25-34,Paid Search,B,Yes,Yes,No,Yes,No,5,Medium,Yes,Digital Wallet,73.91,No,No,No,No,No
+S0422,South,25-34,Paid Search,B,No,No,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0423,East,45+,Organic,A,Yes,Yes,Yes,Yes,No,5,Medium,Yes,Card,47.74,No,No,No,No,No
+S0424,East,25-34,Organic,B,No,Yes,No,No,No,2,Low,Yes,Card,74.54,No,No,No,No,No
+S0425,West,45+,Social Media,B,No,Yes,No,No,No,5,Medium,Yes,Digital Wallet,93.27,No,No,No,No,No
+S0426,North,25-34,Social Media,B,Yes,Yes,Yes,No,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0427,East,25-34,Organic,A,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0428,North,35-44,Paid Search,B,No,No,No,No,No,1,Low,Yes,Cash on Delivery,133.28,No,No,Yes,No,No
+S0429,North,25-34,Referral,A,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0430,South,25-34,Organic,A,No,No,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0431,South,35-44,Referral,B,Yes,Yes,Yes,Yes,No,5,Medium,Yes,Bank Transfer,253.59,No,No,No,No,No
+S0432,North,18-24,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0433,East,25-34,Paid Search,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0434,North,35-44,Paid Search,A,Yes,Yes,Yes,No,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0435,South,25-34,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0436,South,45+,Referral,A,Yes,No,Yes,No,Yes,3,Medium,Yes,Card,35.0,No,No,No,No,No
+S0437,East,25-34,Paid Search,B,No,Yes,No,No,No,1,Low,Yes,Bank Transfer,103.12,No,No,Yes,No,No
+S0438,South,45+,Referral,B,Yes,Yes,No,Yes,Yes,3,Medium,Yes,Bank Transfer,91.71,No,No,No,No,No
+S0439,South,45+,Organic,B,No,No,No,Yes,No,2,Low,Yes,Bank Transfer,11.35,No,No,Yes,No,No
+S0440,South,45+,Referral,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0441,South,45+,Referral,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0442,East,18-24,Paid Search,A,No,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0443,South,35-44,Organic,B,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0444,South,18-24,Social Media,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0445,North,45+,Paid Search,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0446,East,35-44,Referral,A,No,No,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0447,East,25-34,Paid Search,B,No,Yes,Yes,No,No,1,Low,Yes,Digital Wallet,49.37,No,No,No,No,No
+S0448,South,45+,Organic,A,No,Yes,Yes,No,Yes,5,Medium,Yes,Card,136.15,No,No,Yes,No,No
+S0449,West,18-24,Organic,A,No,Yes,Yes,No,No,4,Medium,Yes,Digital Wallet,113.48,No,No,Yes,No,No
+S0450,North,35-44,Social Media,B,No,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0451,East,35-44,Referral,B,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0452,South,18-24,Organic,B,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0453,North,35-44,Social Media,A,Yes,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0454,East,45+,Referral,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0455,West,18-24,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0456,South,35-44,Organic,A,Yes,No,No,Yes,No,3,Medium,Yes,Digital Wallet,104.89,No,Yes,No,No,Yes
+S0457,East,25-34,Social Media,B,Yes,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0458,East,35-44,Social Media,B,Yes,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0459,East,18-24,Organic,B,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0460,North,45+,Social Media,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0461,North,45+,Paid Search,A,No,No,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0462,North,25-34,Referral,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0463,East,25-34,Referral,A,No,Yes,No,Yes,No,2,Low,Yes,Card,45.49,No,No,No,No,No
+S0464,North,35-44,Social Media,A,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0465,East,35-44,Paid Search,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0466,East,25-34,Organic,B,Yes,No,Yes,Yes,Yes,8,High,Yes,Card,226.29,No,No,No,No,No
+S0467,South,18-24,Paid Search,A,Yes,Yes,Yes,No,No,6,High,Yes,Card,43.47,No,No,No,No,No
+S0468,South,18-24,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0469,North,45+,Social Media,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0470,North,25-34,Organic,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0471,South,45+,Paid Search,B,No,No,Yes,No,No,1,Low,Yes,Digital Wallet,60.09,No,No,No,No,No
+S0472,North,25-34,Organic,A,No,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0473,North,45+,Organic,B,Yes,No,Yes,Yes,No,6,High,Yes,Card,84.16,No,No,No,No,No
+S0474,North,18-24,Organic,B,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0475,South,18-24,Social Media,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0476,South,45+,Social Media,A,No,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0477,West,45+,Organic,B,No,Yes,Yes,No,No,3,Medium,Yes,Digital Wallet,75.61,No,No,No,No,No
+S0478,North,25-34,Referral,B,No,Yes,No,No,No,1,Low,Yes,Bank Transfer,314.39,No,No,Yes,No,No
+S0479,South,25-34,Referral,B,Yes,Yes,No,Yes,Yes,2,Low,Yes,Card,253.11,No,No,No,No,No
+S0480,East,25-34,Paid Search,A,No,No,No,No,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0481,West,25-34,Social Media,B,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0482,West,25-34,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0483,West,45+,Organic,A,Yes,Yes,Yes,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0484,South,25-34,Paid Search,A,No,Yes,No,Yes,No,3,Medium,Yes,Card,111.03,No,No,Yes,No,No
+S0485,West,35-44,Organic,A,No,Yes,No,No,No,4,Medium,Yes,Card,80.2,No,No,No,No,No
+S0486,South,18-24,Referral,B,No,Yes,Yes,Yes,No,10,High,No,None,0.0,Not Applicable,No,Yes,No,No
+S0487,North,18-24,Referral,A,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0488,West,35-44,Social Media,B,Yes,No,No,No,No,3,Medium,Yes,Card,96.48,No,No,No,No,No
+S0489,West,25-34,Paid Search,B,Yes,Yes,Yes,Yes,No,2,Low,Yes,Bank Transfer,151.47,No,Yes,No,No,No
+S0490,South,35-44,Paid Search,A,No,Yes,Yes,Yes,Yes,4,Medium,Yes,Digital Wallet,178.53,No,No,No,No,No
+S0491,West,18-24,Referral,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0492,North,45+,Organic,B,Yes,No,Yes,No,No,4,Medium,Yes,Bank Transfer,42.69,No,Yes,No,No,No
+S0493,North,35-44,Organic,A,No,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0494,South,45+,Paid Search,A,Yes,Yes,No,Yes,No,7,High,Yes,Cash on Delivery,255.01,No,No,No,No,No
+S0495,West,18-24,Organic,A,No,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0496,East,25-34,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0497,East,25-34,Organic,B,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0498,North,35-44,Paid Search,B,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Card,138.76,Yes,Yes,No,No,No
+S0499,South,25-34,Organic,B,Yes,Yes,No,Yes,No,3,Medium,Yes,Digital Wallet,66.78,No,No,No,No,No
+S0500,East,18-24,Organic,A,Yes,Yes,Yes,No,No,8,High,Yes,Card,88.65,No,No,No,No,No
+S0501,East,25-34,Organic,B,No,Yes,Yes,No,No,4,Medium,Yes,Digital Wallet,111.28,No,No,No,No,No
+S0502,South,25-34,Paid Search,B,Yes,Yes,Yes,Yes,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0503,West,25-34,Referral,A,Yes,Yes,No,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0504,North,25-34,Organic,A,No,No,No,Yes,Yes,2,Low,Yes,Card,126.97,No,No,Yes,No,No
+S0505,East,25-34,Social Media,B,No,No,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0506,East,35-44,Social Media,B,Yes,Yes,No,Yes,No,4,Medium,Yes,Card,48.31,No,No,No,No,Yes
+S0507,North,25-34,Organic,A,Yes,Yes,No,Yes,Yes,6,High,Yes,Digital Wallet,106.03,No,No,No,No,No
+S0508,East,25-34,Social Media,A,No,Yes,No,Yes,Yes,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0509,South,35-44,Social Media,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0510,South,35-44,Paid Search,A,No,No,Yes,Yes,Yes,3,Medium,Yes,Digital Wallet,105.06,No,Yes,No,No,No
+S0511,East,25-34,Organic,B,Yes,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0512,North,35-44,Organic,B,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0513,East,45+,Referral,A,No,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0514,West,35-44,Social Media,B,No,No,No,Yes,Yes,4,Medium,Yes,Card,180.19,No,No,No,No,No
+S0515,North,45+,Referral,A,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0516,South,45+,Referral,B,Yes,Yes,Yes,Yes,Yes,6,High,Yes,Card,216.28,No,Yes,No,No,No
+S0517,West,18-24,Organic,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0518,South,25-34,Social Media,B,Yes,Yes,No,Yes,No,5,Medium,Yes,Digital Wallet,38.97,No,No,No,No,Yes
+S0519,South,35-44,Paid Search,B,No,Yes,Yes,Yes,No,5,Medium,Yes,Bank Transfer,83.1,Yes,Yes,Yes,No,No
+S0520,North,45+,Social Media,B,No,Yes,Yes,Yes,Yes,7,High,Yes,Digital Wallet,62.77,No,No,No,No,No
+S0521,North,25-34,Organic,B,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0522,West,18-24,Organic,B,Yes,Yes,Yes,No,Yes,5,Medium,Yes,Card,141.15,No,No,No,No,No
+S0523,West,35-44,Social Media,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0524,East,18-24,Social Media,A,No,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0525,East,35-44,Paid Search,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0526,South,35-44,Organic,A,Yes,No,No,Yes,No,8,High,Yes,Card,333.55,No,No,No,No,Yes
+S0527,North,35-44,Organic,A,No,Yes,No,No,No,5,Medium,Yes,Bank Transfer,155.48,No,Yes,Yes,No,No
+S0528,North,45+,Referral,A,Yes,Yes,No,Yes,Yes,3,Medium,Yes,Bank Transfer,148.33,No,No,No,No,No
+S0529,South,35-44,Paid Search,A,Yes,Yes,No,Yes,No,12,High,No,None,0.0,Not Applicable,No,No,No,No
+S0530,South,35-44,Paid Search,B,Yes,Yes,Yes,Yes,Yes,8,High,Yes,Card,172.31,No,No,No,No,No
+S0531,West,35-44,Paid Search,A,Yes,Yes,No,No,Yes,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0532,West,45+,Paid Search,A,Yes,Yes,No,No,Yes,4,Medium,Yes,Card,242.87,No,No,No,No,No
+S0533,North,45+,Paid Search,B,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0534,West,18-24,Paid Search,A,Yes,Yes,No,Yes,No,6,High,Yes,Card,168.73,No,No,No,No,No
+S0535,West,35-44,Social Media,A,Yes,Yes,Yes,Yes,No,6,High,Yes,Digital Wallet,44.24,No,No,No,No,No
+S0536,West,25-34,Referral,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0537,East,45+,Referral,A,Yes,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0538,North,35-44,Paid Search,B,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0539,South,25-34,Paid Search,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0540,West,25-34,Social Media,B,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0541,West,25-34,Social Media,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0542,North,35-44,Paid Search,A,No,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0543,North,25-34,Social Media,B,No,Yes,No,Yes,No,8,High,Yes,Card,239.52,No,No,No,No,No
+S0544,East,18-24,Social Media,B,No,Yes,No,Yes,Yes,4,Medium,Yes,Digital Wallet,100.99,Yes,No,No,No,No
+S0545,West,45+,Social Media,A,Yes,Yes,No,Yes,No,6,High,Yes,Cash on Delivery,125.95,No,No,No,No,No
+S0546,West,35-44,Social Media,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0547,East,25-34,Organic,B,No,No,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0548,North,25-34,Paid Search,B,No,Yes,Yes,Yes,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0549,East,45+,Paid Search,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0550,East,35-44,Organic,B,Yes,Yes,No,No,No,6,High,Yes,Card,204.13,No,No,No,No,No
+S0551,South,35-44,Referral,B,No,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0552,North,25-34,Paid Search,B,No,No,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0553,West,25-34,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0554,East,18-24,Social Media,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0555,West,35-44,Social Media,B,Yes,Yes,No,No,Yes,4,Medium,Yes,Card,335.98,No,No,No,No,No
+S0556,South,18-24,Social Media,B,No,Yes,No,Yes,Yes,3,Medium,Yes,Card,71.91,No,No,No,No,No
+S0557,East,18-24,Paid Search,B,No,Yes,Yes,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0558,South,35-44,Referral,A,No,Yes,Yes,Yes,Yes,3,Medium,Yes,Card,185.58,Yes,No,No,No,No
+S0559,West,45+,Paid Search,B,No,No,Yes,No,No,3,Medium,Yes,Cash on Delivery,57.16,Yes,No,No,No,No
+S0560,South,35-44,Paid Search,A,No,Yes,Yes,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0561,North,25-34,Organic,B,No,Yes,No,Yes,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0562,West,25-34,Social Media,A,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0563,South,25-34,Social Media,A,Yes,Yes,No,No,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0564,North,25-34,Paid Search,B,Yes,No,Yes,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0565,North,35-44,Paid Search,B,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0566,South,25-34,Social Media,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0567,South,35-44,Social Media,A,Yes,Yes,No,Yes,No,8,High,Yes,Cash on Delivery,119.51,Yes,No,No,No,No
+S0568,West,45+,Organic,A,Yes,Yes,Yes,No,Yes,2,Low,Yes,Card,45.85,No,No,No,No,No
+S0569,East,45+,Referral,A,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0570,West,18-24,Social Media,B,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0571,West,25-34,Referral,A,No,Yes,No,Yes,Yes,6,High,Yes,Bank Transfer,69.41,No,No,No,No,No
+S0572,West,25-34,Referral,B,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0573,North,25-34,Referral,B,No,Yes,No,Yes,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0574,North,25-34,Social Media,B,Yes,Yes,No,Yes,No,8,High,Yes,Card,115.74,No,No,No,No,Yes
+S0575,East,18-24,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0576,South,35-44,Organic,A,No,No,No,No,No,3,Medium,Yes,Digital Wallet,120.46,No,No,No,No,No
+S0577,South,25-34,Paid Search,B,No,No,Yes,Yes,Yes,3,Medium,Yes,Digital Wallet,127.89,No,No,No,No,No
+S0578,North,45+,Social Media,B,Yes,Yes,No,Yes,Yes,6,High,Yes,Card,194.41,No,Yes,No,No,No
+S0579,North,18-24,Paid Search,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0580,North,18-24,Referral,B,No,Yes,Yes,No,No,2,Low,Yes,Digital Wallet,63.91,No,No,Yes,No,No
+S0581,South,25-34,Organic,A,Yes,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0582,West,18-24,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0583,North,25-34,Paid Search,B,Yes,Yes,Yes,No,Yes,7,High,Yes,Digital Wallet,106.87,No,Yes,Yes,No,No
+S0584,East,45+,Paid Search,A,Yes,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0585,North,25-34,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0586,North,25-34,Organic,B,Yes,Yes,No,Yes,Yes,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0587,West,35-44,Social Media,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0588,East,25-34,Paid Search,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0589,East,35-44,Organic,B,Yes,No,No,Yes,No,7,High,Yes,Card,97.89,No,No,No,No,No
+S0590,West,25-34,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0591,West,45+,Paid Search,B,Yes,Yes,Yes,Yes,No,4,Medium,Yes,Cash on Delivery,83.09,No,No,No,No,No
+S0592,North,18-24,Organic,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0593,South,25-34,Social Media,A,No,Yes,No,Yes,No,4,Medium,Yes,Card,42.18,No,Yes,No,No,No
+S0594,North,35-44,Social Media,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0595,West,45+,Organic,B,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0596,East,25-34,Paid Search,A,Yes,Yes,Yes,Yes,Yes,6,High,Yes,Card,119.29,No,No,No,No,No
+S0597,East,35-44,Organic,A,Yes,Yes,No,Yes,No,7,High,Yes,Cash on Delivery,164.73,No,Yes,No,No,No
+S0598,East,18-24,Organic,A,No,Yes,Yes,No,Yes,5,Medium,Yes,Card,117.09,No,Yes,Yes,No,No
+S0599,South,18-24,Referral,A,Yes,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0600,North,18-24,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0601,West,35-44,Referral,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0602,West,25-34,Organic,A,Yes,Yes,Yes,Yes,No,5,Medium,Yes,Card,76.34,No,No,No,No,Yes
+S0603,South,35-44,Organic,A,Yes,Yes,No,No,No,5,Medium,Yes,Card,108.63,No,No,No,No,No
+S0604,South,18-24,Paid Search,B,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Card,85.24,No,Yes,No,No,No
+S0605,East,45+,Paid Search,B,No,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0606,North,45+,Referral,B,No,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0607,West,18-24,Organic,B,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0608,South,18-24,Referral,A,Yes,Yes,No,Yes,Yes,6,High,Yes,Card,155.11,No,No,No,No,No
+S0609,North,18-24,Referral,A,Yes,Yes,No,No,No,4,Medium,Yes,Card,168.02,No,No,No,No,No
+S0610,West,45+,Paid Search,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0611,West,25-34,Paid Search,A,No,Yes,No,No,No,2,Low,Yes,Digital Wallet,148.09,No,Yes,No,No,No
+S0612,North,35-44,Paid Search,B,No,Yes,No,Yes,Yes,1,Low,Yes,Card,84.39,No,No,No,No,No
+S0613,North,25-34,Organic,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0614,South,45+,Social Media,A,No,No,No,No,Yes,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0615,East,25-34,Paid Search,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0616,North,35-44,Referral,A,No,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0617,South,45+,Social Media,B,Yes,No,Yes,No,No,7,High,Yes,Bank Transfer,74.29,No,No,No,No,No
+S0618,West,18-24,Paid Search,A,No,Yes,Yes,Yes,No,3,Medium,Yes,Bank Transfer,159.35,No,No,No,No,No
+S0619,North,45+,Social Media,B,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0620,South,18-24,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0621,West,25-34,Referral,A,No,Yes,No,No,Yes,4,Medium,Yes,Card,80.43,No,No,No,No,No
+S0622,West,45+,Organic,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0623,East,35-44,Referral,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0624,North,35-44,Social Media,A,Yes,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0625,East,25-34,Referral,A,No,Yes,No,Yes,Yes,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0626,East,25-34,Paid Search,B,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0627,South,25-34,Social Media,B,Yes,Yes,No,Yes,Yes,8,High,Yes,Cash on Delivery,119.52,No,No,No,No,No
+S0628,West,35-44,Organic,A,No,No,Yes,Yes,No,3,Medium,Yes,Bank Transfer,104.35,No,No,Yes,No,No
+S0629,North,25-34,Social Media,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0630,East,25-34,Organic,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0631,North,25-34,Organic,A,Yes,Yes,No,Yes,Yes,4,Medium,Yes,Cash on Delivery,113.97,No,Yes,Yes,No,No
+S0632,South,25-34,Paid Search,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0633,North,25-34,Organic,B,Yes,No,No,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0634,South,18-24,Paid Search,B,Yes,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0635,South,45+,Social Media,A,No,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0636,South,35-44,Organic,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0637,South,18-24,Social Media,B,No,Yes,No,Yes,Yes,1,Low,Yes,Digital Wallet,146.19,No,No,No,No,No
+S0638,West,35-44,Organic,A,No,Yes,No,No,Yes,3,Medium,Yes,Card,39.07,No,No,No,No,No
+S0639,East,45+,Social Media,B,Yes,Yes,Yes,Yes,No,5,Medium,Yes,Card,135.13,No,No,No,No,No
+S0640,North,25-34,Social Media,A,No,Yes,No,No,Yes,3,Medium,Yes,Bank Transfer,58.91,No,Yes,No,No,No
+S0641,North,18-24,Paid Search,A,No,Yes,No,Yes,Yes,7,High,Yes,Digital Wallet,75.1,No,No,No,No,No
+S0642,North,18-24,Social Media,B,No,Yes,No,Yes,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0643,East,18-24,Referral,A,No,Yes,Yes,Yes,No,3,Medium,Yes,Bank Transfer,95.65,No,No,No,No,No
+S0644,East,35-44,Social Media,B,No,Yes,No,Yes,No,3,Medium,Yes,Bank Transfer,21.34,No,No,No,No,No
+S0645,South,45+,Paid Search,A,Yes,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0646,South,18-24,Paid Search,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0647,West,35-44,Social Media,B,Yes,No,Yes,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0648,South,18-24,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0649,West,35-44,Social Media,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0650,East,35-44,Organic,B,Yes,Yes,No,Yes,Yes,6,High,Yes,Card,103.69,Yes,No,No,No,No
+S0651,South,25-34,Social Media,B,Yes,No,No,Yes,No,2,Low,Yes,Card,81.87,No,No,No,No,No
+S0652,West,18-24,Organic,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0653,West,35-44,Organic,A,Yes,Yes,No,Yes,No,8,High,Yes,Cash on Delivery,94.93,No,No,No,No,No
+S0654,South,45+,Referral,A,Yes,Yes,No,Yes,No,8,High,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0655,West,25-34,Referral,B,Yes,Yes,Yes,Yes,Yes,8,High,Yes,Card,90.95,No,No,No,No,No
+S0656,East,25-34,Referral,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0657,East,18-24,Referral,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0658,East,35-44,Paid Search,A,No,No,No,No,No,1,Low,Yes,Bank Transfer,90.04,No,No,No,No,No
+S0659,West,35-44,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0660,North,45+,Organic,A,Yes,Yes,No,Yes,Yes,6,High,Yes,Cash on Delivery,83.47,No,No,No,No,No
+S0661,East,35-44,Paid Search,B,Yes,Yes,Yes,No,No,3,Medium,Yes,Card,99.51,No,No,No,No,No
+S0662,South,45+,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0663,East,45+,Referral,B,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0664,North,25-34,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0665,South,35-44,Organic,B,Yes,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0666,West,25-34,Organic,B,No,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0667,North,25-34,Organic,A,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0668,South,45+,Organic,B,No,No,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0669,North,35-44,Social Media,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0670,North,45+,Organic,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0671,West,25-34,Paid Search,B,No,Yes,No,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0672,North,35-44,Referral,A,No,Yes,No,Yes,Yes,5,Medium,Yes,Card,107.5,No,No,No,No,Yes
+S0673,West,25-34,Paid Search,B,No,Yes,No,Yes,Yes,2,Low,Yes,Digital Wallet,175.06,Yes,Yes,Yes,No,No
+S0674,West,18-24,Social Media,A,Yes,Yes,Yes,No,No,9,High,Yes,Bank Transfer,210.62,No,No,No,No,No
+S0675,West,25-34,Paid Search,B,Yes,Yes,No,No,Yes,4,Medium,Yes,Digital Wallet,51.32,No,No,No,No,No
+S0676,North,35-44,Organic,B,No,No,No,No,Yes,1,Low,Yes,Card,183.15,No,No,No,No,No
+S0677,West,18-24,Organic,A,No,Yes,No,Yes,No,3,Medium,Yes,Card,41.97,No,No,No,No,No
+S0678,East,45+,Referral,B,No,No,Yes,Yes,No,1,Low,Yes,Card,82.8,No,No,Yes,No,No
+S0679,East,18-24,Social Media,B,No,No,Yes,Yes,Yes,0,Low,Yes,Card,34.7,Yes,No,Yes,No,No
+S0680,East,25-34,Organic,A,Yes,No,Yes,No,No,6,High,Yes,Card,20.47,No,No,No,No,No
+S0681,North,35-44,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0682,West,18-24,Social Media,A,No,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0683,East,45+,Social Media,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0684,West,35-44,Paid Search,B,Yes,No,Yes,No,No,3,Medium,Yes,Bank Transfer,322.09,No,No,No,Yes,Yes
+S0685,North,18-24,Referral,A,Yes,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0686,South,35-44,Social Media,A,Yes,Yes,No,Yes,Yes,12,High,Yes,Card,113.73,No,No,No,No,No
+S0687,South,35-44,Social Media,B,No,No,Yes,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0688,North,35-44,Organic,A,No,Yes,No,No,No,1,Low,Yes,Bank Transfer,71.91,No,No,Yes,No,No
+S0689,West,45+,Organic,B,No,Yes,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0690,West,35-44,Referral,B,Yes,Yes,Yes,Yes,No,8,High,Yes,Cash on Delivery,122.22,Yes,Yes,No,No,No
+S0691,North,35-44,Paid Search,B,No,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0692,South,25-34,Paid Search,B,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0693,East,35-44,Paid Search,A,Yes,No,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0694,East,45+,Organic,B,No,No,No,No,Yes,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0695,East,35-44,Social Media,B,Yes,No,No,Yes,No,9,High,Yes,Digital Wallet,89.38,No,No,No,No,No
+S0696,West,35-44,Organic,B,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0697,South,25-34,Social Media,B,Yes,Yes,No,No,No,4,Medium,Yes,Digital Wallet,166.82,No,No,No,No,No
+S0698,West,35-44,Paid Search,B,Yes,Yes,No,Yes,Yes,4,Medium,Yes,Card,130.02,No,No,No,No,No
+S0699,East,45+,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0700,South,18-24,Organic,A,No,Yes,No,Yes,Yes,4,Medium,Yes,Digital Wallet,141.81,No,No,Yes,No,No
+S0701,East,25-34,Social Media,B,Yes,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0702,North,35-44,Organic,A,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0703,West,25-34,Organic,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0704,North,35-44,Social Media,B,Yes,Yes,No,Yes,No,9,High,Yes,Card,60.39,No,No,No,No,No
+S0705,West,18-24,Paid Search,A,Yes,Yes,No,Yes,No,5,Medium,Yes,Card,35.19,No,No,No,No,Yes
+S0706,West,25-34,Paid Search,A,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0707,East,35-44,Organic,A,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Digital Wallet,190.14,No,No,No,No,No
+S0708,South,35-44,Referral,B,No,Yes,No,No,No,2,Low,Yes,Card,106.11,No,Yes,Yes,No,No
+S0709,West,35-44,Organic,B,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0710,South,35-44,Organic,B,No,Yes,No,Yes,No,3,Medium,Yes,Card,33.34,No,No,No,No,No
+S0711,West,35-44,Organic,B,No,No,No,Yes,Yes,2,Low,Yes,Digital Wallet,45.81,No,No,No,No,No
+S0712,South,45+,Organic,A,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0713,West,35-44,Organic,A,Yes,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0714,South,35-44,Organic,A,No,Yes,Yes,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0715,North,35-44,Organic,B,No,Yes,No,No,No,3,Medium,Yes,Card,91.38,No,No,No,Yes,Yes
+S0716,East,18-24,Paid Search,A,No,Yes,No,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0717,North,25-34,Referral,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0718,East,35-44,Organic,B,Yes,No,Yes,No,No,4,Medium,Yes,Card,143.93,No,No,No,No,No
+S0719,West,45+,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0720,South,35-44,Referral,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0721,South,18-24,Referral,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0722,West,35-44,Social Media,B,No,Yes,Yes,No,No,3,Medium,Yes,Card,41.73,No,No,Yes,No,No
+S0723,North,25-34,Organic,A,No,Yes,No,No,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0724,South,35-44,Paid Search,B,Yes,No,Yes,No,No,6,High,Yes,Card,237.47,No,No,No,No,No
+S0725,East,45+,Organic,B,Yes,Yes,No,Yes,No,4,Medium,Yes,Digital Wallet,155.28,No,No,No,No,No
+S0726,South,35-44,Organic,A,Yes,Yes,No,Yes,No,5,Medium,Yes,Digital Wallet,185.61,No,Yes,No,No,No
+S0727,South,35-44,Paid Search,B,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0728,North,25-34,Paid Search,B,No,Yes,No,Yes,No,3,Medium,Yes,Card,89.79,No,No,Yes,No,No
+S0729,South,25-34,Paid Search,B,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0730,South,45+,Paid Search,A,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0731,North,35-44,Organic,A,No,Yes,Yes,No,No,6,High,Yes,Digital Wallet,84.68,No,No,No,No,No
+S0732,East,35-44,Paid Search,A,No,Yes,Yes,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0733,East,25-34,Social Media,A,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0734,West,18-24,Referral,A,No,Yes,No,Yes,Yes,3,Medium,Yes,Cash on Delivery,42.89,Yes,Yes,Yes,No,No
+S0735,East,18-24,Organic,A,No,Yes,No,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0736,East,25-34,Paid Search,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0737,West,25-34,Organic,A,No,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0738,East,45+,Organic,A,Yes,No,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0739,West,35-44,Social Media,A,Yes,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0740,West,25-34,Organic,B,No,Yes,Yes,Yes,Yes,4,Medium,Yes,Digital Wallet,59.61,No,No,No,No,No
+S0741,West,18-24,Paid Search,B,No,Yes,Yes,No,No,5,Medium,Yes,Digital Wallet,77.5,No,No,No,No,No
+S0742,West,25-34,Paid Search,B,No,Yes,Yes,No,No,3,Medium,Yes,Digital Wallet,107.97,No,No,No,No,No
+S0743,West,45+,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0744,North,25-34,Organic,B,No,Yes,No,No,Yes,5,Medium,Yes,Bank Transfer,107.39,No,No,No,No,No
+S0745,South,35-44,Paid Search,B,Yes,Yes,No,No,No,5,Medium,Yes,Cash on Delivery,23.54,No,Yes,No,No,No
+S0746,North,45+,Referral,A,No,Yes,Yes,Yes,No,5,Medium,Yes,Card,39.9,No,No,No,No,No
+S0747,West,18-24,Paid Search,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0748,West,35-44,Paid Search,A,No,No,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0749,East,45+,Organic,A,Yes,Yes,No,Yes,No,6,High,Yes,Card,118.39,No,No,No,No,No
+S0750,West,25-34,Paid Search,B,Yes,Yes,Yes,No,No,5,Medium,Yes,Card,129.43,No,No,No,No,No
+S0751,West,18-24,Organic,A,No,Yes,No,Yes,No,4,Medium,Yes,Digital Wallet,62.94,No,No,No,No,No
+S0752,North,45+,Paid Search,B,Yes,No,Yes,No,Yes,8,High,Yes,Card,159.36,No,No,No,No,Yes
+S0753,South,45+,Social Media,A,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0754,East,35-44,Paid Search,B,No,Yes,No,No,No,3,Medium,Yes,Bank Transfer,125.23,No,No,No,No,No
+S0755,West,35-44,Organic,A,Yes,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0756,West,25-34,Organic,B,No,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0757,North,45+,Organic,B,No,No,No,No,No,2,Low,Yes,Card,281.12,No,No,Yes,No,No
+S0758,South,25-34,Paid Search,B,No,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0759,West,18-24,Referral,A,No,Yes,No,Yes,Yes,0,Low,Yes,Digital Wallet,97.07,No,No,No,No,No
+S0760,East,35-44,Organic,A,Yes,Yes,No,No,Yes,3,Medium,Yes,Card,88.12,No,No,No,No,No
+S0761,South,45+,Paid Search,A,Yes,No,No,Yes,No,3,Medium,Yes,Card,54.27,No,No,No,No,No
+S0762,South,45+,Social Media,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0763,South,25-34,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0764,East,18-24,Organic,B,No,No,No,Yes,Yes,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0765,West,45+,Organic,B,No,No,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0766,East,45+,Social Media,A,Yes,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0767,East,35-44,Paid Search,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0768,East,35-44,Social Media,B,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0769,South,25-34,Referral,A,Yes,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,Yes,No,No
+S0770,North,25-34,Social Media,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0771,North,18-24,Referral,B,No,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0772,West,18-24,Social Media,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0773,West,25-34,Referral,A,Yes,Yes,No,Yes,Yes,10,High,Yes,Card,49.53,No,No,No,No,No
+S0774,West,45+,Social Media,A,No,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0775,East,18-24,Social Media,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0776,North,25-34,Social Media,A,No,Yes,No,Yes,Yes,3,Medium,Yes,Digital Wallet,133.81,No,No,No,No,No
+S0777,South,35-44,Referral,B,No,No,No,No,No,3,Medium,Yes,Card,113.11,No,No,Yes,No,Yes
+S0778,North,25-34,Paid Search,A,No,Yes,No,Yes,Yes,4,Medium,Yes,Card,42.67,No,No,No,No,No
+S0779,South,18-24,Social Media,A,No,Yes,Yes,No,No,5,Medium,Yes,Digital Wallet,122.35,No,No,No,No,No
+S0780,West,35-44,Paid Search,B,Yes,Yes,Yes,Yes,No,6,High,Yes,Cash on Delivery,111.34,No,No,No,No,No
+S0781,South,25-34,Referral,B,Yes,Yes,No,No,No,4,Medium,Yes,Bank Transfer,83.66,No,No,No,No,No
+S0782,North,35-44,Paid Search,B,No,Yes,No,No,No,3,Medium,Yes,Bank Transfer,14.81,No,No,Yes,No,No
+S0783,South,45+,Social Media,A,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0784,East,18-24,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0785,East,45+,Referral,B,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0786,North,45+,Organic,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0787,West,45+,Social Media,B,No,No,Yes,No,No,3,Medium,Yes,Card,112.36,No,No,No,No,No
+S0788,West,35-44,Social Media,A,Yes,Yes,No,Yes,No,13,High,Yes,Bank Transfer,256.61,No,Yes,No,No,No
+S0789,South,35-44,Referral,B,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0790,West,35-44,Referral,A,No,Yes,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0791,South,35-44,Paid Search,B,No,No,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0792,West,18-24,Paid Search,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0793,South,45+,Organic,A,No,Yes,No,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0794,West,35-44,Referral,A,Yes,Yes,No,Yes,No,6,High,Yes,Card,59.22,No,No,No,No,No
+S0795,East,45+,Organic,A,Yes,No,No,Yes,Yes,5,Medium,Yes,Cash on Delivery,123.46,Yes,No,No,No,No
+S0796,North,25-34,Social Media,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0797,South,18-24,Social Media,B,No,Yes,Yes,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0798,East,35-44,Paid Search,B,Yes,Yes,No,Yes,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0799,South,35-44,Organic,B,No,Yes,No,Yes,No,3,Medium,Yes,Bank Transfer,118.32,Yes,No,No,No,No
+S0800,North,25-34,Organic,A,Yes,Yes,No,Yes,Yes,9,High,Yes,Card,26.23,No,Yes,No,No,No
+S0801,North,25-34,Referral,B,No,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0802,West,25-34,Paid Search,B,No,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0803,East,35-44,Organic,A,No,Yes,No,Yes,No,3,Medium,Yes,Card,40.55,No,No,No,No,No
+S0804,West,25-34,Social Media,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0805,North,45+,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0806,West,18-24,Referral,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0807,South,25-34,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0808,North,25-34,Organic,A,No,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0809,West,35-44,Organic,B,Yes,No,Yes,No,No,8,High,Yes,Bank Transfer,33.18,No,No,No,Yes,No
+S0810,West,25-34,Paid Search,B,No,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0811,East,35-44,Paid Search,B,Yes,Yes,No,No,No,6,High,Yes,Digital Wallet,255.71,No,No,No,No,No
+S0812,North,45+,Social Media,B,No,Yes,No,No,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0813,East,25-34,Paid Search,B,Yes,Yes,No,No,No,10,High,No,None,0.0,Not Applicable,No,No,No,No
+S0814,East,35-44,Paid Search,A,Yes,Yes,No,Yes,No,8,High,Yes,Digital Wallet,13.53,No,No,No,No,No
+S0815,South,18-24,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0816,North,25-34,Organic,B,Yes,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0817,South,25-34,Referral,B,No,Yes,No,Yes,Yes,7,High,Yes,Cash on Delivery,79.75,No,No,No,No,No
+S0818,East,18-24,Organic,B,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0819,East,35-44,Referral,A,Yes,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,Yes,Yes,No,No
+S0820,North,35-44,Organic,B,Yes,Yes,No,Yes,Yes,5,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0821,East,35-44,Organic,A,No,Yes,No,No,No,2,Low,Yes,Digital Wallet,100.49,No,No,No,No,No
+S0822,North,35-44,Organic,B,Yes,Yes,No,Yes,Yes,8,High,Yes,Card,70.88,No,No,No,No,No
+S0823,South,35-44,Organic,B,Yes,No,Yes,Yes,Yes,9,High,Yes,Digital Wallet,28.24,No,No,No,No,No
+S0824,North,25-34,Social Media,A,Yes,Yes,Yes,Yes,No,10,High,No,None,0.0,Not Applicable,No,No,No,No
+S0825,East,18-24,Paid Search,A,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0826,West,18-24,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0827,North,35-44,Social Media,B,Yes,Yes,No,No,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0828,East,45+,Social Media,A,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0829,North,18-24,Referral,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0830,South,35-44,Referral,B,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0831,North,35-44,Social Media,B,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0832,East,45+,Social Media,A,No,Yes,No,Yes,No,8,High,No,None,0.0,Not Applicable,Yes,No,No,No
+S0833,West,35-44,Social Media,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0834,South,35-44,Paid Search,A,Yes,No,Yes,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0835,North,35-44,Social Media,A,No,No,Yes,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0836,North,45+,Organic,A,Yes,Yes,No,Yes,No,1,Low,Yes,Card,85.7,No,No,No,No,No
+S0837,West,18-24,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0838,East,45+,Referral,B,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0839,South,18-24,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0840,South,45+,Social Media,B,Yes,No,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0841,North,18-24,Referral,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0842,North,25-34,Organic,A,Yes,Yes,Yes,Yes,Yes,6,High,Yes,Digital Wallet,70.2,No,No,No,No,No
+S0843,North,18-24,Paid Search,B,No,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0844,South,25-34,Referral,B,Yes,Yes,No,Yes,No,8,High,Yes,Bank Transfer,127.57,No,No,No,No,No
+S0845,North,25-34,Referral,A,No,Yes,No,Yes,Yes,8,High,Yes,Card,147.21,No,No,No,No,No
+S0846,West,18-24,Organic,B,Yes,Yes,Yes,Yes,Yes,10,High,Yes,Bank Transfer,53.41,No,Yes,No,No,No
+S0847,South,25-34,Paid Search,B,No,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0848,West,25-34,Social Media,B,Yes,Yes,Yes,No,No,10,High,No,None,0.0,Not Applicable,No,No,No,No
+S0849,East,35-44,Organic,A,Yes,No,No,No,No,6,High,Yes,Bank Transfer,62.49,No,No,No,No,No
+S0850,East,45+,Organic,A,No,Yes,Yes,Yes,Yes,6,High,Yes,Card,63.08,No,No,No,No,No
+S0851,West,35-44,Organic,A,No,Yes,No,No,Yes,0,Low,Yes,Bank Transfer,145.92,No,No,No,No,No
+S0852,East,18-24,Organic,B,No,Yes,No,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,Yes
+S0853,West,25-34,Paid Search,B,No,Yes,No,Yes,Yes,3,Medium,Yes,Digital Wallet,98.2,No,No,No,No,No
+S0854,South,45+,Social Media,B,Yes,Yes,No,No,No,8,High,Yes,Card,42.67,No,No,No,No,No
+S0855,West,18-24,Social Media,A,Yes,Yes,No,No,Yes,8,High,Yes,Card,197.46,No,No,No,No,No
+S0856,South,25-34,Social Media,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0857,South,45+,Paid Search,A,Yes,Yes,No,Yes,Yes,4,Medium,Yes,Card,70.75,No,No,No,No,No
+S0858,South,45+,Organic,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0859,North,25-34,Organic,B,Yes,Yes,No,Yes,Yes,4,Medium,Yes,Digital Wallet,82.08,No,No,No,No,No
+S0860,North,35-44,Organic,A,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0861,East,25-34,Organic,B,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0862,East,35-44,Organic,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0863,West,18-24,Organic,B,Yes,Yes,No,No,No,1,Low,Yes,Card,50.3,No,No,No,No,No
+S0864,West,18-24,Organic,A,No,Yes,Yes,No,No,1,Low,Yes,Card,90.81,No,No,Yes,No,No
+S0865,East,35-44,Social Media,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,Yes
+S0866,East,25-34,Social Media,A,No,Yes,No,No,Yes,1,Low,Yes,Cash on Delivery,74.9,No,No,Yes,No,No
+S0867,West,35-44,Referral,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0868,South,25-34,Social Media,A,No,No,Yes,Yes,No,2,Low,Yes,Digital Wallet,193.42,No,No,Yes,No,No
+S0869,East,45+,Paid Search,A,Yes,Yes,No,Yes,Yes,6,High,Yes,Bank Transfer,116.66,No,Yes,No,No,No
+S0870,East,45+,Organic,A,No,No,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0871,East,25-34,Paid Search,B,Yes,Yes,Yes,No,No,10,High,Yes,Cash on Delivery,52.54,No,No,Yes,No,No
+S0872,South,35-44,Organic,A,No,Yes,No,Yes,Yes,4,Medium,Yes,Card,92.51,No,No,No,No,No
+S0873,North,25-34,Paid Search,B,Yes,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0874,South,25-34,Paid Search,A,Yes,Yes,No,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0875,East,25-34,Paid Search,A,No,Yes,Yes,No,Yes,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0876,South,45+,Organic,A,No,No,No,No,Yes,3,Medium,Yes,Card,223.04,No,No,No,No,No
+S0877,North,45+,Social Media,A,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0878,West,45+,Social Media,B,No,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0879,East,45+,Social Media,B,No,Yes,Yes,No,No,4,Medium,Yes,Digital Wallet,28.86,No,No,No,No,No
+S0880,West,45+,Social Media,B,No,Yes,Yes,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0881,West,25-34,Paid Search,B,No,Yes,Yes,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0882,South,45+,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0883,West,35-44,Social Media,A,No,Yes,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0884,East,25-34,Paid Search,A,No,Yes,Yes,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0885,North,35-44,Organic,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0886,East,25-34,Organic,A,Yes,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0887,West,25-34,Referral,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,Yes
+S0888,South,25-34,Social Media,A,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0889,North,18-24,Paid Search,B,Yes,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0890,West,25-34,Social Media,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0891,North,45+,Paid Search,A,Yes,No,No,Yes,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0892,North,35-44,Paid Search,B,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0893,East,35-44,Organic,A,No,Yes,Yes,Yes,No,6,High,Yes,Card,112.29,No,Yes,No,No,No
+S0894,South,25-34,Paid Search,B,Yes,Yes,No,Yes,Yes,4,Medium,Yes,Card,34.23,No,No,No,No,No
+S0895,West,25-34,Social Media,B,No,Yes,Yes,Yes,Yes,3,Medium,Yes,Bank Transfer,196.8,Yes,No,No,No,No
+S0896,South,25-34,Organic,A,Yes,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0897,West,45+,Social Media,B,No,No,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0898,West,25-34,Organic,A,No,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0899,East,35-44,Social Media,A,Yes,Yes,No,Yes,No,2,Low,Yes,Card,71.32,No,No,No,No,No
+S0900,East,35-44,Social Media,B,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0901,South,35-44,Social Media,B,Yes,Yes,No,Yes,Yes,9,High,Yes,Digital Wallet,63.48,No,No,No,No,No
+S0902,West,45+,Paid Search,A,No,No,Yes,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0903,South,25-34,Referral,B,Yes,Yes,Yes,Yes,Yes,8,High,Yes,Digital Wallet,240.25,No,No,No,No,No
+S0904,East,45+,Paid Search,B,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0905,North,35-44,Social Media,B,Yes,No,No,No,No,1,Low,Yes,Digital Wallet,93.38,No,No,No,No,No
+S0906,North,45+,Social Media,A,No,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0907,North,35-44,Organic,A,Yes,Yes,No,Yes,Yes,7,High,Yes,Card,107.72,No,No,No,No,No
+S0908,West,45+,Organic,A,No,Yes,No,No,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0909,South,45+,Paid Search,A,Yes,No,Yes,Yes,Yes,7,High,Yes,Card,84.05,No,No,No,No,No
+S0910,West,25-34,Organic,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0911,West,45+,Paid Search,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0912,South,35-44,Paid Search,A,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Bank Transfer,86.2,No,No,No,No,No
+S0913,South,25-34,Paid Search,A,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0914,North,45+,Organic,A,Yes,No,No,Yes,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0915,North,25-34,Social Media,A,No,Yes,No,Yes,No,7,High,Yes,Cash on Delivery,13.45,No,Yes,No,No,Yes
+S0916,South,35-44,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,Yes
+S0917,North,18-24,Social Media,A,No,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,Yes,No,No,No
+S0918,West,25-34,Organic,A,Yes,Yes,No,Yes,No,9,High,Yes,Digital Wallet,130.91,No,No,No,No,No
+S0919,South,45+,Paid Search,B,Yes,No,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0920,West,25-34,Organic,A,Yes,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S0921,West,25-34,Social Media,A,Yes,Yes,Yes,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0922,East,25-34,Paid Search,A,Yes,Yes,No,No,No,10,High,Yes,Card,33.36,No,No,No,No,No
+S0923,North,25-34,Referral,B,No,Yes,No,Yes,Yes,2,Low,Yes,Digital Wallet,160.0,No,No,No,Yes,Yes
+S0924,West,45+,Organic,B,No,No,Yes,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0925,East,45+,Paid Search,B,No,Yes,Yes,No,Yes,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0926,West,18-24,Organic,B,No,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0927,West,35-44,Social Media,B,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0928,West,25-34,Paid Search,A,No,Yes,No,No,No,2,Low,Yes,Card,33.66,No,Yes,Yes,No,No
+S0929,East,35-44,Paid Search,A,Yes,Yes,Yes,Yes,Yes,11,High,Yes,Card,113.48,No,No,No,No,No
+S0930,East,25-34,Organic,A,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0931,South,25-34,Organic,B,No,Yes,No,No,No,2,Low,Yes,Card,50.48,No,No,No,No,No
+S0932,South,25-34,Organic,B,No,Yes,No,Yes,Yes,2,Low,Yes,Card,69.58,No,No,No,No,No
+S0933,West,35-44,Referral,B,No,Yes,No,Yes,Yes,4,Medium,Yes,Card,78.23,No,No,No,No,No
+S0934,East,35-44,Paid Search,B,Yes,No,No,No,No,8,High,No,None,0.0,Not Applicable,No,No,No,Yes
+S0935,South,25-34,Organic,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0936,East,45+,Referral,A,Yes,No,No,No,No,8,High,Yes,Card,118.5,No,No,No,No,No
+S0937,West,35-44,Organic,A,Yes,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0938,West,25-34,Paid Search,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0939,North,45+,Social Media,A,Yes,No,No,Yes,Yes,4,Medium,Yes,Bank Transfer,236.36,No,No,No,No,No
+S0940,North,45+,Referral,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0941,East,18-24,Social Media,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0942,East,35-44,Paid Search,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0943,East,25-34,Referral,A,No,No,No,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0944,North,35-44,Organic,B,Yes,Yes,No,Yes,No,9,High,Yes,Card,70.84,No,No,No,No,No
+S0945,South,25-34,Referral,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0946,North,35-44,Social Media,B,Yes,No,Yes,Yes,No,3,Medium,Yes,Card,17.12,No,No,No,No,No
+S0947,North,25-34,Referral,A,No,Yes,Yes,Yes,Yes,5,Medium,Yes,Card,184.18,No,No,No,No,No
+S0948,North,35-44,Organic,B,Yes,No,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0949,East,45+,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0950,West,25-34,Social Media,B,No,No,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0951,West,45+,Paid Search,B,Yes,No,No,Yes,Yes,5,Medium,Yes,Bank Transfer,155.34,No,No,No,No,No
+S0952,North,45+,Paid Search,B,Yes,No,Yes,Yes,No,10,High,Yes,Card,43.38,No,No,No,No,No
+S0953,West,45+,Referral,B,No,Yes,No,No,No,4,Medium,Yes,Card,27.73,No,No,Yes,No,No
+S0954,West,18-24,Social Media,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0955,East,45+,Organic,A,No,No,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0956,North,18-24,Paid Search,B,No,Yes,No,Yes,No,3,Medium,Yes,Digital Wallet,102.83,No,No,No,No,No
+S0957,East,25-34,Organic,A,No,Yes,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0958,North,45+,Organic,A,No,No,Yes,Yes,No,4,Medium,Yes,Bank Transfer,90.87,No,No,Yes,No,No
+S0959,North,35-44,Organic,B,No,Yes,No,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0960,East,35-44,Social Media,B,Yes,Yes,No,Yes,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0961,North,25-34,Social Media,A,Yes,Yes,Yes,Yes,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S0962,East,45+,Paid Search,B,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0963,North,35-44,Paid Search,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S0964,East,25-34,Social Media,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0965,East,45+,Social Media,A,Yes,No,No,Yes,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S0966,East,25-34,Referral,B,Yes,No,No,Yes,No,7,High,Yes,Bank Transfer,257.71,Yes,Yes,No,No,No
+S0967,North,18-24,Paid Search,A,No,Yes,No,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S0968,South,35-44,Social Media,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0969,North,45+,Paid Search,B,Yes,Yes,No,No,Yes,3,Medium,Yes,Card,143.72,No,No,Yes,No,No
+S0970,East,25-34,Paid Search,B,No,No,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0971,West,25-34,Referral,A,No,No,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0972,North,18-24,Paid Search,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0973,West,45+,Paid Search,B,Yes,No,No,Yes,Yes,6,High,Yes,Card,73.2,No,No,No,No,No
+S0974,South,25-34,Organic,B,No,Yes,No,Yes,Yes,9,High,Yes,Card,51.7,No,No,No,No,No
+S0975,West,35-44,Paid Search,B,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0976,North,45+,Paid Search,A,No,No,No,Yes,No,2,Low,Yes,Digital Wallet,82.17,No,No,No,No,Yes
+S0977,South,18-24,Social Media,B,Yes,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0978,East,35-44,Paid Search,A,No,Yes,Yes,Yes,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0979,East,35-44,Organic,B,No,Yes,Yes,No,No,3,Medium,Yes,Card,14.18,No,No,No,No,No
+S0980,South,45+,Referral,A,Yes,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0981,South,25-34,Paid Search,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0982,East,25-34,Referral,B,No,Yes,Yes,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S0983,East,18-24,Organic,A,No,Yes,Yes,No,Yes,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0984,West,35-44,Paid Search,B,Yes,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0985,East,45+,Paid Search,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S0986,East,18-24,Social Media,A,Yes,Yes,No,Yes,Yes,4,Medium,Yes,Card,40.32,No,No,No,No,No
+S0987,South,25-34,Organic,A,No,Yes,No,Yes,No,2,Low,Yes,Card,29.25,No,No,No,No,No
+S0988,East,45+,Referral,B,No,Yes,Yes,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0989,East,18-24,Paid Search,A,No,Yes,Yes,Yes,Yes,5,Medium,Yes,Cash on Delivery,59.03,No,No,No,No,No
+S0990,North,25-34,Paid Search,A,Yes,No,Yes,No,No,3,Medium,Yes,Card,92.4,No,No,No,No,Yes
+S0991,South,35-44,Paid Search,A,Yes,Yes,No,Yes,No,3,Medium,Yes,Card,137.15,No,No,No,No,No
+S0992,East,25-34,Organic,B,No,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S0993,East,25-34,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S0994,South,25-34,Organic,A,No,Yes,No,Yes,Yes,1,Low,Yes,Cash on Delivery,190.83,No,No,Yes,No,No
+S0995,West,25-34,Paid Search,B,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Digital Wallet,191.99,Yes,No,No,No,No
+S0996,South,35-44,Social Media,B,Yes,Yes,No,Yes,Yes,9,High,Yes,Digital Wallet,175.29,No,Yes,No,No,No
+S0997,West,35-44,Paid Search,B,Yes,Yes,Yes,No,No,1,Low,Yes,Digital Wallet,70.14,No,No,Yes,No,No
+S0998,East,35-44,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S0999,North,18-24,Organic,B,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1000,North,45+,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1001,West,18-24,Organic,B,No,No,No,Yes,No,3,Medium,Yes,Card,40.6,No,No,No,No,No
+S1002,East,35-44,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1003,South,25-34,Organic,A,Yes,Yes,No,Yes,Yes,7,High,Yes,Bank Transfer,132.33,Yes,Yes,No,No,No
+S1004,North,45+,Referral,B,No,No,No,No,Yes,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1005,North,25-34,Organic,B,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1006,West,25-34,Organic,A,No,Yes,Yes,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1007,East,25-34,Referral,A,No,Yes,Yes,No,No,3,Medium,Yes,Card,105.85,No,No,Yes,No,No
+S1008,South,18-24,Organic,A,No,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1009,East,25-34,Paid Search,A,No,Yes,No,No,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1010,North,35-44,Referral,A,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1011,West,45+,Referral,A,No,No,No,No,No,2,Low,Yes,Cash on Delivery,31.96,No,No,Yes,No,No
+S1012,South,18-24,Social Media,B,Yes,Yes,Yes,No,No,6,High,Yes,Card,81.46,No,No,No,No,No
+S1013,South,45+,Organic,B,Yes,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1014,North,45+,Paid Search,A,Yes,Yes,No,Yes,No,9,High,Yes,Digital Wallet,49.68,No,Yes,No,No,Yes
+S1015,South,45+,Referral,A,Yes,Yes,No,Yes,No,7,High,Yes,Digital Wallet,27.43,No,No,No,No,No
+S1016,South,35-44,Referral,B,No,No,No,Yes,Yes,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1017,East,35-44,Organic,A,No,Yes,No,Yes,No,10,High,Yes,Card,96.17,No,No,No,No,No
+S1018,North,35-44,Paid Search,B,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Card,173.34,No,No,No,No,No
+S1019,West,35-44,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1020,South,45+,Organic,B,No,No,No,Yes,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1021,East,18-24,Social Media,A,Yes,Yes,Yes,Yes,Yes,7,High,Yes,Bank Transfer,255.69,No,No,No,No,No
+S1022,West,25-34,Organic,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S1023,South,18-24,Paid Search,B,No,Yes,Yes,Yes,Yes,3,Medium,Yes,Card,81.76,No,No,No,No,No
+S1024,East,45+,Organic,A,No,Yes,No,No,Yes,6,High,Yes,Cash on Delivery,27.79,No,No,No,No,No
+S1025,North,25-34,Paid Search,A,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1026,East,35-44,Organic,B,No,Yes,No,No,No,1,Low,Yes,Card,242.42,No,No,No,No,No
+S1027,West,45+,Paid Search,A,Yes,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1028,North,45+,Organic,B,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1029,South,18-24,Referral,A,No,No,No,Yes,No,2,Low,Yes,Digital Wallet,256.19,No,No,Yes,No,No
+S1030,West,45+,Organic,A,No,Yes,No,No,No,2,Low,Yes,Digital Wallet,406.45,No,No,Yes,Yes,No
+S1031,South,45+,Paid Search,B,No,No,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S1032,East,18-24,Organic,A,Yes,Yes,No,No,No,7,High,Yes,Card,335.71,No,No,No,No,No
+S1033,West,35-44,Organic,A,Yes,Yes,Yes,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S1034,North,25-34,Organic,B,Yes,Yes,No,Yes,Yes,3,Medium,Yes,Digital Wallet,122.38,Yes,No,Yes,No,No
+S1035,East,35-44,Organic,A,Yes,Yes,No,Yes,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S1036,East,35-44,Organic,B,Yes,No,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1037,North,25-34,Paid Search,B,No,Yes,Yes,No,Yes,3,Medium,Yes,Digital Wallet,90.4,No,No,Yes,No,No
+S1038,East,18-24,Social Media,A,No,Yes,No,Yes,Yes,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S1039,South,18-24,Organic,A,No,Yes,No,No,No,3,Medium,Yes,Digital Wallet,129.97,No,No,No,No,No
+S1040,South,18-24,Paid Search,A,No,Yes,No,Yes,Yes,1,Low,Yes,Digital Wallet,34.94,No,No,Yes,No,No
+S1041,South,35-44,Paid Search,A,Yes,Yes,Yes,No,No,6,High,Yes,Digital Wallet,57.77,No,No,No,Yes,Yes
+S1042,West,25-34,Organic,B,No,Yes,No,Yes,No,3,Medium,Yes,Card,70.49,No,No,No,No,No
+S1043,South,25-34,Paid Search,B,Yes,Yes,No,No,No,4,Medium,Yes,Card,184.06,No,No,No,No,No
+S1044,South,35-44,Organic,A,No,No,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1045,North,35-44,Organic,B,Yes,Yes,Yes,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S1046,West,35-44,Paid Search,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1047,West,45+,Referral,A,No,No,No,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S1048,East,25-34,Referral,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1049,East,45+,Referral,A,No,Yes,No,No,No,2,Low,Yes,Card,165.62,No,No,No,No,No
+S1050,South,18-24,Paid Search,A,No,Yes,No,No,No,2,Low,Yes,Digital Wallet,73.43,No,No,No,No,No
+S1051,North,35-44,Organic,A,Yes,Yes,No,Yes,Yes,7,High,Yes,Cash on Delivery,46.66,No,No,No,No,No
+S1052,West,45+,Organic,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S1053,West,45+,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1054,East,35-44,Organic,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1055,North,35-44,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1056,South,25-34,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1057,North,35-44,Organic,A,No,Yes,No,Yes,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1058,South,35-44,Organic,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1059,West,45+,Social Media,A,Yes,Yes,No,Yes,No,5,Medium,Yes,Card,159.63,No,No,No,No,No
+S1060,East,25-34,Paid Search,B,Yes,Yes,No,Yes,No,8,High,Yes,Digital Wallet,32.74,No,No,No,No,No
+S1061,South,18-24,Referral,B,Yes,Yes,No,Yes,Yes,3,Medium,Yes,Card,77.13,No,No,No,No,No
+S1062,East,35-44,Organic,B,No,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1063,North,18-24,Paid Search,A,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1064,South,25-34,Organic,A,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Digital Wallet,121.87,No,No,Yes,No,No
+S1065,South,25-34,Paid Search,A,Yes,No,No,Yes,Yes,8,High,Yes,Digital Wallet,41.71,No,No,No,No,No
+S1066,North,35-44,Organic,A,No,Yes,Yes,No,No,4,Medium,Yes,Bank Transfer,42.7,No,No,No,No,No
+S1067,South,25-34,Organic,B,Yes,Yes,No,No,No,6,High,Yes,Digital Wallet,174.65,Yes,No,No,Yes,No
+S1068,West,18-24,Paid Search,A,Yes,Yes,No,No,No,6,High,Yes,Digital Wallet,151.21,Yes,No,No,No,No
+S1069,South,18-24,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1070,West,45+,Organic,B,Yes,No,No,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S1071,West,35-44,Referral,A,No,Yes,No,No,Yes,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S1072,West,18-24,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1073,South,18-24,Paid Search,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1074,South,35-44,Paid Search,A,No,Yes,No,Yes,Yes,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1075,South,25-34,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1076,North,35-44,Paid Search,B,Yes,Yes,No,No,No,4,Medium,Yes,Card,38.39,No,No,No,No,No
+S1077,East,25-34,Organic,B,Yes,No,No,No,No,0,Low,Yes,Digital Wallet,118.42,No,No,No,No,No
+S1078,West,45+,Social Media,B,Yes,No,No,No,No,2,Low,Yes,Card,22.83,No,Yes,Yes,No,No
+S1079,East,25-34,Organic,B,Yes,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1080,East,35-44,Organic,A,No,Yes,No,Yes,Yes,8,High,Yes,Cash on Delivery,132.87,No,No,No,No,No
+S1081,South,18-24,Organic,B,Yes,Yes,Yes,No,No,5,Medium,Yes,Bank Transfer,58.86,No,No,No,No,No
+S1082,North,45+,Referral,A,Yes,No,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1083,South,45+,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1084,East,35-44,Referral,A,No,Yes,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1085,South,25-34,Social Media,A,Yes,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1086,East,25-34,Social Media,A,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1087,East,45+,Paid Search,B,Yes,Yes,Yes,Yes,No,8,High,No,None,0.0,Not Applicable,No,No,No,No
+S1088,South,35-44,Referral,A,Yes,Yes,No,No,No,4,Medium,Yes,Card,82.59,Yes,No,No,No,No
+S1089,South,25-34,Paid Search,A,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S1090,North,25-34,Paid Search,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1091,West,25-34,Social Media,A,No,Yes,No,Yes,No,0,Low,Yes,Card,84.1,No,No,Yes,No,No
+S1092,East,45+,Paid Search,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1093,West,35-44,Organic,B,No,Yes,Yes,Yes,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1094,South,35-44,Paid Search,A,No,Yes,Yes,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1095,East,35-44,Organic,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1096,South,25-34,Social Media,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1097,West,25-34,Paid Search,B,No,No,No,Yes,No,1,Low,Yes,Card,29.94,No,No,Yes,No,No
+S1098,East,18-24,Social Media,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1099,North,45+,Paid Search,B,Yes,Yes,Yes,Yes,Yes,11,High,Yes,Cash on Delivery,67.56,No,No,No,No,No
+S1100,East,25-34,Social Media,B,Yes,No,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S1101,South,25-34,Organic,A,Yes,No,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S1102,East,25-34,Referral,B,Yes,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1103,North,25-34,Paid Search,B,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1104,North,35-44,Organic,A,No,Yes,No,No,No,3,Medium,Yes,Card,222.93,No,No,No,No,No
+S1105,West,25-34,Organic,A,No,Yes,Yes,No,No,3,Medium,Yes,Digital Wallet,63.43,No,No,No,No,No
+S1106,West,18-24,Organic,B,Yes,Yes,No,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1107,West,35-44,Paid Search,B,Yes,Yes,Yes,No,No,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S1108,North,25-34,Social Media,B,No,Yes,No,No,No,3,Medium,Yes,Card,87.52,No,No,No,No,No
+S1109,South,25-34,Referral,A,No,Yes,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1110,West,25-34,Social Media,B,Yes,Yes,Yes,Yes,Yes,10,High,Yes,Digital Wallet,118.34,No,No,No,No,No
+S1111,South,45+,Paid Search,A,Yes,Yes,No,Yes,No,8,High,Yes,Digital Wallet,206.33,No,Yes,No,No,No
+S1112,North,25-34,Paid Search,B,No,Yes,Yes,No,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1113,West,35-44,Social Media,A,No,Yes,Yes,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1114,East,45+,Social Media,B,No,No,No,Yes,Yes,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1115,North,35-44,Organic,A,No,Yes,No,No,Yes,3,Medium,Yes,Card,147.46,No,No,Yes,No,No
+S1116,South,25-34,Referral,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1117,East,35-44,Paid Search,B,No,Yes,Yes,Yes,No,3,Medium,Yes,Bank Transfer,31.38,No,No,No,No,No
+S1118,East,25-34,Social Media,A,Yes,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1119,East,25-34,Referral,A,No,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S1120,South,35-44,Social Media,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1121,West,25-34,Organic,A,Yes,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1122,East,18-24,Paid Search,B,No,Yes,No,No,Yes,2,Low,Yes,Card,209.11,No,No,No,No,No
+S1123,West,25-34,Organic,A,No,Yes,Yes,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1124,East,18-24,Social Media,B,Yes,Yes,No,Yes,No,6,High,Yes,Bank Transfer,272.02,No,No,No,No,No
+S1125,South,25-34,Organic,A,Yes,Yes,No,Yes,Yes,8,High,Yes,Card,53.8,No,No,No,No,Yes
+S1126,North,35-44,Social Media,B,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1127,North,45+,Referral,A,No,No,No,No,No,3,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S1128,West,18-24,Organic,B,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1129,South,35-44,Paid Search,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1130,West,25-34,Social Media,A,No,Yes,Yes,No,No,2,Low,Yes,Digital Wallet,60.4,No,No,Yes,No,No
+S1131,North,18-24,Paid Search,A,No,No,No,Yes,Yes,5,Medium,Yes,Card,84.13,No,No,Yes,Yes,Yes
+S1132,West,25-34,Organic,A,No,Yes,No,No,No,2,Low,Yes,Digital Wallet,62.21,No,No,Yes,No,No
+S1133,West,18-24,Organic,B,No,Yes,No,Yes,Yes,4,Medium,Yes,Card,133.28,No,No,No,No,No
+S1134,South,25-34,Paid Search,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1135,East,25-34,Social Media,B,No,Yes,Yes,No,No,4,Medium,Yes,Digital Wallet,67.34,No,No,No,Yes,Yes
+S1136,North,25-34,Paid Search,A,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,Yes,No,No,No
+S1137,South,35-44,Organic,B,Yes,Yes,No,Yes,No,6,High,Yes,Card,65.84,No,No,No,No,No
+S1138,North,18-24,Paid Search,A,No,Yes,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1139,South,18-24,Paid Search,B,No,Yes,No,No,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S1140,West,18-24,Organic,B,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1141,East,35-44,Social Media,A,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,Yes
+S1142,East,25-34,Organic,A,No,Yes,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1143,East,35-44,Paid Search,A,Yes,No,Yes,Yes,No,4,Medium,Yes,Card,145.86,No,Yes,Yes,No,Yes
+S1144,North,25-34,Referral,A,Yes,No,No,Yes,No,3,Medium,Yes,Bank Transfer,17.61,No,No,No,No,No
+S1145,East,18-24,Paid Search,B,No,Yes,No,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,Yes,No,No
+S1146,West,45+,Paid Search,B,No,No,No,No,No,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1147,West,18-24,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1148,North,18-24,Organic,B,No,No,No,Yes,No,0,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1149,North,18-24,Organic,B,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1150,East,45+,Social Media,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1151,West,35-44,Social Media,B,No,No,No,No,No,2,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1152,South,35-44,Organic,B,No,Yes,Yes,Yes,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1153,North,45+,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1154,South,18-24,Organic,A,No,Yes,No,Yes,No,1,Low,Yes,Card,92.36,No,Yes,Yes,Yes,Yes
+S1155,South,45+,Paid Search,B,No,Yes,Yes,Yes,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1156,East,25-34,Social Media,A,Yes,Yes,No,Yes,No,5,Medium,Yes,Digital Wallet,131.6,No,No,Yes,No,No
+S1157,North,35-44,Social Media,A,Yes,Yes,Yes,Yes,Yes,10,High,Yes,Digital Wallet,225.72,No,No,No,No,No
+S1158,East,25-34,Referral,A,Yes,Yes,No,Yes,Yes,3,Medium,Yes,Card,112.19,No,No,No,No,No
+S1159,East,25-34,Organic,A,No,No,Yes,Yes,No,2,Low,Yes,Bank Transfer,16.74,No,No,Yes,No,No
+S1160,West,45+,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1161,North,18-24,Paid Search,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S1162,West,45+,Organic,A,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1163,South,25-34,Referral,A,Yes,Yes,No,No,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S1164,West,35-44,Organic,B,No,Yes,No,Yes,Yes,6,High,Yes,Card,98.56,No,No,No,No,No
+S1165,East,45+,Social Media,A,No,No,Yes,No,No,2,Low,No,None,0.0,Not Applicable,Yes,No,No,No
+S1166,South,18-24,Social Media,A,No,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1167,West,45+,Referral,A,Yes,No,No,Yes,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1168,South,35-44,Paid Search,A,Yes,Yes,No,Yes,Yes,5,Medium,Yes,Cash on Delivery,34.72,No,No,No,No,No
+S1169,West,35-44,Organic,A,No,No,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,No
+S1170,South,18-24,Social Media,B,No,Yes,No,No,No,1,Low,Yes,Bank Transfer,103.7,No,No,Yes,No,No
+S1171,East,35-44,Social Media,B,Yes,Yes,No,No,No,4,Medium,Yes,Card,191.62,No,No,No,No,No
+S1172,East,35-44,Paid Search,B,No,No,Yes,No,No,1,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1173,West,25-34,Social Media,B,No,Yes,Yes,No,Yes,5,Medium,Yes,Card,86.96,No,No,No,No,Yes
+S1174,North,18-24,Organic,B,No,Yes,Yes,Yes,No,3,Medium,Yes,Digital Wallet,67.4,No,No,No,No,No
+S1175,South,25-34,Paid Search,B,Yes,Yes,No,Yes,No,6,High,No,None,0.0,Not Applicable,No,No,No,No
+S1176,West,45+,Referral,A,No,No,No,Yes,No,4,Medium,Yes,Bank Transfer,133.42,No,No,No,No,No
+S1177,South,18-24,Organic,B,No,Yes,No,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1178,South,35-44,Paid Search,B,Yes,Yes,No,No,No,9,High,No,None,0.0,Not Applicable,No,No,No,No
+S1179,East,45+,Referral,B,Yes,No,Yes,Yes,Yes,7,High,Yes,Card,131.97,No,No,No,No,Yes
+S1180,East,18-24,Social Media,B,No,Yes,No,No,No,2,Low,Yes,Card,126.78,No,No,No,No,No
+S1181,West,18-24,Referral,A,No,Yes,Yes,Yes,Yes,2,Low,Yes,Card,314.29,No,No,Yes,No,No
+S1182,North,35-44,Paid Search,B,Yes,Yes,No,Yes,Yes,6,High,Yes,Bank Transfer,80.91,No,No,No,No,No
+S1183,North,18-24,Referral,A,Yes,Yes,No,Yes,Yes,7,High,Yes,Digital Wallet,140.03,No,No,No,No,Yes
+S1184,South,35-44,Organic,A,Yes,No,No,Yes,Yes,0,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1185,South,35-44,Paid Search,B,No,Yes,Yes,No,Yes,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1186,North,35-44,Paid Search,A,No,Yes,Yes,No,No,2,Low,Yes,Card,199.28,No,No,No,No,No
+S1187,North,25-34,Social Media,A,No,Yes,No,Yes,Yes,4,Medium,Yes,Digital Wallet,213.3,No,No,No,No,No
+S1188,North,35-44,Referral,A,Yes,Yes,Yes,Yes,Yes,3,Medium,Yes,Bank Transfer,147.83,No,No,No,No,No
+S1189,East,35-44,Social Media,A,No,Yes,No,No,No,1,Low,No,None,0.0,Not Applicable,No,Yes,No,Yes
+S1190,North,25-34,Social Media,A,No,No,No,Yes,Yes,7,High,No,None,0.0,Not Applicable,No,No,No,No
+S1191,North,35-44,Paid Search,B,Yes,No,Yes,Yes,No,4,Medium,Yes,Cash on Delivery,80.72,No,No,Yes,No,No
+S1192,East,45+,Paid Search,A,Yes,Yes,Yes,No,No,8,High,Yes,Card,146.5,No,No,No,No,No
+S1193,West,35-44,Paid Search,B,Yes,Yes,No,No,No,2,Low,No,None,0.0,Not Applicable,No,No,No,No
+S1194,East,25-34,Organic,A,No,Yes,No,No,No,3,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1195,West,25-34,Paid Search,A,No,Yes,No,Yes,No,3,Medium,Yes,Card,127.45,No,No,No,No,No
+S1196,South,18-24,Referral,B,No,Yes,No,Yes,No,5,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1197,South,25-34,Social Media,B,No,Yes,Yes,No,No,4,Medium,No,None,0.0,Not Applicable,No,No,No,No
+S1198,North,18-24,Social Media,A,No,Yes,No,No,Yes,4,Medium,Yes,Card,154.08,No,No,No,No,No
+S1199,East,45+,Paid Search,A,Yes,No,No,Yes,Yes,8,High,Yes,Digital Wallet,56.01,No,No,No,No,No
+S1200,West,25-34,Paid Search,A,Yes,Yes,No,Yes,No,7,High,Yes,Card,267.72,No,Yes,Yes,No,Yes

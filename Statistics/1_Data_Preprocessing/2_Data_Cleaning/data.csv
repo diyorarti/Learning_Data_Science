@@ -1,0 +1,121 @@
+student_id,date,program,city,gender,employment_status,age,study_hours_week,sleep_hours,attendance_rate,assignment_score,exam_score,survey_satisfaction,stress_level,monthly_income_pln,season,temperature_c,campaign,website_visits,usual_country,login_country,purchase_amount,transaction_hour,failed_logins_5min,requests_per_minute,batch_id,defective_count
+1,2026-01-01,Data Science,Warsaw,Female,Part-time,18,9.8,6.2,85.0,78.3,79.1,5,7,2197.0,Winter,2.7,None,1014,Poland,Poland,107.98,20,0,122,B08,0
+2,2026-01-02,Data Science,Katowice,Male,Student,20,10.1,7.4,98.6,83.4,88.3,3,6,,Winter,-3.4,Exam Week,1855,Poland,Poland,63.76,16,2,83,B10,1
+3,2026-01-03,Cybersecurity,Gdansk,Male,Part-time,30,9.6,7.4,82.5,79.5,77.8,3,3,4319.0,Winter,-0.9,None,1079,Poland,Poland,79.54,12,1,111,B12,4
+4,2026-01-04,Business IT,Krakow,Female,Part-time,31,14.5,7.0,78.6,83.5,75.9,4,5,4818.0,Winter,4.6,Holiday Promo,2941,Poland,Poland,63.67,21,0,118,B09,5
+5,2026-01-05,Business IT,Krakow,Female,Full-time,36,1.1,9.9,89.5,84.7,69.1,2,3,3122.0,Winter,2.1,None,838,Poland,Poland,52.6,15,1,104,B01,3
+6,2026-01-06,Data Science,Gdansk,Female,Student,24,12.2,7.0,82.7,70.7,65.5,5,3,,Winter,0.9,None,1103,Poland,Poland,50.06,18,0,77,B09,3
+7,2026-01-07,Data Science,Gdansk,Male,Part-time,19,17.4,6.0,86.2,65.0,100,,2,3784.0,Winter,0.2,Holiday Promo,2775,Poland,Poland,39.45,12,0,68,B09,5
+8,2026-01-08,Data Science,Gdansk,Male,Part-time,24,7.0,8.6,81.6,60.6,69.4,1,4,3315.0,Winter,4.6,Holiday Promo,1312,Poland,Poland,69.5,8,0,125,B06,4
+9,2026-01-09,Data Science,Warsaw,Male,Student,25,14.5,7.6,94.0,67.8,66.4,4,4,,Winter,5.9,None,1131,Poland,Poland,29.65,10,0,128,B07,3
+10,2026-01-10,Cybersecurity,Katowice,Male,Student,25,6.9,7.4,86.9,50.2,63.6,1,8,,Winter,-6.4,None,1578,Poland,Poland,126.62,9,0,134,B04,5
+11,2026-01-11,Business IT,Warsaw,Male,Student,24,13.3,8.9,71.9,77.5,100,5,8,,Winter,2.9,None,1110,Poland,Poland,28.92,8,0,109,B10,0
+12,2026-01-12,Cybersecurity,Warsaw,Female,Full-time,26,11.3,7.2,79.0,95.7,99.3,4,,8079.0,Winter,-0.9,Holiday Promo,2173,Poland,Poland,57.78,23,0,135,B12,3
+13,2026-01-13,Business IT,Krakow,Male,Student,28,11.3,6.0,100,61.9,85.8,5,2,,Winter,3.5,None,1049,Poland,Poland,77.3,14,0,127,B05,6
+14,2026-01-14,Data Science,Wroclaw,Female,Part-time,26,16.3,6.5,96.1,80.0,89.9,1,2,3178.0,Winter,-1.3,None,798,Poland,Poland,50.93,15,1,65,B01,4
+15,2026-01-15,Data Science,Krakow,Male,Student,150,14.8,5.4,80.8,93.7,87.7,1,2,,Winter,8.4,None,1150,Poland,Poland,108.45,11,1,91,B03,5
+16,2026-01-16,Business IT,Warsaw,Female,Part-time,28,11.0,8.5,92.5,83.1,78.3,5,3,3725.0,Winter,-0.3,None,1288,Poland,Poland,75.49,7,0,118,B07,2
+17,2026-01-17,Business IT,Krakow,Male,Student,29,20.3,8.4,86.5,67.4,95.6,3,4,,Winter,2.0,Exam Week,2403,Poland,Poland,139.66,18,2,138,B09,0
+18,2026-01-18,Business IT,Warsaw,Female,Student,22,20.6,8.2,100,73.4,99.7,4,6,,Winter,-2.4,Holiday Promo,2758,Poland,Poland,83.28,8,2,92,B09,4
+19,2026-01-19,Data Science,Krakow,Female,Student,28,18.9,6.3,79.3,68.7,98.6,4,6,,Winter,-1.7,None,1077,Poland,Poland,67.59,12,1,98,B10,3
+20,2026-01-20,Cybersecurity,Warsaw,Male,Student,30,18.8,5.6,75.0,61.3,87.8,2,9,,Winter,2.4,None,929,Poland,Poland,60.97,17,0,137,B11,0
+21,2026-01-21,Cybersecurity,Katowice,Male,Student,18,14.1,8.2,84.3,70.2,71.7,2,7,,Winter,-2.0,None,1004,Poland,Poland,131.6,20,0,79,B03,5
+22,2026-01-22,Data Science,Krakow,Female,Full-time,27,4.2,5.1,86.9,56.4,34.9,5,6,9307.0,Winter,-1.6,Holiday Promo,2507,Poland,Poland,17.23,21,0,118,B05,1
+23,2026-01-23,Business IT,Katowice,Female,Part-time,22,4.1,7.6,82.9,84.8,76.5,,4,2996.0,Winter,-0.7,None,1061,Poland,Poland,48.4,20,0,137,B04,4
+24,2026-01-24,Business IT,Gdansk,Male,Student,23,10.6,6.7,91.5,91.7,77.7,5,9,,Winter,-7.1,Exam Week,1591,Poland,Poland,121.76,19,2,134,B03,5
+25,2026-01-25,Cybersecurity,Warsaw,Male,Full-time,18,9.1,6.9,78.6,68.9,70.6,4,6,65000,Winter,1.8,Exam Week,2207,Poland,Poland,98.14,9,1,103,B01,3
+26,2026-01-26,Data Science,Warsaw,Female,Part-time,28,8.7,7.3,82.6,74.4,92.9,5,3,3265.0,Winter,5.5,None,896,Poland,Poland,75.4,18,0,69,B12,0
+27,2026-01-27,Business IT,Krakow,Male,Student,18,18.7,6.4,90.1,67.6,94.6,5,4,1128.0,Winter,6.5,Holiday Promo,3313,Poland,Poland,145.83,18,1,115,B07,3
+28,2026-01-28,Data Science,Katowice,Female,Full-time,39,8.7,9.2,97.7,59.2,54.6,2,7,7043.0,Winter,5.3,None,731,Poland,Poland,32.69,21,1,135,B06,1
+29,2026-01-29,Cybersecurity,Gdansk,Male,Full-time,31,10.0,5.6,77.5,64.5,64.5,4,4,6249.0,Winter,-0.9,None,1097,Poland,Poland,76.5,7,1,100,B04,6
+30,2026-01-30,Data Science,Warsaw,Female,Part-time,28,13.3,6.7,71.4,84.0,89.6,4,4,2835.0,Winter,6.0,Exam Week,2888,Poland,Poland,74.41,18,2,99,B04,4
+31,2026-01-31,Business IT,Warsaw,Female,Student,26,19.8,6.5,87.9,92.3,100,5,10,1595.0,Winter,34.5,None,1072,Poland,Poland,65.95,11,0,136,B01,6
+32,2026-02-01,Data Science,Warsaw,Male,Student,18,13.2,5.9,76.9,66.9,81.3,1,5,1519.0,Winter,-0.6,None,949,Poland,Poland,93.02,8,0,139,B05,6
+33,2026-02-02,Data Science,Warsaw,Male,Part-time,24,4.4,5.8,83.9,88.4,66.8,5,,3465.0,Winter,-0.9,Holiday Promo,3224,Poland,Poland,88.92,15,2,85,B02,4
+34,2026-02-03,Data Science,Katowice,Male,Student,29,16.1,6.2,77.4,76.2,100,4,2,939.0,Winter,-7.4,Holiday Promo,2172,Poland,Poland,15.84,14,2,131,B03,5
+35,2026-02-04,Business IT,Gdansk,Male,Part-time,27,10.0,5.6,80.8,80.0,75.8,3,9,2050.0,Winter,-3.2,Holiday Promo,1538,Poland,Poland,80.38,7,0,86,B04,7
+36,2026-02-05,Cybersecurity,Wroclaw,Female,Full-time,45,8.2,7.6,70.2,74.6,69.4,5,8,7048.0,Winter,-0.3,Holiday Promo,1415,Poland,Poland,110.18,20,0,114,B03,4
+37,2026-02-06,Business IT,Warsaw,Female,Student,24,16.0,5.7,73.7,76.9,78.9,4,9,1912.0,Winter,1.1,Holiday Promo,2439,Poland,Poland,97.68,22,2,141,B08,4
+38,2026-02-07,Cybersecurity,Gdansk,Female,Student,29,11.3,6.7,82.2,59.3,60.1,2,5,839.0,Winter,-0.6,None,1048,Poland,Poland,151.32,10,2,134,B12,1
+39,2026-02-08,Business IT,Wroclaw,Male,Student,25,17.0,6.9,72.7,70.3,97.0,2,2,1031.0,Winter,-0.2,Exam Week,2474,Poland,Germany,20.2,16,2,117,B05,5
+40,2026-02-09,Business IT,Warsaw,Female,Student,25,9.5,6.2,92.5,61.3,67.2,3,4,1420.0,Winter,0.6,Exam Week,1617,Poland,Poland,145.18,22,2,140,B11,2
+41,2026-02-10,Business IT,Wroclaw,Female,Full-time,28,4.7,7.0,95.9,56.2,48.7,,1,6894.0,Winter,0.3,None,838,Poland,Poland,90.4,19,2,100,B02,6
+42,2026-02-11,Data Science,Krakow,Female,Part-time,32,3.7,7.1,61.7,78.4,70.2,3,4,3183.0,Winter,-3.3,None,1016,Poland,Poland,30.51,12,2,118,B06,4
+43,2026-02-12,Cybersecurity,Krakow,Female,Student,20,14.2,8.1,79.4,67.1,86.6,4,10,1567.0,Winter,-0.9,Holiday Promo,1621,Poland,Poland,59.86,7,1,98,B05,3
+44,2026-02-13,Data Science,Gdansk,Female,Part-time,24,7.9,6.6,71.7,59.2,98.7,4,2,3284.0,Winter,6.2,Holiday Promo,1473,Poland,Brazil,137.02,19,0,169,B12,4
+45,2026-02-14,Data Science,Warsaw,Female,Full-time,33,10.5,6.2,84.3,66.0,76.7,2,2,7295.0,Winter,5.7,None,868,Poland,Poland,117.62,11,0,124,B05,3
+46,2026-02-15,Cybersecurity,Gdansk,Male,Part-time,32,13.7,6.9,87.9,98.7,150,3,6,3501.0,Winter,-3.2,None,1264,Poland,Poland,155.56,19,1,90,B01,6
+47,2026-02-16,Data Science,Katowice,Female,Student,28,14.0,6.1,71.5,85.6,81.6,4,1,1525.0,Winter,-6.0,None,738,Poland,Germany,87.26,21,2,128,B05,3
+48,2026-02-17,Data Science,Krakow,Male,Full-time,27,8.4,8.9,94.0,82.7,87.2,5,7,4070.0,Winter,-2.4,Exam Week,2589,Poland,Poland,30.19,15,0,113,B08,2
+49,2026-02-18,Data Science,Krakow,Male,Full-time,35,0,6.2,75.6,83.4,67.6,4,2,6935.0,Winter,-2.0,Holiday Promo,1347,Poland,Poland,32.44,13,0,184,B09,4
+50,2026-02-19,Cybersecurity,Gdansk,Male,Part-time,27,12.7,9.2,82.4,77.9,88.2,3,3,4437.0,Winter,6.1,None,1281,Poland,Poland,90.77,17,93,1395,B12,4
+51,2026-02-20,Data Science,Krakow,Male,Part-time,25,6.4,7.3,72.9,66.7,69.8,5,5,4288.0,Winter,-9.0,None,1107,Poland,USA,106.18,10,107,1322,B12,4
+52,2026-02-21,Cybersecurity,Wroclaw,Female,Student,22,13.2,6.0,72.7,71.2,73.0,5,9,1101.0,Winter,5.6,Exam Week,3042,Poland,Poland,116.77,13,93,1153,B06,4
+53,2026-02-22,Cybersecurity,Katowice,Female,Part-time,23,4.7,7.7,77.9,78.9,74.4,1,2,3061.0,Winter,-5.0,None,1109,Poland,Poland,41.37,17,97,1065,B02,0
+54,2026-02-23,Data Science,Warsaw,Female,Part-time,23,14.3,8.0,89.2,81.8,97.8,1,6,3632.0,Winter,-2.2,None,740,Poland,Poland,56.49,7,98,1072,B05,2
+55,2026-02-24,Business IT,Katowice,Female,Part-time,22,13.3,6.5,84.3,80.1,84.8,1,2,2946.0,Winter,0.9,Exam Week,2317,Poland,Poland,46.67,9,0,149,B03,5
+56,2026-02-25,Cybersecurity,Krakow,Female,Student,24,18.6,5.8,83.0,71.1,100,1,6,979.0,Winter,2.4,Holiday Promo,1356,Poland,Poland,89.36,8,0,137,B03,8
+57,2026-02-26,Data Science,Wroclaw,Male,Student,25,14.0,6.3,70.6,86.8,74.5,3,,1199.0,Winter,-4.3,Exam Week,1696,Poland,Poland,111.77,20,1,130,B07,3
+58,2026-02-27,Data Science,Gdansk,Male,Full-time,29,6.0,7.5,68.8,87.3,60.6,1,7,6847.0,Winter,-1.5,Holiday Promo,2082,Poland,Poland,93.29,14,0,121,B11,3
+59,2026-02-28,Cybersecurity,Krakow,Male,Full-time,35,4.0,9.2,78.5,68.6,70.1,2,10,6917.0,Winter,4.9,None,1221,Poland,Poland,90.85,21,2,91,B10,0
+60,2026-03-01,Business IT,Katowice,Female,Student,25,4.8,6.1,85.0,73.4,71.6,5,2,1078.0,Spring,17.1,None,910,Poland,Poland,106.14,9,1,99,B10,2
+61,2026-03-02,Cybersecurity,Gdansk,Male,Full-time,42,8.0,6.2,76.3,75.0,78.7,3,2,6475.0,Spring,10.5,None,997,Poland,Poland,127.58,12,0,118,B06,5
+62,2026-03-03,Business IT,Wroclaw,Female,Part-time,28,8.0,6.5,89.7,62.9,65.0,3,10,3704.0,Spring,10.4,Holiday Promo,1950,Poland,Brazil,18.18,19,0,71,B05,1
+63,2026-03-04,Business IT,Gdansk,Male,Full-time,45,7.2,4.4,100,73.5,83.8,5,6,7480.0,Spring,16.4,None,1015,Poland,Poland,87.32,11,0,103,B02,3
+64,2026-03-05,Cybersecurity,Wroclaw,Male,Part-time,32,16.8,7.1,76.7,68.9,90.2,5,3,3157.0,Spring,11.8,None,947,Poland,Poland,61.93,16,2,123,B04,2
+65,2026-03-06,Business IT,Warsaw,Female,Student,27,18.4,6.9,80.1,85.5,75.2,2,10,1066.0,Spring,15.0,Exam Week,2352,Poland,Poland,139.11,10,0,149,B02,4
+66,2026-03-07,Business IT,Warsaw,Female,Student,32,2,7.2,92.8,72.4,99,1,7,980.0,Spring,13.0,None,972,Poland,Germany,90.92,17,0,133,B08,5
+67,2026-03-08,Business IT,Katowice,Male,Student,18,14.7,6.9,83.2,80.7,100,4,2,1049.0,Spring,13.5,None,883,Poland,Poland,30.52,21,0,141,B02,5
+68,2026-03-09,Cybersecurity,Katowice,Female,Part-time,22,6.0,5.6,87.9,74.7,80.6,1,9,3496.0,Spring,12.8,Holiday Promo,2268,Poland,Poland,68.18,19,1,143,B06,4
+69,2026-03-10,Data Science,Krakow,Female,Part-time,23,10.3,8.6,92.5,83.6,83.7,3,9,2772.0,Spring,10.0,Exam Week,3118,Poland,Poland,92.78,21,0,132,B05,5
+70,2026-03-11,Cybersecurity,Krakow,Female,Part-time,31,16.8,6.2,80.0,74.2,83.5,3,1,3678.0,Spring,10.3,None,1052,Poland,Poland,49.28,21,1,111,B12,5
+71,2026-03-12,Data Science,Katowice,Female,Full-time,37,14.8,7.7,87.5,60.5,76.8,3,5,6771.0,Spring,7.0,None,1084,Poland,Poland,78.87,18,1,125,B07,3
+72,2026-03-13,Data Science,Gdansk,Male,Student,30,95,7.0,76.1,96.9,100,4,1,1354.0,Spring,15.1,None,746,Poland,Poland,150.15,11,2,97,B08,4
+73,2026-03-14,Data Science,Wroclaw,Male,Part-time,24,8.7,7.8,84.2,73.3,79.4,5,2,4089.0,Spring,12.8,Exam Week,2062,Poland,USA,67.71,22,0,174,B02,4
+74,2026-03-15,Business IT,Gdansk,Female,Full-time,34,11.2,6.1,68.3,64.5,72.2,3,3,5356.0,Spring,4.1,None,1051,Poland,Poland,44.83,13,0,122,B06,6
+75,2026-03-16,Data Science,Wroclaw,Male,Student,26,19.7,8.7,91.2,78.9,94.8,4,7,865.0,Spring,13.7,None,943,Poland,Poland,34.75,18,0,131,B09,3
+76,2026-03-17,Business IT,Gdansk,Male,Full-time,40,8.0,7.4,86.9,65.7,82.4,3,9,8568.0,Spring,8.3,None,1132,Poland,Poland,167.65,16,1,91,B03,3
+77,2026-03-18,Business IT,Wroclaw,Female,Student,27,13.0,5.5,89.1,61.1,76.7,1,10,1136.0,Spring,12.7,Holiday Promo,2462,Poland,Poland,157.06,16,2,129,B05,0
+78,2026-03-19,Data Science,Warsaw,Male,Student,29,14.8,8.1,86.0,65.9,82.0,,3,1017.0,Spring,18.9,None,1083,Poland,Poland,82.14,10,0,120,B08,5
+79,2026-03-20,Cybersecurity,Katowice,Male,Student,24,16.7,6.1,100,68.0,93.9,3,4,556.0,Spring,13.4,Holiday Promo,2268,Poland,Poland,82.27,19,1,125,B08,5
+80,2026-03-21,Cybersecurity,Gdansk,Female,Student,27,13.4,8.2,72.2,59.4,77.5,1,7,1357.0,Spring,15.3,None,1013,Poland,Poland,51.72,13,0,110,B09,3
+81,2026-03-22,Data Science,Krakow,Female,Full-time,43,9.1,6.5,91.9,72.1,77.4,3,3,4845.0,Spring,14.5,None,18000,Poland,Poland,105.53,22,1,137,B08,6
+82,2026-03-23,Cybersecurity,Krakow,Male,Student,27,20.8,6.9,73.6,62.4,100,5,8,1135.0,Spring,9.7,None,837,Poland,Brazil,123.56,16,2,144,B10,1
+83,2026-03-24,Business IT,Katowice,Male,Part-time,27,5.2,7.2,78.9,53.6,46.1,2,1,4216.0,Spring,7.4,None,890,Poland,Poland,77.19,13,1,133,B09,4
+84,2026-03-25,Business IT,Krakow,Male,Part-time,26,1.1,6.3,95.1,63.7,55.7,2,8,3824.0,Spring,11.1,None,855,Poland,Poland,22.11,15,1,57,B05,4
+85,2026-03-26,Cybersecurity,Krakow,Female,Full-time,33,10.8,5.3,77.8,61.1,60.5,3,5,6452.0,Spring,17.3,Exam Week,2474,Poland,Poland,145.69,16,0,107,B05,4
+86,2026-03-27,Data Science,Wroclaw,Female,Student,31,13.6,4.5,76.4,71.8,78.0,5,10,1207.0,Spring,14.3,Holiday Promo,1722,Poland,Poland,110.19,22,0,114,B09,3
+87,2026-03-28,Business IT,Krakow,Male,Student,21,14.1,6.1,81.2,78.1,88.5,2,9,767.0,Spring,12.4,None,688,Poland,Germany,117.84,12,0,166,B07,4
+88,2026-03-29,Cybersecurity,Krakow,Male,Student,27,11.5,5.0,68.2,67.3,85.1,5,9,492.0,Spring,13.4,Holiday Promo,1627,Poland,Poland,89.57,21,2,119,B12,5
+89,2026-03-30,Business IT,Krakow,Male,Student,31,11.4,6.1,74.0,78.7,79.4,2,,1278.0,Spring,11.7,None,1108,Poland,Poland,58.94,17,0,126,B10,3
+90,2026-03-31,Business IT,Gdansk,Female,Student,19,13.4,6.4,83.3,63.4,58.9,3,2,741.0,Spring,5.7,None,915,Poland,Poland,68.76,11,1,119,B07,1
+91,2026-04-01,Business IT,Warsaw,Female,Part-time,30,8.6,6.3,82.3,94.1,89.0,4,9,2963.0,Spring,12.5,Holiday Promo,1667,Poland,Poland,45.31,11,0,111,B06,5
+92,2026-04-02,Data Science,Gdansk,Male,Student,26,10.6,6.6,83.1,82.4,90.2,5,1,782.0,Spring,10.8,None,973,Poland,Poland,50.35,13,1,143,B12,4
+93,2026-04-03,Cybersecurity,Gdansk,Male,Full-time,26,70,12,80.5,81.4,97.9,4,6,7869.0,Spring,16.9,Exam Week,2261,Poland,Poland,154.51,11,2,108,B06,8
+94,2026-04-04,Data Science,Warsaw,Male,Part-time,21,18.5,7.9,67.5,87.3,98.1,5,7,1740.0,Spring,11.5,None,909,Poland,Poland,89.98,10,0,129,B01,2
+95,2026-04-05,Data Science,Krakow,Male,Student,18,8.4,7.5,87.2,67.5,80.7,5,4,1289.0,Spring,13.2,None,723,Poland,Poland,69.28,17,1,164,B10,4
+96,2026-04-06,Data Science,Gdansk,Female,Full-time,40,2.7,7.2,90.3,100,87.8,2,7,5749.0,Spring,12.6,None,1222,Poland,Poland,66.26,17,2,107,B07,4
+97,2026-04-07,Cybersecurity,Wroclaw,Male,Student,21,12.0,8.6,89.6,49.0,45.5,5,9,900.0,Spring,15.0,None,1089,Poland,Poland,118.63,18,0,133,B09,3
+98,2026-04-08,Data Science,Gdansk,Female,Full-time,30,7.4,7.5,69.5,70.0,65.5,2,6,5087.0,Spring,21.3,None,1377,Poland,Poland,50.56,22,0,106,B07,1
+99,2026-04-09,Data Science,Warsaw,Female,Part-time,24,4.3,7.3,78.6,84.6,81.3,4,6,2598.0,Spring,16.3,Exam Week,1514,Poland,Poland,88.53,15,1,133,B10,2
+100,2026-04-10,Data Science,Gdansk,Male,Student,27,12.0,7.6,-5,63.7,64.1,3,8,1620.0,Spring,11.8,Exam Week,1968,Poland,Poland,98.85,22,0,147,B11,2
+101,2026-04-11,Cybersecurity,Katowice,Male,Full-time,26,15.6,6.4,82.9,61.7,84.0,2,1,5260.0,Spring,13.9,None,1173,Poland,Poland,60.79,22,2,90,B08,6
+102,2026-04-12,Cybersecurity,Gdansk,Male,Part-time,22,10.5,6.1,80.2,55.4,68.1,,3,3482.0,Spring,14.1,None,1012,Poland,Poland,133.6,18,0,122,B07,3
+103,2026-04-13,Data Science,Warsaw,Female,Full-time,31,7.7,9.0,100,92.0,82.3,4,7,5882.0,Spring,9.7,None,1126,Poland,Poland,143.7,17,1,143,B02,7
+104,2026-04-14,Cybersecurity,Gdansk,Female,Student,32,8.5,9.2,92.3,86.5,75.2,1,3,1435.0,Spring,11.5,None,771,Poland,Brazil,900,3,0,110,B10,6
+105,2026-04-15,Cybersecurity,Wroclaw,Male,Student,29,21.6,9.5,80.1,60.0,92.7,4,4,1184.0,Spring,14.9,Holiday Promo,2595,Poland,Poland,86.27,15,1,113,B08,4
+106,2026-04-16,Data Science,Katowice,Male,Part-time,28,15.0,5.6,93.8,71.5,91.3,1,2,3112.0,Spring,16.9,None,990,Poland,Poland,54.52,7,0,80,B02,5
+107,2026-04-17,Data Science,Krakow,Female,Student,26,10.1,6.6,91.2,75.8,89.0,3,7,1424.0,Spring,17.1,None,1012,Poland,Poland,0,14,1,91,B99,77
+108,2026-04-18,Cybersecurity,Krakow,Female,Student,20,17.4,8.1,86.1,61.9,88.6,1,6,1198.0,Spring,16.0,Exam Week,1631,Poland,Poland,72.17,7,1,102,B99,78
+109,2026-04-19,Business IT,Warsaw,Male,Full-time,44,12.1,6.9,71.6,100,97.9,4,6,7482.0,Spring,11.4,Exam Week,2917,Poland,Poland,71.97,19,0,138,B99,64
+110,2026-04-20,Cybersecurity,Gdansk,Female,Full-time,38,8.9,7.7,79.6,80.7,63.3,1,,5805.0,Spring,11.1,None,1011,Poland,Poland,136.25,19,0,87,B99,78
+111,2026-04-21,Business IT,Gdansk,Male,Part-time,30,16.1,6.7,87.1,59.1,83.6,2,6,3003.0,Spring,15.8,Holiday Promo,3011,Poland,Poland,37.75,20,0,144,B99,87
+112,2026-04-22,Cybersecurity,Wroclaw,Male,Student,24,15.6,5.4,85.5,71.5,81.1,1,8,1446.0,Spring,15.5,None,1283,Poland,Poland,140.43,16,0,103,B08,4
+113,2026-04-23,Business IT,Wroclaw,Female,Student,29,12.6,7.1,97.1,79.2,93.1,1,3,1239.0,Spring,18.9,Holiday Promo,1744,Poland,Poland,67.02,21,0,143,B07,3
+114,2026-04-24,Cybersecurity,Gdansk,Female,Student,27,12.1,7.9,74.7,73.0,81.1,2,4,1117.0,Spring,19.1,None,746,Poland,Poland,55.69,18,0,124,B11,4
+115,2026-04-25,Cybersecurity,Wroclaw,Male,Part-time,27,8.5,7.3,75.4,84.6,87.3,3,10,4258.0,Spring,8.0,None,871,Poland,Poland,77.41,11,1,134,B07,3
+116,2026-04-26,Cybersecurity,Wroclaw,Female,Part-time,26,11.1,6.4,68.5,89.3,88.0,4,5,3642.0,Spring,15.7,Exam Week,1284,Poland,Poland,37.2,13,1,148,B08,3
+117,2026-04-27,Data Science,Wroclaw,Male,Part-time,25,8.3,7.0,98.6,77.9,75.1,5,5,3819.0,Spring,15.2,Exam Week,2779,Poland,Poland,60.19,18,1,111,B01,4
+118,2026-04-28,Data Science,Gdansk,Female,Part-time,28,5.7,7.0,73.6,87.1,77.6,3,2,828.0,Spring,17.8,None,1065,Poland,Poland,140.44,20,0,87,B04,1
+119,2026-04-29,Business IT,Wroclaw,Female,Part-time,27,6.6,6.8,79.6,64.5,64.8,,3,4771.0,Spring,19.8,None,934,Poland,USA,97.23,11,0,110,B03,3
+120,2026-04-30,Cybersecurity,Katowice,Female,Student,28,6.7,6.9,92.3,57.8,67.0,1,7,959.0,Spring,12.7,None,822,Poland,Poland,96.37,9,2,154,B12,3
