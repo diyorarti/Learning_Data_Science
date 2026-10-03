@@ -73,7 +73,7 @@ How is probability distributed accross those possible values ?
 
 PMF(Probability Mass Function) → discrete
     PMF tells us the probability that a discrete random variable takes each possible value.
-    Formula: px(x) = P(X = x) = number of observations where X=x / total number of observations
+    Formula: P(X = x) = p(x) = number of observations where X=x / total number of observations
     example: 
         tossing a coin twice
         Sample:space: {HH, TH, HT, TT}
@@ -95,7 +95,8 @@ PDF(Proabability Density Function) → continuous
 NOTE: The folloing function works when the density is constant across that interval.
     PDF describes how probability is distributed over the possible values of continuous random variable.
     THe formula:
-        P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx
+        P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) * dx
+        
 
     example:
         X = waiting time, the time can be anywhere between 0 and 10 minutes.
@@ -116,7 +117,7 @@ NOTE: The folloing function works when the density is constant across that inter
             interval width: 5 - 2 = 3
             Density: 0.1 
             area: 3 * 0.1 = 0.30
-            So: P(2 ≤ X ≤ 5) =0.30 There is a 30% probability that the waiting time is between 2 and 5 minutes.
+            So: P(2 ≤ X ≤ 5) = 0.30 There is a 30% probability that the waiting time is between 2 and 5 minutes.
 
     Density for Uniform distribution::
         density = probability / interval_width
