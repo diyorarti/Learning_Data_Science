@@ -11,7 +11,7 @@
    3.4 Large sample size
 
 4.Evaluating Model Performance
-   4.1 True Positive (TP)
+   4.1 True Positive (TP) 
    4.2 False Positive (FP)
    4.3 True Negative (TN)
    4.4 False Negative (FN)
@@ -251,6 +251,7 @@ Linearity is usually checked on quantitative features, not categorical features.
             For example:
                 log-odds(p) = β₀ + β₁age -> fitts a straight-line relationship
                 log-odds(p) = β₀ + β₁age + β₂age² -> the Polynomial term allows the relationship to be curved.
+                When nonlinear shape is simple we use Polynomial term, when it is complexer we use Spline
 
         5. partial-effect plots
             Suppose we have features: age, income, session_minutes
