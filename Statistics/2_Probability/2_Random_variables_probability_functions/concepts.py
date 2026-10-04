@@ -70,7 +70,10 @@ How is probability distributed accross those possible values ?
             we normally don't assign probability to one exact value such as 170.1
             instead we calculate probability over a range: P(170 ≤ X ≤ 180)
             So PDF - Probability Density Function
+"""
 
+# Probability Mass Function
+"""
 PMF(Probability Mass Function) → discrete
     PMF tells us the probability that a discrete random variable takes each possible value.
     Formula: P(X = x) = p(x) = number of observations where X=x / total number of observations
@@ -90,14 +93,16 @@ PMF(Probability Mass Function) → discrete
     Two important properties of PMF 
         1. every probability must be between 0 and 1
         2. all probabilities must sum to 1 
+"""
 
+# Proabability Density Function
+"""
 PDF(Proabability Density Function) → continuous
-NOTE: The folloing function works when the density is constant across that interval.
+Uniform Distribution PDF
     PDF describes how probability is distributed over the possible values of continuous random variable.
     THe formula:
         P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) * dx
-        
-
+         
     example:
         X = waiting time, the time can be anywhere between 0 and 10 minutes.
         Suppose: f_X(x) = 0.1
@@ -154,28 +159,34 @@ NOTE: The folloing function works when the density is constant across that inter
             area = density * interval width = 4 * 0.10 = 0.40
             So: There is a 40% probability that the waiting time is between 0.05 and 0.15 minutes.
 
-    When Density is not constant:
-        example: f(10) ≠ f(11) ≠ f(15) ≠ f(20) -> The problem is that the density is changing
-        SO: 
-            P(a ≤ X ≤ b) = ∫ₐᵇ λe^(-λx) dx
-            Here:
-                ∫ₐᵇ = integral from a to b
-                λ = parameter of the exponential distribution
-                e = mathematical constant 2.71828
-                x = represents a possible value of the random variable
-        example:
-             λ = 0.2 customers per minute
-             E[X] = 1 / λ = 5 munutes
-             P(3 ≤ X ≤ 8) = ?
-             P(3 ≤ X ≤ 8) = ∫₃⁸ 0.2e^(-0.2x) dx
-             P(3 ≤ X ≤ 8) = 0.5488 - 0.2019 = 0.347
-             There is about a 34.7% probability that the waiting time until the next customer is between 3 and 8 minutes.
-        Numpy implementation:
-            P(3 ≤ X ≤ 8) = np.exp(-0.2 * 3) - np.exp(-0.2 * 8)
+            
+
+Exponetial Distribution (density is not constrant)
+    example: f(10) ≠ f(11) ≠ f(15) ≠ f(20) -> The problem is that the density is changing
+    SO: 
+        P(a ≤ X ≤ b) = ∫ₐᵇ λe^(-λx) dx
+        Here:
+            ∫ₐᵇ = integral from a to b
+            λ = parameter of the exponential distribution
+            e = mathematical constant 2.71828
+            x = represents a possible value of the random variable
+    example:
+            λ = 0.2 customers per minute
+            E[X] = 1 / λ = 5 munutes
+            P(3 ≤ X ≤ 8) = ?
+            P(3 ≤ X ≤ 8) = ∫₃⁸ 0.2e^(-0.2x) dx
             P(3 ≤ X ≤ 8) = 0.5488 - 0.2019 = 0.347
             There is about a 34.7% probability that the waiting time until the next customer is between 3 and 8 minutes.
+    Numpy implementation:
+        P(3 ≤ X ≤ 8) = np.exp(-0.2 * 3) - np.exp(-0.2 * 8)
+        P(3 ≤ X ≤ 8) = 0.5488 - 0.2019 = 0.347
+        There is about a 34.7% probability that the waiting time until the next customer is between 3 and 8 minutes.
 
 
+"""
+
+# Cumculative Distribution Function
+"""
 CDF(Cumculative Distribution Function) → discrete and continuous
     The probability that a random variable X is less than or equal to a particular value x.
     The formula: F_X(x) = P(X ≤ x) read as the CDF at x is the probability that X is less than or equal to x. 
@@ -211,7 +222,7 @@ CDF(Cumculative Distribution Function) → discrete and continuous
         So: F(4) = 40%
         There is a 40% probability that the waiting time is 4 minutes or less.
 """
- 
+
 # Multiple random variables
 """
 Multilple random variable means we define two or more random variables on the same random experiement or observation.
