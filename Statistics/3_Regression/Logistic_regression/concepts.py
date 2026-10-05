@@ -16,7 +16,6 @@
    4.3 True Negative (TN)
    4.4 False Negative (FN)
 
- 
    4.5 Metrics for Model Evaluation
        - Accuracy 
        - Balanced Accuracy 
@@ -152,6 +151,9 @@ Sigmoid function
 """
 Assumptions are conditions we expect the data and the relationship between variables to satisfy so that the model's 
 coefficients, probabilities and statistical conclusions are reliable.
+
+General Workflow:
+    1. 
 
 Linearity is usually checked on quantitative features, not categorical features. 
 | Method                  | Main idea                                                     | Type                     |
