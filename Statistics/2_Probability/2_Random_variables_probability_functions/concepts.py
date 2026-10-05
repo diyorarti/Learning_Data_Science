@@ -98,10 +98,11 @@ PMF(Probability Mass Function) → discrete
 # Proabability Density Function
 """
 PDF(Proabability Density Function) → continuous
+
 Uniform Distribution PDF
     PDF describes how probability is distributed over the possible values of continuous random variable.
     THe formula:
-        P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) * dx
+        P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx
          
     example:
         X = waiting time, the time can be anywhere between 0 and 10 minutes.
@@ -161,7 +162,7 @@ Uniform Distribution PDF
 
             
 
-Exponetial Distribution (density is not constrant)
+Exponetial Distribution PDF
     example: f(10) ≠ f(11) ≠ f(15) ≠ f(20) -> The problem is that the density is changing
     SO: 
         P(a ≤ X ≤ b) = ∫ₐᵇ λe^(-λx) dx
@@ -182,6 +183,21 @@ Exponetial Distribution (density is not constrant)
         P(3 ≤ X ≤ 8) = 0.5488 - 0.2019 = 0.347
         There is about a 34.7% probability that the waiting time until the next customer is between 3 and 8 minutes.
 
+Normal Distribution PDF
+    Density Formula: f_X(x) = 1 / (σ√(2π)) · e^(-((x - μ)² / (2σ²)))
+    example:
+        X ~ N(100, 15²)
+        μ = 100
+        σ = 15
+        f_X(x) = 1 / (15 * √(2π)) · e^(-((x - 100)² / (2(15)²)))
+
+        Suppose we want density at: x = 100
+            f_X(100) = 1 / (15√(2π)) · e^(- (100 - 100)² / 2(15)²) = 1 / (15√(2π)) = 0.0266
+            0.0266 is density at 100, not probability
+
+    Probability Formula: P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x)dx
+
+    
 
 """
 
