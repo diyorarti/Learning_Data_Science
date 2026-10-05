@@ -67,5 +67,38 @@ Hypothesis testing is a statistical methof used to make an inference about a pop
 
 # Null hypothesis H₀ and alternative hypothesis Hₐ
 """
+H₀ = null hypothesis
+    Null hypothesis is the default assumption. It usually means no effect, no difference, no change, no relationship.
+    example:
+        A new  website design doesn't change the average purchase amount.
+        H₀: μ_new = μ_old 
+        H₀: μ_new - μ_old = 0
+
+Hₐ = alternative hypothesis 
+    Alternative hypothesis represents the effect or difference we are interested in detecting.
+    example:
+        A new  website design has differen purchase anount than old one.
+        Hₐ = μ_new ≠ μ_old
+    
+A example:
+    A coffee machine company claims: The machine fills cups with an average of 250 ml.
+    Thypothesis could be one of them:
+        H₀: μ = 250 the true average amount is 250 
+        Hₐ: μ ≠ 250 the true average amount is not 250
+    take a sample:
+        x̄ = 244
+    if the true population mean really were 250 ml, would a sample mean of 244 ml be unusally faw away ? 
+    This where test statistics and p-values come in.
+
+Three forms of alternative hypothesis:
+    1.Different    Hₐ: μ_new ≠ μ_old , example Hₐ: μ ≠ 250  
+    2.Greater than Hₐ: μ_new > μ_old , example Hₐ: μ > 250
+    3.Less than    Hₐ: μ_new < μ_old , example Hₐ: μ < 250
+    Different(≠) form of alternative hypothesis leads a two-tailed test
+    Greater(>) or less(<) forms of alternative hypothesis lead a one-tailed test
+"""
+
+# One-tailed vs two-tailed hypotheses
+"""
 
 """
