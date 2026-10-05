@@ -72,5 +72,22 @@ class Vehicle(ABC):
     def is_available(self, value):
         Validator.validate_positive_number(value, 'is_available')
         self.__is_available = value
-        
-        
+
+    def get_vehicle_info(self):
+        return f"Brad: {self.brand} |Model: {self.model} |Year {self.year} |Daily Price: {self.daily_price} |Available: {self.is_available}"
+
+    def rent(self):
+        return f"{self.model} is renking"
+
+    def return_vehicle(self):
+        return f"{self.model} is returning"
+
+    @abstractmethod
+    def calculate_rental_cost(self, days):
+        return self.daily_price * days
+
+    
+
+
+    
+
