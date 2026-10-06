@@ -19,7 +19,7 @@
 
 # What is Hypothesis testing
 """
-Hypothesis testing is a statistical methof used to make an inference about a population using sample data.
+Hypothesis testing is a statistical method used to make an inference about a population using sample data.
     We observe soemthing in a sample and ask whether that result is strong enough to conclude that something is happening in the population.
     Example:
         A company claims that the average delivery time μ=30 minutes
@@ -77,7 +77,7 @@ H₀ = null hypothesis
 Hₐ = alternative hypothesis 
     Alternative hypothesis represents the effect or difference we are interested in detecting.
     example:
-        A new  website design has differen purchase anount than old one.
+        A new  website design has different purchase amount than old one.
         Hₐ = μ_new ≠ μ_old
     
 A example:
@@ -98,7 +98,55 @@ Three forms of alternative hypothesis:
     Greater(>) or less(<) forms of alternative hypothesis lead a one-tailed test
 """
 
-# One-tailed vs two-tailed hypotheses
+# One-tailed vs two-tailed hypothesis
+"""
+This is mainly about the direction of the alternative hypothesis Hₐ
+    one-tailed hypothesis tests are used when the hypothesis specifies a direction.
+    two-tailed tests are used when we only care whether there is any difference.
+
+Two-tailed hypothesis:
+    it asks that: is the population parameter different from the hypothesized value in either direction ?
+    Symbol: ≠
+    example: company claims that Coffee machine average filling: 250
+        H₀: μ = 250
+        Hₐ: μ ≠ 250
+        here: we care about both possibilities: μ < 250 and μ > 250
+        So the machone could be underfilling or overfilling cups.
+        μ = 240 or μ = 260
+        Visually:
+            Reject H₀ | Fail to reject H₀ | Reject H₀
+            left tail | Center            | right tail
+
+One-tailed Hypothesis:
+    a one-tailed hypothesis asks about only one direction.
+    there are two possible versions:
+    
+    Right-tailed test
+        We want to know whether the population parameter is greater than some value.
+        Hₐ: μ > population_mean
+        example:
+            does a new calibration make the coffee machine dispense more than 250 ml on average ?
+            H₀: μ ≤ 250
+            Hₐ: μ > 250
+            The important direction is the right side of the distribution.
+
+    Left-tailed test
+        We want to know whether the pupulation parameter is less than some value.
+        Hₐ: μ < population_mean
+        example:
+            does the coffee machine underfilling cups ?
+            H₀: μ ≥ 250
+            Hₐ: μ < 250
+            now we reject region is only left side
+
+What happens to α ?
+    suppose α = 0.5
+    two-tailed test:
+        α = 0.5 / 2 = 0.025
+        left tail = 0.025
+        right tail = 0.025
+    One-tail:
+        α = 0.5 if it is in right-tail -> right-tail α = 0.5
+        α = 0.5 if it is in left-tail -> left-tail α = 0.5
 """
 
-"""
