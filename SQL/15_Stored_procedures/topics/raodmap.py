@@ -13,7 +13,7 @@
 6.Loops 
     Basic `LOOP`
     `WHILE` loop
-    `FOR` loop
+    `FOR` loop 
     `EXIT`
     `CONTINUE`
 

@@ -33,26 +33,31 @@ DECLARE
     v_risk_level TEXT;
 
 BEGIN 
-    SELECT 
-        SUM(p.payment_value),
-        AVG(r.review_score),
-        o.order_status
+    SELECT SUM(payment_value)
+    INTO v_total_payment
+    FROM order_payments
+    WHERE order_id = p_order_id;
 
-    INTO 
-        v_total_payment,
-        v_review_score,
-        v_order_status
+    SELECT AVG(review_score)
+    INTO v_review_score
+    FROM order_reviews
+    WHERE order_id = p_order_id;
 
-    FROM orders o
-    JOIN order_payments p ON o.order_id = p.order_id
-    JOIN order_reviews r ON o.order_id = r.order_id
-    WHERE o.order_id = p_order_id;
+    SELECT order_status
+    INTO v_order_status
+    FROM orders
+    WHERE order_id = p_order_id;
 
-    IF v_order_status != 'delivered' THEN v_risk_level:='incomplete order'
-    ELSIF v_total_payment >= 500 AND v_review_score <= 2 THEN v_risk_level:='high risk order'
-    ELSIF v_total_payment >= 200 AND v_review_score <= 3 THEN v_risk_level:='medium risk order'
-    ELSIF v_review_score >= 4 THEN v_risk_level:='low risk order'
-    ELSE v_risk_level:='Normal order'
+    IF v_order_status != 'delivered' THEN 
+        v_risk_level:='incomplete order';
+    ELSIF v_total_payment >= 500 AND v_review_score <= 2 THEN 
+        v_risk_level:='high risk order';
+    ELSIF v_total_payment >= 200 AND v_review_score <= 3 THEN 
+        v_risk_level:='medium risk order';
+    ELSIF v_review_score >= 4 THEN 
+        v_risk_level:='low risk order';
+    ELSE 
+        v_risk_level:='Normal order';
     END IF;
 
     RAISE NOTICE 'Total payment: %', v_total_payment;
@@ -64,4 +69,6 @@ END;
 $$;
 
 
-
+CALL order_risk_summary(
+    'e481f51cbdc54678b7cc49136f2d6af7'
+)
