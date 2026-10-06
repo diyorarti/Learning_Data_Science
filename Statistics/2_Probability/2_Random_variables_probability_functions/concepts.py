@@ -98,42 +98,27 @@ PMF(Probability Mass Function) → discrete
 # Proabability Density Function
 """
 PDF(Proabability Density Function) → continuous
+    PDF describes how probability is distributed over the possible values of continuous random variable.
+    General PDF formula: 
+        P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx
+
+    Density changes in different distributions:
+        Uniform:     f_X(x) = 1 / (b - a) 
+        Exponential: f_X(x) = λe^(-λx)
+        Normal:      f_X(x) = 1 / (σ√(2π)) · e^(-((x - μ)² / (2σ²)))
+
 
 Uniform Distribution PDF
-    PDF describes how probability is distributed over the possible values of continuous random variable.
-    THe formula:
-        P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx
-         
-    example:
-        X = waiting time, the time can be anywhere between 0 and 10 minutes.
+    example: X = waiting time, the time can be anywhere between 0 and 10 minutes.
         Suppose: f_X(x) = 0.1
-        Graphically: Density
-                        0.1 |────────────────────────
-                            |                        |
-                            |                        |
-                        0   +-------------------------> X
-                            0                        10
-
-        Interval width: P(0 ≤ X ≤ 10) = 10 - 0 = 10 
-        Density: 0.1 
-        area: 10 * 0.1 = 1
-        1 means there is 100% probability waiting time is between 0 and 10. 
-
-        Suppose: We want - P(2 ≤ X ≤ 5). what is the probability , waiting time between 2 and 5
-            interval width: 5 - 2 = 3
-            Density: 0.1 
-            area: 3 * 0.1 = 0.30
-            So: P(2 ≤ X ≤ 5) = 0.30 There is a 30% probability that the waiting time is between 2 and 5 minutes.
-
-    Density for Uniform distribution::
-        density = probability / interval_width
-        example:
-            P(2 ≤ X ≤ 5) = 0.30
-            interval width = 3
-            density = 0.30 / 3 = 0.1
+        We want: P(3 ≤ X ≤ 5) = ?
+        P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx = ∫₃⁵ * 0.1 = (5-3) * 0.1 = 0.2 
+        Converting to % 0.2 * 100 = 20
+        there is 20% proability x can be a value between 3 and 5
 
     What about One exact value:
-        Suppose we want: P(X = 5), for truly continuous variable: P(X = 5) = 0
+        Suppose we want: P(X = 5)
+        for truly continuous variable: P(X = 5) = 0
         It doesn't mean X = 5 is impossible
         Why is the P(X = 5) = 0:
             Interval width: 5 - 5 = 0
@@ -141,7 +126,7 @@ Uniform Distribution PDF
             area = 5 * 0.1 = 0 
             so: P(X = 5) = 0 
 
-    Properties of PDF 
+    Property of PDF 
         Density can not be negative fx(x) ≥ 0
         Total area equals 1
 
@@ -160,12 +145,10 @@ Uniform Distribution PDF
             area = density * interval width = 4 * 0.10 = 0.40
             So: There is a 40% probability that the waiting time is between 0.05 and 0.15 minutes.
 
-            
 
 Exponetial Distribution PDF
-    example: f(10) ≠ f(11) ≠ f(15) ≠ f(20) -> The problem is that the density is changing
-    SO: 
-        P(a ≤ X ≤ b) = ∫ₐᵇ λe^(-λx) dx
+    Formula: P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx
+        f_X(x) = λe^(-λx)
         Here:
             ∫ₐᵇ = integral from a to b
             λ = parameter of the exponential distribution
@@ -183,7 +166,10 @@ Exponetial Distribution PDF
         P(3 ≤ X ≤ 8) = 0.5488 - 0.2019 = 0.347
         There is about a 34.7% probability that the waiting time until the next customer is between 3 and 8 minutes.
 
+        
 Normal Distribution PDF
+    Probability Formula: P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx
+
     Density Formula: f_X(x) = 1 / (σ√(2π)) · e^(-((x - μ)² / (2σ²)))
     example:
         X ~ N(100, 15²)
@@ -194,10 +180,6 @@ Normal Distribution PDF
         Suppose we want density at: x = 100
             f_X(100) = 1 / (15√(2π)) · e^(- (100 - 100)² / 2(15)²) = 1 / (15√(2π)) = 0.0266
             0.0266 is density at 100, not probability
-
-    Probability Formula: P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x)dx
-
-    
 
 """
 
