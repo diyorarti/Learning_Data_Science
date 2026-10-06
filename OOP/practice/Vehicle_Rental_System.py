@@ -70,7 +70,8 @@ class Vehicle(ABC):
 
     @is_available.setter
     def is_available(self, value):
-        Validator.validate_positive_number(value, 'is_available')
+        if type(value) is not bool:
+            raise ValueError("is_availabe must be True or False")
         self.__is_available = value
 
     def get_vehicle_info(self):
@@ -86,8 +87,30 @@ class Vehicle(ABC):
     def calculate_rental_cost(self, days):
         return self.daily_price * days
 
-    
+
+class Car(Vehicle):
+    def __init__(self, brand, model, year, daily_price, is_available, number_of_doors):
+        super().__init__( brand, model, year, daily_price, is_available)
+        self.__number_of_doors = None
+        self.number_of_doors = number_of_doors
+
+    @property
+    def number_of_doors(self):
+        return self.__number_of_doors
+
+    @number_of_doors.setter
+    def number_of_doors(self, value):
+        Validator.validate_positive_number(value, 'number_of_doors')
+        self.__number_of_doors = value
+
+    def calculate_rental_cost(self, days):
+        return super().calculate_rental_cost(days)
+
+    def get_vehicle_type(self):
+        return "Car"
 
 
-    
-
+car = Car('BMW', 'X7', 2024, 100, False, 4)
+print(car.get_vehicle_info())
+print(car.get_vehicle_type())
+print(car.calculate_rental_cost(10))
