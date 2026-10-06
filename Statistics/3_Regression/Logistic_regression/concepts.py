@@ -148,22 +148,18 @@ Sigmoid function
 """
  
 # Linearity of independent variables and log-odds
-"""
+""" 
 Assumptions are conditions we expect the data and the relationship between variables to satisfy so that the model's 
 coefficients, probabilities and statistical conclusions are reliable.
 
 General Workflow:
-    1. 
-
-Linearity is usually checked on quantitative features, not categorical features. 
-| Method                  | Main idea                                                     | Type                     |
-| ----------------------- | ------------------------------------------------------------- | ------------------------ |
-| Empirical log-odds plot | Observe the relationship directly from grouped data           | Visual diagnostic        |
-| Box-Tidwell             | Add (X\ln X) and test its coefficient                         | Statistical test         |
-| Polynomial terms        | Add terms such as (X^2)                                       | Diagnostic + treatment   |
-| Splines / GAM           | Allow smooth nonlinear relationships                          | Diagnostic + treatment   |
-| Partial-effect plots    | Inspect one fitted feature effect while accounting for others | Model interpretation     |
-| Residual diagnostics    | Look for systematic errors left by the fitted model           | General model diagnostic |
+    1.Selecting quantitive predictors and plotting each of the features and empirical log-odds
+    2.Interpreting the plots and decide what to do next.
+        1.if Aprroximately straight line relationship. Keep the feature as it is.
+        2.if the relationship is Simple U, inverted-U or simple curve. Apply Polynomial term
+        3.if the relationship is more complicated smooth curve. Apply Spline/GAM
+    3.When we can't decide that whether a features has linear relationship or not. Apply Box-Tidwell statistical method
+        1.if the evidence is significant. Invistigate shape with Ploynomial/Spline/GAM
 
 1.Linearity of Independent Variables and Log-Odds
     Independet variables have a linear relationship with the log-odds of the dependent variable.
