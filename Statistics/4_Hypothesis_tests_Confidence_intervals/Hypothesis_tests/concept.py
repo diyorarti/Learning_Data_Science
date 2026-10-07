@@ -150,3 +150,33 @@ What happens to α ?
         α = 0.5 if it is in left-tail -> left-tail α = 0.5
 """
 
+# Significance level α
+"""
+The significance level α  is the threshold we choose before the test for deciding 
+    how strong the evidence must be before we reject the H₀ null hypothesis.
+    α = 0.05. This means that we are accepting a 5% Type I error rate.
+    If H₀ is actually True, we are willing to tolerate up to 5% change of incorrevtly rejecting it.
+
+    α = P(reject H₀ | H₀ is True) -> this is the probability of a Type I error.
+
+    example: Coffee machine 
+        H₀: μ = 250
+        Hₐ: μ ≠ 250
+        α = 0.05
+        I will only reject H₀, if sample result is sufficiently unusual under the assumption that μ = 250.
+        The significance level defines how unusual the result must be:
+            if the result falls into the most extreme 5% of outcomes expected under H₀, then I reject H₀. 
+    
+    Connection with the p-value
+        p < α → reject H₀
+        p ≥ α → fail to reject H₀
+        example:
+            H₀: μ = 250
+            α = 0.05
+            Case-1: p = 0.02 → 0.02 < 0.05 → reject H₀          
+                there is enough statistical evidence that the true average is different from 250
+            Caas-2: p = 0.21 → 0.21 > 0.05 → fail to reject H₀
+                there is no enough statictical evidence that the true average is different from 250
+
+    
+"""
