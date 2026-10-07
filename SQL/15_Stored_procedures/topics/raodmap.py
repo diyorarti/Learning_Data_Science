@@ -15,7 +15,7 @@
     `WHILE` loop
     `FOR` loop 
     `EXIT`
-    `CONTINUE`
+    `CONTINUE` 
 
 7.Working with Queries Inside Procedures
     `SELECT`
