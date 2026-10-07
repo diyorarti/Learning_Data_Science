@@ -1,20 +1,20 @@
 """
-1. What hypothesis testing actually does
-2. Null hypothesis H₀ and alternative hypothesis Hₐ
-3. One-tailed vs two-tailed hypotheses
-4. Significance level α
-5. Test statistic
-6. Sampling distribution under H₀
-7. Critical value and critical region
-8. P-value
-9. Reject vs fail to reject H₀
-10. Type I and Type II errors
-11. Choosing the correct statistical test
-12. Z-test
-13. T-tests
-14. Chi-square tests
-15. ANOVA
-16. Full practical hypothesis-test design in Python
+1.What hypothesis testing actually does
+2.Null hypothesis H₀ and alternative hypothesis Hₐ
+3.One-tailed vs two-tailed hypotheses
+4.Significance level α
+5.Test statistic
+6.Sampling distribution under H₀
+7.Critical value and critical region
+8.P-value
+9.Reject vs fail to reject H₀
+10.Type I and Type II errors
+11.Choosing the correct statistical test:
+        Z-test
+        T-tests
+        Chi-square tests
+        ANOVA
+12.Full practical hypothesis-test design in Python
 """
 
 # What is Hypothesis testing

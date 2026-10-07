@@ -147,7 +147,7 @@ Uniform Distribution PDF
 
 
 Exponetial Distribution PDF
-    Formula: P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx
+    Formula: P(a ≤ X ≤ b) = ∫ₐᵇ f_X(x) dx 
         f_X(x) = λe^(-λx)
         Here:
             ∫ₐᵇ = integral from a to b

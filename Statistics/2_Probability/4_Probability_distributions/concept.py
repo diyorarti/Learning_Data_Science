@@ -112,7 +112,7 @@ the next random event occurs, when events happen independetly at a constant aver
         1. It only has non-negative values: X ≥ 0
         2. shape: right-skewed
         3. It has one parameter λ (lambda): λ = average event rate
-        4. Mean and standard deviation are equal: E[X] = 1 / λ  equal SD(X) = 1 / λ
+        4. Mean and standard deviation are equal: E[X] = 1 / λ  -> equal SD(X) = 1 / λ
     
     Where Lambda come from ?
         Lambda λ means: How frequently events happen 
