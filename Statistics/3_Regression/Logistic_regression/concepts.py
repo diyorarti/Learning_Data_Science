@@ -24,7 +24,7 @@
        - F1-score
   
 5.Common Pitfalls & How to Avoid Them
-   5.1 Overfitting
+   5.1 Overfitting 
    5.2 Misinterpreting coefficients
    5.3 Imbalanced dataset
 """
