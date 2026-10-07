@@ -14,6 +14,7 @@ class Validator:
         if value <= 0:
             raise ValueError(f"{field_name} must be greater than 0")
 
+
 class Vehicle(ABC):
     def __init__(self, brand, model, year, daily_price, is_available):
         self.__brand = None
@@ -85,7 +86,7 @@ class Vehicle(ABC):
 
     @abstractmethod
     def calculate_rental_cost(self, days):
-        return self.daily_price * days
+        pass
 
 
 class Car(Vehicle):
@@ -104,13 +105,41 @@ class Car(Vehicle):
         self.__number_of_doors = value
 
     def calculate_rental_cost(self, days):
-        return super().calculate_rental_cost(days)
+        return self.daily_price * days
 
     def get_vehicle_type(self):
         return "Car"
 
 
-car = Car('BMW', 'X7', 2024, 100, False, 4)
+class Motorcycle(Vehicle):
+    def __init__(self, brand, model, year, daily_price, is_available, engine_cc):
+        super().__init__(brand, model, year, daily_price, is_available)
+        self.__engine_cc = None
+        self.engine_cc = engine_cc
+
+    @property
+    def engine_cc(self):
+        return self.__engine_cc
+
+    @engine_cc.setter
+    def engine_cc(self, value):
+        Validator.validate_not_empty(value, 'engine_cc')
+        self.__engine_cc = value
+
+    def calculate_rental_cost(self, days):
+        if days >= 7:
+            total_praice = self.daily_price * days 
+            return total_praice - (10 / 100 * total_praice)
+        else:
+            return self.daily_price * days
+
+    def get_vehicle_type(self):
+        return "Motorcycle"
+
+    
+
+car = Car('BMW', 'X7', 2022, 100, True, 4)
+motorcycle = Motorcycle('Porch', 'S9', 1990, 20, False, 'turbo')
+
 print(car.get_vehicle_info())
-print(car.get_vehicle_type())
-print(car.calculate_rental_cost(10))
+print(motorcycle.get_vehicle_info())
