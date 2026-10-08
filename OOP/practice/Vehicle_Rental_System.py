@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import re
 
 class Validator:
 
@@ -14,6 +15,14 @@ class Validator:
         if value <= 0:
             raise ValueError(f"{field_name} must be greater than 0")
 
+    @staticmethod
+    def validate_email(email):
+        if email is None or str(email).strip() == "":
+            raise ValueError("email can't be empty")
+
+        email_pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+        if not re.match(email_pattern, email):
+            raise ValueError("Invalid email format")
 
 class Vehicle(ABC):
     def __init__(self, brand, model, year, daily_price, is_available):
@@ -88,7 +97,6 @@ class Vehicle(ABC):
     def calculate_rental_cost(self, days):
         pass
 
-
 class Car(Vehicle):
     def __init__(self, brand, model, year, daily_price, is_available, number_of_doors):
         super().__init__( brand, model, year, daily_price, is_available)
@@ -109,7 +117,6 @@ class Car(Vehicle):
 
     def get_vehicle_type(self):
         return "Car"
-
 
 class Motorcycle(Vehicle):
     def __init__(self, brand, model, year, daily_price, is_available, engine_cc):
@@ -135,11 +142,46 @@ class Motorcycle(Vehicle):
 
     def get_vehicle_type(self):
         return "Motorcycle"
+  
+class Customer:
+    def __init__(self, name, email, customer_id):
+        self.__name = None
+        self.__email = None
+        self.__customer_id = None
+        self.name = name
+        self.email = email
+        self.customer_id = customer_id
 
-    
+    @property
+    def name(self):
+        return self.__name
 
-car = Car('BMW', 'X7', 2022, 100, True, 4)
-motorcycle = Motorcycle('Porch', 'S9', 1990, 20, False, 'turbo')
+    @name.setter
+    def name(self, name):
+        Validator.validate_not_empty(name, "name")
+        self.__name = name 
 
-print(car.get_vehicle_info())
-print(motorcycle.get_vehicle_info())
+    @property
+    def email(self):
+        return self.__email
+
+    @email.setter 
+    def email(self, email):
+        Validator.validate_email(email)
+        self.__email = email
+
+    @property
+    def customer_id(self):
+        return self.__customer_id
+
+    @customer_id.setter
+    def customer_id(self, customer_id):
+        Validator.validate_not_empty(customer_id, "customer_id")
+        self.__customer_id = customer_id
+
+    def get_customer_info(self):
+        return f"Name: {self.name} | Email: {self.email} | Customer-ID: {self.customer_id}"
+
+    def __str__(self):
+        return f"Customer: {self.name} | Customer-ID: {self.customer_id}"
+
