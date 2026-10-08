@@ -151,7 +151,7 @@ Exponetial Distribution PDF
         f_X(x) = λe^(-λx)
         Here:
             ∫ₐᵇ = integral from a to b
-            λ = parameter of the exponential distribution
+            λ = parameter of the exponential distribution 
             e = mathematical constant 2.71828
             x = represents a possible value of the random variable
     example:
