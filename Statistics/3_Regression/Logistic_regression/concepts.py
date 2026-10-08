@@ -18,7 +18,7 @@
 
    4.5 Metrics for Model Evaluation
        - Accuracy 
-       - Balanced Accuracy 
+       - Balanced Accuracy  
        - Precision 
        - Recall
        - F1-score
@@ -160,6 +160,7 @@ General Workflow:
         3.if the relationship is more complicated smooth curve. Apply Spline/GAM
     3.When we can't decide that whether a features has linear relationship or not. Apply Box-Tidwell statistical method
         1.if the evidence is significant. Invistigate shape with Ploynomial/Spline/GAM
+    4.Partial-Effect Plot is used to check what is the shape of fitted model assigning to this feature.
 
 1.Linearity of Independent Variables and Log-Odds
     Independet variables have a linear relationship with the log-odds of the dependent variable.
