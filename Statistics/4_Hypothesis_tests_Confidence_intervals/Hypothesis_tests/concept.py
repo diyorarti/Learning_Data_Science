@@ -178,5 +178,48 @@ The significance level α  is the threshold we choose before the test for decidi
             Caas-2: p = 0.21 → 0.21 > 0.05 → fail to reject H₀
                 there is no enough statictical evidence that the true average is different from 250
 
+    one-tailed and two-tailed connection
+        Suppose  α = 0.05
+        
+        one-tailed test
+            the full 5% goes into one tail 
+        
+        two-tailed test 
+            the 5% is spit: right tail 0.025 and left tail 0.025
+"""
+
+# Test statistic
+"""
+Test Statistic is a number that tells us how far out sample result is from what H₀ expects, mearured relative to the amount of variability in the data.
+    Test statistic = observed difference / expected random variance
+    For one-sample mean: 
+        test statistic = (sample mean - value assumped by H₀) / standard error
+        example Z-test:
+            Z = (x̄ - μ₀) / (σ / √n)
+            x̄ = sample mean
+            μ₀ = mean assumed by H₀
+            σ / √n = standard error
+        example:
+            H₀: μ = 250
+            x̄ = 245 
+            SE = 2
+            Z = (245 - 250) / 2 = -2.5 
+            the sample mean is 2.5 standard errors below the value expected under H₀.
+        The test statistic converts row difference: 245 - 250 = -5 into standardized difference: -2.5
+        because the difference of -5 units may be larger in one data and tiny in another data
+            examples:
+                Case-1: x̄ =245, μ₀=250, SE=10 | x= -5/10 = -0.5
+                Case-2: x̄ =245, μ₀=250, SE=1 | x= -5/1 = -5
     
+    Larger test statistic -> stronger evidence against H₀
+        Suppose: 
+            z = -3.5 | it is far from 0
+            Under H₀, the expected difference is usally: x̄ - μ₀ = 0 
+
+    More extreme test statistic -> smaller p-value -> stronger evidence against H₀
+"""
+
+# Sampling distribution under H₀
+"""
+ 
 """
