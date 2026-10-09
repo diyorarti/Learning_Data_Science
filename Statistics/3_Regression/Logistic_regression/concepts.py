@@ -28,7 +28,7 @@
    5.2 Misinterpreting coefficients
    5.3 Imbalanced dataset
 """
- 
+
 # Logistic Regression Model Overview
 """
 The main purpose of Logistic Regression is to model a binary target variable
@@ -252,7 +252,17 @@ General Workflow:
                 log-odds(p) = β₀ + β₁age + β₂age² -> the Polynomial term allows the relationship to be curved.
                 When nonlinear shape is simple we use Polynomial term, when it is complexer we use Spline
 
-        5. partial-effect plots
+        5. partial-effect plots:
+            What relationship did the fitted model actually learn from each predictor ?
+            This is not primarily used to discover the linearity assumption from scratch. They are more of a post-fit 
+            diagnostic and interpretation tool.
+
+            Partial-effect implementation is different in different predictors.
+                1.Straigt line relationship
+                2.Polynomial term applied predictor
+                3.Spline applied predictor
+                4.GAM applied predictor
+                
             Suppose we have features: age, income, session_minutes
             logit(p) = β₀ + β₁age + β₂income + β₃session
             Now we specifically want to understand:
