@@ -221,5 +221,32 @@ Test Statistic is a number that tells us how far out sample result is from what 
 
 # Sampling distribution under H₀
 """
- 
+The sampling Distribution under H₀ is the distribution of a statisitc we would expect to see if the null hypothesis were ture
+and we repeatedly took many random samples.
+    Suppose: H₀: μ = 250
+        The H₀(null hypothesis) says that the true population is 250.
+        Now if we repeatedly take samples of the the same size: for example - n=100
+        Then calculate each sample mean: x̄₁, x̄₂, x̄₃, ... -> for example: 249.2, 251.1, 250.4, 248.9, 250.8
+        those sample means from a sampling distribution. 
+        Under H₀, that sampling distribution will be centered around μ₀=250.
+        Because: H₀(null hypothesis) is true.
+    
+Why do we need sampling distribution:
+    Suppose: H₀: μ = 250
+        x̄₁ = 249 -> here we can't say: 249 ≠ 250 there reject H₀.
+        Because sample means naturally vary.
+        So instead, we ask: if H₀: μ = 250 were true, how common would a sample mean like 249 be ?
+        The sampling distribution tells us that: 
+            if 249 is very common under H₀, there is little evidence againt H₀.
+            if we observe x̄ = 230 and the values near 230 are extremely rare under the sampling distribution μ = 250,
+            the we have strong evidence against H₀.
+
+Sampling distribution vs Population distribution
+    The population distribution describes indivindual observations. For example: X = amount of coffee in an individual cup.
+    THe sampling distribution deescribes a statistic across many hypotherical samples: X̄ = average amount from a sample cups.
+"""
+
+# Critical value and critical region
+"""
+
 """

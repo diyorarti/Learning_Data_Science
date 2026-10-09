@@ -183,9 +183,9 @@ Normal Distribution PDF
 
 """
 
-# Cumculative Distribution Function
+# Cumulative Distribution Function
 """
-CDF(Cumculative Distribution Function) → discrete and continuous
+CDF(Cumulative Distribution Function) → discrete and continuous
     The probability that a random variable X is less than or equal to a particular value x.
     The formula: F_X(x) = P(X ≤ x) read as the CDF at x is the probability that X is less than or equal to x. 
     F_X(3) = P(X ≤ 3) means that What is the probability that X takes a value of 3 or less?
@@ -197,7 +197,7 @@ CDF(Cumculative Distribution Function) → discrete and continuous
         |   2 |     0.40 |
         |   3 |     0.20 |
         |   4 |     0.10 |
-    we want: F_X(2) = P(X ≤ 2) 
+    we want: F_X(2) = P(X ≤ 2)
         P(X = 0) + P(X = 1) + P(X = 2) = 0.10 + 0.20 + 0.40 = 0.70  F_X(2) = 0.70
         There is a 70% probability that X is 2 or less.
 
