@@ -27,7 +27,7 @@
    5.1 Overfitting 
    5.2 Misinterpreting coefficients
    5.3 Imbalanced dataset
-"""
+""" 
 
 # Logistic Regression Model Overview
 """
@@ -342,7 +342,7 @@ Each observation(row) in the dataset should provide independent information, one
             misleading coefficient significance
     
     Detection methods
-        1.Check for repeated entities / duplicated IDs
+        1.repeated entities / duplicated IDs: Same person/account/entity appearing multiple times
             Example:
                 customer_id   month   visits   spend   churn
                 C1042         Jan       5       300      0
@@ -383,8 +383,7 @@ Each observation(row) in the dataset should provide independent information, one
                     C001          Jan           50             1       0
                     C002          Jan          400             3       1
 
-        2.Check for natural groups or clusters
-            Natural cluster or Natural groups: different people belong to the same group
+        2.Natural groups or clusters: Different observations belonging to the same group
             customer_id   branch_id   age   churn
             C001          B01         25      0
             C002          B01         44      1
@@ -406,14 +405,14 @@ Each observation(row) in the dataset should provide independent information, one
                 3. GEE
                 4. Group-aware training/test splitting
 
-        3.Check time dependence / autocorrelation
+        3.Check time dependence / autocorrelation: 
             This method is relevent when observations have a meaningful time order.
             Suppose we are predicting customer churn every month.
-            customer_id   month   churn:
-            C001          Jan       0
-            C001          Feb       0
-            C001          Mar       1
-            C001          Apr       1
+                customer_id   month   churn:
+                C001          Jan       0
+                C001          Feb       0
+                C001          Mar       1
+                C001          Apr       1
             These rows may not be independent because February comes after January, March comes after February.
             The main idea: an observation at time t may be related to an observation at t-1.
             This relationship is called autocorrelation or serial correlation.
@@ -422,11 +421,11 @@ Each observation(row) in the dataset should provide independent information, one
                 rt = residual at the current time
                 rt-1 = residual from the previous time
  
-        4.Inspect residual dependence 
+        4.Residual dependence: Errors still correlated after model fitting
             Here the main idea: After fitting Logistic Regression, are the remaining errors related across observations ? 
 
 
-        5.Check for spatial dependence
+        5.Check for spatial dependence: Nearby locations behaving similarly
 """
   
 # Absence of multicollinearity
