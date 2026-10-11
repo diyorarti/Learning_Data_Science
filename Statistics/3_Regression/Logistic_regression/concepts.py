@@ -342,46 +342,40 @@ Each observation(row) in the dataset should provide independent information, one
             misleading coefficient significance
     
     Detection methods
-        1.repeated entities / duplicated IDs: Same person/account/entity appearing multiple times
-            Example:
-                customer_id   month   visits   spend   churn
-                C1042         Jan       5       300      0
-                C1042         Apr       1        50      1
-                C1042         May       0         0      1
-                this is not a mistake in the data. The reason for duplication is repeated measurement over time
-            so duplication doesn't mean duplicated ids, it is about duplicated rows, 
-            all values of a row is the same with one ore more than one other rows
-
+        1.repeated entities / duplicated IDs: Same person/account/entity appearing multiple time
             Cases of duplications:
-                1. Exact duplicated rows
+                1.Exact duplicated rows
                     customer_id   age   income   churn
                     C001          30    5000      0
                     C001          30    5000      0
                     Treatment: Droping duplicated rows
-
-                2. Some duplicated columns:
-                    customer_id   month   income   churn
-                    C001          Jan     5000      0
-                    C001          Jan     5200      0
                 
-                3. Repeated entity, but legitimate different observations - same ID, different observations
+                2.Repeated entity
                     customer_id   month   income   churn
                     C001          Jan     5000      0
                     C001          Feb     5100      0
                     C001          Mar     5200      1
-
-            Treamtent:
-                Aggregation 
-                When to use?
-                    Aggregation is useful when multiple rows are legitimate observations at a lower level, 
-                    but model needs one observation at a higher level. For example, we want to predict monthly customer churn.
-                    Desired unit: 1 row = 1 customer in 1 month
-                    but data may look like this:
-                    customer_id   month   purchase_amount   visits   churn
-                    C001          Jan          100             1       0
-                    C001          Jan          250             2       0
-                    C001          Jan           50             1       0
-                    C002          Jan          400             3       1
+                    same customers with different data points
+                    Treatements:
+                        1. Aggregation: if data has multiple lower-level rows, but we want unit of analysis should be higher-level.
+                            example: we want that one row is one customer
+                                customer_id   month   purchase_amount   visits   churn
+                                C001          Jan          100             1       0
+                                C001          Jan          250             2       0
+                                C001          Jan           50             1       0
+                            example: one row = 1 customer for one year
+                                customer_id   month   purchase_amount   visits   churn
+                                C001          Jan     100               1        0
+                                C001          Feb     250               2        0
+                                C001          Mar      50               1        1
+                                it will be:
+                                customer_id   year   total_purchase   total_visits   churn
+                                C001          2026   400              4              1
+                        2. Group-aware train/test splitting:
+                            we should avoid:          it should be: 
+                            TRAIN:  C001 Jan           TRAIN: C001 all observations
+                                    C001 Feb                  C002 all observations
+                            TEST:   C001 Mar           TEST:  C003 all observations
 
         2.Natural groups or clusters: Different observations belonging to the same group
             customer_id   branch_id   age   churn
