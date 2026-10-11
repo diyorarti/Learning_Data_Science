@@ -201,24 +201,16 @@ CDF(Cumulative Distribution Function) → discrete and continuous
         P(X = 0) + P(X = 1) + P(X = 2) = 0.10 + 0.20 + 0.40 = 0.70  F_X(2) = 0.70
         There is a 70% probability that X is 2 or less.
 
-    CDF for → discrete random variable  
-        X = number of heads from two coin tosses
-            | (x) |  PMF |
-            |   0 | 0.25 |
-            |   1 | 0.50 |
-            |   2 | 0.25 |
-        at x = 0  f(0) = P(X ≤ 0) = 0.25
-        at x = 1  f(1) = P(X ≤ 1) + P(X ≤ 0) = 0.50 + 0.25 = 0.75
-        at x = 2  f(2) = P(X ≤ 2) + P(X ≤ 1) + P(X ≤ 0) = 0.25 + 0.50 + 0.25 = 1
+Continuous variable:
+    F_X(x) = ∫₋∞ˣ f_X(t) dt
+    f_X(t) = density
+    F_X(x) = cumulative probability
 
-    CDF for → continuous random variale
-        X = waiting time , where waiting time is uniformly distributed between 0 and 10 munutes 
-        f(x) = 0.1 (density)
-        suppose we want F(4) = P(X ≤ 4)
-        interval withd = 4 - 0 = 4
-        area = 4 * 0.1 = 0.40 
-        So: F(4) = 40%
-        There is a 40% probability that the waiting time is 4 minutes or less.
+
+
+Discreate variable:
+    F_X(x) = Σₜ≤ₓ P(X = t)
+
 """
 
 # Multiple random variables
