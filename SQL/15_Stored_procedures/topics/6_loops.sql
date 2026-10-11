@@ -181,3 +181,57 @@ END IF;
 "
 """
 
+
+-- Loops with parameters
+"""
+Suppose we wnat a procedure that prints numbers from to a value provided by the use:
+"
+CREATE OR REPLACE PROCEDURE print_numbers(
+    p_max_number INTEGER
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_number INTEGER;
+BEGIN
+
+    FOR v_number IN 1..p_max_number LOOP
+
+        RAISE NOTICE 'Number: %', v_number;
+
+    END LOOP;
+
+END;
+$$;
+"
+"""
+
+
+
+-- RECORD 
+"""
+for query-result loops, we often use:  v_order RECORD;
+example:
+"
+CREATE OR REPLACE PROCEDURE show_orders()
+LANGUAGE plpgsql
+AS $$
+DECLARE 
+    v_order RECORD;
+BEGIN 
+    FOR v_order IN 
+        SELECT
+            order_id,
+            order_status
+        FROM orders
+        LIMIT 5
+    LOOP
+        RAISE NOTICE 'Order: %, Status: %',
+        v_order.order_id,
+        v_order.order_status;
+    END LOOP;
+
+END;
+$$;
+"
+"""
