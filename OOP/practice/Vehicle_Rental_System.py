@@ -185,3 +185,19 @@ class Customer:
     def __str__(self):
         return f"Customer: {self.name} | Customer-ID: {self.customer_id}"
 
+class Rental:
+    def __init__(self, days, total_cost, status):
+        self.customer = Customer()
+        self.vehicle = Vehicle()
+        self.days = days
+        self.total_cost = total_cost
+        self.status = status
+
+    def start_rental(self):
+        self.vehicle.is_available == True
+        self.status == 'Active'
+
+    def complete_rental(self):
+        self.vehicle.is_available == False
+        self.status == 'Completed'
+
