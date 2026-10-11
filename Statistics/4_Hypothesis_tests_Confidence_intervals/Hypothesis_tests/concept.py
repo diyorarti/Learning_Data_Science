@@ -248,5 +248,54 @@ Sampling distribution vs Population distribution
 
 # Critical value and critical region
 """
+The critical value and critical region are the boundaries we use to decide whether a test statistic is extreme enough to reject H₀ null hypothesis.
+
+Critical Value: this is a cutoff. 
+    two-tailed Z-test with α = 0.05
+        the critial values are approximately -1.96 and 1.96 (these values are calculated from α=0.05)
+        it means:
+            if -1.96 ≤ z ≤ 1.96 -> Fail to reject H₀
+            if z < -1.96 or z > 1.96 -> Reject H₀
+
+Critical region: this is the are beyond the critical value.
+    two-tailed Z-test with α = 0.05
+        total rejecton area: 0.05
+        we split between both tails: 0.025 + 0.025
+        SO visually:
+            Reject H₀     |    Fail to Reject H₀       |    Reject H₀
+                        -1.96                         1.96
+            to outside areas are the critical regions.
+
+Right-tailed test:
+    Hₐ: μ > 250   
+    α = 0.05
+    the z critical value is approximately: 1.645
+    z > 1.645 -> reject H₀
+    z ≤ 1.645 -> Fail to Reject H₀
+
+
+Left-tailed test:
+    Hₐ: μ < 250 
+    α = 0.05
+    the z critical value is approximately: -1.645
+    z < -1.645 -> reject H₀
+    z ≥ -1.645 -> Fail to Reject H₀
+
+Critical Value Formula:
+    Right-tailed:  z_c = Φ⁻¹(1 - α)
+    Left-tailed:   z_c = Φ⁻¹(α)
+    Two-tailed:    z_c = ±Φ⁻¹(1 - α/2)
+
+    Python imlementation:
+        from scipy.stats import norm
+
+        alpha = 0.6
+        two-tailed test: critical_value = norm.ppf(1 - alpha / 2) -> -critical_value and +critical_value -> -0.524 and +0.524
+        righ-tailed testL critical_value = norm.ppf(1 - alpha) -> -0.253
+        righ-tailed testL critical_value = norm.ppf(alpha) -> 0.253
+"""
+
+# P-value
+"""
 
 """
