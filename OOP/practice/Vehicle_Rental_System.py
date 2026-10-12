@@ -63,7 +63,7 @@ class Vehicle(ABC):
     @year.setter
     def year(self, value):
         Validator.validate_positive_number(value, 'year')
-        self.__year = self.year
+        self.__year = value
 
     @property
     def daily_price(self):
@@ -186,18 +186,38 @@ class Customer:
         return f"Customer: {self.name} | Customer-ID: {self.customer_id}"
 
 class Rental:
-    def __init__(self, days, total_cost, status):
-        self.customer = Customer()
-        self.vehicle = Vehicle()
+    def __init__(self, customer, vehicle, days):
+        self.customer = customer
+        self.vehicle = vehicle
         self.days = days
-        self.total_cost = total_cost
-        self.status = status
+        self.total_cost = 0
+        self.status = 'Pending'
 
     def start_rental(self):
-        self.vehicle.is_available == True
-        self.status == 'Active'
+        self.vehicle.is_available = False
+        self.status = 'Active'
+        self.total_cost = self.vehicle.calculate_rental_cost(
+            self.days
+        )
 
     def complete_rental(self):
-        self.vehicle.is_available == False
-        self.status == 'Completed'
+        self.vehicle.is_available = True
+        self.status = 'Completed'
 
+    def get_rental_info(self):
+        return (
+            f"Customer: {self.customer} |"
+            f"Vehicle: {self.vehicle.model} |"
+            f"Days: {self.days} |"
+            f"Total cost: {self.total_cost} |"
+            f"Status: {self.status} |"
+        )
+
+class RentalCompany:
+    def __init__(self, company_name):
+        self.company_name = company_name
+        self.__vehicles = []
+        self.__customers = []
+        self.__rentals = []
+
+    
