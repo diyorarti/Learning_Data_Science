@@ -377,7 +377,10 @@ Each observation(row) in the dataset should provide independent information, one
                                     C001 Feb                  C002 all observations
                             TEST:   C001 Mar           TEST:  C003 all observations
 
-        2.Natural groups or clusters: Different observations belonging to the same group
+        2.Natural groups or clusters: Different observations belonging to the same group.
+            1. Do the dataset has a meaningful grouping structure ?
+            2. Do observations within those groups appear more similar than observations across groups ?
+
             customer_id   branch_id   age   churn
             C001          B01         25      0
             C002          B01         44      1
@@ -385,8 +388,8 @@ Each observation(row) in the dataset should provide independent information, one
             C004          B02         51      1
             C005          B02         39      1
             here all customers are unique, but customers belong to the same branches.
-            B01 → C001, C002, C003
-            B02 → C004, C005
+                B01 → C001, C002, C003
+                B02 → C004, C005
             customers from one group/brach/team/ share several the same information. For example:
                 same local management
                 same promotions
