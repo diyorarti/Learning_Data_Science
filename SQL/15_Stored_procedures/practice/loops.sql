@@ -35,5 +35,48 @@ Loop through the customer's orders
 
     Calculate payment for the current order
 
+    Get the review score
+
+    Classify each order
+        IF order status = 'canceled'
+            → print "Canceled Order"
+            → increase v_cancelled_orders
+
+        ELSIF order status != 'delivered'
+            → print "Incomplete Order"
+
+        ELSIF order payment >= 300
+            → print "High Value Delivered Order"
+            → increase v_delivered_orders
+            → increase v_high_value_orders
+
+        ELSE
+            → print "Normal Delivered Order"
+            → increase v_delivered_orders
     
+    Print every order inside the loop
+
+    Classify the customer after the loop
+
 """
+
+CREATE OR REPLACE PROCEDURE customer_order_activity_report(
+    p_customer_id VARCHAR(50),
+    p_start_date TIMESTAMP,
+    p_end_date TIMESTAMP
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE 
+    v_total_orders BIGINT :=0;
+    v_delivered_order BIGINT :=0;
+    v_cancelled_orders BIGINT :=0;
+    v_high_value_orders BIGINT :=0;
+    v_total_spent NUMERIC(12, 2) := 0;
+    v_customer_level TEXT;
+    v_order_payment NUMERIC(12, 2);
+    v_review_score NUMERIC;
+    v_order RECORD;
+
+BEGIN 
+    
