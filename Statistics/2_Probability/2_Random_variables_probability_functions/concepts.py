@@ -206,8 +206,6 @@ Continuous variable:
     f_X(t) = density
     F_X(x) = cumulative probability
 
-
-
 Discreate variable:
     F_X(x) = Σₜ≤ₓ P(X = t)
 
@@ -262,7 +260,7 @@ Multilple random variable means we define two or more random variables on the sa
                 Total = 50 customers
                 P(X = 2) = 50 / 100 - 0.50
     
-    Conditional(the same with Probability Laws CP) Porbability
+    Conditional Porbability(the same with Probability Laws CP) 
 
     Independent (the same with Laws of proability indepdent events)
 
