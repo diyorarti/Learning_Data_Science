@@ -290,12 +290,54 @@ Critical Value Formula:
         from scipy.stats import norm
 
         alpha = 0.6
-        two-tailed test: critical_value = norm.ppf(1 - alpha / 2) -> -critical_value and +critical_value -> -0.524 and +0.524
+        two-tailed test: critical_value = norm.ppf(1 - alpha / 2) -> -0.524 and +0.524
         righ-tailed testL critical_value = norm.ppf(1 - alpha) -> -0.253
         righ-tailed testL critical_value = norm.ppf(alpha) -> 0.253
 """
 
 # P-value
+"""
+The p-value tells us how unusual our observed test statistic would be if the null hypothesis H₀ were true.
+    smaller p-value -> stronger evidence against H₀
+
+    Case 1
+        α = 0.05
+        p = 0.02
+        since 0.02 < 0.05 -> reject H₀
+        there is enough statistical evidence against H₀
+
+    Case 2
+        α = 0.05
+        p = 0.30
+        since 0.30 > 0.05 -> fail to reject H₀
+        there is not enough statistical evidence against H₀
+
+Where does the p-value come from ?
+    it comes from the sampling distribution under H₀
+    suppose we have a Z-test and calculate: 
+        z=2.0
+        α = 0.05
+        Right-tailed test: 
+            p = P(Z ≥ 2.0) -> approximately: p=0.0228
+            in Python: 
+                from scipy.stats import norm
+                p_value = 1 - norm.cdf(z) output:0.0228
+            0.0228 < 0.05 -> reject H₀
+
+        Left-tailed test:
+            p = P(Z ≤ -2)
+            in Python:
+                p_value = norm.cdf(z) output:0.0228
+            0.0228 < 0.05 -> reject H₀
+
+        Two-tailed test:
+            p = 2P(Z ≥ 2) 
+            in Python:
+                p_value = 2 * (1 - norm.cdf(abs(z))) output: 0.0456
+            0.0456 < 0.05 -> reject H₀
+"""
+
+# 
 """
 
 """
