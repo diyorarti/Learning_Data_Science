@@ -380,7 +380,7 @@ Each observation(row) in the dataset should provide independent information, one
         2.Natural groups or clusters: Different observations belonging to the same group.
             1. Do the dataset has a meaningful grouping structure ?
             2. Do observations within those groups appear more similar than observations across groups ?
-
+ 
             customer_id   branch_id   age   churn
             C001          B01         25      0
             C002          B01         44      1
@@ -403,6 +403,8 @@ Each observation(row) in the dataset should provide independent information, one
                 4. Group-aware training/test splitting
 
         3.Check time dependence / autocorrelation: 
+            1. Does the dataset have a meaningful time order?
+            2. Do observations close together in time appear more related than observations farther apart?
             This method is relevent when observations have a meaningful time order.
             Suppose we are predicting customer churn every month.
                 customer_id   month   churn:
