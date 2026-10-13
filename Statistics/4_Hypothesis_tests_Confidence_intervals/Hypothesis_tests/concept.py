@@ -7,13 +7,22 @@
 6.Sampling distribution under H₀
 7.Critical value and critical region
 8.P-value
-9.Reject vs fail to reject H₀
-10.Type I and Type II errors
-11.Choosing the correct statistical test:
+9.Type I and Type II errors
+10.Choosing the correct statistical test:
         Z-test
+            one-sample Z-test
+            two-sample Z-test
+            one-proportion Z-test
+            two-proportion Z-test
         T-tests
+            one-sample t-test
+            independent two-sample t-test
+            paired t-test
         Chi-square tests
+            goodness-of-fit
+            test of independence
         ANOVA
+            start with one-way ANOVA
 12.Full practical hypothesis-test design in Python
 """
 
@@ -337,7 +346,39 @@ Where does the p-value come from ?
             0.0456 < 0.05 -> reject H₀
 """
 
-# 
+# Type I and Type II errors
+"""
+Type I and Type II errors are the two possible mistakes we can make when deciding whether to reject H₀
+Table:
+    | Reality  | Your decision     | Result       | 
+    | H₀ true  | Fail to reject H₀ | Correct      | TP
+    | H₀ true  | Reject H₀         | Type I error | FP
+    | H₀ false | Reject H₀         | Correct      | TN
+    | H₀ false | Fail to reject H₀ | Type II error| FN
+
 """
 
+# Choosing the correct statistical test:
+"""
+Choosing the correct statistical test:
+    Questions: 
+        1.What am I comparing ?
+        2.How many groups/samples ?
+        3.Numerical or categorical ?
+        4.Independent or paired ?
+
+"""
+
+# Z-test
+"""
+Z-test is a hypothesis test used when we want to compare an observed sample result with what H₀ claims, 
+and test follows the standard normal distribution. 
+Formula: Z = (observed result - value expected under H₀) / standard error
+    in words: how many standard error awa is the observed result from what H₀ predicts ?
+    Example:
+        A company claims:  H₀:μ = 250
+        Sample: x̄ = 246
+        Suppose: σ = 20 | n = 100
+        Standard Error: SE = σ / √n = 20 / √100 = 2
+        Z-test: Z = (246 - 250) / 2 = -4 / 2 = -2
 """
