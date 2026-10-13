@@ -24,6 +24,12 @@ class Validator:
         if not re.match(email_pattern, email):
             raise ValueError("Invalid email format")
 
+
+    @staticmethod
+    def validate_instance(obj, class_type, field_name):
+        if not isinstance(obj, class_type):
+            raise TypeError(f"{field_name} must be an instance of {class_type.__name__}")
+
 class Vehicle(ABC):
     def __init__(self, brand, model, year, daily_price, is_available):
         self.__brand = None
@@ -219,5 +225,44 @@ class RentalCompany:
         self.__vehicles = []
         self.__customers = []
         self.__rentals = []
+
+    def add_vehicle(self, vehicle):
+        Validator.validate_instance(vehicle, Vehicle, 'vehicle')
+        self.__vehicles.append(vehicle)
+
+    def add_customers(self, customer):
+        Validator.validate_instance(customer, Customer, 'customer')
+        self.__customers.append(customer)
+
+    def find_vehicle(self, brand, model):
+        for vehicle in self.__vehicles:
+            if brand == vehicle.brand and model == vehicle.model:
+                return vehicle
+            else:
+                return "Not availabe this vehicle"
+
+    def show_available_vehicles(self):
+        total_count = 0
+        for vehicle in self.__vehicles:
+            if vehicle.__is_available == True:
+                total_count += 1
+                return vehicle
+
+        return total_count
+
+    def rent_vehicle(self, rental):
+        Validator.validate_instance(rental, Rental, 'rental')
+        self.__rentals.append(rental)
+
+    def show_all_rentals(self):
+        for rental in self.__rentals:
+            return f"Rental name: {rental.customer.name} | Vehicle: {rental.vehicle.brand} | Model: {rental.vehicle.model}| Days: {rental.days}"
+
+    def get_comany_summary(self):
+        total_available_vehicles = self.show_available_vehicles()
+        return f"Company name: {self.company_name} | Vehicles: {len(self.__vehicles)} | Available Vehicles: {total_available_vehicles} | Customers: {len(self.__customers)} | Rentals: {len(self.__rentals)}"
+
+    def __str__(self):
+        pass
 
     
