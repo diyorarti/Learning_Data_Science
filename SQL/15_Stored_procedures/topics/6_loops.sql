@@ -9,7 +9,7 @@ Loop:
     looping through query results
 """
 
--- basic LOOP
+--1 basic LOOP
 """
 The basic PostgreSQL PL/pgSQL syntax
 "
@@ -48,7 +48,7 @@ this loop stops when number > 5
 """
 
 
--- WHILE loop
+--2. WHILE loop
 """
 WHILE loop repeats while a condition is true.
 Syntax
@@ -98,7 +98,7 @@ END LOOP;
 """
 
 
--- FOR loop
+--3. FOR loop
 """
 FOR loop is very useful when we know the range in advance.
 "

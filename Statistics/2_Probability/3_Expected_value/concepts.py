@@ -19,10 +19,10 @@ Expected value
         E[X] = Σₓ xP(X = x)
     
     Example: Rolling a die
-        X = number obtained when rolling a fair die
+        X = number obtained when rolling a six-sided fair die
         Possible values: X ∈ {1, 2, 3, 4, 5, 6}
         Each value has prob: P(X = x) = 1 / 6 = 0.16
-        Expected value = multiplied each possible value bu it's probability and add everything
+        Expected value = multiplied each possible value, it's probability and add everything
             E[X] = 1 * (1 / 6) + 2 * (1 / 6) + 3 * (1 / 6) + 4 * (1 / 6) + 5 * (1 / 6) + 6 * (1 / 6) = 3.5
         What does E[X] = 3.5 means:
             It means that suppose rolling a die 100,000 times and calculating: sum of all results / 100,000 = result should be close to 3.5
@@ -165,18 +165,16 @@ Expected value of a transformation
 
     if X and Y are dependent 
         E[XY] ≠ E[X] * E[Y]
-        example:
-            So for every observation, multiplying the value of X by the value of Y
-            | (X) | (Y) | (XY) | 
-            |   1 |   2 |    2 |
-            |   2 |   3 |    6 |
-            |   3 |   4 |   12 |
-            E[X] = 2
-            E[Y] = 3
-            E[XY] = ? 
-            assuming all observations have equal probabilities
-            E[XY] = (2 + 6 + 12) / 3 = 6.67
-            E[XY] = E[X] * E[Y] = 2 * 3 = 6 
+        Example:
+            X = [1, 2, 3, 4, 5, 6]
+            Y = [4, 6, 8, 10, 12, 14]
+            here: Y = 2 * X + 2
+            Z = X * Y = [4, 12, 24, 40, 60, 84]
+            E[X] = 3.5
+            E[Y] = 9
+            E[Y] = 37.33
+            E[Z] ≠ E[X] * E[Y] -> 37.33 ≠ 3.5 * 9
+
 
 """ 
 
@@ -202,7 +200,7 @@ Variance tells us:
                 4 - 5 = -1
                 5 - 5 = 0
                 6 - 5 = 1
-            sqaure of the dbiations: -1² + 0² + 1² = 2
+            sqaure of the deviations: -1² + 0² + 1² = 2
             Var(X) = 1 * (1 / 3) + 0 * (1 / 3) + 1 * (1 / 3) = 2 / 3 = 0.667
 
         Another example:
@@ -238,8 +236,8 @@ Variance tells us:
 """
 Standard Deviation: SD = √Var(X)
     SD measures how far the values of random variable typically spread awawy from its expected value (mean).
-        E[X] = center / mean
-        Var(X) = spread around the center, squared
+        E[X] = center/mean
+        Var(X) = spread around the center in square
         SD(X) = spread around the center in the original unit
     Formula:
         SD(X) = √E[(X - E[X])²]

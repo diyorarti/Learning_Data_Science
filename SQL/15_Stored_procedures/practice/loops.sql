@@ -74,9 +74,56 @@ DECLARE
     v_high_value_orders BIGINT :=0;
     v_total_spent NUMERIC(12, 2) := 0;
     v_customer_level TEXT;
+
     v_order_payment NUMERIC(12, 2);
-    v_review_score NUMERIC;
+    v_review_score NUMERIC; 
     v_order RECORD;
 
 BEGIN 
+
+    SELECT
+        order_id
+    INTO 
+        v_order
+    FROM orders
+    WHERE customer_id = p_customer_id
+      AND order_purchase_time_stamp = p_start_date
+      AND order_estimated_delivery_date = p_end_date
+
+    LOOP 
+        -- increasing total order count
+        v_total_orders := v_total_orders + 1
+
+        -- get payment for current order
+        SELECT 
+            SUM(payment_value)
+        INTO 
+            v_order_payment
+        FROM order_payments 
+        WHERE order_id = v_order;
+
+        -- Hanling Null payment value
+        IF v_order_payment = 'NULL' THEN 
+            v_order_payment := 0;
+        ELSE:
+            v_order_payment := v_order_payment;
+        END IF;
+
+        -- getting review score
+        SELECT
+            AVG(review_score)
+        INTO 
+            v_review_score
+        FROM order_reviews
+        WHERE order_id = v_order
+
+    END LOOP;
+
+    
+
+        
+
+
+
+
     
