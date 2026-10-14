@@ -1,0 +1,34 @@
+ANSWER KEY — OPEN ONLY AFTER YOU FINISH
+
+Case 1:
+n = 120
+sample mean = 246.7750
+known sigma = 12
+observed z = -2.9440
+Test type: one-sample mean Z-test, two-tailed.
+
+Case 2:
+n_A = 100
+n_B = 100
+mean_A = 71.9097
+mean_B = 74.2679
+known sigma_A = 10
+known sigma_B = 12
+observed z = -1.5097
+Test type: two-sample mean Z-test, two-tailed.
+
+Case 3:
+n = 300
+sample proportion = 0.3867
+p0 = 0.30
+observed z = 3.2757
+Test type: one-proportion Z-test, right-tailed.
+
+Case 4:
+n_A = 250
+n_B = 250
+p_hat_A = 0.2720
+p_hat_B = 0.3640
+pooled proportion = 0.3180
+observed z = -2.2087
+Test type: two-proportion Z-test, two-tailed.

@@ -381,4 +381,49 @@ Formula: Z = (observed result - value expected under H₀) / standard error
         Suppose: σ = 20 | n = 100
         Standard Error: SE = σ / √n = 20 / √100 = 2
         Z-test: Z = (246 - 250) / 2 = -4 / 2 = -2
+        The observed sample mean is 2 standard errors below the mean predicted by H₀
+
+    One-Sample Z-test for a mean
+        when to use:
+            1.You have one sample
+            2.outcome is numerical
+            3.you compare the sample mean with a pypothesized population mean
+            4.population standard deviation σ is known
+        Example:
+            company claims that the average bottle volume 500:
+            H₀: μ = 500 
+            Hₐ: μ ≠ 500 
+            Z = (x̄ - μ) / (σ / √n)
+    
+    Two-sample Z-test for means
+        When to use:
+            1.you have two independet groups
+            2.outcome is numerical
+            3.you compare their population means
+            4.population stadard deviations are known
+        Example:
+            is average salary different between Company A and Company B ?
+            H₀: μ_A = μ_B
+            Hₐ: μ_A ≠ μ_B
+            the idea is: Observed difference = x̄_A - x̄_B 
+
+    One-proportion Z-test:
+        Use when testing a proportion
+        example:
+            Suppose historically: p0 = 0.10
+            Sample convertion rate: p̂ = 0.13
+            is the true conversion rate different from 0.10(10%)?
+                H₀: p = 0.10
+                Hₐ: p ≠ 0.10
+
+    Two-proportion Z-test:
+        Use when comparing two proportions
+        Example:
+            Version_A and Version_B
+            p̂_A = 0.10
+            p̂_B = 0.13
+            are the conversion rates different ?
+                H₀: p_A = p_B
+                Hₐ: p_A ≠ p_B
+
 """
