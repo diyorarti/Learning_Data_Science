@@ -263,6 +263,24 @@ class RentalCompany:
         return f"Company name: {self.company_name} | Vehicles: {len(self.__vehicles)} | Available Vehicles: {total_available_vehicles} | Customers: {len(self.__customers)} | Rentals: {len(self.__rentals)}"
 
     def __str__(self):
-        pass
+        return f"Company name: {self.company_name} | Vehicles: {len(self.__vehicles)} | Available Vehicles: {total_available_vehicles} | Customers: {len(self.__customers)} | Rentals: {len(self.__rentals)}"
 
-    
+    def __repr__(self):
+        return f"Car({self.__vehicles.brand!r}, {self.__vehicles.model!r}, {self.__vehicles.year!r}, {self.__vehicles.daily_price!r})"
+
+    def __eq__(self, value):
+        if not isinstance(value, Vehicle):
+            return False
+        return (
+            self.__vehicles.brand == value.__vehicles.brand and 
+            self.__vehicles.model == value.__vehicles.model and 
+            self.__vehicles.year == value.__vehicles.year
+                )
+
+    def __len__(self):
+        return len(self.__vehicles)
+
+    def __contains__(self, item):
+        return item in self.__vehicles
+
+
