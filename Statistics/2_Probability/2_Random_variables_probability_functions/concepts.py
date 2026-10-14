@@ -244,7 +244,7 @@ Multilple random variable means we define two or more random variables on the sa
 
     Marginal (not the same as Union) probability/distribution
         Marginal means looking at one random variable by itself, ignoring the other random variables
-        Example:
+        Example: 
             X = num of purchases
             Y = coupon usage
             Assume 100 customers

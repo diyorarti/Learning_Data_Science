@@ -151,7 +151,7 @@ the next random event occurs, when events happen independetly at a constant aver
             P(10 ≤ X ≤ 20) = np.exp(-λ * 10) - np.exp(-λ * 20)
         
 """
-
+ 
 # Uniform Distribution
 """
 A uniform distribution is a continuous probability distribution where all values are within a specified range are equally likely.
@@ -198,6 +198,8 @@ A uniform distribution is a continuous probability distribution where all values
 
     Variance:
         Var(X) = ((b - a) ** 2) / 12
+
+    Standard Deviation: Std = √var
 
     PDF (Probability Density Function)
         denstiy = 1 / (b - a)
