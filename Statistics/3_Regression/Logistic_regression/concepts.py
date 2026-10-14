@@ -356,31 +356,11 @@ Each observation(row) in the dataset should provide independent information, one
                     C001          Feb     5100      0
                     C001          Mar     5200      1
                     same customers with different data points
-                    Treatements:
-                        1. Aggregation: if data has multiple lower-level rows, but we want unit of analysis should be higher-level.
-                            example: we want that one row is one customer
-                                customer_id   month   purchase_amount   visits   churn
-                                C001          Jan          100             1       0
-                                C001          Jan          250             2       0
-                                C001          Jan           50             1       0
-                            example: one row = 1 customer for one year
-                                customer_id   month   purchase_amount   visits   churn
-                                C001          Jan     100               1        0
-                                C001          Feb     250               2        0
-                                C001          Mar      50               1        1
-                                it will be:
-                                customer_id   year   total_purchase   total_visits   churn
-                                C001          2026   400              4              1
-                        2. Group-aware train/test splitting:
-                            we should avoid:          it should be: 
-                            TRAIN:  C001 Jan           TRAIN: C001 all observations
-                                    C001 Feb                  C002 all observations
-                            TEST:   C001 Mar           TEST:  C003 all observations
 
         2.Natural groups or clusters: Different observations belonging to the same group.
             1. Do the dataset has a meaningful grouping structure ?
             2. Do observations within those groups appear more similar than observations across groups ?
- 
+  
             customer_id   branch_id   age   churn
             C001          B01         25      0
             C002          B01         44      1
@@ -396,11 +376,6 @@ Each observation(row) in the dataset should provide independent information, one
                 same service quality
                 sam geographic area
             For treating understanding the data is very important.
-            Methods:
-                1. Cluster-robutest standard errors
-                2. Mixed-effect Logistic Regression
-                3. GEE
-                4. Group-aware training/test splitting
 
         3.Check time dependence / autocorrelation: 
             1. Does the dataset have a meaningful time order?
@@ -415,16 +390,58 @@ Each observation(row) in the dataset should provide independent information, one
             These rows may not be independent because February comes after January, March comes after February.
             The main idea: an observation at time t may be related to an observation at t-1.
             This relationship is called autocorrelation or serial correlation.
-            Mathematically, lag-1 autocrrelation asks about 
-                Corr(rt, rt-1)
-                rt = residual at the current time
-                rt-1 = residual from the previous time
+            Autocorrelation:
+                it measures does preview time data effect to data nearby.
+                lag 1 -> how far back in time we compare.
+                lag 2 -> current value vs value two periods earlier
  
         4.Residual dependence: Errors still correlated after model fitting
             Here the main idea: After fitting Logistic Regression, are the remaining errors related across observations ? 
 
 
         5.Check for spatial dependence: Nearby locations behaving similarly
+
+        Treatment Methods:
+            1. Aggregation: if data has multiple lower-level rows, but we want unit of analysis should be higher-level.
+                example: we want that one row is one customer
+                    customer_id   month   purchase_amount   visits   churn
+                    C001          Jan          100             1       0
+                    C001          Jan          250             2       0
+                    C001          Jan           50             1       0
+                example: one row = 1 customer for one year
+                    customer_id   month   purchase_amount   visits   churn
+                    C001          Jan     100               1        0
+                    C001          Feb     250               2        0
+                    C001          Mar      50               1        1
+                    it will be:
+                    customer_id   year   total_purchase   total_visits   churn
+                    C001          2026   400              4              1
+            2. Group-aware train/test splitting:
+                we should avoid:          it should be: 
+                TRAIN:  C001 Jan           TRAIN: C001 all observations
+                        C001 Feb                  C002 all observations
+                TEST:   C001 Mar           TEST:  C003 all observations
+
+RAW DATA
+   ↓
+1. Repeated entities / duplicate rows
+   ↓
+2. Natural groups / clusters
+   ↓
+3. Time dependence / autocorrelation
+   ↓
+5. Spatial dependence
+   ↓
+Review ALL structural dependence found
+   ↓
+Choose an appropriate treatment / validation strategy
+   ↓
+Train model
+   ↓
+4. Check residual dependence
+   ↓
+If residual dependence remains:
+modify treatment/model → refit → check again
 """
   
 # Absence of multicollinearity
