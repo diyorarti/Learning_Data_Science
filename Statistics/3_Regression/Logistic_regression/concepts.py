@@ -332,7 +332,6 @@ Each observation(row) in the dataset should provide independent information, one
         | A        | Feb   |         1 |
         | A        | Mar   |         0 |
         These three rows are not fully independent because they all belong to the same customer.
-
     Why is this problem ?
         SLG assumes each row contributes independent evidence to the likelihood.
         THis cause to:
@@ -394,12 +393,24 @@ Each observation(row) in the dataset should provide independent information, one
                 it measures does preview time data effect to data nearby.
                 lag 1 -> how far back in time we compare.
                 lag 2 -> current value vs value two periods earlier
+
+        4.Check for spatial dependence: Nearby locations behaving similarly
+            1.Does the dataset contain meaningful spatial information?
+                Meaningful columns:
+                    latitude
+                    longitude
+                    postcode
+                    neighborhood
+                    city
+                    district
+                    region
+                    coordinates
+            2.Are geographically nearby observations more similar than geographically distant observations?
  
-        4.Residual dependence: Errors still correlated after model fitting
+        5.Residual dependence: Errors still correlated after model fitting
             Here the main idea: After fitting Logistic Regression, are the remaining errors related across observations ? 
 
 
-        5.Check for spatial dependence: Nearby locations behaving similarly
 
         Treatment Methods:
             1. Aggregation: if data has multiple lower-level rows, but we want unit of analysis should be higher-level.
