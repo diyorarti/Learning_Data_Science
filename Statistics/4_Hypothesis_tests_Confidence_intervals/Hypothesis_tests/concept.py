@@ -290,7 +290,7 @@ Left-tailed test:
     z < -1.645 -> reject H₀
     z ≥ -1.645 -> Fail to Reject H₀
 
-Critical Value Formula:
+Critical(α) Value Formula (Conveting significance level α scale to observed value scale):
     Right-tailed:  z_c = Φ⁻¹(1 - α)
     Left-tailed:   z_c = Φ⁻¹(α)
     Two-tailed:    z_c = ±Φ⁻¹(1 - α/2)
@@ -299,9 +299,23 @@ Critical Value Formula:
         from scipy.stats import norm
 
         alpha = 0.6
-        two-tailed test: critical_value = norm.ppf(1 - alpha / 2) -> -0.524 and +0.524
-        righ-tailed testL critical_value = norm.ppf(1 - alpha) -> -0.253
-        righ-tailed testL critical_value = norm.ppf(alpha) -> 0.253
+        two-tailed test:  critical_value = norm.ppf(1 - alpha / 2) -> -0.524 and +0.524
+        righ-tailed test: critical_value = norm.ppf(1 - alpha) -> -0.253
+        righ-tailed test: critical_value = norm.ppf(alpha) -> 0.253
+
+Conveting observed value scale to p-value(significance level scale)
+    Right-tailed: p = 1 - Φ(z_obs)
+    Left-tailed:  p = Φ(z_obs)
+    Two-tailed:   p = 2 (1 - Φ(|z_obs|))
+
+    Python implementation:
+        from scipy.stats import norm
+        
+        z = 2.0
+        Right-tailed: p_right = 1 - norm.cdf(z)
+        Left-taile:   p_left = norm.cdf(z)
+        Two-taile:    p_two = 2 * (1 - norm.cdf(abs(z)))
+
 """
 
 # P-value
@@ -371,6 +385,7 @@ Choosing the correct statistical test:
 
 # Z-test
 """
+
 Z-test is a hypothesis test used when we want to compare an observed sample result with what H₀ claims, 
 and test follows the standard normal distribution. 
 Formula: Z = (observed result - value expected under H₀) / standard error
@@ -381,7 +396,7 @@ Formula: Z = (observed result - value expected under H₀) / standard error
         Suppose: σ = 20 | n = 100
         Standard Error: SE = σ / √n = 20 / √100 = 2
         Z-test: Z = (246 - 250) / 2 = -4 / 2 = -2
-        The observed sample mean is 2 standard errors below the mean predicted by H₀
+        The observed sample mean is 2 standard errors below the mean predicted by H₀ 
 
     One-Sample Z-test for a mean
         when to use:
