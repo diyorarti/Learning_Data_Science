@@ -411,7 +411,6 @@ Each observation(row) in the dataset should provide independent information, one
             Here the main idea: After fitting Logistic Regression, are the remaining errors related across observations ? 
 
 
-
         Treatment Methods:
             1. Aggregation: if data has multiple lower-level rows, but we want unit of analysis should be higher-level.
                 example: we want that one row is one customer
@@ -432,6 +431,10 @@ Each observation(row) in the dataset should provide independent information, one
                 TRAIN:  C001 Jan           TRAIN: C001 all observations
                         C001 Feb                  C002 all observations
                 TEST:   C001 Mar           TEST:  C003 all observations
+
+            3. Time-based splitting 
+
+            4. Adding relevant group/time features
 
 RAW DATA
    ↓
