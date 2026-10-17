@@ -94,10 +94,14 @@ class Vehicle(ABC):
         return f"Brad: {self.brand} |Model: {self.model} |Year {self.year} |Daily Price: {self.daily_price} |Available: {self.is_available}"
 
     def rent(self):
-        return f"{self.model} is renking"
+        if not self.is_available:
+            raise ValueError(f"{self.model} is already rented")
+        self.is_available = False
 
     def return_vehicle(self):
-        return f"{self.model} is returning"
+        if self.is_available:
+            raise ValueError(F"{self.model} is already available")
+        self.is_available = True
 
     @abstractmethod
     def calculate_rental_cost(self, days):
@@ -119,6 +123,8 @@ class Car(Vehicle):
         self.__number_of_doors = value
 
     def calculate_rental_cost(self, days):
+        if days <= 0:
+            Validator.validate_positive_number(days, 'Days')
         return self.daily_price * days
 
     def get_vehicle_type(self):
@@ -136,10 +142,12 @@ class Motorcycle(Vehicle):
 
     @engine_cc.setter
     def engine_cc(self, value):
-        Validator.validate_not_empty(value, 'engine_cc')
+        Validator.validate_positive_number(value, 'engine_cc')
         self.__engine_cc = value
 
     def calculate_rental_cost(self, days):
+        if days <= 0:
+            Validator.validate_positive_number(days, "days")
         if days >= 7:
             total_praice = self.daily_price * days 
             return total_praice - (10 / 100 * total_praice)
@@ -193,6 +201,20 @@ class Customer:
 
 class Rental:
     def __init__(self, customer, vehicle, days):
+        Validator.validate_instance(
+            customer,
+            Customer,
+            'customer'
+        )
+        Validator.validate_instance(
+            vehicle,
+            Vehicle,
+            'vehicle'
+        )
+        Validator.validate_positive_number(
+            days,
+            'days'
+        )
         self.customer = customer
         self.vehicle = vehicle
         self.days = days
@@ -200,14 +222,15 @@ class Rental:
         self.status = 'Pending'
 
     def start_rental(self):
-        self.vehicle.is_available = False
+        self.vehicle.rent()
+
         self.status = 'Active'
         self.total_cost = self.vehicle.calculate_rental_cost(
             self.days
         )
 
     def complete_rental(self):
-        self.vehicle.is_available = True
+        self.vehicle.return_vehicle()
         self.status = 'Completed'
 
     def get_rental_info(self):
@@ -282,5 +305,4 @@ class RentalCompany:
 
     def __contains__(self, item):
         return item in self.__vehicles
-
 
