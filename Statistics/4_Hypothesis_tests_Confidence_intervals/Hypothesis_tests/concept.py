@@ -19,7 +19,7 @@
             independent two-sample t-test
             paired t-test
         Chi-square tests
-            goodness-of-fit
+            goodness-of-fit 
             test of independence
         ANOVA
             start with one-way ANOVA
@@ -301,20 +301,7 @@ Critical(α) Value Formula (Conveting significance level α scale to observed va
         alpha = 0.6
         two-tailed test:  critical_value = norm.ppf(1 - alpha / 2) -> -0.524 and +0.524
         righ-tailed test: critical_value = norm.ppf(1 - alpha) -> -0.253
-        righ-tailed test: critical_value = norm.ppf(alpha) -> 0.253
-
-Conveting observed value scale to p-value(significance level scale)
-    Right-tailed: p = 1 - Φ(z_obs)
-    Left-tailed:  p = Φ(z_obs)
-    Two-tailed:   p = 2 (1 - Φ(|z_obs|))
-
-    Python implementation:
-        from scipy.stats import norm
-        
-        z = 2.0
-        Right-tailed: p_right = 1 - norm.cdf(z)
-        Left-taile:   p_left = norm.cdf(z)
-        Two-taile:    p_two = 2 * (1 - norm.cdf(abs(z)))
+        left-tailed test: critical_value = norm.ppf(alpha) -> 0.253
 
 """
 
@@ -340,24 +327,23 @@ Where does the p-value come from ?
     suppose we have a Z-test and calculate: 
         z=2.0
         α = 0.05
+        Two-tailed test:
+            p = 2P(Z ≥ 2) 
+            in Python:
+                p_value = 2 * (1 - norm.cdf(abs(z))) output: 0.0456
+
         Right-tailed test: 
             p = P(Z ≥ 2.0) -> approximately: p=0.0228
             in Python: 
                 from scipy.stats import norm
                 p_value = 1 - norm.cdf(z) output:0.0228
-            0.0228 < 0.05 -> reject H₀
+                0.0228 < 0.05 -> reject H₀
 
         Left-tailed test:
             p = P(Z ≤ -2)
             in Python:
                 p_value = norm.cdf(z) output:0.0228
-            0.0228 < 0.05 -> reject H₀
-
-        Two-tailed test:
-            p = 2P(Z ≥ 2) 
-            in Python:
-                p_value = 2 * (1 - norm.cdf(abs(z))) output: 0.0456
-            0.0456 < 0.05 -> reject H₀
+                0.0228 < 0.05 -> reject H₀
 """
 
 # Type I and Type II errors
