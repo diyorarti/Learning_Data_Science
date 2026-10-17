@@ -53,9 +53,10 @@ this loop stops when number > 5
 WHILE loop repeats while a condition is true.
 Syntax
 "
-WHILE condition LOOP
-    statement;
-END LOOP;
+WHILE condition 
+    LOOP
+        statement;
+    END LOOP;
 "
 example
 "
@@ -66,13 +67,11 @@ DECLARE
     v_number INTEGER := 1;
 BEGIN
 
-    WHILE v_number <= 5 LOOP
-
-        RAISE NOTICE 'Number: %', v_number;
-
-        v_number := v_number + 1;
-
-    END LOOP;
+    WHILE v_number <= 5 
+        LOOP
+            RAISE NOTICE 'Number: %', v_number;
+            v_number := v_number + 1;
+        END LOOP;
 
 END;
 $$;
@@ -91,9 +90,10 @@ END LOOP;
 
 WHILE loop: Use WHILE when the stopping condition is simple and clear.
 "
-WHILE condition LOOP
-    ...
-END LOOP;
+WHILE condition 
+    LOOP
+        ...
+    END LOOP;
 "
 """
 
@@ -109,11 +109,10 @@ DECLARE
     v_number INTEGER;
 BEGIN
 
-    FOR v_number IN 1..5 LOOP
-
-        RAISE NOTICE 'Number: %', v_number;
-
-    END LOOP;
+    FOR v_number IN 1..5 
+        LOOP
+            RAISE NOTICE 'Number: %', v_number;
+        END LOOP;
 
 END;
 $$;
@@ -130,11 +129,10 @@ output:
 -- REVERSE with FOR loop
 """
 "
-FOR v_number IN REVERSE 5..1 LOOP
-
-    RAISE NOTICE 'Number: %', v_number;
-
-END LOOP;
+FOR v_number IN REVERSE 5..1 
+    LOOP
+        RAISE NOTICE 'Number: %', v_number;
+    END LOOP;
 "
 ouput:
 5
@@ -149,15 +147,13 @@ ouput:
 """
 CONTINUE skips the rest of the current iteration and moves to the next one.
 "
-FOR v_number IN 1..5 LOOP
-
-    IF v_number = 3 THEN
-        CONTINUE;
-    END IF;
-
-    RAISE NOTICE 'Number: %', v_number;
-
-END LOOP;
+FOR v_number IN 1..5 
+    LOOP
+        IF v_number = 3 THEN
+            CONTINUE;
+        END IF;
+        RAISE NOTICE 'Number: %', v_number;
+    END LOOP;
 "
 output:
 1

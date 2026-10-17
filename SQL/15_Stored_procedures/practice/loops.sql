@@ -17,7 +17,7 @@ Variables:
     v_customer_level TEXT;
 
     v_order_payment NUMERIC(12, 2);
-    v_review_score NUMERIC;
+    v_review_score NUMERIC; 
     v_order RECORD;
 
 Loop through the customer's orders
@@ -68,11 +68,12 @@ CREATE OR REPLACE PROCEDURE customer_order_activity_report(
 LANGUAGE plpgsql
 AS $$
 DECLARE 
-    v_total_orders BIGINT :=0;
-    v_cancelled_orders BIGINT :=0;
-    v_delivered_order BIGINT :=0;
-    v_high_value_orders BIGINT :=0;
+    v_total_orders BIGINT := 0;
+    v_cancelled_orders BIGINT := 0;
+    v_delivered_order BIGINT := 0;
+    v_high_value_orders BIGINT := 0;
     v_total_spent NUMERIC(12, 2) := 0;
+
     v_order_classification TEXT;
     v_customer_level TEXT;
 
@@ -82,95 +83,107 @@ DECLARE
 
 BEGIN 
 
-    SELECT
-        order_id,
-        order_status
-    INTO 
-        v_order
-    FROM orders
-    WHERE customer_id = p_customer_id
-      AND order_purchase_time_stamp = p_start_date
-      AND order_estimated_delivery_date = p_end_date
-
-    LOOP 
-        -- increasing total order count
-        v_total_orders := v_total_orders + 1
-
-        -- get payment for current order
-        SELECT 
-            SUM(payment_value)
-        INTO 
-            v_order_payment
-        FROM order_payments 
-        WHERE order_id = v_order;
-
-        -- Hanling Null payment value
-        IF v_order_payment = 'NULL' THEN 
-            v_order_payment := 0;
-        ELSE:
-            v_order_payment := v_order_payment;
-        END IF;
-
-        -- getting review score
+    FOR v_order IN 
         SELECT
-            AVG(review_score)
-        INTO 
-            v_review_score
-        FROM order_reviews
-        WHERE order_id = v_order
+            order_id,
+            order_status,
+            order_purchase_timestamp
+        FROM orders
+        WHERE customer_id = p_customer_id
+          AND order_purchase_timestamp >= p_start_date
+          AND order_purchase_timestamp < p_end_date
+    LOOP
 
-        -- classifying current order 
-        IF order_status = 'canceled' THEN 
-            v_order_classification := v_order_classification = "Cancelled order";
-            RAISE NOTICE "Canceled order: %", order_id;
-            v_cancelled_orders:= v_cancelled_orders + 1;
-        ELSIF order_status != 'delivered' THEN 
-            v_order_classification := v_order_classification = 'Incomplete order';
-            RAISE NOTICE "Incomplete order: %", order_id;
-        ELSIF v_order_payment >= 300 THEN 
-            v_order_classification := v_order_classification = 'High value delivered order';
-            RAISE NOTICE "High Value delivered Order", order_id;
-            v_delivered_order : = v_delivered_order + 1;
-            v_high_value_orders : = v_high_value_orders + 1;
-            v_total_spent := v_total_spent + v_order_payment;
-        ELSE 
-            v_order_classification := v_order_classification = "Normal delivered order";
-            RAISE NOTICE "Normal delivered order %", order_id;
-            v_delivered_order := v_delivered_order + 1;
-            v_total_spent := v_total_spent + v_order_payment
+        v_total_orders := v_total_orders + 1; 
+
+
+        SELECT SUM(payment_value)
+        INTO v_order_payment
+        FROM order_payments 
+        WHERE order_id = v_order.order_id;
+
+
+        IF v_order_payment IS NULL THEN 
+            v_order_payment := 0;
         END IF;
 
-        RAISE NOTICE "Order ID : %", order_id;
-        RAISE NOTICE "Status: %", order_status;
-        RAISE NOTICE "Payment: %", v_total_spent;
-        RAISE NOTICE "Review: %", v_review_score;
-        RAISE NOTICE "Classification: %", v_order_classification;
+
+        SELECT AVG(review_score)
+        INTO v_review_score
+        FROM order_reviews
+        WHERE order_id = v_order.order_id;
+
+
+        IF v_order.order_status = 'canceled' THEN 
+
+            v_order_classification := 'Cancelled order';
+            v_cancelled_orders := v_cancelled_orders + 1;
+
+        ELSIF v_order.order_status != 'delivered' THEN 
+
+            v_order_classification := 'Incomplete order';
+
+        ELSIF v_order_payment >= 300 THEN 
+
+            v_order_classification := 'High value delivered order';
+            v_delivered_order := v_delivered_order + 1;
+            v_high_value_orders := v_high_value_orders + 1;
+            v_total_spent := v_total_spent + v_order_payment;
+
+        ELSE 
+
+            v_order_classification := 'Normal delivered order';
+            v_delivered_order := v_delivered_order + 1;
+            v_total_spent := v_total_spent + v_order_payment;
+
+        END IF;
+
+
+        RAISE NOTICE 'Order ID: %', v_order.order_id;
+        RAISE NOTICE 'Status: %', v_order.order_status;
+        RAISE NOTICE 'Payment: %', v_order_payment;
+        RAISE NOTICE 'Review: %', v_review_score;
+        RAISE NOTICE 'Classification: %', v_order_classification;
 
     END LOOP;
 
-    -- classifying the customer
+
     IF v_total_orders = 0 THEN 
-        v_customer_level := v_customer_level = 'No activity';
-    ELSIF v_total_spent >= 2000 AND v_delivered_order >= 5 THEN 
-        v_customer_level := v_customer_level = 'VIP Customer';
-    ELSIF v_total_spent >= 500 AND v_delivered_order >= 3 THEN 
-        v_customer_level := v_customer_level = 'Regular Customer';
-    ELSE:
-        v_customer_level := v_customer_level = 'Low Activaty Customer';
+
+        v_customer_level := 'No activity';
+
+    ELSIF v_total_spent >= 2000
+          AND v_delivered_order >= 5 THEN 
+
+        v_customer_level := 'VIP Customer';
+
+    ELSIF v_total_spent >= 500
+          OR v_delivered_order >= 3 THEN 
+
+        v_customer_level := 'Regular Customer';
+
+    ELSE
+
+        v_customer_level := 'Low Activity Customer';
+
     END IF;
 
-    RAISE NOTICE "Customer ID: %", p_customer_id;
-    RAISE NOTICE "Total orders: %", v_total_orders;
-    RAISE NOTICE "Delivered orders: %", v_delivered_order;
-    RAISE NOTICE "Canceled orders: %", v_cancelled_orders;
-    RAISE NOTICE "High-value orders: %", v_high_value_orders;
-    RAISE NOTICE "Total spent %", v_total_spent;
-    RAISE NOTICE "Customer level: %", v_customer_level;
+
+    RAISE NOTICE 'Customer ID: %', p_customer_id;
+    RAISE NOTICE 'Total orders: %', v_total_orders;
+    RAISE NOTICE 'Delivered orders: %', v_delivered_order;
+    RAISE NOTICE 'Canceled orders: %', v_cancelled_orders;
+    RAISE NOTICE 'High-value orders: %', v_high_value_orders;
+    RAISE NOTICE 'Total spent: %', v_total_spent;
+    RAISE NOTICE 'Customer level: %', v_customer_level;
 
 END;
 $$;
 
 
-
-
+CALL customer_order_activity_report(
+    '9ef432eb6251297304e76186b10a928d',
+    '2016-01-01',
+    '2018-01-01'
+)
     
