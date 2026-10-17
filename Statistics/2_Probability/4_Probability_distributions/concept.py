@@ -252,7 +252,7 @@ A binary variable follows a Bernoulli distribution.
     | Number of outcomes | 2                 |
     | Parameter          | (p)               |
     | P(X=1)             | (p)               |
-    | P(X=0)             | (1-p)             |
+    | P(X=0)             | (1-p)             | 
     | Mean               | (p )              |
     | Variance           | (p(1-p))          |
     | Standard deviation | (sqrt{p(1-p)}   ) |

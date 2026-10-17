@@ -432,9 +432,17 @@ Each observation(row) in the dataset should provide independent information, one
                         C001 Feb                  C002 all observations
                 TEST:   C001 Mar           TEST:  C003 all observations
 
-            3. Time-based splitting 
+            3. Time-based splitting:
+                When observations have meaningful temporal order, train the model using earlier observations and evaluate it using
+                later observations.
+                Time-based splittig doesn't remove autocorrelation, that dependence still exists. 
+                Time-bassed splitting mainly solves temporal leakage.
 
-            4. Adding relevant group/time features
+            4. Adding relevant group/time features:
+                THe idea: If observations are dependent because they sahre some known group or time effect, 
+                give that information to the model as features.
+                Then, the model can explain that shared structure instead of leaving it hidden in the errors.
+                
 
 RAW DATA
    ↓
