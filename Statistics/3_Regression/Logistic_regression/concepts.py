@@ -7,7 +7,7 @@
 3.Assumptions of Logistic Regression
    3.1 Linearity of independent variables and log-odds
    3.2 Independence of observations
-   3.3 Absence of multicollinearity
+   3.3 Absence of multicollinearity 
    3.4 Large sample size
 
 4.Evaluating Model Performance
@@ -439,11 +439,38 @@ Each observation(row) in the dataset should provide independent information, one
                 Time-bassed splitting mainly solves temporal leakage.
 
             4. Adding relevant group/time features:
-                THe idea: If observations are dependent because they sahre some known group or time effect, 
+                THe idea: If observations are dependent because they share some known group or time effect, 
                 give that information to the model as features.
                 Then, the model can explain that shared structure instead of leaving it hidden in the errors.
-                
+                The given information should be meaningful:
+                    Example:
+                        Detected:             Customers in December purchase more
+                        Possible explanation: Seasonality
+                        Treatment:            Add month / seasonal features
+                    Another example:
+                        Detected:             Customers from some branches behave differently
+                        Possible explanation: Branch-level environment
+                        Treatment:            Add branch or meaningful branch characteristics
+                The Information can be given to model by following methods:
+                    Natural groups / Clusters:
+                        1. Encoding: brach_encoded = pd.get_dummies(df['branch_id'], drop_first=True, dtye=int)
+                        2. Transforming: 
+                            df['branch_size'] = df.groupby('brach_id')['customer_id'].transform('nunique')
+                                now isteading of saying, this is branch N, model knows this brach has N serving customers
+                            df['branch_avg_income'] = df.groupby('branch_id')['monthly_income'].transform('mean')
+                    Time/Autocorrelation:
+                        1. df['months_since_start']
+                        2. Cyclical time features: 
+                            df['month_sin'] = np.sin(2 * np.pi * month / 12)
+                            df['month_cos'] = np.cos(2 * np.pi * month / 12)
+                        3. lag features:
+                            df['purchased_lag1'] = df.sort_values(['customer_id', 'observation_month']).groupby('customer_id')['purchased'].shift(2)
+                    Spatial/Location dependence:
+                        df['latitude']
+                        df['longitude']
+                    
 
+            
 RAW DATA
    ↓
 1. Repeated entities / duplicate rows
