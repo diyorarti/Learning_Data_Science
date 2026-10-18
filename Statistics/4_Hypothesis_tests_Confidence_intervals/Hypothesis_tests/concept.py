@@ -24,7 +24,7 @@
         ANOVA
             start with one-way ANOVA
 12.Full practical hypothesis-test design in Python
-""" 
+"""  
 
 # What is Hypothesis testing
 """
@@ -394,6 +394,7 @@ Formula: Z = (observed result - value expected under H₀) / standard error
             company claims that the average bottle volume 500:
             H₀: μ = 500 
             Hₐ: μ ≠ 500 
+        Formula:
             Z = (x̄ - μ) / (σ / √n)
     
     Two-sample Z-test for means
@@ -407,6 +408,8 @@ Formula: Z = (observed result - value expected under H₀) / standard error
             H₀: μ_A = μ_B
             Hₐ: μ_A ≠ μ_B
             the idea is: Observed difference = x̄_A - x̄_B 
+        Formula:
+            Z = ((X̄_A - X̄_B) - (μ_A - μ_B)₀) / √((σ_A² / n_A) + (σ_B² / n_B))
 
     One-proportion Z-test:
         Use when testing a proportion
@@ -428,3 +431,4 @@ Formula: Z = (observed result - value expected under H₀) / standard error
                 Hₐ: p_A ≠ p_B
 
 """
+
