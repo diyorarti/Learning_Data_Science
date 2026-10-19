@@ -180,10 +180,11 @@ BEGIN
 END;
 $$;
 
-
 CALL customer_order_activity_report(
-    '9ef432eb6251297304e76186b10a928d',
-    '2016-01-01',
-    '2018-01-01'
+    '9bdf08b4b3b52b5526ff42d37d47f222',
+    '2018-01-01',
+    '2019-01-01'
 )
-    
+
+SELECT *
+FROM orders

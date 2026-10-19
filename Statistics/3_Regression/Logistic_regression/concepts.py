@@ -468,9 +468,7 @@ Each observation(row) in the dataset should provide independent information, one
                     Spatial/Location dependence:
                         df['latitude']
                         df['longitude']
-                    
-
-            
+                     
 RAW DATA
    ↓
 1. Repeated entities / duplicate rows
