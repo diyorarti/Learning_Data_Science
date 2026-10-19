@@ -42,12 +42,13 @@ Descriptive Statistics
 2. Normal Distribution:
     Methods to know whether data is normally distributed: 
         1. Histogram:
-            Distributed:        █
+            Normla-Distributed: █
                               █ █ █
                             █ █ █ █ █
                           █ █ █ █ █ █ █
 
-            Not distrubuted:█
+            Not normal-distrubuted:
+                            █
                             █ █
                             █ █ █
                             █ █ █ █
@@ -93,22 +94,17 @@ Descriptive Statistics
                 70 - 3 * 10 = 40
                 70 + 3 * 10 = 100
                 99.7% of students scored between 40 and 100.
-
-
-    Main the properties of Normal :
-        1. It is symmetric - the left side and rigght side are balanced
-
 """
 
 # Skewness and Kurtosis 
 """
-3. Skewness:  measures asymmetry of the distribution , skewness shows the direction of tail
+3. Skewness measures asymmetry of the distribution, skewness shows the direction of tail
     Formula:
-        skewness = Σ((xᵢ - x̄) / s)³ / n
+        skewness = Σ((xᵢ - x̄) / σ)³ / n
         Meaning:
             xᵢ = each value
             x̄ = mean
-            s = standard deviation
+            σ = standard deviation
             n = number of values
     Interpretation:
         Skewness > 0  → right-skewed / positive skew  
@@ -135,11 +131,10 @@ Descriptive Statistics
     2. Negative (left) skewed --> When the tail on the left of the distribution is longer and flatter than the tail on right
                                   Simple: Most Values are high, a few values are very low
                                   Example: exam scores, product ratings
-                                  Frequency |               █
+                                  Frequency |              █
                                             |            █████
                                             |          ████████
                                             |________███████████______Values
-                            
 
     3. Symmetric: 
                    Frequency|
@@ -149,13 +144,13 @@ Descriptive Statistics
                             |____███████______ Vales
 
 4. Kurtosis: 
-    1. Pearson Kurtosis:  Measures how heavy the tail of the distribution
+    1. Pearson Kurtosis: Kurtosis measures how heavy the tail of the distribution
         Formula:
-            kurtosis = Σ((xᵢ - x̄) / s)⁴ / n
+            kurtosis = Σ((xᵢ - x̄) / σ)⁴ / n
             Meaning:
                 xᵢ = each value
                 x̄ = mean
-                s = standard deviation
+                σ = standard deviation
                 n = number of values
 
         Interpretation:
