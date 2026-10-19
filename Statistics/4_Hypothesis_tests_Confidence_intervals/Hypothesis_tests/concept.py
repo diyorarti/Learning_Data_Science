@@ -371,7 +371,6 @@ Choosing the correct statistical test:
 
 # Z-test
 """
-
 Z-test is a hypothesis test used when we want to compare an observed sample result with what H₀ claims, 
 and test follows the standard normal distribution. 
 Formula: Z = (observed result - value expected under H₀) / standard error
@@ -419,6 +418,8 @@ Formula: Z = (observed result - value expected under H₀) / standard error
             is the true conversion rate different from 0.10(10%)?
                 H₀: p = 0.10
                 Hₐ: p ≠ 0.10
+        Formula:
+            Z = (p̂ - p₀) / √((p₀(1 - p₀)) / n)
 
     Two-proportion Z-test:
         Use when comparing two proportions
