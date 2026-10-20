@@ -91,7 +91,7 @@ class Vehicle(ABC):
         self.__is_available = value
 
     def get_vehicle_info(self):
-        return f"Brad: {self.brand} |Model: {self.model} |Year {self.year} |Daily Price: {self.daily_price} |Available: {self.is_available}"
+        return f"Brand: {self.brand} |Model: {self.model} |Year {self.year} |Daily Price: {self.daily_price} |Available: {self.is_available}"
 
     def rent(self):
         if not self.is_available:
@@ -135,7 +135,7 @@ class Motorcycle(Vehicle):
         super().__init__(brand, model, year, daily_price, is_available)
         self.__engine_cc = None
         self.engine_cc = engine_cc
-
+ 
     @property
     def engine_cc(self):
         return self.__engine_cc
@@ -149,8 +149,8 @@ class Motorcycle(Vehicle):
         if days <= 0:
             Validator.validate_positive_number(days, "days")
         if days >= 7:
-            total_praice = self.daily_price * days 
-            return total_praice - (10 / 100 * total_praice)
+            total_price = self.daily_price * days 
+            return total_price - (10 / 100 * total_price)
         else:
             return self.daily_price * days
 
@@ -253,7 +253,7 @@ class RentalCompany:
         Validator.validate_instance(vehicle, Vehicle, 'vehicle')
         self.__vehicles.append(vehicle)
 
-    def add_customers(self, customer):
+    def add_customer(self, customer):
         Validator.validate_instance(customer, Customer, 'customer')
         self.__customers.append(customer)
 
@@ -261,48 +261,71 @@ class RentalCompany:
         for vehicle in self.__vehicles:
             if brand == vehicle.brand and model == vehicle.model:
                 return vehicle
-            else:
-                return "Not availabe this vehicle"
+        return None
 
     def show_available_vehicles(self):
-        total_count = 0
-        for vehicle in self.__vehicles:
-            if vehicle.__is_available == True:
-                total_count += 1
-                return vehicle
+        available_vehicles = []
 
-        return total_count
+        for vehicle in self.__vehicles:
+            if vehicle.is_available:
+                available_vehicles.append(vehicle)
+
+        return available_vehicles
 
     def rent_vehicle(self, rental):
         Validator.validate_instance(rental, Rental, 'rental')
         self.__rentals.append(rental)
 
     def show_all_rentals(self):
-        for rental in self.__rentals:
-            return f"Rental name: {rental.customer.name} | Vehicle: {rental.vehicle.brand} | Model: {rental.vehicle.model}| Days: {rental.days}"
+        rentals = []
 
-    def get_comany_summary(self):
+        for rental in self.__rentals:
+            rentals.append(rental.get_rental_info())
+
+        return rentals
+
+    def get_company_summary(self):
         total_available_vehicles = self.show_available_vehicles()
         return f"Company name: {self.company_name} | Vehicles: {len(self.__vehicles)} | Available Vehicles: {total_available_vehicles} | Customers: {len(self.__customers)} | Rentals: {len(self.__rentals)}"
 
     def __str__(self):
-        return f"Company name: {self.company_name} | Vehicles: {len(self.__vehicles)} | Available Vehicles: {total_available_vehicles} | Customers: {len(self.__customers)} | Rentals: {len(self.__rentals)}"
+        total_available_vehicles = sum(
+            vehicle.is_available
+            for vehicle in self.__vehicles
+        )
+
+        return (
+            f"Company name: {self.company_name} | "
+            f"Vehicles: {len(self.__vehicles)} | "
+            f"Available Vehicles: {total_available_vehicles} | "
+            f"Customers: {len(self.__customers)} | "
+            f"Rentals: {len(self.__rentals)}"
+        )
 
     def __repr__(self):
-        return f"Car({self.__vehicles.brand!r}, {self.__vehicles.model!r}, {self.__vehicles.year!r}, {self.__vehicles.daily_price!r})"
-
-    def __eq__(self, value):
-        if not isinstance(value, Vehicle):
-            return False
         return (
-            self.__vehicles.brand == value.__vehicles.brand and 
-            self.__vehicles.model == value.__vehicles.model and 
-            self.__vehicles.year == value.__vehicles.year
-                )
+            f"{self.__class__.__name__}("
+            f"brand={self.brand!r}, "
+            f"model={self.model!r}, "
+            f"year={self.year!r}, "
+            f"daily_price={self.daily_price!r})"
+        )
+
+    def __eq__(self, other):
+        if not isinstance(other, Vehicle):
+            return False
+
+        return (
+            self.brand == other.brand
+            and self.model == other.model
+            and self.year == other.year
+        )
 
     def __len__(self):
         return len(self.__vehicles)
 
     def __contains__(self, item):
         return item in self.__vehicles
+
+
 

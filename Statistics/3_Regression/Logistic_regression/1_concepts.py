@@ -542,10 +542,10 @@ The independent varianles should not be too strongly linearly related to each ot
     Treatment Methods 
         1. Remove one of the redundant features
         2. Combine strongly related features
-        3. Use Ridge Regression / Lasso Regression / Elastic Net
+        3. Ridge / Lasso / Elastic Net Logistic Regression
         4. PCA - Principal Component Analysis 
 """
-
+ 
 # Large sample size
 """
 Logistic Regression needs enough observations - especially enough observations of both classes - to estimate it's coefficients reliably.

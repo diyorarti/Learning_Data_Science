@@ -47,7 +47,7 @@ Requirements on data to apply Linear Regression:
         Collinearity means two predictor features are strongly linearly related each other
             example:    area_m2    rooms
                         50         2
-                        70         3
+                        70         3 
                         90         4
                         110        5
         Collinearity: refers to a strong linear relationship between two predictos
