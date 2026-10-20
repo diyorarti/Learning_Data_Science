@@ -132,6 +132,7 @@ One-tailed Hypothesis:
     
     Right-tailed test
         We want to know whether the population parameter is greater than some value.
+        H₀: μ = 250
         Hₐ: μ > population_mean
         example:
             does a new calibration make the coffee machine dispense more than 250 ml on average ?
@@ -141,6 +142,7 @@ One-tailed Hypothesis:
 
     Left-tailed test
         We want to know whether the pupulation parameter is less than some value.
+        H₀: μ = 250
         Hₐ: μ < population_mean
         example:
             does the coffee machine underfilling cups ?
@@ -396,7 +398,7 @@ Formula: Z = (observed result - value expected under H₀) / standard error
         Formula:
             Z = (x̄ - μ) / (σ / √n)
     
-    Two-sample Z-test for means
+    Two-sample Z-test for means 
         When to use:
             1.you have two independet groups
             2.outcome is numerical
@@ -430,6 +432,7 @@ Formula: Z = (observed result - value expected under H₀) / standard error
             are the conversion rates different ?
                 H₀: p_A = p_B
                 Hₐ: p_A ≠ p_B
-
+        Formula:
+            Z = (p̂₁ - p̂₂) / √(p̂(1 - p̂) * (1/n₁ + 1/n₂))
 """
 
