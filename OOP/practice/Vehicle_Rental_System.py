@@ -142,7 +142,7 @@ class Motorcycle(Vehicle):
 
     @engine_cc.setter
     def engine_cc(self, value):
-        Validator.validate_positive_number(value, 'engine_cc')
+        Validator.validate_not_empty(value, 'engine_cc')
         self.__engine_cc = value
 
     def calculate_rental_cost(self, days):
@@ -329,3 +329,40 @@ class RentalCompany:
 
 
 
+car1 = Car(
+    "BMW", 
+    "X7", 
+    2024,
+    100,
+    True,
+    4
+)
+car2 = Car(
+    "Bugatti", 
+    "Chiron-7", 
+    2026,
+    1000,
+    True,
+    2
+)
+motorcycle1 = Motorcycle(
+    "Honda",
+    "Cruisers",
+    2021,
+    80,
+    True,
+    'cylinder layout'
+)
+
+motorcycle2 = Motorcycle(
+    "Yamaha",
+    "Adventure Bikes",
+    2025,
+    86,
+    True,
+    'stroke cycle'
+)
+print(motorcycle1.get_vehicle_info())
+print(motorcycle1.rent())
+print(motorcycle1.return_vehicle())
+print(motorcycle1.calculate_rental_cost(10))
