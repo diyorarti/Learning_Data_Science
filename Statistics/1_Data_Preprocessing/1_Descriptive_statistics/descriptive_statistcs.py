@@ -20,7 +20,8 @@
                     Standard Diviation
                     Variance
                     Range
-                    Correlation and Coveriance
+                    Correlation
+                    Coveriance
 """
 
 # Distribution
@@ -82,7 +83,7 @@ Descriptive Statistics
             Example:
                 Mean = 70
                 Standard Deviation = 10
-                70 - 2 * 10 = 50
+                70 - 2 * 10 = 50 
                 70 + 2 * 10 = 90
                 95% of students scored between 50 and 90.
         99.7% - About 99.7% of the data is between 3 standard deviations below the mean and 3 standard deviations above the mean.
@@ -170,7 +171,7 @@ Descriptive Statistics
 # Measures of Centeral tendency and Measures of Variablity         
 """
 5. Measures of Centeral tendency:
-    1. Mean --> Average Value
+    1. Mean/average --> Average Value
                 Formula : Mean = sum of all values / number of values
 
     2. Median --> Middle value after sorting the data

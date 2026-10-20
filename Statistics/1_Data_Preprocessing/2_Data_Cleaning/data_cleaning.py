@@ -16,102 +16,93 @@ Handling Missing Data
 
 # Missingness
 """
-    The types of missing Data:
-        1. Missing Completely At Random(MCAR):
-                A Value is missing for a completely random reason, and the missingness is not related to any other variable in the dataset. 
-                Example:
-                    | student | study_hours | exam_score |
-                    | ------- | ----------: | ---------: |
-                    | Ali     |           5 |         80 |
-                    | Vali    |           6 |        NaN |
-                    | Sara    |           4 |         75 |
-                    | John    |         NaN |         90 |
-                    | Anna    |           7 |         88 |
-                They may be missing because of a random techinical problem.
-                The missing values are not related to other variables (Student name, Study hours, or Exam Score)
-                Real Life Example:
-                    1. Survery mistake: Some people accidenylly skipped a question because the page was not loaded
-                    2. Data Entry error: Worker may forget to enter
-                    3. File Corruption: some cells may disappear because of a Software problem
-            MCAR --> these values can be dropped if small amount, because it will not effect , analysis is unually not strong biased
-            
-            Detection methods:
-                1. Creating a new column(missing indicator) with missing values and Comparing the columns with other columns
-                    Question : are the missing values mostly from one group ? if No it is likely MCAR, if Yes it is likely MAR
+The types of missing Data: 
+    1. Missing Completely At Random(MCAR):
+            A Value is missing for a completely random reason, and the missingness is not related to any other variable in the dataset. 
+            Example:
+                | student | study_hours | exam_score |
+                | ------- | ----------: | ---------: |
+                | Ali     |           5 |         80 |
+                | Vali    |           6 |        NaN |
+                | Sara    |           4 |         75 |
+                | John    |         NaN |         90 |
+                | Anna    |           7 |         88 |
+            They may be missing because of a random techinical problem.
+            The missing values are not related to other variables (Student name, Study hours, or Exam Score)
+            Real Life Example:
+                1. Survery mistake: Some people accidenylly skipped a question because the page was not loaded
+                2. Data Entry error: Worker may forget to enter
+                3. File Corruption: some cells may disappear because of a Software problem
+        MCAR --> these values can be dropped if small amount, because it will not effect , analysis is unually not strong biased
+        Detection methods:
+            1. Creating a new column(missing indicator) with missing values and Comparing the columns with other columns
+                Question : are the missing values mostly from one group ? if No it is likely MCAR, if Yes it is likely MAR
+        Treatement methods:
+            1. Dropping when missing percentage is small
+            2. Mean/Median/Mode/Any Advanced Imputation
 
-            Treatement methods:
-                1. Dropping when missing percentage is small
-                2. Mean/Median/Mode/Any Advanced Imputation
+2. Missing At Random (MAR)
+        A value is missing because of another observed column in the data. The Missingness has a pattern, we can explain the pattern using exit columns
+        Exampl:
+            | student | age | job_status | income |
+            | ------- | --: | ---------- | -----: |
+            | Ali     |  20 | Student    |    NaN |
+            | Vali    |  22 | Student    |    NaN |
+            | Sara    |  28 | Worker     |   4000 |
+            | John    |  35 | Worker     |   5000 |
+            | Anna    |  40 | Worker     |   5500 |
+        Here, income is missing mostly for students. So the missingness is related to job_status
+        Another Example:
+            | patient | age_group | blood_pressure |
+            | ------- | --------- | -------------: |
+            | A       | Young     |            NaN |
+            | B       | Young     |            NaN |
+            | C       | Old       |            145 |
+            | D       | Old       |            150 |
+        Maybe younger pations skipped blood pressure measuremnt more often. So missingness is related to age_group
+    MAR --> Dropping these columns are dangerous
+    Detection methods:
+        1. Creating a new column(missing indicator) with missing values and Comparing the columns with other columns
+            Question : are the missing values mostly from one group ? if No it is likely MCAR, if Yes it is likely MAR
+        2. Logistic Regression
+    Treatement:
+        1.Group-based Imputation
+        2. Regression/KNN Imputation
 
-        2. Missing At Random (MAR)
-                A value is missing because of another observed column in the data. The Missingness has a pattern, we can explain the pattern using exit columns
-                Exampl:
-                    | student | age | job_status | income |
-                    | ------- | --: | ---------- | -----: |
-                    | Ali     |  20 | Student    |    NaN |
-                    | Vali    |  22 | Student    |    NaN |
-                    | Sara    |  28 | Worker     |   4000 |
-                    | John    |  35 | Worker     |   5000 |
-                    | Anna    |  40 | Worker     |   5500 |
-                Here, income is missing mostly for students. So the missingness is related to job_status
-                Another Example:
-                    | patient | age_group | blood_pressure |
-                    | ------- | --------- | -------------: |
-                    | A       | Young     |            NaN |
-                    | B       | Young     |            NaN |
-                    | C       | Old       |            145 |
-                    | D       | Old       |            150 |
-                Maybe younger pations skipped blood pressure measuremnt more often. So missingness is related to age_group
-            MAR --> Dropping these columns are dangerous
-
-            Detection methods:
-                1. Creating a new column(missing indicator) with missing values and Comparing the columns with other columns
-                    Question : are the missing values mostly from one group ? if No it is likely MCAR, if Yes it is likely MAR
-                2. Logistic Regression
-
-
-            Treatement:
-                1.Group-based Imputation
-                2. Regression/KNN Imputation
-
-        3. Missing Not At Random (MNAR)
-                A value is missing because of the value itself. The reason the value is missing is directly connnected to the hidden value.
-                Example:
-                    | person | age | job     | income |
-                    | ------ | --: | ------- | -----: |
-                    | Ali    |  25 | Worker  |   3000 |
-                    | Sara   |  35 | Manager |   7000 |
-                    | John   |  45 | CEO     |    NaN |
-                    | Anna   |  40 | CEO     |    NaN |
-                maybe CEOs don't want to share their income because their uncome is very high
-                Other Example:
-                    Exam score: low-performing students refuse to submit their exam results
-                    Customer feedback: Very angry customers don't complete the feedback form
-            MNAR --> Most Dangerous, leads bias
-
-            Detection methods:
-                1. Domain Knowledge
-                2. Related-variable clues
-                3. Sensitivity analysis 
-
-            Treatement:
-                1. Missing indicator column 
-                2. Sensitive Analysis
-                3. Domain-based impulation
-                4. Advanced methods
-        
-        | Missingness type | Meaning                                |   Risk | Treatment                                             |
-        | ---------------- | -------------------------------------- | -----: | ----------------------------------------------------- |
-        | MCAR             | Missing randomly                       |    Low | Drop rows or simple imputation                        |
-        | MAR              | Missing depends on observed columns    | Medium | Group-based, KNN, regression imputation               |
-        | MNAR             | Missing depends on hidden value itself |   High | Missing indicator, sensitivity analysis, domain logic |
+3. Missing Not At Random (MNAR)
+        A value is missing because of the value itself. The reason the value is missing is directly connnected to the hidden value.
+        Example:
+            | person | age | job     | income |
+            | ------ | --: | ------- | -----: |
+            | Ali    |  25 | Worker  |   3000 |
+            | Sara   |  35 | Manager |   7000 |
+            | John   |  45 | CEO     |    NaN |
+            | Anna   |  40 | CEO     |    NaN |
+        maybe CEOs don't want to share their income because their income is very high
+        Other Example:
+            Exam score: low-performing students refuse to submit their exam results
+            Customer feedback: Very angry customers don't complete the feedback form
+    MNAR --> Most Dangerous, leads bias
+    Detection methods:
+        1. Domain Knowledge
+        2. Related-variable clues
+        3. Sensitivity analysis 
+    Treatement:
+        1. Missing indicator column 
+        2. Sensitive Analysis
+        3. Domain-based impulation
+        4. Advanced methods
+| Missingness type | Meaning                                |   Risk | Treatment                                             |
+| ---------------- | -------------------------------------- | -----: | ----------------------------------------------------- |
+| MCAR             | Missing randomly                       |    Low | Drop rows or simple imputation                        |
+| MAR              | Missing depends on observed columns    | Medium | Group-based, KNN, regression imputation               |
+| MNAR             | Missing depends on hidden value itself |   High | Missing indicator, sensitivity analysis, domain logic |
 """
-
 
 # Outliers
 """
 Outliers types:
-Checking at first impossible values:
+at first Checking impossible values:
     For example:
         age = 150
         Exam_score 199
