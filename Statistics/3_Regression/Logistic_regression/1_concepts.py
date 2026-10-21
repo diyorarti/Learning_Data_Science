@@ -520,7 +520,7 @@ The independent varianles should not be too strongly linearly related to each ot
                 Formula:                      1
                                     VIF = ──────────
                                             1 - R²
-                                VIF = 1 / (1 - (1 - R²))
+                                VIF = 1 / (1 - (1 - R²)) 
                                 R² = residuals ** 2
                 Interpretation 
                     VIF ≈ 1 -> No multicollinearity problem
