@@ -25,7 +25,7 @@
             start with one-way ANOVA
 12.Full practical hypothesis-test design in Python
 """  
- 
+
 # What is Hypothesis testing
 """
 Hypothesis testing is a statistical method used to make an inference about a population using sample data.
@@ -438,3 +438,6 @@ Formula: Z = (observed result - value expected under H₀) / standard error
             Z = (p̂₁ - p̂₂) / √(p̂(1 - p̂) * (1/n₁ + 1/n₂))
 """
 
+# T-tests
+"""
+"""
