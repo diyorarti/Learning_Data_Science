@@ -3,111 +3,111 @@ Z-TEST HYPOTHESIS PRACTICE
 Use alpha = 0.05 for all exercises.
 
 CASE 1 — One-sample Z-test for a mean
-File: 01_one_sample_z_mean.csv
-Scenario:
-A coffee-machine manufacturer claims that the machine dispenses an average of 250 ml per cup.
+    File: 01_one_sample_z_mean.csv
+    Scenario:
+    A coffee-machine manufacturer claims that the machine dispenses an average of 250 ml per cup.
 
-Known population standard deviation:
-sigma = 12 ml
+    Known population standard deviation:
+    sigma = 12 ml
 
-Research question:
-Is the true average amount dispensed different from 250 ml?
+    Research question:
+    Is the true average amount dispensed different from 250 ml?
 
-Your tasks:
-1. Identify the correct Z-test.
-2. Write H0 and Ha.
-3. Decide whether the test is left-tailed, right-tailed, or two-tailed.
-4. Calculate the sample mean.
-5. Calculate the standard error.
-6. Calculate the observed Z-statistic.
-7. Find the critical value(s).
-8. Calculate the p-value.
-9. Compare p-value with alpha.
-10. Compare the Z-statistic with the critical value(s).
-11. Reject or fail to reject H0.
-12. Interpret the result in plain English.
+    Your tasks:
+    1. Identify the correct Z-test.
+    2. Write H0 and Ha.
+    3. Decide whether the test is left-tailed, right-tailed, or two-tailed.
+    4. Calculate the sample mean.
+    5. Calculate the standard error.
+    6. Calculate the observed Z-statistic.
+    7. Find the critical value(s).
+    8. Calculate the p-value.
+    9. Compare p-value with alpha.
+    10. Compare the Z-statistic with the critical value(s).
+    11. Reject or fail to reject H0.
+    12. Interpret the result in plain English.
 
 
 CASE 2 — Two-sample Z-test for means
-File: 02_two_sample_z_mean.csv
-Scenario:
-A company wants to know whether average customer satisfaction differs between Group A and Group B.
+    File: 02_two_sample_z_mean.csv
+    Scenario:
+    A company wants to know whether average customer satisfaction differs between Group A and Group B.
 
-Known population standard deviations:
-sigma_A = 10
-sigma_B = 12
+    Known population standard deviations:
+    sigma_A = 10
+    sigma_B = 12
 
-Research question:
-Is the population mean satisfaction score different between Group A and Group B?
+    Research question:
+    Is the population mean satisfaction score different between Group A and Group B?
 
-Your tasks:
-1. Identify the correct Z-test.
-2. Write H0 and Ha.
-3. Identify the tail type.
-4. Calculate n_A and n_B.
-5. Calculate the two sample means.
-6. Calculate the standard error of the difference.
-7. Calculate the observed Z-statistic.
-8. Find the critical value(s).
-9. Calculate the p-value.
-10. Make the hypothesis-test decision.
-11. Interpret the result.
+    Your tasks:
+    1. Identify the correct Z-test.
+    2. Write H0 and Ha.
+    3. Identify the tail type.
+    4. Calculate n_A and n_B.
+    5. Calculate the two sample means.
+    6. Calculate the standard error of the difference.
+    7. Calculate the observed Z-statistic.
+    8. Find the critical value(s).
+    9. Calculate the p-value.
+    10. Make the hypothesis-test decision.
+    11. Interpret the result.
 
 
 CASE 3 — One-proportion Z-test
-File: 03_one_proportion_z.csv
-Scenario:
-Historically, 30% of website visitors make a purchase.
+    File: 03_one_proportion_z.csv
+    Scenario:
+    Historically, 30% of website visitors make a purchase.
 
-Null proportion:
-p0 = 0.30
+    Null proportion:
+    p0 = 0.30
 
-Research question:
-Has the purchase rate increased above 30%?
+    Research question:
+    Has the purchase rate increased above 30%?
 
-Coding:
-purchased = 1 means purchased
-purchased = 0 means did not purchase
+    Coding:
+    purchased = 1 means purchased
+    purchased = 0 means did not purchase
 
-Your tasks:
-1. Identify the correct Z-test.
-2. Write H0 and Ha.
-3. Identify the tail type.
-4. Calculate the sample proportion p_hat.
-5. Calculate the standard error under H0.
-6. Calculate the observed Z-statistic.
-7. Find the critical value.
-8. Calculate the p-value.
-9. Make the hypothesis-test decision.
-10. Interpret the result.
+    Your tasks:
+    1. Identify the correct Z-test.
+    2. Write H0 and Ha.
+    3. Identify the tail type.
+    4. Calculate the sample proportion p_hat.
+    5. Calculate the standard error under H0.
+    6. Calculate the observed Z-statistic.
+    7. Find the critical value.
+    8. Calculate the p-value.
+    9. Make the hypothesis-test decision.
+    10. Interpret the result.
 
 
 CASE 4 — Two-proportion Z-test
-File: 04_two_proportion_z.csv
-Scenario:
-A company runs an A/B test and wants to know whether conversion rates differ between website variants A and B.
+    File: 04_two_proportion_z.csv
+    Scenario:
+    A company runs an A/B test and wants to know whether conversion rates differ between website variants A and B.
 
-Coding:
-converted = 1 means converted
-converted = 0 means did not convert
+    Coding:
+    converted = 1 means converted
+    converted = 0 means did not convert
 
-Research question:
-Are the population conversion rates different between Variant A and Variant B?
+    Research question:
+    Are the population conversion rates different between Variant A and Variant B?
 
-Your tasks:
-1. Identify the correct Z-test.
-2. Write H0 and Ha.
-3. Identify the tail type.
-4. Calculate n_A and n_B.
-5. Calculate p_hat_A and p_hat_B.
-6. Calculate the pooled proportion under H0.
-7. Calculate the standard error.
-8. Calculate the observed Z-statistic.
-9. Find the critical value(s).
-10. Calculate the p-value.
-11. Make the hypothesis-test decision.
-12. Interpret the result.
+    Your tasks:
+    1. Identify the correct Z-test.
+    2. Write H0 and Ha.
+    3. Identify the tail type.
+    4. Calculate n_A and n_B.
+    5. Calculate p_hat_A and p_hat_B.
+    6. Calculate the pooled proportion under H0.
+    7. Calculate the standard error.
+    8. Calculate the observed Z-statistic.
+    9. Find the critical value(s).
+    10. Calculate the p-value.
+    11. Make the hypothesis-test decision.
+    12. Interpret the result.
 
-IMPORTANT:
-Do not use the sample standard deviation in Cases 1 and 2.
-The population standard deviations are deliberately given because these are Z-tests for means.
+    IMPORTANT:
+    Do not use the sample standard deviation in Cases 1 and 2.
+    The population standard deviations are deliberately given because these are Z-tests for means.
