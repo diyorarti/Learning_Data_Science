@@ -1,0 +1,30 @@
+ANSWER KEY — USE ONLY AFTER YOU FINISH
+
+1) ONE-SAMPLE T-TEST
+    n = 40
+    sample mean = 32.888000
+    sample standard deviation = 5.003731
+    standard error = 0.791159
+    t observed = 3.650340
+    df = 39
+    two-tailed p-value = 0.00076670
+    decision at alpha=0.05 : Reject H0
+
+2) INDEPENDENT TWO-SAMPLE T-TEST (WELCH)
+    Group A: n = 48, mean = 71.756667, s = 8.290239
+    Group B: n = 52, mean = 78.464038, s = 9.451599
+    t observed = -3.779313
+    Welch df = 97.755044
+    two-tailed p-value = 0.00027053
+    decision at alpha=0.05: Reject H0
+
+3) PAIRED T-TEST
+    difference defined as: after - before
+    n pairs = 35
+    mean difference = 2.981429
+    SD of differences = 4.004842
+    SE of mean difference = 0.676942
+    t observed = 4.404261
+    df = 34
+    right-tailed p-value = 0.00005012
+    decision at alpha=0.05: Reject H0

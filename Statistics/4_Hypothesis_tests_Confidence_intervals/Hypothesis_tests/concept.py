@@ -25,7 +25,7 @@
             start with one-way ANOVA
 12.Full practical hypothesis-test design in Python
 """  
-
+ 
 # What is Hypothesis testing
 """
 Hypothesis testing is a statistical method used to make an inference about a population using sample data.
@@ -440,4 +440,23 @@ Formula: Z = (observed result - value expected under H₀) / standard error
 
 # T-tests
 """
+T-tests are Hypothesis statistical tests. It is mainly used when population σ is unknown
+
+    One-Sample T-test:
+        compare one sample mean to a hypothesized population mean
+        Formula:
+            t = (X̄ - μ₀) / (s / √n)
+            X̄ : Sample mean
+            μ₀: Hypothesized population mean
+            s : Sample standard deviation
+            √n: sample size sqare root
+
+
+    Independent two-sample T-test:
+        compare means of two indepedent groups.
+        Fo
+    
+    Paired T-test 
+        compare two related measurements, such as before vs after measurements on the same people.
+
 """

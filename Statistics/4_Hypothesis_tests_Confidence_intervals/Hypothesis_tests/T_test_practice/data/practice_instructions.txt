@@ -1,0 +1,80 @@
+T-TEST PRACTICE PACK
+
+Use alpha = 0.05 unless you intentionally want to practice another significance level.
+
+1) ONE-SAMPLE T-TEST
+    File: 01_one_sample_t_mean.csv
+
+    Scenario:
+    A delivery company claims that its average delivery time is 30 minutes.
+    The population standard deviation is UNKNOWN.
+
+    Research question:
+    Is the true average delivery time different from 30 minutes?
+
+    Your tasks:
+    - Identify the correct t-test.
+    - Decide whether the test is one-tailed or two-tailed.
+    - Write H0 and Ha.
+    - Calculate n, sample mean, and sample standard deviation.
+    - Calculate standard error.
+    - Calculate the observed t-statistic.
+    - Calculate degrees of freedom.
+    - Find the critical t-value(s).
+    - Make a decision using critical values.
+    - Calculate the p-value.
+    - Make a decision using the p-value.
+    - Write the final statistical conclusion.
+
+
+2) INDEPENDENT TWO-SAMPLE T-TEST
+    File: 02_independent_two_sample_t.csv
+
+    Scenario:
+    A company compares employee productivity scores between two independent teams:
+    Group A and Group B.
+    The population standard deviations are UNKNOWN.
+
+    Research question:
+    Are the population mean productivity scores different between Group A and Group B?
+
+    Your tasks:
+    - Identify the correct t-test.
+    - Decide whether the test is one-tailed or two-tailed.
+    - Write H0 and Ha.
+    - Separate Group A and Group B.
+    - Calculate sample size, sample mean, and sample standard deviation for each group.
+    - Use an independent two-sample t-test. Welch's t-test is recommended.
+    - Calculate the observed t-statistic.
+    - Calculate/obtain the appropriate degrees of freedom.
+    - Make a decision using the p-value.
+    - Write the final statistical conclusion.
+
+
+3) PAIRED T-TEST
+    File: 03_paired_t.csv
+
+    Scenario:
+    The same participants take a skills test before and after a training program.
+
+    Research question:
+    Has the training increased the average score?
+
+    Important:
+    Define each paired difference as:
+    d = score_after - score_before
+
+    Your tasks:
+    - Identify the correct t-test.
+    - Decide whether the test is one-tailed or two-tailed.
+    - Write H0 and Ha in terms of the population mean difference.
+    - Calculate each participant's difference.
+    - Calculate the mean difference and standard deviation of the differences.
+    - Calculate the standard error of the mean difference.
+    - Calculate the observed t-statistic.
+    - Calculate degrees of freedom.
+    - Find the appropriate critical t-value.
+    - Make a decision using critical values.
+    - Calculate the p-value.
+    - Make a decision using the p-value.
+    - Write the final statistical conclusion.
