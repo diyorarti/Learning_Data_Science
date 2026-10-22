@@ -260,7 +260,7 @@ class RentalCompany:
     def find_vehicle(self, brand, model):
         for vehicle in self.__vehicles:
             if brand == vehicle.brand and model == vehicle.model:
-                return vehicle
+                return f"Brand: {vehicle.brand}| Model: {vehicle.model}"
         return None
 
     def show_available_vehicles(self):
@@ -268,7 +268,7 @@ class RentalCompany:
 
         for vehicle in self.__vehicles:
             if vehicle.is_available:
-                available_vehicles.append(vehicle)
+                available_vehicles.append(f"Vehicel Brand: {vehicle.brand} |Vehicle Model: {vehicle.model}")
 
         return available_vehicles
 
@@ -362,7 +362,44 @@ motorcycle2 = Motorcycle(
     True,
     'stroke cycle'
 )
-print(motorcycle1.get_vehicle_info())
-print(motorcycle1.rent())
-print(motorcycle1.return_vehicle())
-print(motorcycle1.calculate_rental_cost(10))
+
+customer1 = Customer(
+    'Ali',
+    'ali@gmail.com',
+    'AF2301'
+)
+
+customer2 = Customer(
+    'Vali',
+    'vali@gmail.com',
+    'AF2302'
+)
+
+rental1 = Rental(
+    customer1,
+    car1,
+    10
+)
+
+
+rental2 = Rental(
+    customer2,
+    motorcycle2,
+    12
+)
+
+rentalCompany = RentalCompany(
+    "FastRent"
+)
+rentalCompany.add_vehicle(car1)
+rentalCompany.add_vehicle(car2)
+rentalCompany.add_vehicle(motorcycle1)
+rentalCompany.add_vehicle(motorcycle2)
+rentalCompany.add_customer(customer1)
+rentalCompany.add_customer(customer2)
+
+
+rentalCompany.rent_vehicle(rental1)
+rentalCompany.rent_vehicle(rental2)
+
+print(rentalCompany.show_all_rentals())

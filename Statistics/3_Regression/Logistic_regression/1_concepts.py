@@ -518,7 +518,7 @@ The independent varianles should not be too strongly linearly related to each ot
             VIF is diagnostic measure used to detect multicollinearity among the predictors in a regression model.
             VIF can be used for both continuous and dicrease value features.
                 Formula:                      1
-                                    VIF = ──────────
+                                    VIF = ────────── 
                                             1 - R²
                                 VIF = 1 / (1 - (1 - R²)) 
                                 R² = residuals ** 2
@@ -535,9 +535,9 @@ The independent varianles should not be too strongly linearly related to each ot
                     5. Calculate VIF  (1 / tolerance)
                     6. Repeat this process for each feature 
 
-        4. Condition number and condition index
-        5. Eigenvalues / singular values / matrix rank
-        6. Coefficient instability
+        3. Condition number and condition index
+        4. Eigenvalues / singular values / matrix rank
+        5. Coefficient instability
 
     Treatment Methods 
         1. Remove one of the redundant features
