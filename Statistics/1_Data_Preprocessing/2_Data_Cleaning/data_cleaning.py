@@ -155,8 +155,8 @@ at first Checking impossible values:
             | Vali   |  30 |           4000 |
             | Sara   |  35 |           5000 |
             | John   |  40 |           6000 |
-            | Mike   |  18 |         100000 |
-            here, age column 18 years old , ok no problem it may be, but 100000 monthly income, 
+            | Mike   |  18 |          10000 |
+            here, age column 18 years old , ok no problem it may be, but 10000 monthly income, 
             but when we combine both age and monthly income, it seems unusual. So this row may be a multivariate outlier.
         Another example:
             | transaction | amount | location | time  | device     |
@@ -164,7 +164,7 @@ at first Checking impossible values:
             | T1          |     20 | Poland   | 14:00 | iPhone     |
             | T2          |     50 | Poland   | 16:00 | iPhone     |
             | T3          |     35 | Poland   | 18:00 | iPhone     |
-            | T4          |   3000 | Brazil   | 03:00 | New Device |
+            | T4          |    300 | Brazil   | 03:00 | New Device |
             The transaction T4 may be suspicious because of the combination: high amount | unusual country | unusual time | new device
         Detection methods:
             1. Identifying Mutlivarite column groupds 

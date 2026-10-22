@@ -108,4 +108,4 @@ Cluster Smapling
 10. Check design-specific problems
 11. Evaluate fitness for purpose
 12. Accept, accept with limitations, or resample
-"""
+""" 

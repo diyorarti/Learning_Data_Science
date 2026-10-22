@@ -29,7 +29,7 @@ Data Transformation
 
 Distribution Transformation: 
     it is the process of applying a mathematical function to every value of a numerical variable to change how it's values are distributed.
-    It changes an unsuitable distribution shape or relationship into a form that is easir for statistical methods or models to analyze. 
+    It changes an unsuitable distribution shape or relationship into a form that is easier for statistical methods or models to analyze. 
     it solves problems like: Skewness, Kurtosis (heavy tails)
     example: income = [ 1200, 1500, 1700, 2000, 2300, 2500, 50000]
         most observations are between 1200 and 2500, but one value is 50,000, this creates strongly right skewed
@@ -55,7 +55,7 @@ Distribution Transformation:
                 1. Reduce skewness
                 2. Reduce influnce of large values
                 3. Stabilize variance
-                4. Make curved linearshio more linear
+                4. Make curved linearship more linear
                 5. Convert ratios into differences
             
             Types: 
@@ -81,7 +81,7 @@ Distribution Transformation:
 
             Requirements to apply:
                 1. Non-negative values x≥0 
-                2. Moderately or  Stong posistive skewed data
+                2. Moderately or Stong posistive skewed data
 
     Box Cox Transformation 
             Box-Cox is a family of power transformations that automatically estimates the lambda value for a strictly positive numerical feature. 
@@ -118,7 +118,8 @@ Distribution Transformation:
     Scaling is the process of changing numerical variables so they have comparable numerical ranges or scales
     
     Types:
-        Standardization (Z-score scaling): it is a feature-scaling method that transforms numerical values so that resulting feature has mean ≈ 0 std ≈ 1
+        Standardization (Z-score scaling): it is a feature-scaling method that transforms numerical values so that resulting 
+        feature has mean ≈ 0 std ≈ 1
             Formula: z = (x - μ) / std
                 0	Exactly at the mean
                 1	One standard deviation above the mean
