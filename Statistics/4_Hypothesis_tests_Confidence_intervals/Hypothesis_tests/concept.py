@@ -306,7 +306,7 @@ Critical(α) Value Formula (Conveting significance level α scale to observed va
         left-tailed test: critical_value = norm.ppf(alpha) -> 0.253
 
 """
-
+ 
 # P-value
 """
 The p-value tells us how unusual our observed test statistic would be if the null hypothesis H₀ were true.
@@ -454,8 +454,17 @@ T-tests are Hypothesis statistical tests. It is mainly used when population σ i
 
     Independent two-sample T-test:
         compare means of two indepedent groups.
-        Fo
-    
+        Formula:
+            t = ((X̄_A - X̄_B) - (μ_A - μ_B)₀) / √((s_A² / n_A) + (s_B² / n_B))
+        under H₀: H₀: μ_A = μ_B Formula:
+            t = (X̄_A - X̄_B) / √((s_A² / n_A) + (s_B² / n_B))
+            X̄_A = Sample A mean
+            X̄_B = Sample B mean
+            s_A = Sample A std
+            s_B = Sample B std
+            n_A = Sample A size
+            n_B = Sample B size
+
     Paired T-test 
         compare two related measurements, such as before vs after measurements on the same people.
 
