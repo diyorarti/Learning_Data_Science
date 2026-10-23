@@ -370,7 +370,7 @@ Choosing the correct statistical test:
         4.Independent or paired ?
 
 """
-
+ 
 # Z-test
 """
 Z-test is a hypothesis test used when we want to compare an observed sample result with what H₀ claims, 
@@ -456,7 +456,8 @@ T-tests are Hypothesis statistical tests. It is mainly used when population σ i
         compare means of two indepedent groups.
         Formula:
             t = ((X̄_A - X̄_B) - (μ_A - μ_B)₀) / √((s_A² / n_A) + (s_B² / n_B))
-        under H₀: H₀: μ_A = μ_B Formula:
+        under Null Hpothesis(H₀): (μ_A - μ_B) = 0
+        Formula:
             t = (X̄_A - X̄_B) / √((s_A² / n_A) + (s_B² / n_B))
             X̄_A = Sample A mean
             X̄_B = Sample B mean
@@ -467,5 +468,13 @@ T-tests are Hypothesis statistical tests. It is mainly used when population σ i
 
     Paired T-test 
         compare two related measurements, such as before vs after measurements on the same people.
-
+        Formula:
+            t = (d̄ - μ_d0) / (s_d / √n)
+        under Null Hypothesis(H₀): μ_d0 = 0
+        Formula: 
+            t = d̄ / (s_d / √n)
+            d̄ = mean of all paired differences
+            s_d = standard deviation of the paired differences
+            n = number of pairs
 """
+
