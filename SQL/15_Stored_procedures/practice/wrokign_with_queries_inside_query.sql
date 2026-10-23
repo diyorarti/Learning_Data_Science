@@ -91,6 +91,21 @@ Part-8 UPDATING counters
     Every payment → add to v_total_spent
     Payment >= 300 → v_high_value_orders + 1
     Canceled / incomplete / poor-review order → v_problem_orders + 1
+
+Part-9 Print every processed order
+    inside the loop, print:
+        Order ID 
+        Status
+        Payment
+        Review score 
+        Classification
+
+PART-10 After END LOOP, print
+    Customer ID
+    Total orders processed
+    Total spent
+    High-value orders
+    Problem orders
 """
 
 -- Creating practice table
@@ -104,7 +119,7 @@ CREATE TABLE customer_order_report (
     classification TEXT,
     requires_attention BOOLEAN DEFAULT FALSE,
     processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 CREATE OR REPLACE PROCEDURE process_customer_orders(
     p_customer_id VARCHAR(50),
@@ -127,7 +142,7 @@ DECLARE
 BEGIN 
     -- DELETE previous report rows
     DELETE FROM customer_order_report
-    WHERE customer_id = p_customer_id 
+    WHERE customer_id = p_customer_id;
 
     -- loop customer's orders for the specified period
     FOR v_order IN 
@@ -139,6 +154,7 @@ BEGIN
         WHERE customer_id = p_customer_id AND 
         order_purchase_timestamp BETWEEN p_start_date AND p_end_date
 
+    LOOP
         -- calculating payment 
         SELECT SUM(payment_value)
         INTO v_payment
@@ -146,14 +162,15 @@ BEGIN
         WHERE order_id = v_order.order_id;
 
         -- if there is no payment
-        IF payment = 0 THEN v_payment := NUL; 
+        IF v_payment = NULL THEN 
+            v_payment := 0; 
         END IF;
 
         -- calculating v_review_score
         SELECT AVG(review_score)
         INTO v_review_score
         FROM order_reviews
-        WHERE order_id = v_order.order_id
+        WHERE order_id = v_order.order_id;
 
         -- Conditional classification
         if v_order.order_status = 'canceled' THEN 
@@ -166,11 +183,19 @@ BEGIN
             v_classification:='High value Order';
         ELSIF v_review_score <= 2 THEN 
             v_classification:='Poor Review Order';
-        ELSE:
-            v_classification:='Normal Order'
+        ELSE
+            v_classification:='Normal Order';
+        END IF;
 
         --  INSERT 
-        INSERT INTO customer_order_report()
+        INSERT INTO customer_order_report(
+            customer_id,
+            order_id,
+            order_status,
+            payment_amount,
+            review_score,
+            classification
+        )
         VALUES(
             p_customer_id,
             v_order.order_id,
@@ -181,13 +206,55 @@ BEGIN
         );
 
         -- UPDATE
-        IF v_classification IN ('Canceled Order', 'incomplete Order', 'High value / poor review Order','Poor Review Order') THEN 
+        IF v_classification IN ('Canceled Order', 
+                                'incomplete Order', 
+                                'High value / poor review Order',
+                                'Poor Review Order'
+                            ) THEN 
             UPDATE customer_order_report
             SET requires_attention = TRUE
+            WHERE customer_id = p_customer_id AND order_id = v_order.order_id;
         END IF;
 
-        v_total_orders:= v_total_orders + 1
-        v_total_spent:= v_total_spent + 1
-        v_high_value_orders:= v_high_value_orders + 1
-        v_problem_orders:= v_problem_orders + 1
+        -- Counters
+        v_total_orders:= v_total_orders + 1;
+        v_total_spent:= v_total_spent + v_payment;
+        IF v_payment >= 300 THEN 
+            v_high_value_orders:= v_high_value_orders + 1;
+        END IF;
+        IF v_classification IN ('Canceled Order', 
+                                'incomplete Order', 
+                                'High value / poor review Order',
+                                'Poor Review Order'
+                            ) THEN
+            v_problem_orders:= v_problem_orders + 1;
+        END IF;
+
+        RAISE NOTICE 'ORDER ID: %', v_order.order_id;
+        RAISE NOTICE 'Status: %', v_order.order_status;
+        RAISE NOTICE 'Payment: %', v_payment;
+        RAISE NOTICE 'Review: %', v_review_score;
+        RAISE NOTICE 'Classification: %', v_classification;
+
+        END LOOP;
+
+    RAISE NOTICE 'Customer ID: %', p_customer_id;
+    RAISE NOTICE 'Total Orders: %', v_total_orders;
+    RAISE NOTICE 'Total Spent: %', v_total_spent;
+    RAISE NOTICE 'High-value Orders : %', v_high_value_orders;
+    RAISE NOTICE 'Problem Orders: %', v_problem_orders;
+END;
+$$;
         
+
+SELECT *
+FROM orders
+
+CALL process_customer_orders(
+    '9ef432eb6251297304e76186b10a928d',
+    '2017-01-01',
+    '2018-01-01'
+);
+
+SELECT * 
+FROM customer_order_report
