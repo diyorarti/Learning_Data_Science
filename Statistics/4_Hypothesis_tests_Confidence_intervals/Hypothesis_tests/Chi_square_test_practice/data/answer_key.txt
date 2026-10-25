@@ -1,0 +1,54 @@
+ANSWER KEY — USE ONLY AFTER YOU FINISH
+
+============================================================
+1) CHI-SQUARE GOODNESS-OF-FIT
+
+Observed counts:
+Card = 120
+PayPal = 60
+Bank Transfer = 42
+Cash = 18
+
+n = 240
+
+Expected counts under H0:
+Card = 96
+PayPal = 72
+Bank Transfer = 48
+Cash = 24
+
+Chi-square statistic = 10.250000
+df = 3
+p-value = 0.01655632
+
+Decision at alpha = 0.05:
+Reject H0
+
+Interpretation:
+There is sufficient statistical evidence that the current payment-method
+distribution differs from the historical expected distribution.
+
+
+============================================================
+2) CHI-SQUARE TEST OF INDEPENDENCE
+
+Observed contingency table:
+
+                Converted=1   Converted=0
+Mobile              45            135
+Desktop             48             72
+
+Expected counts under H0:
+Mobile:   55.800, 124.200
+Desktop:  37.200, 82.800
+
+Chi-square statistic = 7.573633
+df = 1
+p-value = 0.00592283
+
+Decision at alpha = 0.05:
+Reject H0
+
+Interpretation:
+There is sufficient statistical evidence that device type and conversion
+behavior are associated.

@@ -1,0 +1,67 @@
+CHI-SQUARE TEST PRACTICE PACK
+
+Use significance level:
+alpha = 0.05
+
+============================================================
+1) CHI-SQUARE GOODNESS-OF-FIT TEST
+    File: 01_chi_square_goodness_of_fit.csv
+
+    Scenario:
+    Historically, customers are expected to use payment methods in these proportions:
+
+    - Card: 40%
+    - PayPal: 30%
+    - Bank Transfer: 20%
+    - Cash: 10%
+
+    A new sample of customers is collected.
+
+    Research question:
+    Does the current payment-method distribution differ from the historical expected distribution?
+
+    Your tasks:
+    - Identify the correct Chi-square test.
+    - Write H0 and Ha.
+    - Count the observed frequency for each payment method.
+    - Calculate the expected frequency for each category.
+    - Check whether expected counts are sufficiently large.
+    - Calculate the Chi-square statistic.
+    - Calculate degrees of freedom.
+    - Find the critical Chi-square value.
+    - Make a decision using the critical-value method.
+    - Calculate the p-value.
+    - Make a decision using the p-value.
+    - Write the final statistical conclusion.
+
+
+============================================================
+2) CHI-SQUARE TEST OF INDEPENDENCE
+    File: 02_chi_square_independence.csv
+
+    Scenario:
+    A company wants to know whether website conversion is associated with device type.
+
+    Variables:
+    - device_type: Mobile or Desktop
+    - converted: 1 = Yes, 0 = No
+
+    Research question:
+    Is conversion behavior associated with device type?
+
+    Your tasks:
+    - Identify the correct Chi-square test.
+    - Write H0 and Ha.
+    - Build the contingency table of observed counts.
+    - Calculate row totals, column totals, and grand total.
+    - Calculate expected counts under H0.
+    - Check whether expected counts are sufficiently large.
+    - Calculate the Chi-square statistic.
+    - Calculate degrees of freedom.
+    - Find the critical Chi-square value.
+    - Make a decision using the critical-value method.
+    - Calculate the p-value.
+    - Make a decision using the p-value.
+    - Write the final statistical conclusion.
+
+    Do not open answer_key.txt until you finish your calculations.

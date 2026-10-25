@@ -466,6 +466,9 @@ T-tests are Hypothesis statistical tests. It is mainly used when population σ i
             n_A = Sample A size
             n_B = Sample B size
 
+        degrees of freedom formula:
+            df_value = ((s_A² / n_A) + (s_B² / n_B))² / (((s_A² / n_A)² / (n_A - 1)) + ((s_B² / n_B)² / (n_B - 1)))
+
     Paired T-test 
         compare two related measurements, such as before vs after measurements on the same people.
         Formula:
@@ -478,3 +481,52 @@ T-tests are Hypothesis statistical tests. It is mainly used when population σ i
             n = number of pairs
 """
 
+# Chi-square test
+"""
+Chi-square test is mainly used for categorical data and counts or frequencies
+
+    Chi-square goodness-of-fit test
+        Use this when we have one categorical variable and want to know whether it's observed distribution matches an expected distribution.
+        Example:
+            a company expectes customers to choose four payment methods equally:
+                Card: 25%
+                PayPal: 25%
+                Bank Transfer: 25%
+                Cash: 25%
+            But sample gives different observed counts
+            The question is:
+                Does the observed distribution differ significantly from the expected distributuon ?
+            Hypotheis:
+                H₀ : The observed distrubution follows the expected distribution
+                Hₐ : The observed fistribution doesn't follow the exptected distribution                
+            Formula:
+                χ² = Σ ((Oᵢ - Eᵢ)² / Eᵢ)
+                Oᵢ = observed count from category i
+                Eᵢ = expected count for category i
+            degrees of freedom:
+                df_value = k - 1
+                k = number of categories
+
+    Chi-square test of independence:
+        Use this when we have two categorical variables and want to determine whether they are associated
+        Example:
+            Variable 1:                 
+                Device:                     
+                    - Mobile
+                    - Desktop 
+            Variable 2:
+                Purchased:
+                    - Yes
+                    - No
+            Research question:
+                is purchasing behavior associated with device type 
+            Hypothesis:
+                H₀ : Device type and Purchase are independent
+                Hₐ : Device type and Purchase are associated
+
+
+"""
+
+# ANOVA
+"""
+"""
