@@ -3,12 +3,12 @@
 Power Analysis
     What is Power Analysis?
     Statistical Power (1-β)
-        4. Effect Size and Minimum Detectable Effect (MDE)
-            - Absolute vs. relative MDE
-            - Standardized effect size (Cohen's d)
-        5. Significance Level (α)
-        6. Variance and Standard Deviation
-        7. Statistical Significance vs. Practical Significance
+    Effect Size and Minimum Detectable Effect (MDE)
+        Absolute vs. relative MDE
+        Standardized effect size (Cohen's d)
+    Significance Level (α)
+    Variance and Standard Deviation
+    Statistical Significance vs. Practical Significance
 
     B. Sample Size Determination
         1. Required Sample Size (n)
@@ -19,6 +19,7 @@ Power Analysis
         6. Unequal Group Allocation (e.g., 50/50 vs. 80/20)
         7. Sample Size Calculation Using Formulas
         8. Sensitivity Analysis
+
     C. Practical Power Analysis in Python
         1. TTestIndPower — Power analysis for comparing means
         2. NormalIndPower — Power analysis using normal approximations
@@ -27,6 +28,7 @@ Power Analysis
         5. Calculate Statistical Power for a Given Sample Size
         6. Visualize Relationships between Power, Effect Size, and Sample Size
         7. Interpret Results and Make Recommendations
+
     D. Experiment Planning
         1. Sample Size → Experiment Duration
         2. Traffic / Data Collection Rate
@@ -43,7 +45,7 @@ What is Power Analysis?
     Power Analysis is a statistical method used to determine how many observations(Sample Size) are needed
     to detect a meaningful effect with a specified level of statistical power.
     IT answers this question: 
-        How much data do we need to have a suffuciently high probability of detecting a real effect, itf that effect exists ?
+        How much data do we need to have a suffuciently high probability of detecting a real effect, if that effect exists ?
     Example:
         An e-commerce company wants to test whether a new checkout design increases the purchase conversion rate.
         Question: How many users should particiate in each group to reliably detect this improvement ?
@@ -109,6 +111,69 @@ Absolute and Relative MDE
         MSE_relative = (p_B - p_A) / p_A * 100% -> (0.12 - 0.10) / 0.10 * 100% = 20%
 
 Standardized Effect Size (Cohen's d)
-    
+    It is the method used to express two different scale experiment outcomes:
+    example:
+        Experiment_A measures the difference in monthly spending (PLN)
+        Experiment_B measures the difference in session duraction (minuted)
+    Cohens'd is a standardized effect size that expresses the difference between two group means in units of standard deviation.
 """
 
+# Significance Level (α)
+"""
+Assuming other relevant factors remain constant:
+    Higher α → Higher statistical power
+    Lower α  → Lower statistical power
+    Lower α  → Larger required sample size (at fixed power)
+    Higher α → Smaller required sample size (at fixed power)
+    Trade-off: Lowering α reduces the Type I error rate, but achieving the same statistical power requires more observations.
+"""
+
+# Variance and Standard Deviation
+"""
+Higer Var/Std means more noise, which makes it harder to distinguish a real effect from sampling variation.
+    example:
+        A/B test to determine whether a new recommendation algorithm increases ucstomer spending
+        μ_A = 100  | μ_B = 110 -> δ = μ_B - μ_A = 10
+        σ_A = 10   | σ_B = 30 
+        Here, Experiment_B needs a larger sample size to detect the same 10pln customer spending improvement with the same statistical power.
+    
+    Relationship Var/Std and Power
+        ↑σ²/σ ⇒ ↓Power
+        ↓σ²/σ ⇒ ↑Power
+    
+    Relationship Var/Std and Sample Size
+        ↑σ²/σ ⇒ ↑n(sample-size)
+        ↓σ²/σ ⇒ ↓n(sample-size)
+"""
+
+# Statistical Significance vs Practical Significance
+"""
+Statistical significance
+    Statistical Significance means that the observed result is sufficiently inconsistent with the null hypotheis H₀ 
+    to reject it at the chosen significance level(α)
+    Decision rule:
+        p < α  ⇒ Reject H₀
+        p > α  ⇒ Fail to Reject H₀
+    example:
+        an e-commerce company runs an A/B test comparing two checkout designs.
+        α = 0.05
+        p = 0.01
+        0.01 < 0.05 ⇒ reject H₀
+        there is statistically significant evidence that the conversion rates differ.
+        However, statistical significance doesn't tell us whether the difference is large enough to matter to the business.
+        That is where practical significance comes in.
+    
+Practical Significance
+    Practical Significance refers to whether the magnitude of an ebserved effect is large enough to be meaningful or valuable in real-world context.
+    Example:
+        α = 0.05
+        p = 0.01
+        p < α = 0.01 < 0.05 -> Reject H₀
+        the result is statistically signifiacnt.
+        but whether this improvement is practically significanct depends on the business.
+        for example, if implementation the new checkout design costs €100,000 annually 
+        but the expected additional profit is only €20,000, the change may not be worth implementing.
+
+Connection with Power Analysis and MDE
+    
+"""

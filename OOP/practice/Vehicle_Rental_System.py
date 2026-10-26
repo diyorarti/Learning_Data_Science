@@ -381,7 +381,6 @@ rental1 = Rental(
     10
 )
 
-
 rental2 = Rental(
     customer2,
     motorcycle2,
