@@ -170,7 +170,7 @@ The significance level α  is the threshold we choose before the test for decidi
 
     α = P(reject H₀ | H₀ is True) -> this is the probability of a Type I error.
 
-    example: Coffee machine 
+    example: Coffee machine  
         H₀: μ = 250
         Hₐ: μ ≠ 250
         α = 0.05
@@ -483,9 +483,10 @@ T-tests are Hypothesis statistical tests. It is mainly used when population σ i
 
 # Chi-square test
 """
-Chi-square test is mainly used for categorical data and counts or frequencies
+Chi-square test is mainly used for categorical data counts or frequencies
 
     Chi-square goodness-of-fit test
+    NOTE: Chi-square goodness-of-fit test is always Right-tailed
         Use this when we have one categorical variable and want to know whether it's observed distribution matches an expected distribution.
         Example:
             a company expectes customers to choose four payment methods equally:
