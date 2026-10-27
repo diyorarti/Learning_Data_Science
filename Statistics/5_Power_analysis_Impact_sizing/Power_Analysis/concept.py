@@ -10,15 +10,15 @@ Power Analysis
     Variance and Standard Deviation
     Statistical Significance vs. Practical Significance
 
-    B. Sample Size Determination
-        1. Required Sample Size (n)
-        2. Relationships between MDE, Power, α, Variance, and n
-        3. One-sided vs. Two-sided Tests
+Sample Size Determination
+    Required Sample Size (n)
+    Relationships between MDE, Power, α, Variance, and n
+    One-sided vs Two-sided Tests
         4. Power Analysis for Means
         5. Power Analysis for Proportions
         6. Unequal Group Allocation (e.g., 50/50 vs. 80/20)
         7. Sample Size Calculation Using Formulas
-        8. Sensitivity Analysis
+        8. Sensitivity Analysis 
 
     C. Practical Power Analysis in Python
         1. TTestIndPower — Power analysis for comparing means
@@ -130,9 +130,9 @@ Assuming other relevant factors remain constant:
 
 # Variance and Standard Deviation
 """
-Higer Var/Std means more noise, which makes it harder to distinguish a real effect from sampling variation.
+Higher Var/Std means more noise, which makes it harder to distinguish a real effect from sampling variation.
     example:
-        A/B test to determine whether a new recommendation algorithm increases ucstomer spending
+        A/B test to determine whether a new recommendation algorithm increases customer spending
         μ_A = 100  | μ_B = 110 -> δ = μ_B - μ_A = 10
         σ_A = 10   | σ_B = 30 
         Here, Experiment_B needs a larger sample size to detect the same 10pln customer spending improvement with the same statistical power.
@@ -175,5 +175,74 @@ Practical Significance
         but the expected additional profit is only €20,000, the change may not be worth implementing.
 
 Connection with Power Analysis and MDE
+    When planning an experiment, Data scienctists should identify an effect that would be partically meaningful to the business.
+    That effect can guide the selection of the Minimum Detectable Effect (MDE)
+"""
+
+# Required Sample Size (n)
+"""
+Required Sample Size (n)
+    Required Sample Size(n) is the minimum number of observations needed in an experiment to detect a specified effect size with 
+    a desired statistical power and significance level, under the assumed statistical model.
+
+    The four key inputs required sample depends on.
+        Input	                 Meaning	                                                Example
+        Effect Size / MDE	     Smallest effect we want to detect	                        +2 percentage points
+        Statistical Power(1-β)	 Desired probability of detecting the specified effect	    80%
+        Significance Level(α)	 Allowed Type I error probability	                        0.05
+        Variance(σ²)	         Variability of the outcome metric	                        Estimated from historical data
     
+    Required sample size per group formula when comparing two independent population means.
+        n ≈ [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
+        n = required sample size per group
+        Z_(1-α/2 = Standard normal quantile for significance
+        Z_(1-β) = Standard normal quantile for desired power
+        σ² = common population variance
+        δ = minimum detectable difference between means
+        used when:
+            1. two independent groups are being compared 
+            2. the outcome is continuous 
+            3. two groups have equal population variance
+            4. equal sample sizes are planned for both groups
+            5. observations are independent, and a normal approximation is appropriate.
+"""
+
+# Relationships between MDE, Power, α, Variance, and n
+"""
+Relationship between MDE and n
+    Smaller MDE → Larger required sample size.
+    Why? Detecting a very small improvement is more difficult because it can be hidden by random sampling variation.
+    n ∝ 1 / MDE²
+
+Realtionship between Power and n
+    Higher desired statistical power → Larger required sample size.
+    Power is the probability of rejecting H₀ when a specified alternative is true.
+    Increasing power from 80% to 90% means you want a higher chance of detecting the same true effect.
+    To achaive this while keeping MDE, α, variance and design constant, you generally need more observations
+
+Relationship between α and n 
+    Lower significance level → Larger required sample size.
+    a smaller α means stricter evidence is required to reject H₀.
+    Suppose the company changes α = 0.05 → 0.01. This decreases the allowed Type I error probability from 5% to 1%.
+    But mainintaing the same statistical power now requires a larger sample. 
+
+Relationship between Variance and n
+    Higher variance → larger required samole size
+
+Relationship Table:
+    Parameter changes          Required n      Reason
+    -----------------------------------------------------------------------------
+    MDE increases              ↓ Decreases     Larger effects are easier to detect
+    MDE decreases              ↑ Increases     Smaller effects are harder to detect
+    Desired power increases    ↑ Increases     Greater detection probability is required
+    Desired power decreases    ↓ Decreases     Lower detection probability is accepted
+    α increases                ↓ Decreases     Less stringent rejection threshold
+    α decreases                ↑ Increases     More stringent rejection threshold
+    Variance increases         ↑ Increases     More noise
+    Variance decreases         ↓ Decreases     Less noise
+"""
+
+# One-sided vs. Two-sided Tests
+"""
+
 """
