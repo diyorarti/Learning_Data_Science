@@ -13,7 +13,7 @@
             one-sample Z-test
             two-sample Z-test
             one-proportion Z-test
-            two-proportion Z-test
+            two-proportion Z-test 
         T-tests
             one-sample t-test
             independent two-sample t-test
@@ -524,10 +524,52 @@ Chi-square test is mainly used for categorical data counts or frequencies
             Hypothesis:
                 H₀ : Device type and Purchase are independent
                 Hₐ : Device type and Purchase are associated
+            Here, we don't compare means or proportions directly, we are asking whether knowing one categorical variable gives information about the other.
+            First, Creating an observed categorical table:
+                | Device | Converted | Not converted | Total |
+                |--------|-----------|---------------|-------|
+                | Mobile |    45     |      135      |  180  |
+                | Desktop|    48     |      72       |  120  |
+                | Total  |    93     |      207      |  300  |
+            Then, we need to calculate the expected count for every cell assuming H₀ is True.
+            The formula:
+                Eᵢⱼ = (Row total × Column total) / Grand total
+                Mobile + Converted:       E = (180 * 93) / 300 = 55.8
+                Mobile + Not Conveted:    E = (180 * 207) / 300 = 124.2
+                Desktop + Converted:      E = (120 * 93) / 300 = 37.2
+                Desktop + Not Conveted:   E = (120 * 207) / 300 = 82.8
 
+            Observed vs Expected 
+                |                        | Observed | Expected |
+                |------------------------|----------|----------|
+                | Mobile + Converted     |    45    |   55.8   |
+                | Mobile + Not converted |    135   |   124.2  |
+                | Desktop + Converted    |    48    |   37.2   |
+                | Desktop + Not converted|    72    |   82.8   |
 
+            Then, we can apply Chi-square goodness-of-fit test: χ² = Σ ((Oᵢ - Eᵢ)² / Eᵢ)
+
+            For Chi-square test of independence, the degree of freedom is different:
+                df_value = (r - 1) * (c - 1)
+                r = number of rows (mobile, desktop)
+                c - number of columns (conveted, not conveted)
+                for the example above:
+                df_value = (2 - 1) * (2 - 1) = 1
 """
 
 # ANOVA
 """
+ANOVA stads for Analysis of Variance
+    We use it when we want to compare the means of 3 or more independent groups
+    example:
+        Group A average score
+        Group B average score
+        Group C average score
+    Hypothesis:
+        H₀ : μ_A = μ_B = μ_C
+        Hₐ : at least one population mean is different
+    ANOVA doesn't tell exactly which groups differ, it only answers at leat one difference exists.
+    The main idea:
+        variation between groups
+        variation within groups
 """
