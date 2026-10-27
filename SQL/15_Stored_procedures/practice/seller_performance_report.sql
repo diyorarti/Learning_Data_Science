@@ -39,6 +39,76 @@ Create a stored procedure called generate_seller_performance_report
         before generating a new report, delete the previous report for this seller.
 
     Part-5  FOR loop + SELECT
+        loop through all distinct orders in which the seller sold something during the requested date range.
         
+    Part-6 Calculate information for each order
+        For the current order and seller, calculate:
+            number of ites
+            total sales
+            average price
 
+    Part-7 Handle NULL
+        if v_order_sales is NULL, use conditional statement to set it to: 0
+
+    Part-8 Classify each order
+        Rules:
+            IF order_status = 'canceled'                   → 'Canceled Order'
+            ELSIF order_status != 'delivered'              → 'Incomplete Order'
+            ELSIF total_sales >= 500 AND item_count >= 3   → 'Large High-Value Order'
+            ELSIF total_sales >= 500                       → 'High-Value Order'
+            ELSIF item_count >= 3                          → 'Large Order'
+            ELSE                                           → 'Normal Order'
+        store in v_classification
+
+    PART-9 INSERT
+        For every processed order, insert a row into: seller_performance_report
+            seller_id
+            order_id
+            order_status
+            item_count
+            total_sales
+            average_item_price
+            classification
+
+    Part-10 UPDATE
+        after inserting the row, set: requires attention = True
+        when the classificatio is:
+            Canceled Order
+            Incomplete Order
+        UPDATE must modify only the current seller/current order, not every row in the table.
+
+    Part-11 UPDATE counters
+        for every order: v_total_orders + 1
+        add the current item's count to: v_total_items
+        add the current order sales to: v_total_sales
+        if v_order_sales >= 500, increase: v_high_value_orders
+        if classification is Canceled Order or Incomplete Order, increase: v_problem_orders
+
+    Part-12 Print each processed order
+        inside the loop print:
+            Order ID:
+                Status:
+                Items sold:
+                Order sales:
+                Average item price:
+                Classification:
+    Part-13 Classify the seller:
+        after END LOOP, classify the entire seller:
+            IF total_orders = 0 → 'No Activity'
+            ELSIF total_sales >= 10000 AND total_orders >= 20 → 'Top Seller'
+            ELSIF total_sales >= 5000 OR total_orders >= 10 → 'Active Seller'
+            ELSIF problem_orders >= 3 → 'Needs Attention'
+            ELSE → 'Small Seller'
+        store this in v_seller_level
+
+    Part-14 Final summary
+        print:
+            Seller ID:
+            Total orders:
+            Total items:
+            Total sales:
+            High-value orders:
+            Problem orders:
+            Seller level:
 """
+
