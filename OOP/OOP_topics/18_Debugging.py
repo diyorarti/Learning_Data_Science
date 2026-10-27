@@ -17,5 +17,7 @@ Finally write tests so bugs don't return
 
 # What is debugging 
 """
-
+Debugging is the systematix process of identifying, investigating, understanding and fixing errors(bugs) is a computer program.
+    a bug is a defeact in a program that causes it ot behave incorrectly or unexpectedly.
+    Debugging 
 """
