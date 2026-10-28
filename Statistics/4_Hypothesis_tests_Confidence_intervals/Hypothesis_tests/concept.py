@@ -22,7 +22,25 @@
             goodness-of-fit 
             test of independence
         ANOVA
-            start with one-way ANOVA
+            One-Way ANOVA
+                1. When to use One-way ANOVA
+                2. Why not use multiple t-tests
+                3. Null and alternative hypotheses
+                4. Between-group vs within-group variation
+                5. ANOVA assumptions
+                6. Sum of Squares
+                    - SS_between
+                    - SS_within
+                7. Degrees of freedom
+                8. Mean Squares
+                    - MS_between
+                    - MS_within
+                9. F-statistic
+                10. F-distribution and critical value
+                11. P-value and decision
+                12. Interpreting ANOVA results
+                13. Post-hoc tests — Tukey HSD
+                14. Full practical implementation in Python
 12.Full practical hypothesis-test design in Python
 """  
  
@@ -571,5 +589,29 @@ ANOVA stads for Analysis of Variance
     ANOVA doesn't tell exactly which groups differ, it only answers at leat one difference exists.
     The main idea:
         variation between groups
-        variation within groups
+        variation within groups 
+    
+    F-statisitc = between-group vairation / within-group variation
+
+One-Way ANOVA:
+    When to use One-Way ANOVA
+        we use it to compare the population means of 3 or more independent groups for one numerical outcome.
+        example: a company has three advertising strategies: A, B, C
+            measrues customers speding:
+                Strategy A → spending values
+                Strategy B → spending values
+                Strategy C → spending values
+            Is the average customer spending the same across all three advertising strategies?
+        Here:
+            categorical explanatory variable = strategy
+            categories / groups = A, B, C
+            numerical outcome = spending
+        So One-Way ANOVA is appropriate
+        Hypothesis:
+            H₀ : μ_A = μ_B = μ_C
+            Hₐ : at least one population mean is different
+        One-Way means we have one categorical explanantory factor: in the example above: treatment_type
+
+    Why not use Multiple t-tests
+        
 """

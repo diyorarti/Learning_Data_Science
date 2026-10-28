@@ -10,11 +10,11 @@ Power Analysis
     Variance and Standard Deviation
     Statistical Significance vs. Practical Significance
 
-Sample Size Determination
+Sample Size Determination 
     Required Sample Size (n)
     Relationships between MDE, Power, α, Variance, and n
     One-sided vs Two-sided Tests
-        4. Power Analysis for Means
+    Power Analysis for Means
         5. Power Analysis for Proportions
         6. Unequal Group Allocation (e.g., 50/50 vs. 80/20)
         7. Sample Size Calculation Using Formulas
@@ -242,7 +242,72 @@ Relationship Table:
     Variance decreases         ↓ Decreases     Less noise
 """
 
-# One-sided vs. Two-sided Tests
+# One-sided vs Two-sided Tests
+"""
+A one-sided test generally requires a smaller sample size than a two-sided test when detecting an effect in its prespecified direction,
+    assuming the same MDE, power, variance and significance level.
+    A one-sided test concentrates its rejection region in one direction. A two-sided test must account for effects in both directions, 
+    so its rejection thresholds are more stringent in either indivitual direction.
+
+    Sample-size formulas:
+        One-sided test: n ≈ [2 * (Z_(1-α) + Z_(1-β))² * σ²] / δ²
+        Two-sided test: n ≈ [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
+
+    example:
+        Suppose a company wants to detect a 10pln improvement in average spending.
+        Assumptions:
+            Parameter	        Value
+            MDE	                10 PLN
+            Standard deviation	30 PLN
+            Power	            80%
+            α	                0.05
+            Groups	            Two independent, equal-sized
+        using the normal-approximation formulas:
+            one-sided test requires 112 users per group
+            two-sided test requires 142 users per group
+            two-sided test requies 27% more observations then the one-sided test in this example.
 """
 
+# Power Analysis for Means
+"""
+Power Analysis for Means is a statistical method used to determine the sample size required to detect a speficied difference 
+    in population means with a desired statistical power and significance level.
+
+    Example:
+        an e-ecommerce company wants to evaluate whether a new recommendation algorithm increases average customer spending.
+        Company wants to detect an increase of  δ = 110 - 100 = 10pln.
+        We need to determine the sample size needed to detect this difference with 80% statistical power and α=0.05.
+    
+    Types of Power Analysis For Means:
+        1.One-sample-mean - Compare one population mean with a specified reference value - is average order value different from 100pln?
+        2.Two independent means - Compare means from two indepenent groups - Do customers using design B spend more than customers using A?
+        3.Paired means - Compare related observations - Does spending change for the same customers before and after an intervetion ?
+
+    One-Sample Power Analysis For a Mean:
+        Suppose the historical average order value is 100pln
+        We want to detect whether the population mean differs from 100pln by at least 10pln
+        Assume:
+            H₀: μ = 100
+            Hₐ: μ ≠ 100
+            δ = 10
+            σ = 30
+            α = 0.05
+            Power = 80%
+        For a Two-sided one-sample Z-test with known population standard deviation m the apporimate formula:
+            n = [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
+            n ≈ ((1.96 + 0.84)² × 30²) / 10² ≈ 70.6
+
+    Two Independent Means 
+        Suppose customers are randomly assigned to two groups:
+            - Group A receives the current recommendation algorithm
+            - Group B receives the new recommendation algorithm
+        We want to detect a mean spending difference of 10pln
+        Formula For two independent groups with equal sizes, equal population variance, and a two-sided test:
+            n = [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ² 
+            Var(X̄_B - X̄_A) = (σ_A² / n_A) + (σ_B² / n_B) = 2σ² / n
+            n ≈ [2(1.96 + 0.84)² × 900] / 100 ≈ 141.1
+            per group = 142, total samples 284
+
+    Paired Means
+    
 """
