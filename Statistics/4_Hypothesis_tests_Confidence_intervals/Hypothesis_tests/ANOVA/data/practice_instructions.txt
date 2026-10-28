@@ -1,0 +1,41 @@
+ONE-WAY ANOVA PRACTICE
+
+File:
+01_one_way_anova.csv
+
+Scenario:
+A company wants to compare employee performance scores after three different
+training programs: A, B, and C.
+
+Research question:
+Are the population mean performance scores the same across all three training programs?
+
+Use:
+alpha = 0.05
+
+Your tasks:
+1. Identify why One-way ANOVA is appropriate.
+2. Write H0 and Ha.
+3. Separate the three independent groups.
+4. Calculate each group:
+   - sample size
+   - sample mean
+5. Calculate the grand mean.
+6. Calculate SS_between.
+7. Calculate SS_within.
+8. Calculate degrees of freedom:
+   - df_between
+   - df_within
+9. Calculate:
+   - MS_between
+   - MS_within
+10. Calculate the F-statistic.
+11. Find the critical F-value.
+12. Make a decision using the critical-value method.
+13. Calculate the p-value.
+14. Make a decision using the p-value.
+15. Write the final statistical conclusion.
+16. If H0 is rejected, remember that ANOVA only tells you that at least one
+    population mean differs; it does not tell you which groups differ.
+
+Do not open answer_key.txt until you finish.

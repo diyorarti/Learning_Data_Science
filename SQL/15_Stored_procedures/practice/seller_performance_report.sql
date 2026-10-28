@@ -112,3 +112,18 @@ Create a stored procedure called generate_seller_performance_report
             Seller level:
 """
 
+-- creating a report table
+CREATE TABLE seller_performance_report(
+    report_id BIGSERIAL PRIMARY KEY,
+    seller_id VARCHAR(50),
+    order_id VARCHAR(50),
+    order_status TEXT,
+    item_count BIGINT,
+    total_sales NUMERIC(12,2),
+    average_item_price NUMERIC(12,2),
+    classification
+)
+
+CREATE OR REPLACE PROCEDURE generate_seller_performance_report(
+
+)

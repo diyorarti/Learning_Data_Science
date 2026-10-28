@@ -1,0 +1,36 @@
+ANSWER KEY — USE ONLY AFTER YOU FINISH
+
+Sample sizes:
+A = 30
+B = 30
+C = 30
+
+Group means:
+A = 72.869000
+B = 75.361667
+C = 80.630667
+
+Grand mean = 76.287111
+
+SS_between = 942.192176
+SS_within = 4108.526473
+
+df_between = 2
+df_within = 87
+
+MS_between = 471.096088
+MS_within = 47.224442
+
+F-statistic = 9.975683
+Critical F-value at alpha=0.05 = 3.101296
+p-value = 0.00012574
+
+Decision:
+Reject H0
+
+Interpretation:
+There is sufficient statistical evidence that at least one population mean performance score differs among the three training programs.
+
+Verification with scipy.stats.f_oneway:
+F = 9.975683
+p = 0.00012574
