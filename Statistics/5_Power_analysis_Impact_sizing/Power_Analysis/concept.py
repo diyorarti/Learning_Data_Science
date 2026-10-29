@@ -15,8 +15,8 @@ Sample Size Determination
     Relationships between MDE, Power, α, Variance, and n
     One-sided vs Two-sided Tests
     Power Analysis for Means
-        5. Power Analysis for Proportions
-        6. Unequal Group Allocation (e.g., 50/50 vs. 80/20)
+    Power Analysis for Proportions
+    Unequal Group Allocation (e.g., 50/50 vs. 80/20)
         7. Sample Size Calculation Using Formulas
         8. Sensitivity Analysis 
 
@@ -38,7 +38,7 @@ Sample Size Determination
         6. Practical Assumptions and Limitations
         7. Estimating Experiment Duration in Python
 """
-
+ 
 # Power Analysis 
 """
 What is Power Analysis?
@@ -280,7 +280,7 @@ Power Analysis for Means is a statistical method used to determine the sample si
     
     Types of Power Analysis For Means:
         1.One-sample-mean - Compare one population mean with a specified reference value - is average order value different from 100pln?
-        2.Two independent means - Compare means from two indepenent groups - Do customers using design B spend more than customers using A?
+        2.Two independent means - Compare means from two indepenent groups - Do customers using design B spend more than customers using design A?
         3.Paired means - Compare related observations - Does spending change for the same customers before and after an intervetion ?
 
     One-Sample Power Analysis For a Mean:
@@ -294,8 +294,7 @@ Power Analysis for Means is a statistical method used to determine the sample si
             α = 0.05
             Power = 80%
         For a Two-sided one-sample Z-test with known population standard deviation m the apporimate formula:
-            n = [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
-            n ≈ ((1.96 + 0.84)² × 30²) / 10² ≈ 70.6
+            n = [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ² -> n ≈ ((1.96 + 0.84)² × 30²) / 10² ≈ 70.6
 
     Two Independent Means 
         Suppose customers are randomly assigned to two groups:
@@ -309,5 +308,51 @@ Power Analysis for Means is a statistical method used to determine the sample si
             per group = 142, total samples 284
 
     Paired Means
-    
+        Now imagine measuring the same customers before and after a change.
+        each customer contributes two measurements, producing a paired differences.
+            Dᵢ = X_after_i - X_before_i
+        instead of comparing independent means, we analyze the mean of these differences
+        approximate two-sided sample-size formula:
+            n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ_D²) / δ_D²
+        Paired power analysis uses the standard deviation of the differences, not individual measurements.
+"""
+
+# Power Analysis for Proportions
+"""
+Power Analysis for Proportions is a statistical method used to determine the sample size required to detect a specified
+    difference in population proportions with a desired statistical power and significance level.
+    How many observations do we need to detect a meaningful difference in conversion rates, success rates, or other proportions ?
+
+    Two types of power analysis for proportions:
+        One-proportion test - compare a population proportion against a reference.
+        Two-proportion test - compare proportions from two independent groups.
+
+    Two-Proportion Power Analysis
+        Suppose an e-commerce company wants to test whether a new checkout design increase its conversion rate.
+            Group A - 10% Control  
+            Group B - 12% Treatment 
+            Company wnat to detect an improvement of: δ = p_B - p_A = 0.12 - 0.10 = 0.02
+            Absolute MDE = 2 percentage points
+            Relative MDE = 20%
+            Assuming: α = 0.05 | power = 0.80
+            Goal is to determine the sample size needed per group
+        For two indpendent proportions, equal group sizes and a two-sided Z-test:
+            n ≈ [Z_(1-α/2) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+
+
+    One-Proportion Power Analysis
+        Suppose the company has a historical conversion-rate benchmark of 10%
+            it wants to determine whether the current conversion rate differs from 10% using only one sample.
+            Hypothesis:
+                H₀: p = 10
+                Hₐ: p ≠ 10
+
+            Suppose the smallest difference of interest is 2 percentage points, so we plan an alternative proportion of 12%.
+        For two-sided one-sample proportion Z-test 
+            n ≈ [Z_(1-α/2) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+"""
+
+# Unequal Group Allocation (e.g., 50/50 vs. 80/20)
+"""
+
 """
