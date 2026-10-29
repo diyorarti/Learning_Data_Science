@@ -23,27 +23,17 @@
             test of independence
         ANOVA
             One-Way ANOVA
-                1. When to use One-way ANOVA
-                2. Why not use multiple t-tests
-                3. Null and alternative hypotheses
-                4. Between-group vs within-group variation
-                5. ANOVA assumptions
-                6. Sum of Squares
-                    - SS_between
-                    - SS_within
-                7. Degrees of freedom
-                8. Mean Squares
-                    - MS_between
-                    - MS_within
-                9. F-statistic
-                10. F-distribution and critical value
-                11. P-value and decision
-                12. Interpreting ANOVA results
-                13. Post-hoc tests — Tukey HSD
-                14. Full practical implementation in Python
+                When to use One-way ANOVA
+                Why not use multiple t-tests
+                Between-group vs within-group variation
+                ANOVA assumptions
+                Degrees of freedom
+                F-statistic
+            Post-hoc tests
+                Tukey HSD
 12.Full practical hypothesis-test design in Python
 """  
- 
+  
 # What is Hypothesis testing
 """
 Hypothesis testing is a statistical method used to make an inference about a population using sample data.
@@ -586,7 +576,7 @@ ANOVA stads for Analysis of Variance
     Hypothesis:
         H₀ : μ_A = μ_B = μ_C
         Hₐ : at least one population mean is different
-    ANOVA doesn't tell exactly which groups differ, it only answers at leat one difference exists.
+    ANOVA doesn't tell exactly which groups differ, it only answers at least one difference exists.
     The main idea:
         variation between groups
         variation within groups 
@@ -613,5 +603,63 @@ One-Way ANOVA:
         One-Way means we have one categorical explanantory factor: in the example above: treatment_type
 
     Why not use Multiple t-tests
+        Using multiple ordinary t-test increases the chance of making a Type I error.
+        Example: there are three independent groups: A, B, C
+            if we apply pairwase t-test: we would do: 
+                A vs B | A vs C | B vs C 
+            ech test might uses:  α = 0.05 (5% chance of rejecting H₀ when H₀ is true)
+            The problem is that when we perform several tests, the chance of getting at leat one false positive becomes larger than 5%.
+                P(at least one Type I error) = 1 - (1 - α)ᵐ
+            With m=3(tests): 1 - (1 - 0.05)³ = 1 - 0.95³ ≈ 0.143 -> 14.3% instead of 5%. This is called famlily-wise error rate.
+        As number of groups increase, the problem gets worse.
+
+    Between-group vs within-group variation
+        the key idea in One-way ANOVA is to compare Between-group vs within-group variations
+        Question:
+            are the group means far apart compared with the natural variation inside each group ?
+        Between-Group Variation:
+            this means how far each group mean is from the grand mean.
+            exampple: X̄_A = 70,   X̄_B = 75,   X̄_C = 85 -> X̄_grand = 76.7
+                ANOVA looks:
+                    70 - 76.7
+                    75 - 76.7
+                    85 - 76.7
+            if the group means are from the grand mean, then between-group variation is large.
+            Formula:
+                SS_between = Σⱼ₌₁ᵏ nⱼ(X̄ⱼ - X̄_grand)²
+                MS_between = SS_between / df_between
         
+        Within-Group Variation:
+            This means how spread out the individual observations are inside each group.
+                example: Group-A = [68, 70, 71, 69, 72]
+            Formula:
+                SS_within = Σⱼ₌₁ᵏ Σᵢ₌₁ⁿʲ (Xᵢⱼ - X̄ⱼ)²
+                MS_within = SS_within / df_within
+
+        Total Variance: SS_total = SS_between + SS_within
+        Degrees of freedom:
+            df_between = k - 1
+            df_within = N - k
+            df_total = N - 1
+            k = number of groups
+            N = total number of observations across all groups
+        ANOVA: F_statistic = MS_between / MS_within
+
+    ANOVA assumptions
+        1. Independent observations
+        2. Numerical dependent variable
+        3. Categorical indepdenent variable with 3+ groups
+        4. Normality within groups
+        5. Homosgeneity of variance
+
+    Post-hoc tests
+        after ANOVA, Post-hoc tests are used to find out which specific groups are different
+        One of Post-hoc tests: Tukey HSD
+            Tukey HSD compares all pairs of the groups.
+            example: A, B, C
+                A vs B
+                B vs C
+                C vs A
+            the important advantages is that Tukey controls the family-wise Type I error rate.
+            So we don't inflate false-positive risk by doing many unadjusted t-tests.
 """
