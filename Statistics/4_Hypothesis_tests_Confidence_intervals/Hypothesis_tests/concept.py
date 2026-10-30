@@ -564,7 +564,7 @@ Chi-square test is mainly used for categorical data counts or frequencies
                 for the example above:
                 df_value = (2 - 1) * (2 - 1) = 1
 """
-
+ 
 # ANOVA
 """
 ANOVA stads for Analysis of Variance
@@ -586,6 +586,13 @@ ANOVA stads for Analysis of Variance
 One-Way ANOVA:
     When to use One-Way ANOVA
         we use it to compare the population means of 3 or more independent groups for one numerical outcome.
+        one numerical outcome means one quantitative variable that you measure for every observation/person.
+        Example:
+            1. Group A, Group B, Group C
+               employees performance score
+            2. groups = Diet A, Diet B, Diet C
+               numerical outcome = weight loss in kg
+
         example: a company has three advertising strategies: A, B, C
             measrues customers speding:
                 Strategy A → spending values
@@ -607,7 +614,7 @@ One-Way ANOVA:
         Example: there are three independent groups: A, B, C
             if we apply pairwase t-test: we would do: 
                 A vs B | A vs C | B vs C 
-            ech test might uses:  α = 0.05 (5% chance of rejecting H₀ when H₀ is true)
+            each test might uses:  α = 0.05 (5% chance of rejecting H₀ when H₀ is true)
             The problem is that when we perform several tests, the chance of getting at leat one false positive becomes larger than 5%.
                 P(at least one Type I error) = 1 - (1 - α)ᵐ
             With m=3(tests): 1 - (1 - 0.05)³ = 1 - 0.95³ ≈ 0.143 -> 14.3% instead of 5%. This is called famlily-wise error rate.
@@ -627,6 +634,11 @@ One-Way ANOVA:
             if the group means are from the grand mean, then between-group variation is large.
             Formula:
                 SS_between = Σⱼ₌₁ᵏ nⱼ(X̄ⱼ - X̄_grand)²
+                k = number of groups
+                nⱼ = size of group j
+                X̄ⱼ = mean of group j
+                X̄_grand = mean of all observations 
+            Mean Square Formula:
                 MS_between = SS_between / df_between
         
         Within-Group Variation:
@@ -634,6 +646,7 @@ One-Way ANOVA:
                 example: Group-A = [68, 70, 71, 69, 72]
             Formula:
                 SS_within = Σⱼ₌₁ᵏ Σᵢ₌₁ⁿʲ (Xᵢⱼ - X̄ⱼ)²
+            Mean Square Formula:
                 MS_within = SS_within / df_within
 
         Total Variance: SS_total = SS_between + SS_within
