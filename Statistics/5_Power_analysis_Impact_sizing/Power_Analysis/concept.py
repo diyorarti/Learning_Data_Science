@@ -45,7 +45,7 @@ What is Power Analysis?
     Power Analysis is a statistical method used to determine how many observations(Sample Size) are needed
     to detect a meaningful effect with a specified level of statistical power.
     IT answers this question: 
-        How much data do we need to have a suffuciently high probability of detecting a real effect, if that effect exists ?
+        How much data do we need to have a suffuciently high probability of detecting a real effect, if that effect exists?
     Example:
         An e-commerce company wants to test whether a new checkout design increases the purchase conversion rate.
         Question: How many users should particiate in each group to reliably detect this improvement ?
@@ -68,6 +68,7 @@ Statistical Power is the probability of correctly rejecting the null hypothesis 
         
     Relationship between Statistical power and Type II Error
         Actual situation	Reject H₀	        Fail to reject H₀
+        --------------------------------------------------------
         H₀ is true	        Type I Error(α) 	Correct decision
         H₀ is false	        Power(1-β)	        Type II Error (β)
 
@@ -76,12 +77,13 @@ Statistical Power is the probability of correctly rejecting the null hypothesis 
 
     Distinction between: Power vs Significance level
         Significance Level (α)                              Statistical Power (β)
+        --------------------------------------------------------------------------
         Probability of rejecting (H₀) when it is true	    Probability of rejecting (H₀) when a specified alternative is true
         Controls Type I error	                            Measures ability to detect a real effect
         Common value: 5%	                                Common value: 80%
         Typically chosen before the test	                Typically targeted before the test
     
-    Type II erorr = 1 - Power 
+    Type II erorr β = 1 - Power 
         example:
             Power = 0.90 then Type II = 1 - 0.90 = 0.10
 """
@@ -89,10 +91,18 @@ Statistical Power is the probability of correctly rejecting the null hypothesis 
 # Effect Size and Minimum Detectable Effect (MDE)
 """
 Effect Size is a quantitive measure of the magnitude of a difference between groups or the strength of a relationship between variables.
+    Effect size tells us how big a difference or relationship is, rather than whether it is statistically significant.
     In A/B testing, it commonly refers to the difference between a treatment group and a control group
-    Effect-size = μ_B - μ_A
+        Effect-size = μ_B - μ_A
+            μ_A = 100 pln
+            μ_B = 120 pln
+            Effect-size = 120 - 100 = 20 pln
     For binary outcome such as conversion, we take the difference in proportions:
-    Effect-size = p_B - p_A
+        Effect-size = p_B - p_A
+        suppose an e-commerce company tests a new checkout design. 
+            Group A (Control) = 10%
+            Group B (Treatment) = 12%
+            Effect-size = p_B - p_A = 0.12 - 0.10 = 0.02
 
 Minimum Detectable Effect (MDE) is the smallest true effect size that an experiment is designed to detect with a specified 
     statistical power and  significance level.
@@ -120,12 +130,29 @@ Standardized Effect Size (Cohen's d)
 
 # Significance Level (α)
 """
-Assuming other relevant factors remain constant:
-    Higher α → Higher statistical power
-    Lower α  → Lower statistical power
-    Lower α  → Larger required sample size (at fixed power)
-    Higher α → Smaller required sample size (at fixed power)
-    Trade-off: Lowering α reduces the Type I error rate, but achieving the same statistical power requires more observations.
+How Significance Level (α) effects Statistical power and Sample Size (n)
+    The relationship between Significance Level (α) and Statistical Power
+        example:
+            Suppose an e-commerce company conducts an A/B test:
+                H₀ : the new checkout design doesn't increase conversions
+                Hₐ : the new checkout design increases conversion
+                Sample Size = 1000 users per gourp
+                True effect size = 2 percentage point
+            Assume everything remains constant except α
+            When we increase α, it becomes easier to reject H₀ , which increases statistical power against the specified alternative:
+                ↑ α ⇒ ↑ Power ⇒ β ↓
+                ↓ α ⇒ ↓ Power ⇒ β ↑
+
+    The relationship between Significance Level (α) and Sample Size (n)
+        example:
+            a company wants to maintain 80% statistical power.
+            if it decreases α from 0.05 to 0.01, the experiment must generally collect more observationsto compensate for the stricker rejection.
+                ↑ α ⇒ n ↓
+                ↓ α ⇒ n ↑
+
+    α = probability of Type I error when H₀ is True
+    β = probability of Type II error under a specified alternative
+    Power = probability of rejecting H₀ under that alternative
 """
 
 # Variance and Standard Deviation
