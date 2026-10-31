@@ -125,5 +125,58 @@ CREATE TABLE seller_performance_report(
 )
 
 CREATE OR REPLACE PROCEDURE generate_seller_performance_report(
-
+    p_seller_id VARCHAR(50),
+    p_start_date TIMESTAMP,
+    p_end_date TIMESTAMP
 )
+LANGUAGE plpgsql
+AS $$
+DECLARE 
+    v_order RECORD;
+
+    v_item_count BIGINT;
+    v_order_sales NUMERIC;
+    v_average_price NUMERIC;
+    v_classification TEXT;
+
+    v_total_orders BIGINT := 0;
+    v_total_items BIGINT := 0;
+    v_total_sales NUMERIC(12, 2) := 0;
+    v_high_value_orders BIGINT := 0;
+    v_problem_orders BIGINT := 0;
+
+    v_seller_level TEXT;
+
+BEGIN 
+    -- DELETE before generating a new reprot for a seller, first delete it's report
+    DELETE FROM seller_performance_report
+    WHERE seller_id = p_seller_id;
+
+    -- FOR loop + SELECT looping through all distinct orders in which the seller sold something during the requested date range.
+    FOR v_order IN 
+        SELECT 
+            o.order_id
+        FROM order_items oi
+        JOIN orders o ON oi.order_id = o.order_id
+        WHERE oi.seller_id = p_seller_id 
+          AND o.order_purchase_timestamp BETWEEN p_start_date AND end_date
+    LOOP
+
+        -- Calculating information for each order
+        SELECT 
+            COUNT(*),
+            SUM(pyment_value),
+            AVG(payment_value),
+        INTO
+            v_item_count,
+            v_order_sales,
+            v_average_price
+        FROM order_payment
+        WHERE order_id = v_order.order_id;
+
+        -- Handling NULL if v_order_sales is NULL
+        IF v_order_sales is NULL THEN 
+            v_order_sales := 0;
+        END IF;
+
+        -- classifying each order
