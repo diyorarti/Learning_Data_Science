@@ -463,7 +463,7 @@ T-tests are Hypothesis statistical tests. It is mainly used when population σ i
     One-Sample T-test:
         compare one sample mean to a hypothesized population mean
         Formula:
-            t = (X̄ - μ₀) / (s / √n)
+            t = (X̄ - μ₀) / (s / √n) 
             X̄ : Sample mean
             μ₀: Hypothesized population mean
             s : Sample standard deviation
@@ -593,6 +593,8 @@ ANOVA stads for Analysis of Variance
     
     F-statisitc = between-group vairation / within-group variation
 
+    one-way ANOVA is always righted-tailed
+
 One-Way ANOVA:
     When to use One-Way ANOVA
         we use it to compare the population means of 3 or more independent groups for one numerical outcome.
@@ -677,12 +679,13 @@ One-Way ANOVA:
 
     Post-hoc tests
         after ANOVA, Post-hoc tests are used to find out which specific groups are different
+
         One of Post-hoc tests: Tukey HSD
             Tukey HSD compares all pairs of the groups.
             example: A, B, C
                 A vs B
                 B vs C
                 C vs A
-            the important advantages is that Tukey controls the family-wise Type I error rate.
+            the important advantages is that Tukey HSD controls the family-wise Type I error rate.
             So we don't inflate false-positive risk by doing many unadjusted t-tests.
 """
