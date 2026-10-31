@@ -377,6 +377,16 @@ Choosing the correct statistical test:
         3.Numerical or categorical ?
         4.Independent or paired ?
 
+    Statistical case	                Appropriate test	
+    One population mean	                One-sample Z-test (known population SD) or one-sample t-test (unknown population SD)
+    Two independent means	            Two-sample Z-test (known population variances) or independent t-test (unknown population variances)	C
+    Two dependent means	                Paired t-test
+    Three or more independent means	    One-way ANOVA
+    One population proportion	        One-proportion Z-test
+    Two independent proportions	        Two-proportion Z-test
+    Categorical goodness-of-fit	        Chi-square goodness-of-fit test
+    Categorical independence	        Chi-square test of independence
+
 """
  
 # Z-test
@@ -397,7 +407,7 @@ Formula: Z = (observed result - value expected under H₀) / standard error
         when to use:
             1.You have one sample
             2.outcome is numerical
-            3.you compare the sample mean with a pypothesized population mean
+            3.you compare the sample mean with a hypothesized population mean
             4.population standard deviation σ is known
         Example:
             company claims that the average bottle volume 500:

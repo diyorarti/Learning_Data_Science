@@ -8,7 +8,7 @@ Power Analysis
         Standardized effect size (Cohen's d)
     Significance Level (α)
     Variance and Standard Deviation
-    Statistical Significance vs. Practical Significance
+    Statistical Significance vs Practical Significance
 
 Sample Size Determination 
     Required Sample Size (n)
@@ -38,7 +38,7 @@ Sample Size Determination
         6. Practical Assumptions and Limitations
         7. Estimating Experiment Duration in Python
 """
- 
+# POWER ANALYSIS
 # Power Analysis 
 """
 What is Power Analysis?
@@ -139,14 +139,14 @@ How Significance Level (α) effects Statistical power and Sample Size (n)
                 Sample Size = 1000 users per gourp
                 True effect size = 2 percentage point
             Assume everything remains constant except α
-            When we increase α, it becomes easier to reject H₀ , which increases statistical power against the specified alternative:
+            When we increase α, it becomes easier to reject H₀, which increases statistical power against the specified alternative:
                 ↑ α ⇒ ↑ Power ⇒ β ↓
                 ↓ α ⇒ ↓ Power ⇒ β ↑
 
     The relationship between Significance Level (α) and Sample Size (n)
         example:
             a company wants to maintain 80% statistical power.
-            if it decreases α from 0.05 to 0.01, the experiment must generally collect more observationsto compensate for the stricker rejection.
+            if it decreases α from 0.05 to 0.01, the experiment must generally collect more observations compensate for the stricter rejection.
                 ↑ α ⇒ n ↓
                 ↓ α ⇒ n ↑
 
@@ -157,20 +157,35 @@ How Significance Level (α) effects Statistical power and Sample Size (n)
 
 # Variance and Standard Deviation
 """
-Higher Var/Std means more noise, which makes it harder to distinguish a real effect from sampling variation.
-    example:
-        A/B test to determine whether a new recommendation algorithm increases customer spending
-        μ_A = 100  | μ_B = 110 -> δ = μ_B - μ_A = 10
-        σ_A = 10   | σ_B = 30 
-        Here, Experiment_B needs a larger sample size to detect the same 10pln customer spending improvement with the same statistical power.
-    
-    Relationship Var/Std and Power
-        ↑σ²/σ ⇒ ↓Power
-        ↓σ²/σ ⇒ ↑Power
-    
-    Relationship Var/Std and Sample Size
-        ↑σ²/σ ⇒ ↑n(sample-size)
-        ↓σ²/σ ⇒ ↓n(sample-size)
+How Var/Std affects Statistical Power, Type II error and Required Sample size n.
+
+    Relationship between Var/Std and Statistical Power.
+        we want to keep sample size n fixed.
+        Suppose an e-commerce company wants to determine whether a new recommendation system increases average customer spending.
+        Both experiments have the same true improvement: 
+                                Experiment A	Experiment B
+            True effect size	10 PLN	        10 PLN
+            Standard deviation	10 PLN	        30 PLN
+            Variance	        100	            900
+            Sample size	        100 per group	100 per group
+        but variablity of customer spending differs. 
+        in experiment A, the spending values are relatively concentrated around their population means.
+        in experiment B, the spending values are much more spread out. True improvement is 10pln, but it is hard to distinguish from random variation.
+            ↑ Var/Std ⇒ ↓ Power
+            ↑ Var/Std ⇒ ↑ β
+        In other words, higher variance increases the probability of missing a real effect when sample size is fixed
+
+    Relationship between Variance and Required Sample Size.
+        we want to maintain statistical power at 80%
+        the approximate sample-size formula: n ≈ [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
+        So, ↑ Var/Std ⇒ ↑ n
+        n ∝ σ²
+            Change	                    Required sample size
+            Variance doubles	        2x
+            Variance triples	        3x
+            Standard deviation doubles	4x
+            Standard deviation triples	9x
+            Standard deviation halves	0.25x
 """
 
 # Statistical Significance vs Practical Significance
@@ -198,14 +213,12 @@ Practical Significance
         p < α = 0.01 < 0.05 -> Reject H₀
         the result is statistically signifiacnt.
         but whether this improvement is practically significanct depends on the business.
-        for example, if implementation the new checkout design costs €100,000 annually 
+        for example, if implementation the new checkout design costs €100,000.
         but the expected additional profit is only €20,000, the change may not be worth implementing.
-
-Connection with Power Analysis and MDE
-    When planning an experiment, Data scienctists should identify an effect that would be partically meaningful to the business.
-    That effect can guide the selection of the Minimum Detectable Effect (MDE)
 """
 
+
+# SAMPLE SIZE DETERMINATION
 # Required Sample Size (n)
 """
 Required Sample Size (n)
@@ -218,8 +231,19 @@ Required Sample Size (n)
         Statistical Power(1-β)	 Desired probability of detecting the specified effect	    80%
         Significance Level(α)	 Allowed Type I error probability	                        0.05
         Variance(σ²)	         Variability of the outcome metric	                        Estimated from historical data
-    
-    Required sample size per group formula when comparing two independent population means.
+            
+Statistical cases and Power Analysis:
+    Case	                     Sample Size method                             Example
+    One population mean	         One-sample mean power calculation              Is average customer spending different from 100 PLN?
+    Two independent means	     Two-independent-means power calculation        Is average spending different between users of website A and B?
+    Two dependent means	         Paired-mean power calculation                  Does average spending change for the same customers before and after an intervention?
+    Three or more means	         ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
+    One population proportion	 One-proportion power calculation               Is the conversion rate different from 10%?
+    Two independent proportions	 Two-proportion power calculation               Is conversion rate different between checkout designs A and B?
+    Categorical goodness-of-fit	 Chi-square goodness-of-fit power calculation   Do customers choose four payment methods in the expected proportions?
+    Categorical independence	 Chi-square independence power calculation      Is payment method associated with device type?
+
+Two Independent Means Sample Size Formula
         n ≈ [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
         n = required sample size per group
         Z_(1-α/2 = Standard normal quantile for significance
@@ -381,5 +405,5 @@ Power Analysis for Proportions is a statistical method used to determine the sam
 
 # Unequal Group Allocation (e.g., 50/50 vs. 80/20)
 """
-
+ 
 """
