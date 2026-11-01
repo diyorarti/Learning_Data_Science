@@ -11,7 +11,7 @@ Solid Principles are advanced but very important OOP Design principles
         2. O - Open/Closed Principle
         3. L - Liskov Substituion Principle
         4. I - Interaface Segregation Principle
-        5. Dependency Inversion Principle
+        5. D - Dependency Inversion Principle
 
     SOLID Summary Table:
     | Principle                 | Simple meaning                                              |

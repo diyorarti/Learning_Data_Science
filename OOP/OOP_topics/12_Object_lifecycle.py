@@ -1,11 +1,11 @@
 """
-Object Liefcylce 
+Object Lifecycle 
     Means the full life of an object from creation to deletion
-    Object lifecylce --> how an object os creadred, used, and destroyed
+    Object lifecycle --> how an object is created, used, and destroyed
     In Python , the lifecycle usually has 3 main stages:
         1. Object creation 
         2. Object usage
-        3. Object destruction / delection
+        3. Object destruction / deletion
 
 """
 # Basic object lifecycle
