@@ -121,9 +121,12 @@ CREATE TABLE seller_performance_report(
     item_count BIGINT,
     total_sales NUMERIC(12,2),
     average_item_price NUMERIC(12,2),
-    classification
-)
+    classification TEXT,
+    requires_attention BOOLEAN DEFAULT FALSE,
+    processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
+-- Stored procedure 
 CREATE OR REPLACE PROCEDURE generate_seller_performance_report(
     p_seller_id VARCHAR(50),
     p_start_date TIMESTAMP,
@@ -135,8 +138,8 @@ DECLARE
     v_order RECORD;
 
     v_item_count BIGINT;
-    v_order_sales NUMERIC;
-    v_average_price NUMERIC;
+    v_order_sales NUMERIC(12, 2);
+    v_average_price NUMERIC(12, 2);
     v_classification TEXT;
 
     v_total_orders BIGINT := 0;
@@ -154,29 +157,141 @@ BEGIN
 
     -- FOR loop + SELECT looping through all distinct orders in which the seller sold something during the requested date range.
     FOR v_order IN 
-        SELECT 
-            o.order_id
+        SELECT DISTINCT
+            o.order_id,
+            o.order_status
         FROM order_items oi
         JOIN orders o ON oi.order_id = o.order_id
         WHERE oi.seller_id = p_seller_id 
-          AND o.order_purchase_timestamp BETWEEN p_start_date AND end_date
+          AND o.order_purchase_timestamp BETWEEN p_start_date AND p_end_date
     LOOP
 
         -- Calculating information for each order
         SELECT 
             COUNT(*),
-            SUM(pyment_value),
-            AVG(payment_value),
+            SUM(price),
+            AVG(price)
         INTO
             v_item_count,
             v_order_sales,
             v_average_price
-        FROM order_payment
-        WHERE order_id = v_order.order_id;
+        FROM order_items
+        WHERE order_id = v_order.order_id
+        AND seller_id = p_seller_id;
 
         -- Handling NULL if v_order_sales is NULL
         IF v_order_sales is NULL THEN 
             v_order_sales := 0;
         END IF;
 
-        -- classifying each order
+        IF v_average_price is NULL THEN 
+            v_average_price := 0;
+        END IF;
+
+        -- classifying each order 
+        if v_order.order_status = 'canceled' THEN 
+            v_classification := 'Canceled Order';
+        ELSIF v_order.order_status != 'delivered' THEN 
+            v_classification := 'Incomplete Order';
+        ELSIF v_order_sales >= 500 AND v_item_count >= 3 THEN
+            v_classification := 'Large High-Value Order';
+        ELSIF v_order_sales >= 500 THEN 
+            v_classification := 'High-Value Order';
+        ELSIF v_item_count >= 3 THEN
+            v_classification := 'Large Order';
+        ELSE 
+            v_classification := 'Normal Order';
+        END IF;
+
+        -- INSERT into seller_performance_report
+        INSERT INTO seller_performance_report(
+            seller_id,
+            order_id,
+            order_status,
+            item_count,
+            total_sales,
+            average_item_price,
+            classification
+        ) VALUES (
+            p_seller_id,
+            v_order.order_id,
+            v_order.order_status,
+            v_item_count,
+            v_order_sales,
+            v_average_price,
+            v_classification
+        );
+
+        -- UPDATE seller_performance_report tables
+        if v_classification IN (
+            'Canceled Order',
+            'Incomplete Order'
+        ) THEN 
+            UPDATE seller_performance_report
+            SET requires_attention = TRUE
+            WHERE seller_id = p_seller_id AND order_id = v_order.order_id;
+        END IF;
+
+        -- UPDATE counters
+        v_total_orders := v_total_orders + 1;
+        v_total_items := v_total_items + v_item_count;
+        v_total_sales := v_total_sales + v_order_sales;
+        IF v_order_sales >= 500 THEN
+            v_high_value_orders := v_high_value_orders + 1;
+        END IF;
+        IF v_classification IN (
+            'Canceled Order',
+            'Incomplete Order'
+        ) THEN 
+            v_problem_orders := v_problem_orders + 1;
+        END IF;
+
+        -- printing each processed order
+        RAISE NOTICE 'Order ID: %, Status: %, Items sold: %, Order sales: %, Average item price: %, Classification: %',
+            v_order.order_id,
+            v_order.order_status,
+            v_item_count,
+            v_order_sales,
+            v_average_price,
+            v_classification;
+
+        END LOOP;
+    
+    -- Classifying the seller
+    IF v_total_orders = 0 THEN 
+        v_seller_level := 'No Activity';
+    ELSIF v_total_sales >= 10000 AND v_total_orders >= 20 THEN 
+        v_seller_level := 'Top Seller';
+    ELSIF v_total_sales >= 5000 OR v_total_orders >= 10 THEN 
+        v_seller_level := 'Active Seller';  
+    ELSIF v_problem_orders >= 3 THEN
+        v_seller_level := 'Needs Attention';
+    ELSE 
+        v_seller_level := 'Small Seller';
+    END IF;
+
+    -- Final Summary
+    RAISE NOTICE 'Seller ID: %, Total orders: %, Total items: %, Total sales: %, High-value orders: %, Problem orders: %, Seller level: %',
+        p_seller_id,
+        v_total_orders,
+        v_total_items,
+        v_total_sales,
+        v_high_value_orders,
+        v_problem_orders,
+        v_seller_level;
+
+END;
+$$;
+
+CALL generate_seller_performance_report(
+    '48436dade18ac8b2bce089ec2a041202',
+    '2017-01-01',
+    '2018-01-01'
+);
+
+SELECT *
+FROM seller_performance_report;
+
+SELECT *
+FROM order_items
+
