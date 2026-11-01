@@ -12,6 +12,15 @@ Power Analysis
 
 Sample Size Determination 
     Required Sample Size (n)
+        1. One sample mean
+        2. Two independent means
+        3. Two dependent means 
+        4. One sample proportion
+        5. Two independent proportions
+        6. Three or more means (ANOVA)
+        7. Categorical goodness-of-fit
+        8. Categorical independence
+
     Relationships between MDE, Power, α, Variance, and n
     One-sided vs Two-sided Tests
     Power Analysis for Means
@@ -234,28 +243,52 @@ Required Sample Size (n)
             
 Statistical cases and Power Analysis:
     Case	                     Sample Size method                             Example
-    One population mean	         One-sample mean power calculation              Is average customer spending different from 100 PLN?
-    Two independent means	     Two-independent-means power calculation        Is average spending different between users of website A and B?
-    Two dependent means	         Paired-mean power calculation                  Does average spending change for the same customers before and after an intervention?
-    Three or more means	         ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
-    One population proportion	 One-proportion power calculation               Is the conversion rate different from 10%?
+    One sample mean	             One-sample mean power calculation              Is average customer spending different from 100 PLN?
+    Two independent sample means Two-independent-means power calculation        Is average spending different between users of website A and B?
+    One sample proportion	     One-proportion power calculation               Is the conversion rate different from 10%?
     Two independent proportions	 Two-proportion power calculation               Is conversion rate different between checkout designs A and B?
+    Two dependent sample means	 Paired-mean power calculation                  Does average spending change for the same customers before and after an intervention?
     Categorical goodness-of-fit	 Chi-square goodness-of-fit power calculation   Do customers choose four payment methods in the expected proportions?
     Categorical independence	 Chi-square independence power calculation      Is payment method associated with device type?
+    Three or more sample means	 ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
+
+One-Sample Mean Sample Size Formula:
+    one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
+    two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
 
 Two Independent Means Sample Size Formula
-        n ≈ [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
-        n = required sample size per group
-        Z_(1-α/2 = Standard normal quantile for significance
-        Z_(1-β) = Standard normal quantile for desired power
-        σ² = common population variance
-        δ = minimum detectable difference between means
-        used when:
-            1. two independent groups are being compared 
-            2. the outcome is continuous 
-            3. two groups have equal population variance
-            4. equal sample sizes are planned for both groups
-            5. observations are independent, and a normal approximation is appropriate.
+    one-tailed: n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
+    two-tailed: n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+
+One Sample Proportion Sample Size Formula
+    one-tailed: n ≈ [Z_(1-α) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+    two-tailed: n ≈ [Z_(1-α/2) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+
+Two Independent Proportions Sample Size Formula
+    one-tailed: n ≈ [Z_(1-α) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+    two-tailed: n ≈ [Z_(1-α/2) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+
+Two dependent means Sample Size Formula
+    one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ_D²) / δ_D²
+    two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ_D²) / δ_D²
+
+Categorical goodness-of-fit Sample Size Formula
+    w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
+    λ = nw²
+    df = k - 1
+    Power = 1 - F_ncx²(χ²_critical; df, λ)
+
+Categorical independence Sample Size Formula
+    w = √(Σᵢ Σⱼ ((pᵢⱼ - pᵢ₊p₊ⱼ)² / (pᵢ₊p₊ⱼ)))
+    λ = Nw²
+    df = (r - 1)(c - 1)
+    Power = 1 - F_ncx²(χ²_critical; df, λ)
+
+Three or more independent means (ANOVA) Sample Size Formula
+    λ = Nf²
+    df₁ = k - 1
+    df₂ = N - k
+    Power = 1 - F_ncf(F_critical; df₁, df₂, λ)
 """
 
 # Relationships between MDE, Power, α, Variance, and n

@@ -377,15 +377,15 @@ Choosing the correct statistical test:
         3.Numerical or categorical ?
         4.Independent or paired ?
 
-    Statistical case	                Appropriate test	
-    One population mean	                One-sample Z-test (known population SD) or one-sample t-test (unknown population SD)
-    Two independent means	            Two-sample Z-test (known population variances) or independent t-test (unknown population variances)	C
-    Two dependent means	                Paired t-test
-    Three or more independent means	    One-way ANOVA
-    One population proportion	        One-proportion Z-test
-    Two independent proportions	        Two-proportion Z-test
-    Categorical goodness-of-fit	        Chi-square goodness-of-fit test
-    Categorical independence	        Chi-square test of independence
+    Statistical case	                        Appropriate test	
+    One Sample mean	                            One-sample Z-test (known population SD) or one-sample t-test (unknown population SD)
+    Two independent sample means	            Two-sample Z-test (known population variances) or independent t-test (unknown population variances)	C
+    One sample proportion	                    One-proportion Z-test
+    Two independent sample proportions	        Two-proportion Z-test
+    Two dependent sample means	                Paired t-test
+    Categorical goodness-of-fit	                Chi-square goodness-of-fit test
+    Categorical independence	                Chi-square test of independence
+    Three or more independent sample means	    One-way ANOVA
 
 """
  
