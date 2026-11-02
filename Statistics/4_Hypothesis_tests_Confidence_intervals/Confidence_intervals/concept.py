@@ -58,9 +58,9 @@ VIII. Practical Applications
 # Confidence Intervals
 """
 Confidence Interval (CI) is a range of values calculated from sample data that expresses uncertainty about an 
-   unknown population parameter, such as the population mean or populatio proportion p.
+   unknown population parameter, such as the population mean or population proportion p.
    example: A company has 10,000 employees, and we want to estimate their average salary.
-      instead of colllecting salary information from all 10,000 employees, we randomly select 200 employees.
+      instead of collecting salary information from all 10,000 employees, we randomly select 200 employees.
       then we calculate:
          Sample mean x̄ = 6,000 PLN
          95% CI = [5,600 PLN, 6,400 PLN]
