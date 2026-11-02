@@ -26,8 +26,8 @@ Sample Size Determination
     Power Analysis for Means
     Power Analysis for Proportions
     Unequal Group Allocation (e.g., 50/50 vs. 80/20)
-        7. Sample Size Calculation Using Formulas
-        8. Sensitivity Analysis 
+    Sample Size Calculation Using Formulas
+    Sensitivity Analysis 
 
     C. Practical Power Analysis in Python
         1. TTestIndPower — Power analysis for comparing means
@@ -298,28 +298,28 @@ Relationship between MDE and n
     Why? Detecting a very small improvement is more difficult because it can be hidden by random sampling variation.
     n ∝ 1 / MDE²
 
-Realtionship between Power and n
+Relationship between Power and n
     Higher desired statistical power → Larger required sample size.
     Power is the probability of rejecting H₀ when a specified alternative is true.
     Increasing power from 80% to 90% means you want a higher chance of detecting the same true effect.
-    To achaive this while keeping MDE, α, variance and design constant, you generally need more observations
+    To achieve this while keeping MDE, α, variance and design constant, you generally need more observations
 
 Relationship between α and n 
     Lower significance level → Larger required sample size.
     a smaller α means stricter evidence is required to reject H₀.
     Suppose the company changes α = 0.05 → 0.01. This decreases the allowed Type I error probability from 5% to 1%.
-    But mainintaing the same statistical power now requires a larger sample. 
+    But maintaining the same statistical power now requires a larger sample. 
 
 Relationship between Variance and n
-    Higher variance → larger required samole size
+    Higher variance → larger required sample size
 
 Relationship Table:
     Parameter changes          Required n      Reason
     -----------------------------------------------------------------------------
     MDE increases              ↓ Decreases     Larger effects are easier to detect
     MDE decreases              ↑ Increases     Smaller effects are harder to detect
-    Desired power increases    ↑ Increases     Greater detection probability is required
-    Desired power decreases    ↓ Decreases     Lower detection probability is accepted
+    power increases            ↑ Increases     Greater detection probability is required
+    power decreases            ↓ Decreases     Lower detection probability is accepted
     α increases                ↓ Decreases     Less stringent rejection threshold
     α decreases                ↑ Increases     More stringent rejection threshold
     Variance increases         ↑ Increases     More noise
@@ -436,7 +436,95 @@ Power Analysis for Proportions is a statistical method used to determine the sam
             n ≈ [Z_(1-α/2) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
 """
 
-# Unequal Group Allocation (e.g., 50/50 vs. 80/20)
+# Unequal Group Allocation
 """
- 
+Group allocation
+    Group allocation describes how participants are distributed between the control and treatment groups.
+    example:
+        an E-commerce company has 10,000 users available for an A/B test.
+        50/50 allocation: 5,000 users in each group = equal group allocation
+        80/20 allocation: 8,000 users in the control grou and 2,000 users in the treatment group = unequal group allocation
+
+    The main principle: with equal group allocation and a fixed total sample size, a 50/50 allocation usually provides greater 
+    statistical power than an unequal allocation.
+
+    Why does unequal group allocation affect statistical power ?
+        Variance of the difference between sample means
+            Var(X̄_B - X̄_A) = (σ_A² / n_A) + (σ_B² / n_B)
+            this formula calculates how much the estimated difference between two independen sample means varies across repeated samples.
+            example: A/B test 
+                what we are interested in: X̄_B - X̄_A.
+                Group A: average spending = 100pln
+                Group B: average spending = 110pln
+                the observed difference 110pln - 100pln = 10pln
+                if we repeat the experiment many times, the observed difference will vary due to random sampling variation.
+                the variance is higer when sample sizes are smaller, assuming underlying population variance is unchanged.
+        
+        Standard Error
+            SE = σ * √((1 / n_A) + (1 / n_B))
+
+        example:
+            σ = 30, n=10,000
+            allocation             Standard Error
+            50/50 (5,000 / 5,000)  0.600
+            80/20 (8,000 / 2,000)  0.750
+        the 80/20 allocation has a25% larher standard error, making it harder to dectect the same effect with the same sample size.
+
+    Sample Size Formula for Unequal Group Allocation
+        For unequal group allocation, introduce the allocation ratio: r = n_A / n_B
+        For a two-sided test with common variance:
+            n_a = ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1/r)) / δ²
+            n_b = r * n_a
+            N = n_a + n_b 
+
+        For unequal variance the general normal approximation formula:
+            n_a = ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
+            n_b = r * n_a
+            N = n_a + n_b
+
+    How much more sample size does 80/20 require ?
+        For equal variance:
+            N_r / N_(50/50) = (1 + r)² / (4r) 
+            r = 0.20 / 0.80 = 0.25
+            N_(80/20) / N_(50/50) = (1.25)² / (4(0.25)) = 1.5625 
+        Therefore: 56.25% more total observations required for appromimately the same power, MDE, α.
+
+    Why should we use unequal group allocation ?
+        1. Risk management: A new treatment may be experimental, so the company initially exposes fewer users to it.
+        2. Business costs: One treatment might be more expensive to deliver.
+        3. Ethical considerations: Researchers may want to limit exposure to a potentially harmful or burdensome treatment.
+        4. Different group variances: When population variances differ, a 50/50 allocation is not always the most statistically efficient choice.
+"""
+
+# Sample Size Calculation Using Formulas
+"""
+General Procedure:
+    1. Choose the statistical : Z-test, t-test, chi-square test, ANOAVA, etc.
+    2. Specify the MDE: the smallest effect our experiment should be able to detect.
+    3. Choose α and power: Common choices are α=0.05 and power=80%
+    4. Estimate variablity: Standard deviation, proportion, or standardized effect size, depending on the test.
+    5. Apply the appropriate formula: calculate and round the required sample size upward.
+
+    Example:
+        an E-commerce company wants to test whether a new recommendation algorithm increase average customer spending.
+        Parameters                  Value
+        Control mean                100 PLN
+        Treatment mean to detect    110 PLN
+        MDE δ                       10 PLN
+        Population SD σ             30 PLN
+        Significance level α        0.05
+        Statistical power           80%
+        Allocation                  50/50
+        Test                        Two-sided, Two-independent means Z-test
+
+        1-step: The sample size foruma: n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+        2-step: Find the critical Z-values:
+            α = 0.05 -> Z_(1-α/2) = Z_0.975 = 1.96
+            Power = 80% -> Z_(1-β) = Z_0.80 = 0.8416
+        3-step: n = (2 * (1.96 + 0.8416)² * 30²) / 10² = 141.28 -> 142 customers per group 142 + 142 = 284 total.
+"""
+
+# Sensitivity Analysis 
+"""
+
 """
