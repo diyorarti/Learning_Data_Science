@@ -27,7 +27,12 @@ Sample Size Determination
     Power Analysis for Proportions
     Unequal Group Allocation (e.g., 50/50 vs. 80/20)
     Sample Size Calculation Using Formulas
-    Sensitivity Analysis 
+    Sensitivity Analysis:
+        MDE sensitivity
+        Variance sensitivity
+        Power and α sensitivity
+        Allocation sensitivity
+        Scenario-based planning
 
     C. Practical Power Analysis in Python
         1. TTestIndPower — Power analysis for comparing means
@@ -526,5 +531,67 @@ General Procedure:
 
 # Sensitivity Analysis 
 """
+Sensitivity Analysis is a technique used to examine how changes in input assumptions affect the result of a statistical analysis.
+    In power analysis, it helps us understand how changes in parameters such as MDE, Var, α and power affect:
+        required sample size
+        achievanle statistical power
+        minimum detectable effect 
+        feasibility of an experiment
+    example: an e-commerce company wants to run A/B test to determine whether a new recommendation algorithm increases avera customer spending.
+        initially, the company assumes:
+            MDE = 10 PLN
+            Std = 30 PLN
+            α   = 0.05
+            Power = 80%
+            allocation = 50/50
+            statistical test = two-sided indepdent-means test
+            using the normal approximation: n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²  -> we obtain 142 customers per group, 284 in total.
+        But what if our assumptions are wrong ?
+        Std is 40 instead of 30 or MDE is 5 PLN or Power is 90% 
+        Sensitivity Analysis answers these questions.
 
+    Two main types of Sensitivity Analysis:
+        1.Sample-size Sensitivity Analysis:
+            We fix the sedired power and examine how changes in the other parameters affect required sample size.
+            for example:
+                MDE decreases = Sample size increases
+                Variance increases = Sample size increases
+                Power increases = Sample size increases 
+
+        2.Statistical-power Sensitivity Analysis:
+            We fix the available sample size and examine how changes in the other parameters affect the achievable power.
+            for example:
+                if we have only 500 customers, will we achieve 80% power when the true effect is 5 PLN ?
+                What about 10 PLN
+            this second type is particulary useful when a company has limited traffic or budget.
+
+    MDE Sensitivity
+        MDE Sensitivity Analysis evaluates how different detectable-effect assumptions change required sample size or achievable statistical power.
+        The central relationship is n ∝ 1 / MDE²
+        Main types:
+            Fixed desired power: change MDE and calculate required sample size
+            Fixed sample size: Change the assumed true effect and calculate achievable power
+    
+    Variance Sensitivity
+        Variance Sensitivity Analysis examines how different assumptions about population variability affect the required sample size 
+        and achievable statistical power.
+        The main relationship: n ∝ σ²
+        For fixed desired power:
+            Variance ↑ ⇒ n ↑
+            Variance ↓ ⇒ n ↓
+        For fixed sample size:
+            Variance ↑ ⇒ Power ↓
+            Variance ↓ ⇒ Power ↑
+
+    Power and α Sensitivity Analysis:
+        Power and α Sensitivity Analysis evaluates how different combinations of desired statistical power and significance levels 
+        influence required sample size or achievable statistical power.
+            Change	                  Required n (power fixed)	    Achieved power (n fixed)
+            Desired power target ↑	    ↑	                        Target itself is a planning choice
+            Desired power target ↓	    ↓	                        Target itself is a planning choice
+            α↑	                        ↓	                        ↑
+            α↓	                        ↑	                        ↓
+
+    Allocation sensitivity Analysis:
+        
 """
