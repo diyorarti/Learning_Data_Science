@@ -58,7 +58,7 @@ class BankAccount:
 
 
 """
-Principle 4 --> USing meaningful class names
+Principle 4 --> Use meaningful class names
     class names should be clear
 Python class names usually use PascalCase
 """
@@ -92,7 +92,7 @@ class MyClass:
     pass
 
 """
-Principle 4 --> Keep classes small
+Principle 5 --> Keep classes small
     A class should not become too large
     if a class has too many reponsibilitiees, split it
 """
@@ -142,7 +142,7 @@ class MLPipeline:
         self.evaluator = evaluator
 
 """
-Principle 5 --> Use instance variables for object-specific data
+Principle 6 --> Use instance variables for object-specific data
     if data is different for each, use instance variables
 """
 class Student:
@@ -152,7 +152,7 @@ class Student:
         self.gpa = gpa
 
 """
-Principle 6 --> Use class variables for shared data
+Principle 7 --> Use class variables for shared data
     if data is shared by all ibjects, use class variable
 """
 class Student:
@@ -163,7 +163,7 @@ class Student:
 
 
 """
-Principle 7: Protect important data
+Principle 8: Protect important data
     Do not allow important data to be changed directly in a dangerous way.
 """
 # bad example
@@ -190,7 +190,7 @@ class BankAccount:
 
 
 """
-Principle 8 --> Avoid repeating code
+Principle 9 --> Avoid repeating code
     If you repeat the same logic many times, move it into a method or parent class.
 """
 # bad example
@@ -217,7 +217,7 @@ class Teacher(Person):
 
 
 """
-Principle 9: Prefer composition when it is a has-a relationship
+Principle 10: Prefer composition when it is a has-a relationship
     Use inheritance for is-a relationships.
     Use composition for has-a relationships.
 
@@ -244,7 +244,7 @@ class Car:
     
     
 """
-Principle 10: Make methods do one clear thing
+Principle 11: Make methods do one clear thing
     A method should have one clear purpose.
 """
 # good example
@@ -264,16 +264,17 @@ def deposit_and_withdraw_and_send_email_and_print_report(self):
 
 
 """
-Principle 11: Use clear method names
+Principle 12: Use clear method names
     Method names should usually be verbs because methods represent actions.
     good method names
-        #deposit()
-        #withdraw()
-        #show_info()
-        #calculate_total()
-        #validate_gpa()
-        #train_model()
-        #clean_data()
+        deposit()
+        withdraw()
+        show_info()
+        calculate_total()
+        validate_gpa()
+        train_model()
+        clean_data()
+
     bad method names
         data()
         thing()
@@ -284,7 +285,7 @@ Principle 11: Use clear method names
 
 
 """
-Principle 12: Hide unnecessary details
+Principle 13: Hide unnecessary details
     The user of a class should not need to know how everything works internally.
 """
 
@@ -310,7 +311,7 @@ clearer.clean()
 
 
 """
-Principle 13: Design classes to be easy to extend
+Principle 14: Design classes to be easy to extend
     Good class design makes it easy to add new behavior later.
 """
 class Payment:

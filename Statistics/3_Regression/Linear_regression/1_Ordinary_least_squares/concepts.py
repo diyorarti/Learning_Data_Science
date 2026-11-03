@@ -28,7 +28,7 @@ Ordinary Least Squares is A Statistical method (algorithm) for choosing the best
 
     Key Assumptions of OLS 
         1. Linearity:
-            Means the relationship between the independet variables(target variables) and the dependent variable(feautes). 
+            Means the relationship between the independet variables(features) and the dependent variable(target). 
             Detection methods:
                 1. scatter plots (one features vs target)
                 2. Residual scatter plot (one feature vs residuals )
@@ -96,7 +96,7 @@ Ordinary Least Squares is A Statistical method (algorithm) for choosing the best
                 4. Kurtosis
                 5. Jarque-Bera test or Shapiro-Wilk test
 
-        5. Absence of severe multicollinearity 
+        5. Absence of multicollinearity 
             occurs when one predictor is strongly explained by several other predictors together   
             Detection methods:
                 1. Correlation Heatmap plot

@@ -194,7 +194,6 @@ class RobotWorker(Worker):
 # Better design 
 from abc import ABC, abstractmethod
 
-
 class Workable(ABC):
     @abstractmethod
     def work(self):
