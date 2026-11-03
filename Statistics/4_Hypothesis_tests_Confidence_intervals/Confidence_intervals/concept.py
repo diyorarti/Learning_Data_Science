@@ -55,6 +55,43 @@ VIII. Practical Applications
    4. Reporting effect + CI
 """
 
+# Fundamentals
+# Point estimate vs Interval estimate
+"""
+Point Estimate 
+   a point estimate is a single numerical value calculated from sample data to estimate an unknown population paramter.
+   example:
+      a company has 10,000 employees, and we want to estimate average salary, but collecting salary information from everyone would be expensive.
+      So instead, we randomly select n sample and calculate their average monthly salary.
+         suppose we obtain: x̄ = 6000
+         here:
+            Population μ = unknown
+            Sample x̄ = 6000
+            Sample size n = 100
+   Formula:
+      x̄ = (Σᵢ₌₁ⁿ xᵢ) / n
+   Common point estimators
+      Population Paramter                    Point estimator
+      Population μ                           Sample mean  x̄
+      Population proportion p                Sample proportion p̂
+      population Variance σ²                 Sample variance s²
+      population std σ                       Sample std s
+      Population regression coefficient β    Estimated coefficient β
+      Estimator: The rule of statistic used to estimate the parameter, such as x̄
+      Estimte: The numerical result obtained from the sample such as 6,000 PLN
+
+   Limitation of point estimates:
+      A point estimate doesn't tell us how uncertain out estimate is.
+
+Interval Estimate
+   An interval estimate is a range of values calculated from sample data to estimate an unknown population paramter.
+   example:
+      a company has 10,000 employees, and we want to estimate average salary, but collecting salary information from everyone would be expensive.
+      suppose, we calculate 95% CI = [5600, 6400] PLN
+   Formula:
+      CI = x̄ ± z* · (σ / √n)
+"""
+
 # Confidence Intervals
 """
 Confidence Interval (CI) is a range of values calculated from sample data that expresses uncertainty about an 
@@ -75,7 +112,10 @@ Confidence Interval (CI) is a range of values calculated from sample data that e
       if statistical assumptions hold, approximately 950 of the 1,000 intervals would contain the true population mean.
       this is the meaning of a 95% confidence: the method produces intervals that capture the true parameter in 95% of repeated samples in the long run.
       General Formula:
-         CI = Point Estimate ± Margin of Error
+         CI = Point Estimate ± Margin of Error or CI = θ̂ ± E
+         θ̂  = Point estimate of the population paramter
+         E = Margin of error
+         CI = Confidence Interval
          in out example: CI = 600 ± 400 = [5,600, 6,400]
    Why do Data scientist use CI?
       Suppose, we conduct an A/B test and discover that a new website design increases conversion rate by 2% percentage points.
@@ -86,3 +126,7 @@ Confidence Interval (CI) is a range of values calculated from sample data that e
       this allows stakeholders to evaluate not only the estimated improvement but also its uncertainty and possible business impact.
 """
 
+# Confidence level
+"""
+
+"""
