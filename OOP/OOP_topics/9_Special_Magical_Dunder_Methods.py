@@ -10,7 +10,7 @@ Special / Magic / Dunder Methods in Python OOP
 | `__eq__`       | `object1 == object2`                |
 | `__lt__`       | `object1 < object2`                 |
 | `__gt__`       | `object1 > object2`                 |
-| `__add__`      | `object1 + object2`                 |
+| `__add__`      | `object1 + object2`                 | 
 | `__sub__`      | `object1 - object2`                 |
 | `__mul__`      | `object1 * object2`                 |
 | `__getitem__`  | `object[index]`                     |
@@ -18,16 +18,18 @@ Special / Magic / Dunder Methods in Python OOP
 | `__contains__` | `value in object`                   |
 | `__call__`     | `object()`                          |
 
-
-Simple Memory trick 
-__str__      -> print object nicely
-__repr__     -> show object for debugging
-__len__      -> len(object)
-__eq__       -> object1 == object2
-__add__      -> object1 + object2
-__getitem__  -> object[index]
-__contains__ -> value in object
-
+Category                         Important methods
+Object creation and lifecycle    __new__, __init__, __del__
+String representation            __str__, __repr__, __format__
+Arithmetic operations            __add__, __sub__, __mul__, __truediv__
+In-place operations              __iadd__, __isub__, __imul__
+Comparison operations            __eq__, __ne__, __lt__, __le__, __gt__, __ge__
+Container behavior               __len__, __getitem__, __setitem__, __contains__
+Iteration                        __iter__, __next__
+Boolean evaluation               __bool__
+Callable objects                 __call__
+Context managers                 __enter__, __exit__
+Hashing                          __hash__
 """
 class Validator:
     @staticmethod
