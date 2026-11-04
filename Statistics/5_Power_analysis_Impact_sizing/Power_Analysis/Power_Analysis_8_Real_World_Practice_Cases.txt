@@ -1,0 +1,265 @@
+POWER ANALYSIS — 8 REAL-WORLD DATA SCIENTIST PRACTICE CASES
+===========================================================
+
+You are a Junior Data Scientist at a technology company. Product, Marketing,
+Operations, and Analytics teams ask you to plan studies before collecting data.
+Your responsibility is to determine the sample size needed for each study and
+communicate a justified recommendation.
+
+These assignments intentionally do not include solutions, formulas, or code.
+Choose the correct statistical method and solve each case yourself.
+
+
+CASE 1 — ONE POPULATION MEAN
+Company: QuickCart | Department: Operations Analytics
+Topic: Delivery Time Performance
+
+MESSAGE FROM THE OPERATIONS MANAGER:
+"Our platform promises customers an average delivery time of 30 minutes.
+We recently upgraded our routing system, and we want to check whether our
+average delivery time has changed.
+
+We expect the new average could be around 27 minutes, and our historical
+delivery-time standard deviation is approximately 8 minutes.
+
+We want 90% statistical power and a 5% significance level. How many completed
+deliveries should we analyze before deciding whether the average has changed?"
+
+YOUR ASSIGNMENT:
+- Identify the appropriate statistical test.
+- State the null and alternative hypotheses.
+- Calculate the minimum detectable difference.
+- Estimate the required sample size with Python.
+- Explain your recommendation to the Operations Manager.
+
+PLANNING ASSUMPTIONS:
+Two-sided test; independent delivery times; approximately normally
+distributed observations.
+
+
+CASE 2 — TWO INDEPENDENT POPULATION MEANS
+Company: ShopNova | Department: Product Experimentation
+Topic: Recommendation Algorithm A/B Test
+
+MESSAGE FROM THE PRODUCT MANAGER:
+"Our current recommendation algorithm generates an average order value of
+120 PLN. The Machine Learning team has developed a new algorithm that we
+believe could increase average order value to 128 PLN.
+
+Historical data indicates a standard deviation of approximately 35 PLN.
+We want to run a randomized A/B test with equal traffic allocation, 80%
+statistical power, and a 5% significance level.
+
+How many customers should we assign to each group?"
+
+YOUR ASSIGNMENT:
+- Identify the statistical test and write the hypotheses.
+- Calculate Cohen's d.
+- Calculate required sample size per group and total sample size with Python.
+- Interpret the result as an experiment-planning recommendation.
+
+PLANNING ASSUMPTIONS:
+Two-sided test; independent observations; normal outcomes; equal population
+variances; 50/50 allocation. The metric is spending per randomized customer
+over a fixed observation window.
+
+
+CASE 3 — TWO DEPENDENT POPULATION MEANS
+Company: HelpFlow | Department: Customer Experience
+Topic: AI Assistant and Customer Support Response Time
+
+MESSAGE FROM THE CUSTOMER EXPERIENCE DIRECTOR:
+"We're introducing an AI-powered assistant to help our customer support
+agents respond faster.
+
+We want to measure each agent's average response time before and after
+adopting the assistant. Our goal is to detect a reduction of at least
+2 minutes. Based on our pilot study, the standard deviation of the
+before-and-after differences is approximately 5 minutes.
+
+We need 80% statistical power with a significance level of 0.05.
+How many support agents should participate in the study?"
+
+YOUR ASSIGNMENT:
+- Identify the appropriate paired statistical test.
+- Define the paired-difference variable and hypotheses.
+- Calculate the required number of agents with Python.
+- Explain why the SD of paired differences matters.
+
+PLANNING ASSUMPTIONS:
+One-sided test for faster responses; paired differences are approximately
+normally distributed and independent across agents; each agent provides
+one before-and-after pair.
+
+
+CASE 4 — THREE OR MORE INDEPENDENT POPULATION MEANS (ANOVA)
+Company: LearnSphere | Department: Growth & Product
+Topic: Comparing Three Onboarding Experiences
+
+MESSAGE FROM THE HEAD OF GROWTH:
+"We have developed three onboarding experiences for our online learning
+platform. We want to understand whether onboarding design affects the
+average number of minutes new users spend learning during their first week.
+
+The Product team expects these group averages:
+  Experience A: 40 minutes
+  Experience B: 45 minutes
+  Experience C: 52 minutes
+
+Based on previous cohorts, the common within-group standard deviation is
+around 15 minutes. We need an experiment with 80% power and alpha = 0.05.
+
+How many users should we recruit for each onboarding experience?"
+
+YOUR ASSIGNMENT:
+- Identify the correct statistical test and write the hypotheses.
+- Calculate Cohen's f using the expected group means and SD.
+- Determine required sample size per group and overall using Python.
+- Explain what an overall significant test would and would not establish.
+
+PLANNING ASSUMPTIONS:
+Three independent, equally sized groups; normally distributed outcomes;
+equal within-group population variances. The primary objective is the
+overall ANOVA, not individual pairwise comparisons.
+
+
+CASE 5 — ONE POPULATION PROPORTION
+Company: PayBridge | Department: Payment Analytics
+Topic: Payment Failure Rate
+
+MESSAGE FROM THE PAYMENTS MANAGER:
+"Our payment gateway historically has a transaction failure rate of 8%.
+Following recent infrastructure improvements, we believe the failure
+rate could have decreased to 5%.
+
+We want to verify whether the failure rate is now lower than our historical
+benchmark. The study should have 90% statistical power and alpha = 0.05.
+
+How many transactions should we analyze?"
+
+YOUR ASSIGNMENT:
+- Identify the test and specify null and alternative proportions.
+- Calculate the absolute and relative MDE.
+- Estimate required sample size using Python.
+- Explain the business interpretation and relevant statistical assumptions.
+
+PLANNING ASSUMPTIONS:
+One-sided test; independent payment attempts; historical reference
+proportion treated as fixed; check whether a normal approximation is suitable.
+
+
+CASE 6 — TWO INDEPENDENT POPULATION PROPORTIONS
+Company: MarketPilot | Department: Conversion Optimization
+Topic: Checkout Conversion A/B Test
+
+MESSAGE FROM THE CONVERSION OPTIMIZATION MANAGER:
+"Our current checkout process has a conversion rate of approximately 10%.
+The design team has created a simplified checkout experience. We believe
+it could increase conversions to 12%.
+
+We want to test this change before releasing it to all users.
+The experiment must have 80% statistical power and alpha = 0.05.
+
+However, we're concerned about exposing too many users to an untested
+design. Please compare a 50/50 traffic allocation with an 80/20 allocation,
+where 80% of users remain in the control group.
+
+How many users do we need under each design?"
+
+YOUR ASSIGNMENT:
+- Identify the statistical test and state the hypotheses.
+- Calculate the absolute and relative MDE.
+- Determine control, treatment, and total samples for both allocations.
+- Recommend a design, balancing statistical efficiency and rollout risk.
+
+PLANNING ASSUMPTIONS:
+Two-sided test; independent users; one binary conversion outcome per user;
+no overlap between randomized groups.
+
+
+CASE 7 — CATEGORICAL GOODNESS-OF-FIT
+Company: StreamWave | Department: Marketing Analytics
+Topic: Subscription Plan Preferences
+
+MESSAGE FROM THE MARKETING DIRECTOR:
+"Our platform offers three subscription plans: Basic, Standard, and Premium.
+
+Historically, customers have selected the plans in these proportions:
+  Basic:    50%
+  Standard: 30%
+  Premium:  20%
+
+Following a pricing update, we expect customer preferences to shift:
+  Basic:    40%
+  Standard: 35%
+  Premium:  25%
+
+We want to determine whether the overall distribution of subscription
+choices differs from the historical distribution.
+
+We need 80% power and alpha = 0.05. How many new customer subscriptions
+should we observe?"
+
+YOUR ASSIGNMENT:
+- Identify the statistical test.
+- Define the null and alternative category distributions.
+- Calculate Cohen's w and degrees of freedom.
+- Solve for the required total sample size with Python.
+- Check expected category counts and explain your recommendation.
+
+PLANNING ASSUMPTIONS:
+Independent subscription selections; one observation per new customer;
+fixed historical proportions.
+
+
+CASE 8 — CATEGORICAL INDEPENDENCE
+Company: CloudBox | Department: Customer Analytics
+Topic: Device Type and Premium Subscription Behavior
+
+MESSAGE FROM THE SENIOR DATA SCIENTIST:
+"We suspect that users' device types are associated with whether they
+purchase a premium subscription.
+
+Approximately 60% of our users primarily access CloudBox through mobile
+devices, while 40% use desktop.
+
+Based on preliminary research, we expect:
+  Mobile users:  15% purchase a premium subscription.
+  Desktop users: 25% purchase a premium subscription.
+
+Before collecting a new dataset, we want to ensure we have enough
+observations to detect an association between device type and purchasing
+behavior.
+
+Use 90% statistical power and alpha = 0.05.
+How many users should we include in the study?"
+
+YOUR ASSIGNMENT:
+- Identify the statistical test and formulate hypotheses.
+- Construct the expected 2 x 2 joint probability table.
+- Calculate expected cell probabilities under independence.
+- Calculate Cohen's w and the degrees of freedom.
+- Determine required total sample size using Python.
+- Explain the result without implying that association proves causation.
+
+PLANNING ASSUMPTIONS:
+Independent users; device group proportions treated as fixed in planning.
+
+
+SUBMISSION CHECKLIST — FOR EVERY CASE
+=====================================
+[ ] 1. Identify the appropriate statistical test.
+[ ] 2. State the null and alternative hypotheses.
+[ ] 3. Specify alpha, power, effect size, and assumptions.
+[ ] 4. Calculate the required sample size using Python.
+[ ] 5. Verify or explain the calculation method.
+[ ] 6. Interpret the result in business terms.
+[ ] 7. Provide a recommendation and discuss important limitations.
+
+Suggested tools: Python, NumPy, SciPy, Pandas, statsmodels.
+For t-tests, ANOVA, and Chi-Square tests, use appropriate numerical
+power calculations when possible rather than relying only on simplified
+normal approximations.
+
+Practice one case at a time. Record your reasoning, code, and manager-facing
+recommendation in your Jupyter Notebook. Solutions are deliberately omitted.

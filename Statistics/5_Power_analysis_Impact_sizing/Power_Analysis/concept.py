@@ -148,8 +148,8 @@ How Significance Level (α) effects Statistical power and Sample Size (n)
     The relationship between Significance Level (α) and Statistical Power
         example:
             Suppose an e-commerce company conducts an A/B test:
-                H₀ : the new checkout design doesn't increase conversions
-                Hₐ : the new checkout design increases conversion
+                H₀: the new checkout design doesn't increase conversions
+                Hₐ: the new checkout design increases conversion
                 Sample Size = 1000 users per gourp
                 True effect size = 2 percentage point
             Assume everything remains constant except α
@@ -593,5 +593,10 @@ Sensitivity Analysis is a technique used to examine how changes in input assumpt
             α↓	                        ↑	                        ↓
 
     Allocation sensitivity Analysis:
-        
+"""
+
+# PRACTICAL POWER ANALYSIS IN PYTHON
+# TTestIndPower — Power analysis for comparing means
+"""
+
 """
