@@ -128,5 +128,69 @@ Confidence Interval (CI) is a range of values calculated from sample data that e
 
 # Confidence level
 """
+A Confidence Level is the long-run percentage of confidence intervals expected to contain the true population paramter when 
+   we repeatedly collect samples and construct intervals using the same statistical procedure.
+   Mathematically:
+      Confidence Level = 1 - α
+   For example:
+      Confidence Level  α         Interpretation
+      90%               0.10      About 90 out of 100 intervals contain the parameter
+      95%               0.05      About 95 out of 100 intervals contain the parameter
+      99%               0.01      About 99 out of 100 intervals contain the parameter 
+
+      90 out 100 intervals contain the parameter means that:
+         Suppose: the paramter μ = 6000
+         Sample      90% Confidence interval    Contains μ=6000 parameter
+         Samole-1    [5,800 - 6,200]            Yes
+         Samole-1    [5,900 - 6,300]            Yes
+         Samole-1    [5,700 - 6,100]            Yes
+         Samole-1    [6,100 - 6,500]            No
+         ...  
+         So, 90 out of 100 intervals contain the true parameter.
+
+   The relationship between Confidence level and Significance level
+      CL = 1 -  α
+      α = 1 - CL 
+
+   Confidence level vs Confidence Interval width
+      When Confidence level increases the confidence interval becomes wider, assuming the same sample and estimation method.
+      The general Formula:
+         Confidence Level:
+            CI = x̄ ± z* · (σ / √n)
+            x̄ = sample mena
+            z* = critical z-value
+            n = sample size
+         Two-sided test critical value formual:
+            z* = ±Φ⁻¹(1 - α/2)
+         Alpha α:
+            α = 1 - Confidence Level
+         x̄, σ and n remain fixed, increasing the confidence level increases the critical value z*.
+         Consequently, the margin of error becomes larger, producing a wider interval.
+      example:
+         Case-1: Suppose Confidence Level = 90%
+            x̄ = 100
+            σ = 20
+            n = 100
+            CL = 90%
+            α = 1 - 0.90 = 0.10
+            z* = ±Φ⁻¹(1 - α/2) = ±1.64
+            CI = x̄ ± z* · (σ / √n) = 100 ± 1.64 · (20 / √100) = 100 ± 3.28 = CI = [96.72 - 103.28]
+            Range = 6.56
+         Case-2: Suppose Confidence Level = 95%
+            x̄ = 100
+            σ = 20
+            n = 100
+            CL = 95%
+            α = 1 - 0.95 = 0.05
+            z* = ±Φ⁻¹(1 - α/2) = ±1.96
+            CI = x̄ ± z* · (σ / √n) = 100 ± 1.96 · (20 / √100) = 100 ± 3.92 = CI = [96.08 - 103.92]
+            Range = 7.84
+         SO:
+            CL ↑ ⇒ z* ↑ ⇒ E ↑ ⇒ CI wider
+            CL ↓ ⇒ z* ↓ ⇒ E ↓ ⇒ CI narrower  
+"""
+
+# Standard error
+"""
 
 """
