@@ -10,7 +10,7 @@ Power Analysis
     Variance and Standard Deviation
     Statistical Significance vs Practical Significance
 
-Sample Size Determination 
+Sample Size Determination  
     Required Sample Size (n)
         1. One sample mean
         2. Two independent means
