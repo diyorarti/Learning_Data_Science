@@ -12,19 +12,19 @@ Impact Sizing
         3. Establish Baselines
         4. Build the Impact Equation
         5. Estimate Equation Inputs
-        - Historical Data
-        - Regression Analysis
-        - A/B Testing
-        - Assumptions and Benchmarks
+            - Historical Data
+            - Regression Analysis
+            - A/B Testing
+            - Assumptions and Benchmarks
         6. Calculate Estimated Impact
         7. Produce Impact Ranges
-        - Conservative Scenario
-        - Expected Scenario
-        - Optimistic Scenario
+            - Conservative Scenario
+            - Expected Scenario
+            - Optimistic Scenario
         8. Validate Assumptions and Results
-        - Bias and Confounding
-        - Incremental Impact vs. Correlation
-        - Cannibalization and Double-counting
+            - Bias and Confounding
+            - Incremental Impact vs. Correlation
+            - Cannibalization and Double-counting
         9. Evaluate Second-order Effects
         10. Communicate Findings and Recommendations
     C. Practical Impact Sizing in Python

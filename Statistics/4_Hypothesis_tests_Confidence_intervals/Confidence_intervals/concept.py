@@ -11,7 +11,7 @@ I. Fundamentals
    6. Critical values
    7. CI width and precision
 
-II. Confidence Intervals for Means
+II. Confidence Intervals for Means 
    1. One-sample Z confidence interval
    2. One-sample t confidence interval
    3. Two independent means
@@ -120,7 +120,7 @@ Confidence Interval (CI) is a range of values calculated from sample data that e
    Why do Data scientist use CI?
       Suppose, we conduct an A/B test and discover that a new website design increases conversion rate by 2% percentage points.
       without CI, we only know the observed difference.
-      with CI, we mau report:
+      with CI, we may report:
          Estimated improvement: 2 percentage points
          95% CI: [0.5, 3.5] percentage points
       this allows stakeholders to evaluate not only the estimated improvement but also its uncertainty and possible business impact.
@@ -142,9 +142,9 @@ A Confidence Level is the long-run percentage of confidence intervals expected t
          Suppose: the paramter μ = 6000
          Sample      90% Confidence interval    Contains μ=6000 parameter
          Samole-1    [5,800 - 6,200]            Yes
-         Samole-1    [5,900 - 6,300]            Yes
-         Samole-1    [5,700 - 6,100]            Yes
-         Samole-1    [6,100 - 6,500]            No
+         Samole-2    [5,900 - 6,300]            Yes
+         Samole-3    [5,700 - 6,100]            Yes
+         Samole-4    [6,100 - 6,500]            No
          ...  
          So, 90 out of 100 intervals contain the true parameter.
 
@@ -192,5 +192,73 @@ A Confidence Level is the long-run percentage of confidence intervals expected t
 
 # Standard error
 """
+Standard Error (SE) measures how much a sample statistic, such as the sample mean x̄, typically varies from sample to sample.
+   Example:
+      Employee Salary: 
+         total employees: N = 10,000
+         sample size: n = 100
+      Now, we repeatedly take n=100 sample and calculate mean:
+         Sample	   Sample size	   Sample mean
+         Sample 1	   100	         5,950 PLN
+         Sample 2	   100	         6,080 PLN
+         Sample 3	   100	         5,920 PLN
+         Sample 4	   100	         6,030 PLN
+         Sample 5	   100	         6,010 PLN
+      the sample means are different even though every sample comes from the same population.
+      Standard Error(SE) measures the standard deviation of the sampling distribution of a statistic.
 
+   Mathematical formula of Standard Eror(SE)
+      SE(X̄) = σ / √n
+      σ = popularion standard deviation
+      n = sample size
+      √n = Square root of sample size
+      Example:
+         total employees: N = 10,000
+         population std: σ = 2000
+         sample size: n = 100
+         SE = 2000 / √100 = 200
+      Interpreation: if we repeatedly collected independent random samples of 100 employees, the sample means would have a standard deviation of 200.
+
+   Standard Deviation vs Standard Error
+      Standard Deviation (SD) describes the variability of individual observations
+      Standard Error (SE) describes the sampling variability of a statistic
+         Feature	                  Standard Deviation	                                    Standard Error
+         Measures	                  Spread of individual observations	                     Spread of a statistic across samples
+         Mean formula	            σ or s                                                   σ / √n or s / √n
+         Affected by sample size	   Not systematically reduced merely by increasing(n)	      Generally decreases as n increases
+         Main purpose	            Describe data variability	                              Quantify estimation uncertainty
+         Common use	               Descriptive statistics	                                 CI and hypothesis testin
+
+   The relationship between Sample Size and Standard Error(SE)
+      n ↑ ⇒ SE ↓
+      n ↓ ⇒ SE ↑
+   
+   How Standard Error(SE) affects Confidence Interval
+      CI = x̄ ± z* × (σ / √n) = x̄ ± z* × SE
+      So:
+         SE ↑ ⇒ E ↑ ⇒ CI wider
+         SE ↓ ⇒ E ↓ ⇒ CI narrower
+"""
+
+# Margin of error (E or ME)
+"""
+Margin of Error tells us how far the lower and upper bounds of a symmetric confidenceinterval are from the point estimate.
+   example:
+      Sample mean: X̄ = 6,000 PLN
+      Margin of Error: E = 400 PLN
+      CI = 6,000 ± 400 = [5600, 64000]
+
+   Formula:
+      for a standard analytical confidence interval: E = Critical Value * SE
+      for a Z-based confidence interval: E = z * (σ / √n)
+      for a t-based confidence interval: E = t * (σ / √n)
+      Example:
+         X̄ = 100
+         σ = 20
+         n = 100
+         CL = 95%
+         α  = 1 - CL = 0.05
+         Critical Z-value: z* = ±Φ⁻¹(1 - α/2) = 1.96
+         Standard Error: SE = σ / √n = 20 / √100 = 2
+         Margin of Error: E = z* × SE = 1.96 * 2 = 3.92
 """
