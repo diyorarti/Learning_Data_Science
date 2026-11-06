@@ -46,7 +46,7 @@ Sample Size Determination
     D. Experiment Planning
         1. Sample Size → Experiment Duration
         2. Traffic / Data Collection Rate
-        3. Traffic Allocation Between Groups
+        3. Traffic Allocation Between Groups 
         4. Seasonality and Business Cycles
         5. Budget and Time Constraints
         6. Practical Assumptions and Limitations
@@ -154,8 +154,8 @@ How Significance Level (α) effects Statistical power and Sample Size (n)
                 True effect size = 2 percentage point
             Assume everything remains constant except α
             When we increase α, it becomes easier to reject H₀, which increases statistical power against the specified alternative:
-                ↑ α ⇒ ↑ Power ⇒ β ↓
-                ↓ α ⇒ ↓ Power ⇒ β ↑
+                ↑α ⇒ ↓β ⇒ ↑Power 
+                ↓α ⇒ ↑β ⇒ ↓Power 
 
     The relationship between Significance Level (α) and Sample Size (n)
         example:
@@ -185,14 +185,13 @@ How Var/Std affects Statistical Power, Type II error and Required Sample size n.
         but variablity of customer spending differs. 
         in experiment A, the spending values are relatively concentrated around their population means.
         in experiment B, the spending values are much more spread out. True improvement is 10pln, but it is hard to distinguish from random variation.
-            ↑ Var/Std ⇒ ↓ Power
-            ↑ Var/Std ⇒ ↑ β
+            ↑Var/Std ⇒ ↓Power ⇒ ↑β
         In other words, higher variance increases the probability of missing a real effect when sample size is fixed
 
     Relationship between Variance and Required Sample Size.
         we want to maintain statistical power at 80%
         the approximate sample-size formula: n ≈ [2 * (Z_(1-α/2) + Z_(1-β))² * σ²] / δ²
-        So, ↑ Var/Std ⇒ ↑ n
+        So, ↑Var/Std ⇒ ↑n
         n ∝ σ²
             Change	                    Required sample size
             Variance doubles	        2x
@@ -448,7 +447,7 @@ Group allocation
     example:
         an E-commerce company has 10,000 users available for an A/B test.
         50/50 allocation: 5,000 users in each group = equal group allocation
-        80/20 allocation: 8,000 users in the control grou and 2,000 users in the treatment group = unequal group allocation
+        80/20 allocation: 8,000 users in the control group and 2,000 users in the treatment group = unequal group allocation
 
     The main principle: with equal group allocation and a fixed total sample size, a 50/50 allocation usually provides greater 
     statistical power than an unequal allocation.
@@ -456,7 +455,7 @@ Group allocation
     Why does unequal group allocation affect statistical power ?
         Variance of the difference between sample means
             Var(X̄_B - X̄_A) = (σ_A² / n_A) + (σ_B² / n_B)
-            this formula calculates how much the estimated difference between two independen sample means varies across repeated samples.
+            this formula calculates how much the estimated difference between two independent sample means varies across repeated samples.
             example: A/B test 
                 what we are interested in: X̄_B - X̄_A.
                 Group A: average spending = 100pln
