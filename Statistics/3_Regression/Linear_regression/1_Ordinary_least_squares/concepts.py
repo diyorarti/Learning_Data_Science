@@ -2,10 +2,10 @@
 Ordinary Least Squares
 
 Ordinary least squares Assumptions:
-    Linearuty
+    Linearity
     Independenc of errors
-    Homoscedasticity
     Normality of errors
+    Homoscedasticity
     Absence of severe multicollinearity
 
     Residual analysis
