@@ -263,7 +263,33 @@ Margin of Error tells us how far the lower and upper bounds of a symmetric confi
          Margin of Error: E = z* × SE = 1.96 * 2 = 3.92
 """
 
-# 
+# Critical values
+"""
+Critical Value tells us how many standard erros we need to move away from the point estimate to cunstruc a confidence interval at a choosen 
+confidence level.
+   the role of critical values in Confidence Interval is slightly different than Hypothesis testing.
+      CI = Point Estimate ± (Critical Value × SE)
+      E = Critical Value × SE
+   for example: 95% Z-based confidence interval uses the critical value: z* ≈ 1.96
+   this means that Confidence interval extends 1.96 standard erros below and above the point estimate.
+"""
+
+# CI width and precision
+"""
+Confidence Interval Width is the distance between the upper and lower bounds of a confidence interval.
+   CI Width = Upper Bound - Lower Bound
+
+Confidence Interval Precision refers how narrowly we can estimate an unkwown population paramter.
+   In Confidence Intervals, precision is commonly evaluated using the interval's width.
+   Narrow CI -> Higher Precision
+   Wide CI -> Lower Precision
+   Precision: How little an estimate fluctuates across repeated samples; reflected in CI width.
+   Accuracy: How close an estimate is to the true population parameter.
+"""
+
+
+# CONFIDENCE INTERVALS FOR MEANS
+# One-sample Z confidence interval
 """
 
 """
