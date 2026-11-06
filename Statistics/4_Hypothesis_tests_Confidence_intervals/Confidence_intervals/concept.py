@@ -35,7 +35,7 @@ V. CI and Hypothesis Testing
    3. Two-sided tests and CIs
 
 VI. Bootstrap Confidence Intervals
-   1. Bootstrap resampling
+   1. Bootstrap resampling 
    2. Bootstrap distribution
    3. Percentile CI
    4. Mean CI
@@ -261,4 +261,9 @@ Margin of Error tells us how far the lower and upper bounds of a symmetric confi
          Critical Z-value: z* = ±Φ⁻¹(1 - α/2) = 1.96
          Standard Error: SE = σ / √n = 20 / √100 = 2
          Margin of Error: E = z* × SE = 1.96 * 2 = 3.92
+"""
+
+# 
+"""
+
 """
