@@ -89,6 +89,35 @@ class Student:
         else:
             raise ValueError(f"{value} is already added ")
 
-    
+    # Human readable description
+    def __str__(self):
+        return f"Student name: {self.name}, ID: {self.student_id}, Age: {self.age}, GPA: {self.gpa}, course: {self.courses}"
 
+    # developer-friendly descriptio
+    def __repr__(self):
+        return f"Student({self.name!r}, {self.student_id!r}, {self.age!r}, {self.gpa!r}, {self.courses!r})"
+
+    # comparing students, they are equal when their student IDs match
+    def __eq__(self, other):
+        if not isinstance(other, Student):
+            return False
+        return self.student_id == other.student_id
+
+    # lt compares that is current student's GPA less than other's GPA
+    def __lt__(self, other):
+        if not isinstance(other, Student):
+            return False
+        return self.gpa < other.gpa
+
+    # gt compares that is current student's GPA greater than other's GPA
+    def __gt__(self, other):
+        if not isinstance(other, Student):
+            return False
+        return self.gpa > other.gpa
+
+    # len ruturn number of completed courses 
+    def __len__(self):
+        return len(self.courses)
+
+    
     
