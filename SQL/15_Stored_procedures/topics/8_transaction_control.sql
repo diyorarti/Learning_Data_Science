@@ -29,9 +29,47 @@ TRANSACTION:
         Statement 3
             ↓
             valid?
-        /      \
+           /    \
         YES      NO
         ↓        ↓
         COMMIT   ROLLBACK
 """
 
+
+-- creating a report table:
+CREATE TABLE transfer_batch_report(
+    report_id BIGSERIAL PRIMARY KEY,
+    batch_id INTEGER,
+    request_id BIGINT,
+    result TEXT,
+    processed_amount NUMERIC(12, 2),
+    processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- creating a stored procedure , Its job is to process all pending money-transfer requests belonging to one batch.
+CREATE OR REPLACE process_transfer_batch(
+    p_batch_id VARCHAR(50), --  which batch should be processed
+    p_chunk_size VARCHAR(50) --  maximum amount that can be transferred during one WHILE-loop iteration
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE 
+    v_request RECORD; -- current transfer request
+    
+    v_sender_account INTEGER; -- sender account
+    v_receiver_account INTEGER; -- receiver account
+    
+    v_sender_balance NUMERIC(12, 2); -- sender balance
+    v_receiver_balance NUMERIC(12, 2); -- receiver balance
+
+    v_transfer_amount NUMERIC(12, 2); -- transfer amount
+    v_remaining_amount NUMERIC(12, 2); -- remaining amount
+    v_current_chunk NUMERIC(12, 2); -- current chunk amount
+
+    v_batch_failed BOOLEAN := FALSE; -- batch failed?
+    v_failure_reason TEXT; -- failure reason
+
+BEGIN 
+    -- DELETE before generating a fresh report for this batch
+    DELETE FROM transfer_batch_report
+    WHERE 
