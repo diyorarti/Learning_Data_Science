@@ -159,6 +159,7 @@ A Confidence Level is the long-run percentage of confidence intervals expected t
             CI = x̄ ± z* · (σ / √n)
             x̄ = sample mena
             z* = critical z-value
+            σ = population standard deviation
             n = sample size
          Two-sided test critical value formual:
             z* = ±Φ⁻¹(1 - α/2)
@@ -242,7 +243,7 @@ Standard Error (SE) measures how much a sample statistic, such as the sample mea
 
 # Margin of error (E or ME)
 """
-Margin of Error tells us how far the lower and upper bounds of a symmetric confidenceinterval are from the point estimate.
+Margin of Error tells us how far the lower and upper bounds of a symmetric confidence interval are from the point estimate.
    example:
       Sample mean: X̄ = 6,000 PLN
       Margin of Error: E = 400 PLN
@@ -291,5 +292,36 @@ Confidence Interval Precision refers how narrowly we can estimate an unkwown pop
 # CONFIDENCE INTERVALS FOR MEANS
 # One-sample Z confidence interval
 """
+One-Sample Z Confidence interval is a statistical method used to estimate an unknown population mean(μ) from a single random sample when 
+population standard deviation (σ) is known
+   Example: Delivery Time
+      A food delivery company wants to estimate the average delivery time of all it's orders
+         historical population std σ = 8 minutes
+         Sample mean x̄ = 27 minutes
+         Sample size n = 100
+         Confidence Level = 95%
+         population mean μ = unknown
+      Goal is to estimate the unknown μ
 
+   Mathematical formula For One-sample Z CI
+      CI =  x̄ ± z* · σ / √n
+      CI =  x̄ ± z* · SE
+      CI =  x̄ ± E
+      Calculating CI:
+         1-step Alpha: α = 1 - CL = 0.05
+         2-step critical Z-value for two-sided interval: z* = ±Φ⁻¹(1 - α/2) = 1.96
+         3-step Standard Eror: SE = σ / √n = 8 / √100 = 0.8
+         4-step Margin of Error: E = z* · SE = 1.96 · 0.8 = 1.568
+         5-step Confidence Interval: CI = x̄ ± E = 27 ± 1.569 = [25.43, 28.57] = 95% CI = [25.43, 28.57]
+   Interpretation:
+      We estimate the true population mean delivery time to be between 25.43 and 28.57 minutes. 
+      The method used to construct this interval captures the true population mean in 95% of repeated random samples, 
+      provided its assumptions hold.
 """
+
+# One-sample t confidence interval
+"""
+A One-Sample t Confidence Interval is a statistical method used to estimate an unknown population mean(μ) 
+from a single sample when the population standard deviation(σ)  is unknown.
+"""
+
