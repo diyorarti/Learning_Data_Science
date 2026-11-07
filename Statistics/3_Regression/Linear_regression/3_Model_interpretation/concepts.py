@@ -14,7 +14,7 @@ Model Intepretation:
     Overfitting
     Bias variance tradeoff
         Bias
-        Variance 
+        Variance  
 """
 
 # Model Interpretation

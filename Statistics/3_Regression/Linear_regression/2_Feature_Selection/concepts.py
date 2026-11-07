@@ -273,7 +273,7 @@ Dimensionality Reduction means:
     Dimensionality Reduction
     │
     ├── 1. Feature Selection - Keep some original features   
-    │
+    │ 
     └── 2. Feature Extraction - Create fewer new features from the original features
     
     The most common Feature Extraction methods: 

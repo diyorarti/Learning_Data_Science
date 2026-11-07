@@ -35,9 +35,23 @@ TRANSACTION:
         COMMIT   ROLLBACK
 """
 
+CREATE TABLE bank_accounts (
+    account_id INTEGER PRIMARY KEY,
+    owner_name TEXT,
+    balance NUMERIC(12, 2)
+);
+
+CREATE TABLE transfer_requests (
+    request_id BIGSERIAL PRIMARY KEY,
+    batch_id INTEGER,
+    from_account INTEGER,
+    to_account INTEGER,
+    amount NUMERIC(12,2),
+    status TEXT DEFAULT 'pending'
+);
 
 -- creating a report table:
-CREATE TABLE transfer_batch_report(
+CREATE TABLE transfer_batch_report (
     report_id BIGSERIAL PRIMARY KEY,
     batch_id INTEGER,
     request_id BIGINT,
@@ -72,4 +86,20 @@ DECLARE
 BEGIN 
     -- DELETE before generating a fresh report for this batch
     DELETE FROM transfer_batch_report
-    WHERE 
+    WHERE batch_id = p_batch_id;
+
+    -- the outer loop that repeatedly picks one pending transfer request and processes it
+    LOOP
+        SELECT *
+        INTO v_request
+        FROM transfer_requests
+        WHERE batch_id = p_batch_id
+          AND status = 'pending'
+        ORDER BY request_id
+        LIMIT 1;
+
+
+    END LOOP;
+    
+
+

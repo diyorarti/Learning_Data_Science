@@ -56,7 +56,16 @@ Ordinary Least Squares is A Statistical method (algorithm) for choosing the best
                 4. Cluster-robust standard Errors 
                 5. Generalized Least squares
 
-        3. Homoscedasticity -> measures how Residuals have approximately constant spread
+        3. Normality of errors
+                    Measures the distribution of erros
+                    Detection methods:
+                        1. Histogram
+                        2. Q-Q plot
+                        3. Skewness
+                        4. Kurtosis
+                        5. Jarque-Bera test or Shapiro-Wilk test
+
+        4. Homoscedasticity -> measures how Residuals have approximately constant spread
             The residual changes depending on the predicted value of feature value
                 Simple example: A hourse predictor model
                                 For cheaper houses: Predicted price: $100,000 -> Errors: -5,000, +3,000, -7,000, +4,000
@@ -86,15 +95,6 @@ Ordinary Least Squares is A Statistical method (algorithm) for choosing the best
                                                     absolute residuals vs predicted values correlation)
                     2. Statistical method: Breusch-Pagan Test: 
                         Breusch-Pegat test answers the question: Does the variance/spread of residuals depend on the feature values ?
-                        
-        4. Normality of errors
-            Measures the distribution of erros
-            Detection methods:
-                1. Histogram
-                2. Q-Q plot
-                3. Skewness
-                4. Kurtosis
-                5. Jarque-Bera test or Shapiro-Wilk test
 
         5. Absence of multicollinearity 
             occurs when one predictor is strongly explained by several other predictors together   
@@ -177,11 +177,10 @@ Variance inflation factor (VIF)
     Mearues: how much variance of a regression coefficients is increased beause the feature is linearly related to the other predictor variables.
     In Simple: VIF checks whether a feature contains enough unique information, or most of it's information is already contained in others
     VIF is diagnostic measure used to detect multicollinearity among the predictors in a regression model
-        Formula:                      1
-                            VIF = ──────────
-                                    1 - R²
-                        VIF = 1 / (1 - (1 - R²))
-                        R² = residuals ** 2
+        Formula:
+                VIF = 1 / (1 - R²)
+                VIF = 1 / (1 - (1 - R²))
+                R² = residuals ** 2
         Interpretation 
             VIF ≈ 1 -> No multicollinearity problem
             VIF 1-5 -> Usually acceptable
