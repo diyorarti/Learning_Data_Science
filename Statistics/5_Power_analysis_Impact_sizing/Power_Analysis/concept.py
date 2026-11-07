@@ -136,6 +136,11 @@ Absolute and Relative MDE
 
 Standardized Effect Size (Cohen's d)
     It is the method used to express two different scale experiment outcomes:
+    Formula:
+        d = (μ₁ - μ₀) / σ
+        μ₁ = hypothesized population mean
+        μ₀ = Anticipated population mean
+        σ = population standard deviation
     example:
         Experiment_A measures the difference in monthly spending (PLN)
         Experiment_B measures the difference in session duraction (minuted)
@@ -597,5 +602,5 @@ Sensitivity Analysis is a technique used to examine how changes in input assumpt
 # PRACTICAL POWER ANALYSIS IN PYTHON
 # TTestIndPower — Power analysis for comparing means
 """
-
+ 
 """
