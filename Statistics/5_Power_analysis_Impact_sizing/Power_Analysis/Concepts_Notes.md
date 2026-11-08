@@ -124,11 +124,6 @@ Statistical Power is the probability of correctly rejecting the null hypothesis 
 
 ```text
 Actual situation	Reject H₀	        Fail to reject H₀
-```
-
-&nbsp;&nbsp;&nbsp;&nbsp;--------------------------------------------------------  
-
-```text
 H₀ is true	        Type I Error(α) 	Correct decision
 H₀ is false	        Power(1-β)	        Type II Error (β)
 ```
