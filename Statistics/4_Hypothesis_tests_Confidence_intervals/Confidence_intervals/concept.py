@@ -14,8 +14,8 @@ I. Fundamentals
 II. Confidence Intervals for Means 
    1. One-sample Z confidence interval
    2. One-sample t confidence interval
-   3. Two independent means
-   4. Paired means
+   3. Two independent means confidence interval
+   4. Paired means confidence interval
 
 III. Confidence Intervals for Proportions
    1. One-proportion CI
@@ -54,7 +54,7 @@ VIII. Practical Applications
    3. Mean differences
    4. Reporting effect + CI
 """
-
+ 
 # Fundamentals
 # Point estimate vs Interval estimate
 """
@@ -317,11 +317,47 @@ population standard deviation (σ) is known
       We estimate the true population mean delivery time to be between 25.43 and 28.57 minutes. 
       The method used to construct this interval captures the true population mean in 95% of repeated random samples, 
       provided its assumptions hold.
-"""
 
-# One-sample t confidence interval
+   One-sample t confidence interval:
+      A One-Sample t Confidence Interval is a statistical method used to estimate an unknown population mean(μ) 
+      from a single sample when the population standard deviation(σ)  is unknown.
 """
-A One-Sample t Confidence Interval is a statistical method used to estimate an unknown population mean(μ) 
-from a single sample when the population standard deviation(σ)  is unknown.
+ 
+# Two-independent means confidence interval
 """
+Two-independent means confidence interval:
+   A Two Independent Means Confidence Interval is a statistical method used to estimate the difference 
+   between two population means (μ_1 - μ_2) using two independent samples.
+   example: A/B testing
+      An E-commerce company wants to compare the average amount customers spend under two website designs.
+         Group A(Control): Sample mean: μ = 200 PLN
+                           Sample Size: n = 100
+                           Sample SD:   σ = 40 PLN
+         Group B(Treatment): Sample mean: μ = 215 PLN
+                             Sample size  n = 120
+                             Sample SD:   σ = 50 PLN
+      We want to estimate: μ_B - μ_A = 215 - 200 = 15 PLN
+      However, we don't know whether the true population difference is exactly 15PLN.
+      So, we need to construct a Confidence Interval.
+   
+   Two independent-samples Confidence interval formula: 
+      CI = (x̄_B - x̄_A) ± Critical_value * SE
+      They are three common methods for constructing this interval
+      1. Two-Samples Z CI     Both population variances are known
+      2. Welch's t CI         Population variances Unknown, equal variances not assumed
+      3. Pooled t CI          Population variances Unknown, equal population variances assumed
+      
+      Method-1 Two-sample Z Confidence Interval
+         we use a two-sample Z confidence interval when both population standard deviations(σ_A, σ_B) are knowm and 
+         a normal approximation is appropriate.
+         The Formula:
+            CI = (x̄_B - x̄_A) ± z* · √((σ_A² / n_A) + (σ_B² / n_B))
+            SE = √((σ_A² / n_A) + (σ_B² / n_B))
 
+      Method-2 Welch's t CI
+         A Welch's t Confidence Interval estimates the difference between two independent population means 
+         when their population variances are unknown and are not assumed equal.
+         The Formula:
+            CI = (x̄_B - x̄_A) ± t* · √((s_A² / n_A) + (s_B² / n_B))
+            
+"""
