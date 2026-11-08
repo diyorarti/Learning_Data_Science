@@ -456,29 +456,39 @@ Group allocation
 
     The main principle: with equal group allocation and a fixed total sample size, a 50/50 allocation usually provides greater 
     statistical power than an unequal allocation.
+    Why:
+        the main reason is that unequal group allocation increases the standard error of the estimated difference between groups,
+        assuming the sample the same total sample size and equal population variances.
 
     Why does unequal group allocation affect statistical power ?
-        Variance of the difference between sample means
-            Var(X̄_B - X̄_A) = (σ_A² / n_A) + (σ_B² / n_B)
-            this formula calculates how much the estimated difference between two independent sample means varies across repeated samples.
-            example: A/B test 
-                what we are interested in: X̄_B - X̄_A.
-                Group A: average spending = 100pln
-                Group B: average spending = 110pln
-                the observed difference 110pln - 100pln = 10pln
-                if we repeat the experiment many times, the observed difference will vary due to random sampling variation.
-                the variance is higer when sample sizes are smaller, assuming underlying population variance is unchanged.
-        
-        Standard Error
-            SE = σ * √((1 / n_A) + (1 / n_B))
+        Vairance of two independent groups:         Var(X̄_B - X̄_A) = (σ_A² / n_A) + (σ_B² / n_B)
+            σ_A² = 1225
+            σ_b² = 1225
+            50%/50% group-allocation: Var(X̄_B - X̄_A) = (1225 / 500) + (1225 / 500) = 4.9
+            80%/20% group-allocation: Var(X̄_B - X̄_A) = (1225 / 800) + (1225 / 200) = 7.65625
+            Interpretation: Across repeated experiments with 800 control customers and 200 treatment customers, 
+            the estimated difference between sample means has a sampling variance of 7.65625 PLN², under the assumptions.
 
+        Standard Error of two independent grups:    SE(X̄_B - X̄_A) = √((σ_A² / n_A) + (σ_B² / n_B))
         example:
-            σ = 30, n=10,000
-            allocation             Standard Error
-            50/50 (5,000 / 5,000)  0.600
-            80/20 (8,000 / 2,000)  0.750
-        the 80/20 allocation has a25% larher standard error, making it harder to dectect the same effect with the same sample size.
-
+            σ_A = 35
+            σ_b = 35
+            50%/50% group-allocation: SE =  √(35 ** 2 / 500) + (35 ** 2 / 500) = 2.214
+            80%/20% group-allocation: SE =  √(35 ** 2 / 800) + (35 ** 2 / 200) = 2.767
+            interpretation: 2.767 / 2.214 = 1.25 This means unequal allocation produces a 25% larger standard error in this example, 
+            even though both experiments have 1,000 participants.
+        Conclusion:
+            SE ↑ ⇒ Power ↓
+    
+        How many additional observations ?
+            for equal population variances: N_unequal / N_50/50 = (1 + r)² / (4r)
+            r = n_B / n_A
+            example: For 80/20 allocation
+                r = 20 / 80 = 0.25
+                N_80_20 / N_50_50 = (1 + 0.25)** / (4 * 0.25) = 1.5625
+                This means 80/20 allocation requires approximately 56.25% more total observations than 
+                50/50 allocation to maintain the same statistical power, under the stated assumptions.
+    
     Sample Size Formula for Unequal Group Allocation
         For unequal group allocation, introduce the allocation ratio: r = n_A / n_B
         For a two-sided test with common variance:
@@ -490,13 +500,6 @@ Group allocation
             n_a = ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
             n_b = r * n_a
             N = n_a + n_b
-
-    How much more sample size does 80/20 require ?
-        For equal variance:
-            N_r / N_(50/50) = (1 + r)² / (4r) 
-            r = 0.20 / 0.80 = 0.25
-            N_(80/20) / N_(50/50) = (1.25)² / (4(0.25)) = 1.5625 
-        Therefore: 56.25% more total observations required for appromimately the same power, MDE, α.
 
     Why should we use unequal group allocation ?
         1. Risk management: A new treatment may be experimental, so the company initially exposes fewer users to it.

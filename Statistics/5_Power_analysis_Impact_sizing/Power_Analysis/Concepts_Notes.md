@@ -136,11 +136,6 @@ H₀ is false	        Power(1-β)	        Type II Error (β)
 
 ```text
 Significance Level (α)                              Statistical Power (β)
-```
-
-&nbsp;&nbsp;&nbsp;&nbsp;--------------------------------------------------------------------------  
-
-```text
 Probability of rejecting (H₀) when it is true	    Probability of rejecting (H₀) when a specified alternative is true
 Controls Type I error	                            Measures ability to detect a real effect
 Common value: 5%	                                Common value: 80%
