@@ -33,7 +33,7 @@ class Course:
     pass
 
 class Student:
-    def __init__(self, student_id, name, age, gpa, courses):
+    def __init__(self, student_id, name, age, gpa):
         self.__student_id = None
         self.__name = None
         self.__age = None
@@ -44,7 +44,6 @@ class Student:
         self.name = name
         self.age = age
         self.gpa = gpa
-        self.courses = courses
         
 
     @property
@@ -53,7 +52,7 @@ class Student:
 
     @student_id.setter
     def student_id(self, value):
-        Validator.validate_positive_number(value, "Student ID")
+        Validator.validate_not_empty(value, "Student ID")
         self.__student_id = value
 
     @property
@@ -91,11 +90,11 @@ class Student:
 
     # Human readable description
     def __str__(self):
-        return f"Student name: {self.name}, ID: {self.student_id}, Age: {self.age}, GPA: {self.gpa}, course: {self.courses}"
+        return f"Student name: {self.name}, ID: {self.student_id}, Age: {self.age}, GPA: {self.gpa}, course: {self.__courses}"
 
     # developer-friendly descriptio
     def __repr__(self):
-        return f"Student({self.name!r}, {self.student_id!r}, {self.age!r}, {self.gpa!r}, {self.courses!r})"
+        return f"Student({self.name!r}, {self.student_id!r}, {self.age!r}, {self.gpa!r}, {self.__courses!r})"
 
     # comparing students, they are equal when their student IDs match
     def __eq__(self, other):
@@ -103,21 +102,48 @@ class Student:
             return False
         return self.student_id == other.student_id
 
-    # lt compares that is current student's GPA less than other's GPA
+    # __lt__ compares that is current student's GPA less than other's GPA
     def __lt__(self, other):
         if not isinstance(other, Student):
             return False
         return self.gpa < other.gpa
 
-    # gt compares that is current student's GPA greater than other's GPA
+    # __gt__ compares that is current student's GPA greater than other's GPA
     def __gt__(self, other):
         if not isinstance(other, Student):
             return False
         return self.gpa > other.gpa
 
+    # less than or equal
+    def __le__(self, other):
+        if not isinstance(other, Student):
+            return False
+        return self.gpa <= other.gpa
+
+    # greater than or equal 
+    def __ge__(self, other):
+        if not isinstance(other, Student):
+            return False
+        return self.gpa >= other.gpa
+
     # len ruturn number of completed courses 
     def __len__(self):
-        return len(self.courses)
+        return len(self.courses) 
 
-    
-    
+    # __getitem__ access a course using index
+    def __getitem__(self, key):
+        if len(self.courses) <= key:
+            return "No such index course"
+        return self.courses[key]
+
+    # __contains__ check whether a student has completed a course 
+    def __contains__(self, item):
+        return item in self.courses
+
+    # __bool__ return True if GPA is at least 3.0
+    def __bool__(self):
+        return self.gpa <=3
+
+
+student1 = Student("S001", "Ali", 22, 4.5)
+print(student1.__str__)

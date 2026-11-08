@@ -10,6 +10,8 @@ Special / Magic / Dunder Methods in Python OOP
 | `__eq__`       | `object1 == object2`                |
 | `__lt__`       | `object1 < object2`                 |
 | `__gt__`       | `object1 > object2`                 |
+| `__le__`       | `object1 <= object2`                |
+| `__ge__`       | `object1 >= object2`                |
 | `__add__`      | `object1 + object2`                 | 
 | `__sub__`      | `object1 - object2`                 |
 | `__mul__`      | `object1 * object2`                 |
