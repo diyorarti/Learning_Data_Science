@@ -488,24 +488,55 @@ Group allocation
                 N_80_20 / N_50_50 = (1 + 0.25)** / (4 * 0.25) = 1.5625
                 This means 80/20 allocation requires approximately 56.25% more total observations than 
                 50/50 allocation to maintain the same statistical power, under the stated assumptions.
+    When to use unequal Group allocation:
+        Case 1 is a statistical reason. Unequal allocation can actually improve statistical efficiency 
+            when the groups have different population variances.
+        Cases 2 and 3 are business reasons. Unequal allocation may reduce risks or costs, even though it can require more total observations.
+        
+        Decision rule:
+            Equal variances:         similar costs, low risk: Usually start with 50/50.
+            Different variances:     Consider allocating more observations to the higher-variance group.
+            Risky treatment:         Consider limiting treatment exposure.
+            Expensive treatment:     Consider allocating fewer observations to the costly treatment.
+    
+    Calculate Power Analysis for Unequal Group Allocation:
+        step-1: Calculate the ratio
+            r = n_B(treatment) / n_A(Control)  for 80(control)/20(treatment) allocation: r = 0.20 / 0.80 = 0.25
+                this means the treatment group must contain one-quater as many observations as the control group.
+        step-2: Sample-size Formual
+            n_a = ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1/r)) / δ²
+            n_b = r * n_a
+            N = n_a + n_b
+        
+        example:
+            Parameter	            Value
+            α	                    0.05
+            Power               	0.80
+            β	                	0.20
+            Standard deviation σ    35 PLN
+            MDE δ               	8 PLN
+            Control allocation	    80%
+            Treatment allocation	20%
+            Alternative	            Two-sided
+
+            r = 0.20 / 0.80 = 0.25
+            z_1-α/2 = 1.9600
+            z_b-β = 0.8416
+            n_a = (1.9600 + 0.8416)² * 35² * (1 + 1 / 0.25) + 8² = 751.16 = 752
+            n_b = 0.25 * 752 = 188
+            N = 752 + 188 = 940
+
+
     
     Sample Size Formula for Unequal Group Allocation
         For unequal group allocation, introduce the allocation ratio: r = n_A / n_B
         For a two-sided test with common variance:
-            n_a = ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1/r)) / δ²
-            n_b = r * n_a
             N = n_a + n_b 
 
         For unequal variance the general normal approximation formula:
             n_a = ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
             n_b = r * n_a
             N = n_a + n_b
-
-    Why should we use unequal group allocation ?
-        1. Risk management: A new treatment may be experimental, so the company initially exposes fewer users to it.
-        2. Business costs: One treatment might be more expensive to deliver.
-        3. Ethical considerations: Researchers may want to limit exposure to a potentially harmful or burdensome treatment.
-        4. Different group variances: When population variances differ, a 50/50 allocation is not always the most statistically efficient choice.
 """
 
 # Sample Size Calculation Using Formulas
@@ -605,5 +636,5 @@ Sensitivity Analysis is a technique used to examine how changes in input assumpt
 # PRACTICAL POWER ANALYSIS IN PYTHON
 # TTestIndPower — Power analysis for comparing means
 """
-
+ 
 """
