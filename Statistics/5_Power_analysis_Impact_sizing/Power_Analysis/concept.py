@@ -97,7 +97,7 @@ Statistical Power is the probability of correctly rejecting the null hypothesis 
         Common value: 5%	                                Common value: 80%
         Typically chosen before the test	                Typically targeted before the test
     
-    Type II erorr β = 1 - Power 
+    Type II erorr β = 1 - Power  
         example:
             Power = 0.90 then Type II = 1 - 0.90 = 0.10
 """
@@ -234,7 +234,6 @@ Practical Significance
         for example, if implementation the new checkout design costs €100,000.
         but the expected additional profit is only €20,000, the change may not be worth implementing.
 """
-
 
 # SAMPLE SIZE DETERMINATION
 # Required Sample Size (n)
