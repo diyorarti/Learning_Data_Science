@@ -35,6 +35,45 @@ TRANSACTION:
         COMMIT   ROLLBACK
 """
 
+-- Transaction Control Problem
+"""
+Create a stored procedure called: process_transfer_batch
+    it's job is to prcess all pending money-transfer requests belonging to one batch.
+    All valid transfers in the batch must succeed together. IF one critical problem occurs, all database
+    changes made for that batch must be undone with "ROLLBACK"
+
+1-step: Reporting table:
+    CREATE TABLE transfer_batch_report (
+        report_id BIGSERIAL PRIMARY KEY,
+        batch_id INTEGER,
+        request_id BIGINT,
+        result TEXT,
+        processed_amount NUMERIC(12,2),
+        processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+2-ste: Procedure parameters:
+    p_batch_id   → which batch should be processed
+    p_chunk_siz  → maximum amount that can be transferred during one WHILE-loop iteration
+
+3-step: Variables:
+    current transfer request
+    sender account
+    receiver account
+    sender balance
+    receiver balance
+    transfer amount
+    remaining amount
+    current chunk amount
+    batch failed?
+    failure reason
+
+4-step: DELETE before generating a fresh report for this batch.
+
+5-step: LOOP use a basic LOOP ... END LOOP.
+
+6-step: 
+"""
 CREATE TABLE bank_accounts (
     account_id INTEGER PRIMARY KEY,
     owner_name TEXT,
