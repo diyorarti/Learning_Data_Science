@@ -301,9 +301,9 @@ Left-tailed test:
     z ≥ -1.645 -> Fail to Reject H₀
 
 Critical(α) Value Formula (Conveting significance level α scale to observed value scale):
+    Two-tailed:    z_c = ±Φ⁻¹(1 - α/2)
     Right-tailed:  z_c = Φ⁻¹(1 - α)
     Left-tailed:   z_c = Φ⁻¹(α)
-    Two-tailed:    z_c = ±Φ⁻¹(1 - α/2)
 
     Python imlementation:
         from scipy.stats import norm
@@ -380,9 +380,9 @@ Choosing the correct statistical test:
     Statistical case	                        Appropriate test	
     One Sample mean	                            One-sample Z-test (known population SD) or one-sample t-test (unknown population SD)
     Two independent sample means	            Two-sample Z-test (known population variances) or independent t-test (unknown population variances)	C
+    Two dependent sample means	                Paired t-test
     One sample proportion	                    One-proportion Z-test
     Two independent sample proportions	        Two-proportion Z-test
-    Two dependent sample means	                Paired t-test
     Categorical goodness-of-fit	                Chi-square goodness-of-fit test
     Categorical independence	                Chi-square test of independence
     Three or more independent sample means	    One-way ANOVA

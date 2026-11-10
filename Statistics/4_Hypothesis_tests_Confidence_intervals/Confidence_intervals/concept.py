@@ -14,8 +14,8 @@ I. Fundamentals
 II. Confidence Intervals for Means 
    1. One-sample Z confidence interval
    2. One-sample t confidence interval
-   3. Two independent means confidence interval
-   4. Paired means confidence interval
+   3. Two independent means confidence interval 
+   4. Two dependent/Paired means confidence interval
 
 III. Confidence Intervals for Proportions
    1. One-proportion CI
@@ -359,5 +359,52 @@ Two-independent means confidence interval:
          when their population variances are unknown and are not assumed equal.
          The Formula:
             CI = (x̄_B - x̄_A) ± t* · √((s_A² / n_A) + (s_B² / n_B))
-            
+
+      Method-3 Pooled t CI
+         The pooled t method assumes the two populations have equal variances σ²_A = σ²_B:
+         We estimate a common variance using: s_p² = ((n_A - 1)s_A² + (n_B - 1)s_B²) / (n_A + n_B - 2)
+         Its standard error is: SE_p = s_p * √((1 / n_A) + (1 / n_B))
+         degress of freedom: df = n_A + n_B - 2
+         CI = (x̄_B - x̄_A) ± t* · SE_p
+"""
+
+# Two dependent/Paired means confidence interval
+"""
+A two-depdenent/Paried Means Confidence Interval is a statistical method used to estimate the population mean differences 
+μ_d between two related mesurements. μ_d = μ_after - μ_before
+   Mathematical Formua:
+      CI = d̄ ± t* · (s_d / √n)
+      d̄ = (Σᵢ₌₁ⁿ dᵢ) / n
+      s_d = √(Σᵢ₌₁ⁿ (dᵢ - d̄)² / (n - 1))
+      SE(d̄) = s_d / √n
+   example:
+      paired differences: d = [15, 10, 10, 20, 15]
+      we want 95% Confidence Interval
+      Mean difference: d̄ = (15 + 10 + 10 + 20 + 15) / 5= 14
+      the sample standard deviation of differences: s_d = √(15 - 14)² + (10 - 14)² + (10 - 14)² + (20 - 14)² + (15 - 14)² / n - 1 = 4.183
+      significance level alpha: α  = 1 - Confidence level = 1 - 0.95 = 0.05
+      Critical t-value: t* = ±Φ⁻¹(1 - α/2) = 2.776
+      Standard Error: SE s_d / √n = 1.871
+      Margin of Error: E = t* * SE = 5.19
+      CI = d̄ ± t* = 14 ± 5.19 = [8.81, 19.19]
+"""
+
+# One-proportion CI
+"""
+A one-proprotion Confidence Interval is a statistcal method used to estimate an unknown population proportion(p)
+using the proportion observed in a random sample(p̄)
+   Mathematical Formula: 
+      CI = p̂ ± z* · √((p̂(1 - p̂)) / n)
+      SE = √p̂ * (1 - p̂) / n
+      example: E-commerce conversion rate
+         giveN:               n = 500,    x = 60,  CI = 95%
+         Sample proportion:   p̂ = x / n = 60 / 500 = 0.12
+         Alpha:               α = 1 - CL = 1 - 0.95 = 0.05
+         Critical z-value:    z* = ±Φ⁻¹(1 - α/2) = 1.96
+         Standard Error:      SE = √p̂ * (1 - p̂) / n = √0.12 * (1 - 0.12) / 500 = 0.01453
+         Margin of Error:     E = 1.96 * 0.01453 = 0.02848
+         95% CI:              CI = p̂ ± Margin of Error = 0.12 ± 0.0248 = [0.0915, 0.1485] = [9.15%, 14.85% ]
+
+A Two-proportions Confidence Interval
+   
 """
