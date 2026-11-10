@@ -29,9 +29,6 @@ class Validator:
         if not isinstance(obj, class_type):
             raise TypeError(f"{field_name} must be an instance of {class_type.__name__}")
 
-class Course:
-    pass
-
 class Student:
     def __init__(self, student_id, name, age, gpa):
         self.__student_id = None
@@ -128,7 +125,7 @@ class Student:
 
     # len ruturn number of completed courses 
     def __len__(self):
-        return len(self.courses) 
+        return len(self.__courses) 
 
     # __getitem__ access a course using index
     def __getitem__(self, key):
@@ -146,4 +143,11 @@ class Student:
 
 
 student1 = Student("S001", "Ali", 22, 4.5)
-print(student1.__str__)
+student2 = Student("S001", "Ali", 22, 4.5)
+student3 = Student("S002", "John", 24, 5.0)
+
+student1.add_course("Python")
+student1.add_course("Statistics")
+student1.add_course("SQL")
+
+print(student1.__len__())
