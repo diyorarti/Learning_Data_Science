@@ -37,7 +37,7 @@ Two-sided test; independent delivery times; approximately normally
 distributed observations.
 
 
-CASE 2 — TWO INDEPENDENT POPULATION MEANS
+CASE 2 — TWO INDEPENDENT POPULATIO N MEANS
 Company: ShopNova | Department: Product Experimentation
 Topic: Recommendation Algorithm A/B Test
 
@@ -61,7 +61,7 @@ YOUR ASSIGNMENT:
 PLANNING ASSUMPTIONS:
 Two-sided test; independent observations; normal outcomes; equal population
 variances; 50/50 allocation. The metric is spending per randomized customer
-over a fixed observation window.
+over a fixed observation window.s
 
 
 CASE 3 — TWO DEPENDENT POPULATION MEANS
