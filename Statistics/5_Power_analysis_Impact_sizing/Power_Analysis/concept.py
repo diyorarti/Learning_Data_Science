@@ -14,7 +14,7 @@ Sample Size Determination
     Required Sample Size (n)
         1. One sample mean
         2. Two independent means
-        3. Two dependent means 
+        3. Two dependent/Paired means 
         4. One sample proportion
         5. Two independent proportions
         6. Three or more means (ANOVA)
@@ -260,43 +260,63 @@ Statistical cases and Power Analysis:
     Categorical independence	 Chi-square independence power calculation      Is payment method associated with device type?
     Three or more sample means	 ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
 
-One-Sample Mean Sample Size Formula:
-    one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
-    two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+Factors affect to choose Power analysis formula:
+    1. Statistical scenatior:              One mean, two-means, paired means, proportions,  ANOVA,  chi-square
+    2. Alterbative hypothesis:             One sided, Two sided
+    3. Population variance:                known, unknown
+    4. Group allocation:                   50/50, 80/20 etc.
+    5. Variance assumptions:               equal or unequal group variances
+    6. statistical method and assumptions: Normal approximation, exact test, noncentral t, chi-square, F
 
-Two Independent Means Sample Size Formula
-    one-tailed: n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
-    two-tailed: n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+    1.Statistical scenatiors:
+        One-Sample Mean Sample Size Formula:
+            one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
+            two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+        Two Independent Means Sample Size Formula
+            one-tailed: n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
+            two-tailed: n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+        Two dependent/Paired means Sample Size Formula
+            one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ_D²) / δ_D²
+            two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ_D²) / δ_D²
+        One Sample Proportion Sample Size Formula
+            one-tailed: n ≈ [Z_(1-α) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+            two-tailed: n ≈ [Z_(1-α/2) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+        Two Independent Proportions Sample Size Formula
+            one-tailed: n ≈ [Z_(1-α) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+            two-tailed: n ≈ [Z_(1-α/2) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+        Categorical goodness-of-fit Sample Size Formula
+            w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
+            λ = nw²
+            df = k - 1
+            Power = 1 - F_ncx²(χ²_critical; df, λ)
+        Categorical independence Sample Size Formula
+            w = √(Σᵢ Σⱼ ((pᵢⱼ - pᵢ₊p₊ⱼ)² / (pᵢ₊p₊ⱼ))) 
+            λ = Nw²
+            df = (r - 1)(c - 1)
+            Power = 1 - F_ncx²(χ²_critical; df, λ)
+        Three or more independent means (ANOVA) Sample Size Formula
+            λ = Nf²
+            df₁ = k - 1
+            df₂ = N - k
+            Power = 1 - F_ncf(F_critical; df₁, df₂, λ)
 
-One Sample Proportion Sample Size Formula
-    one-tailed: n ≈ [Z_(1-α) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
-    two-tailed: n ≈ [Z_(1-α/2) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+    2.Alterbative hypothesis:
+        one-sided = Z_(1-α)
+        two-sided = Z_(1-α / 2)
+    
+    3.Population variance:
+        Population varince known:                           Normal/Z-based
+        Population variance unknown:                        Noncentral t-test
+        Population variance unknown, historical SD known    Noncentral t-based using the historical SD as a planning estimate
 
-Two Independent Proportions Sample Size Formula
-    one-tailed: n ≈ [Z_(1-α) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
-    two-tailed: n ≈ [Z_(1-α/2) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+    4.Equal vs Unequal Variances
+        equal variances: σ²_A = σ²_B = σ²       n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+        equal variances: σ²_A ≠ σ²_B            n ≈ ((Z_(1-α/2) + Z_(1-β))²(σ²_A ≠ σ²_B )) / δ²
 
-Two dependent means Sample Size Formula
-    one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ_D²) / δ_D²
-    two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ_D²) / δ_D²
-
-Categorical goodness-of-fit Sample Size Formula
-    w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
-    λ = nw²
-    df = k - 1
-    Power = 1 - F_ncx²(χ²_critical; df, λ)
-
-Categorical independence Sample Size Formula
-    w = √(Σᵢ Σⱼ ((pᵢⱼ - pᵢ₊p₊ⱼ)² / (pᵢ₊p₊ⱼ)))
-    λ = Nw²
-    df = (r - 1)(c - 1)
-    Power = 1 - F_ncx²(χ²_critical; df, λ)
-
-Three or more independent means (ANOVA) Sample Size Formula
-    λ = Nf²
-    df₁ = k - 1
-    df₂ = N - k
-    Power = 1 - F_ncf(F_critical; df₁, df₂, λ)
+    5.Group Allocation:
+        50/50 allocation: n_A = n_B
+        80/20 allocation: n_B = 0.25 * n_A 
+        n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1) / r) / δ²
 """
 
 # Relationships between MDE, Power, α, Variance, and n
@@ -638,7 +658,3 @@ Sensitivity Analysis is a technique used to examine how changes in input assumpt
  
 """
 
-
-# hel
-"""
-"""
