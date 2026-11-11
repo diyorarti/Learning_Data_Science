@@ -35,110 +35,60 @@ TRANSACTION:
         COMMIT   ROLLBACK
 """
 
--- Transaction Control Problem
+-- Practice Problem
 """
-Create a stored procedure called: process_transfer_batch
-    it's job is to prcess all pending money-transfer requests belonging to one batch.
-    All valid transfers in the batch must succeed together. IF one critical problem occurs, all database
-    changes made for that batch must be undone with "ROLLBACK"
+Create a stored procedure called: transfer_money:
+    The procedure must do:
+        first, get the sender's current balance and store it in a varible
+        then check whether:
+            p_amount > 0 AND sender has enough money
 
-1-step: Reporting table:
-    CREATE TABLE transfer_batch_report (
-        report_id BIGSERIAL PRIMARY KEY,
-        batch_id INTEGER,
-        request_id BIGINT,
-        result TEXT,
-        processed_amount NUMERIC(12,2),
-        processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-
-2-ste: Procedure parameters:
-    p_batch_id   → which batch should be processed
-    p_chunk_siz  → maximum amount that can be transferred during one WHILE-loop iteration
-
-3-step: Variables:
-    current transfer request
-    sender account
-    receiver account
-    sender balance
-    receiver balance
-    transfer amount
-    remaining amount
-    current chunk amount
-    batch failed?
-    failure reason
-
-4-step: DELETE before generating a fresh report for this batch.
-
-5-step: LOOP use a basic LOOP ... END LOOP.
-
-6-step: 
+        Case-1 Valid transfer:
+                Ali = 1000
+                Bob = 500
+                Transfer request 200
+            Perform:
+                1.substract 200 from ALi
+                2.add 200 to Bob
+                3.COMMIT
+            Result:
+                Ali:800
+                Bob:700
+            Print:
+                Transfer successful
+        
+        Case-2 Insufficient balance:
+                Ali = 1000
+                Bob = 500
+                Transfer request = 1500 
+            Peform:
+                this transfer must not happen
+                ROLLBACK
+            Result:
+                Ali = 1000
+                Bob = 500
+            Print:
+                Transfer failed: insufficient balance
+            
+        Case-3 Invalid amount:
+                Ali = 1000
+                Bob = 500
+                Transfer request <= 0
+            Peform:
+                this is invalid transfer request
+                ROLLBACK
+            Print:
+                Transfer failed: invalid amount
+                
+        Table:
+        CREATE TABLE accounts (
+            account_id INTEGER PRIMARY KEY,
+            owner_name TEXT,
+            balance NUMERIC(12,2)
+        );
+        test data 
+        INSERT INTO accounts
+        VALUES
+            (1, 'Ali', 1000.00),
+            (2, 'Bob', 500.00);
 """
-CREATE TABLE bank_accounts (
-    account_id INTEGER PRIMARY KEY,
-    owner_name TEXT,
-    balance NUMERIC(12, 2)
-);
-
-CREATE TABLE transfer_requests (
-    request_id BIGSERIAL PRIMARY KEY,
-    batch_id INTEGER,
-    from_account INTEGER,
-    to_account INTEGER,
-    amount NUMERIC(12,2),
-    status TEXT DEFAULT 'pending'
-);
-
--- creating a report table:
-CREATE TABLE transfer_batch_report (
-    report_id BIGSERIAL PRIMARY KEY,
-    batch_id INTEGER,
-    request_id BIGINT,
-    result TEXT,
-    processed_amount NUMERIC(12, 2),
-    processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- creating a stored procedure , Its job is to process all pending money-transfer requests belonging to one batch.
-CREATE OR REPLACE process_transfer_batch(
-    p_batch_id VARCHAR(50), --  which batch should be processed
-    p_chunk_size VARCHAR(50) --  maximum amount that can be transferred during one WHILE-loop iteration
-)
-LANGUAGE plpgsql
-AS $$
-DECLARE 
-    v_request RECORD; -- current transfer request
-    
-    v_sender_account INTEGER; -- sender account
-    v_receiver_account INTEGER; -- receiver account
-    
-    v_sender_balance NUMERIC(12, 2); -- sender balance
-    v_receiver_balance NUMERIC(12, 2); -- receiver balance
-
-    v_transfer_amount NUMERIC(12, 2); -- transfer amount
-    v_remaining_amount NUMERIC(12, 2); -- remaining amount
-    v_current_chunk NUMERIC(12, 2); -- current chunk amount
-
-    v_batch_failed BOOLEAN := FALSE; -- batch failed?
-    v_failure_reason TEXT; -- failure reason
-
-BEGIN 
-    -- DELETE before generating a fresh report for this batch
-    DELETE FROM transfer_batch_report
-    WHERE batch_id = p_batch_id;
-
-    -- the outer loop that repeatedly picks one pending transfer request and processes it
-    LOOP
-        SELECT *
-        INTO v_request
-        FROM transfer_requests
-        WHERE batch_id = p_batch_id
-          AND status = 'pending'
-        ORDER BY request_id
-        LIMIT 1;
-
-
-    END LOOP;
-    
-
-
