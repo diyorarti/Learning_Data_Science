@@ -129,20 +129,18 @@ class Student:
 
     # __getitem__ access a course using index
     def __getitem__(self, key):
-        if len(self.courses) <= key:
-            return "No such index course"
-        return self.courses[key]
+        return self.__courses[key]
 
     # __contains__ check whether a student has completed a course 
     def __contains__(self, item):
-        return item in self.courses
+        return item in self.__courses
 
     # __bool__ return True if GPA is at least 3.0
     def __bool__(self):
-        return self.gpa <=3
+        return self.gpa >= 3
 
 
-student1 = Student("S001", "Ali", 22, 4.5)
+student1 = Student("S001", "Ali", 22, 2.5)
 student2 = Student("S001", "Ali", 22, 4.5)
 student3 = Student("S002", "John", 24, 5.0)
 
@@ -150,4 +148,4 @@ student1.add_course("Python")
 student1.add_course("Statistics")
 student1.add_course("SQL")
 
-print(student1.__len__())
+print(student1.__getitem__(1))
