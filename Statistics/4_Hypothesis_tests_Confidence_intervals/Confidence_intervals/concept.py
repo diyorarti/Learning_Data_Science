@@ -14,12 +14,12 @@ I. Fundamentals
 II. Confidence Intervals for Means 
    1. One-sample Z confidence interval
    2. One-sample t confidence interval
-   3. Two independent means confidence interval 
+   3. Two independent means confidence interval  
    4. Two dependent/Paired means confidence interval
 
 III. Confidence Intervals for Proportions
    1. One-proportion CI
-   2. Difference between two proportions
+   2. two-proportions CI
    3. Wald vs Wilson CI
 
 IV. Interpretation
@@ -389,22 +389,40 @@ A two-depdenent/Paried Means Confidence Interval is a statistical method used to
       CI = d̄ ± t* = 14 ± 5.19 = [8.81, 19.19]
 """
 
-# One-proportion CI
+# Confidence interval for proportions
 """
-A one-proprotion Confidence Interval is a statistcal method used to estimate an unknown population proportion(p)
-using the proportion observed in a random sample(p̄)
-   Mathematical Formula: 
-      CI = p̂ ± z* · √((p̂(1 - p̂)) / n)
-      SE = √p̂ * (1 - p̂) / n
-      example: E-commerce conversion rate
-         giveN:               n = 500,    x = 60,  CI = 95%
-         Sample proportion:   p̂ = x / n = 60 / 500 = 0.12
-         Alpha:               α = 1 - CL = 1 - 0.95 = 0.05
-         Critical z-value:    z* = ±Φ⁻¹(1 - α/2) = 1.96
-         Standard Error:      SE = √p̂ * (1 - p̂) / n = √0.12 * (1 - 0.12) / 500 = 0.01453
-         Margin of Error:     E = 1.96 * 0.01453 = 0.02848
-         95% CI:              CI = p̂ ± Margin of Error = 0.12 ± 0.0248 = [0.0915, 0.1485] = [9.15%, 14.85% ]
+A One-propotion Confidence interval (Wald Confidence Interval)
+   A one-proprotion Confidence Interval is a statistcal method used to estimate an unknown population proportion(p)
+   using the proportion observed in a random sample(p̄)
+      Mathematical Formula: 
+         CI = p̂ ± z* · √((p̂(1 - p̂)) / n)
+         SE = √p̂ * (1 - p̂) / n
+         example: E-commerce conversion rate
+            giveN:               n = 500,    x = 60,  CI = 95%
+            Sample proportion:   p̂ = x / n = 60 / 500 = 0.12
+            Alpha:               α = 1 - CL = 1 - 0.95 = 0.05
+            Critical z-value:    z* = ±Φ⁻¹(1 - α/2) = 1.96
+            Standard Error:      SE = √p̂ * (1 - p̂) / n = √0.12 * (1 - 0.12) / 500 = 0.01453
+            Margin of Error:     E = 1.96 * 0.01453 = 0.02848
+            95% CI:              CI = p̂ ± Margin of Error = 0.12 ± 0.0248 = [0.0915, 0.1485] = [9.15%, 14.85% ]
 
 A Two-proportions Confidence Interval
-   
+   A Two-porportions Confidence Interval is a statistical method used to estimate the difference between two 
+   population proportions (p_B - p_A) using two indepdenet samples.
+      Mathematical Formula:
+         CI = (p̂_B - p̂_A) ± z* · √((p̂_A(1 - p̂_A) / n_A) + (p̂_B(1 - p̂_B) / n_B))
+      Standard Error: SE = √((p̂_A(1 - p̂_A) / n_A) + (p̂_B(1 - p̂_B) / n_B))
+      example: A/B testing conversion rates.
+         given:               n_A = 1000, x_A = 100 | n_B = 1000, x_B = 130  |  CL = 95%
+         proportions:         p̄_A = 100 / 1000 = 0.10 | p̄_B = 130 / 1000 = 0.13 | p_difference = 0.13 - 0.10 = 0.03
+         alpha:               α = 1 - 0.95 = 0.05
+         Critical z-value:    z* = ±Φ⁻¹(1 - α/2) = 1.96
+         Standard Error:      SE =  √( (0.10 * (1 - 0.10) / 1000) + (0.13 * (1 - 0.13) / 1000) ) = 0.01425
+         margin og error:     E = 1.96 * 0.01425 = 0.02793
+         Confidence interval: CI = [0.0021, 0.0579] = [0.21, 5.79] percentage points
+
+""" 
+
+# 
+"""
 """

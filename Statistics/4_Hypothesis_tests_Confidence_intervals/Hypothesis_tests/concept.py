@@ -302,7 +302,7 @@ Left-tailed test:
 
 Critical(α) Value Formula (Conveting significance level α scale to observed value scale):
     Two-tailed:    z_c = ±Φ⁻¹(1 - α/2)
-    Right-tailed:  z_c = Φ⁻¹(1 - α)
+    Right-tailed:  z_c = Φ⁻¹(1 - α) 
     Left-tailed:   z_c = Φ⁻¹(α)
 
     Python imlementation:
