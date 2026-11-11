@@ -74,7 +74,7 @@ The main purpose of Logistic Regression is to model a binary target variable
 
     What is log-odds (or logit)?
         Log-odds is the output of the linear part of the logistic regression model.
-        log(odds) log(p / (1 - p)) is log-odds
+        log(odds): log(p / (1 - p)) is log-odds
         example:
             p = 0.8
             odds = p / (1 - 0.8) = 0.8 / 0.2 = 4
@@ -115,14 +115,6 @@ Sigmoid function
     Formula: 
         σ(z) = 1 / (1 + e⁻ᶻ)
     Important Pattern:
-        | Log-odds (z)   | Sigmoid probability |
-        |             -5 |               0.007 |
-        |             -2 |               0.119 |
-        |             -1 |               0.269 |
-        |          **0** |           **0.500** |
-        |              1 |               0.731 |
-        |              2 |               0.881 |
-        |              5 |               0.993 |
         z<0 ⇒ p<0.5
         z=0 ⇒ p=0.5 
         z>0 ⇒ p>0.5
@@ -146,7 +138,8 @@ Sigmoid function
         its prediction, and additional changes in the predictors have diminishing effects on the probability.
 
 """
- 
+
+# ASSUMPTIONS OF LOGISTIC REGRESSION
 # Linearity of independent variables and log-odds
 """ 
 Assumptions are conditions we expect the data and the relationship between variables to satisfy so that the model's 
