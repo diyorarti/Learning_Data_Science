@@ -389,22 +389,55 @@ A two-depdenent/Paried Means Confidence Interval is a statistical method used to
       CI = d̄ ± t* = 14 ± 5.19 = [8.81, 19.19]
 """
 
-# Confidence interval for proportions
+# Confidence interval for proportions 
 """
-A One-propotion Confidence interval (Wald Confidence Interval)
-   A one-proprotion Confidence Interval is a statistcal method used to estimate an unknown population proportion(p)
-   using the proportion observed in a random sample(p̄)
-      Mathematical Formula: 
-         CI = p̂ ± z* · √((p̂(1 - p̂)) / n)
-         SE = √p̂ * (1 - p̂) / n
-         example: E-commerce conversion rate
-            giveN:               n = 500,    x = 60,  CI = 95%
-            Sample proportion:   p̂ = x / n = 60 / 500 = 0.12
-            Alpha:               α = 1 - CL = 1 - 0.95 = 0.05
-            Critical z-value:    z* = ±Φ⁻¹(1 - α/2) = 1.96
-            Standard Error:      SE = √p̂ * (1 - p̂) / n = √0.12 * (1 - 0.12) / 500 = 0.01453
-            Margin of Error:     E = 1.96 * 0.01453 = 0.02848
-            95% CI:              CI = p̂ ± Margin of Error = 0.12 ± 0.0248 = [0.0915, 0.1485] = [9.15%, 14.85% ]
+A One-propotion Confidence interval 
+   Wald Confidence Interval
+      A one-proprotion Confidence Interval is a statistcal method used to estimate an unknown population proportion(p)
+      using the proportion observed in a random sample(p̄)
+         Mathematical Formula: 
+            CI = p̂ ± z* · √((p̂(1 - p̂)) / n)
+            SE = √p̂ * (1 - p̂) / n
+            example: E-commerce conversion rate
+               giveN:               n = 500,    x = 60,  CI = 95%
+               Sample proportion:   p̂ = x / n = 60 / 500 = 0.12
+               Alpha:               α = 1 - CL = 1 - 0.95 = 0.05
+               Critical z-value:    z* = ±Φ⁻¹(1 - α/2) = 1.96
+               Standard Error:      SE = √p̂ * (1 - p̂) / n = √0.12 * (1 - 0.12) / 500 = 0.01453
+               Margin of Error:     E = 1.96 * 0.01453 = 0.02848
+               95% CI:              CI = p̂ ± Margin of Error = 0.12 ± 0.0248 = [0.0915, 0.1485] = [9.15%, 14.85% ]
+      Limitation of Wald Confidence Interval:   
+         example: Website Conversion rate:
+            number of visitors:         n = 20
+            number of conversions:      x = 2
+            Confidence level:           CL = 95%
+            sample proportion:          p̂ = 2 / 20 = 0.10
+            critical z-value:           z* = 1.96
+            Standard error:             SE = √0.10*(0.90)/20 = 0.06708
+            Margin of Error:            E = 1.96 * 0.06708 = 0.13148
+            Confidence Interval:        CI = [0.10 ± 0.13148] = [-0.0315, 0.2315] = [-3.15%, 2.15%]
+         What is wrong:
+            the lower bound is -3.15%, but population proportions must satisfy 0 ≤ p ≤ 1
+            therefore, the Wald interval has produced an impossible lower bound.
+            this demonstrates an importan weakness of the Wald method, it uses a symmetric normal approximation,
+            even when ths distribution of plausible proportion values is not well appriximated by a symmetric shape.
+
+   Wilson Confidence Interval
+      Wilson Confidence Interval is an alternative method for estimating a population proportion. 
+      it is obtained by inverting the one-proportion score Z-test.
+      Mathematical Formula:
+         CI_Wilson = (p̂ + z*²/(2n) ± z* · √((p̂(1 - p̂)/n) + (z*²/(4n²)))) / (1 + z*²/n)
+         example:Website Conversion rate:
+            number of visitors:         n = 20
+            number of conversions:      x = 2
+            Confidence level:           CL = 95%
+            Sample proportion:          p̂ = 2 / 20 = 0.10
+            Critical Z-value:           z* = 1.96
+            Adjusted numerator center:  A = (p̂ + z*²/(2n) = 0.19604
+            square-root term:           B = √((p̂(1 - p̂)/n) + (z*²/(4n²))) = 0.08307
+            Adjusted Margin term:       C = z* · B = 0.16282
+            Demominator:                D = (1 + z*²/n)
+            Confidence Interval:        CI = (A ± C) D = [0.0279, 0.3010] = [2.79%, 30.10%]
 
 A Two-proportions Confidence Interval
    A Two-porportions Confidence Interval is a statistical method used to estimate the difference between two 
@@ -423,6 +456,35 @@ A Two-proportions Confidence Interval
 
 """ 
 
-# 
+# INTERPRETATION
+# Correct interpretation of 95% CI
 """
+95% Confidence Interval means that if we repeatedly collected random samples and constructed a 95% confidence interval
+from each sample using the same valid method, approximately 95% of those intervals would contain the true population paramter.
+   CL = 1 - α 
+   α = 1 - CL
+   examples:
+      Average customer spending. 
+         x̄ = 250 PLN
+         95% CI = [230, 270]
+         Iterpretation:
+            1. Based on out sample, we estimate tha the true population mean customer spending is between 230PLN and 270PLN.
+               The method used to construct this interval has 95% long run converage under its assumptions.
+            2. The population mean lies between 230 and 270 with 95% Confidence interval prodecure.
+      
+      E-commerce website conversion rate
+         x̄ = 0.12
+         95% CI = [0.09, 0.15] = [9%, 15%]
+         Iterpretation:
+            We estimate that the true population conversion rate is between 9% and 15%, with the procedure having 95% CI.
+      
+      An A/B test compares average customer spedning:
+         x̄_B - x̄_A = 15 PLN
+         95% CI = [5, 25] PLN (we estimate x̄_B-x̄_A difference, not either population mean individually)
+         we estimate that Group B's population mean spedning exceeds Group A's by between 5PLN and 25PLN   
+"""
+
+#
+"""
+
 """

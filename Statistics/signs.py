@@ -6,6 +6,7 @@
 σ²  = sigma squared / variance
 δ   = delta
 λ   = lambda
+x̄   = x mean
 χ   = chi
 χ²  = chi-squared
 Σ   = capital sigma / summation
