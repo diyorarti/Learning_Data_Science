@@ -29,7 +29,7 @@ Impact Sizing
         10. Communicate Findings and Recommendations
     C. Practical Impact Sizing in Python
         1. Estimate Baseline Business Metrics
-        2. Build Impact Equations
+        2. Build Impact Equationsb 
         3. Calculate Incremental Revenue or Conversions
         4. Perform Scenario Analysis
         5. Perform Sensitivity Analysis

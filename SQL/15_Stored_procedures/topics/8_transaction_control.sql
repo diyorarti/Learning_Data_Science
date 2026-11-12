@@ -92,3 +92,85 @@ Create a stored procedure called: transfer_money:
             (1, 'Ali', 1000.00),
             (2, 'Bob', 500.00);
 """
+-- test data
+CREATE TABLE accounts (
+    account_id INTEGER PRIMARY KEY,
+    owner_name TEXT,
+    balance NUMERIC(12,2)
+);
+
+INSERT INTO accounts
+VALUES
+    (1, 'Ali', 1000.00),
+    (2, 'Bob', 500.00);
+
+
+-- Stored Procedure
+CREATE OR REPLACE PROCEDURE transfer_money(
+    p_from_account INTEGER,
+    p_to_account INTEGER,
+    p_amount NUMERIC(12, 2)
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_sender_balance NUMERIC(12, 2);
+    v_receiver_balance NUMERIC(12, 2);
+
+BEGIN
+    -- getting sender balance
+    SELECT balance
+    INTO v_sender_balance
+    FROM accounts
+    WHERE account_id = p_from_account;
+
+    -- getting receiver balance
+    SELECT balance 
+    FROM accounts
+    INTO v_receiver_balance
+    WHERE account_id = p_to_accout;
+
+    -- checking ivalid amount
+    IF p_amount <= 0 THEN 
+        RAISE NOTICE 'Transfer failed: invalid amount';
+        ROLLBACK;
+
+    -- check sender account
+    ELSIF v_sender_balance IS NULL THEN
+        RAISE NOTICE 'Transfer failed: sender account does not exist';
+        ROLLBACK;
+
+    -- check receiver account 
+    ELSIF v_receiver_balance IS NULL THEN 
+        RAISE NOTICE 'Transfer failed: receiver account does not exist';
+        ROLLBACK;
+
+    -- check sufficient balance
+    ELSIF v_sender_balance < p_amount THEN
+        RAISE NOTICE 'Transfer failed: insufficient balance';
+        ROLLBACK;
+
+    -- valid transfer
+    ELSE
+        -- subtract money from sernder 
+        UPDATE accounts
+        SET balance = balance - p_amount
+        WHERE account_id = p_from_account;
+
+        -- add money to receiver
+        UPDATE accounts
+        SET balance = balance + p_amount
+        WHERE account_id = p_from_account;
+
+        COMMIT;
+
+        RAISE NOTICE 'Transfer successful';
+        RAISE NOTICE 'From Account: %', p_from_account;
+        RAISE NOTICE 'To Account: %',p_to_account ;
+        RAISE NOTICE 'Amount: %', p_amount;
+
+    END IF;
+
+END;
+$$;
+
