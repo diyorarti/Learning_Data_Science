@@ -270,30 +270,42 @@ Factors affect to choose Power analysis formula:
 
     1.Statistical scenatiors:
         One-Sample Mean Sample Size Formula:
-            one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
-            two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+            Z-based one-tailed:   n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
+            t-based right-tailed: Power = P(T_(v,λ) > t_(1-α,v))
+                                  λ = δ * √n /  σ
+                                  v = n - 1
+                                
         Two Independent Means Sample Size Formula
-            one-tailed: n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
-            two-tailed: n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+            Z-based one-tailed:     n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
+            t-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v))
+                                    λ = (μ_B - μ_A) / (σ * √((1 / n_A) + (1 / n_B)))
+                                    v = n_A + n_B - 2
+
         Two dependent/Paired means Sample Size Formula
-            one-tailed: n ≈ ((Z_(1-α) + Z_(1-β))² * σ_D²) / δ_D²
-            two-tailed: n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ_D²) / δ_D²
+            Z-based one-tailed:     n ≈ ((Z_(1-α) + Z_(1-β))² * σ_D²) / δ_D²
+            T-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v))
+                                    Dᵢ = X_after,i - X_before,i
+                                    λ = (δ_D * √n) / σ_D
+                                    v = n - 1
+
         One Sample Proportion Sample Size Formula
             one-tailed: n ≈ [Z_(1-α) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
-            two-tailed: n ≈ [Z_(1-α/2) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+
         Two Independent Proportions Sample Size Formula
             one-tailed: n ≈ [Z_(1-α) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
-            two-tailed: n ≈ [Z_(1-α/2) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+
         Categorical goodness-of-fit Sample Size Formula
             w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
             λ = nw²
             df = k - 1
             Power = 1 - F_ncx²(χ²_critical; df, λ)
+
         Categorical independence Sample Size Formula
             w = √(Σᵢ Σⱼ ((pᵢⱼ - pᵢ₊p₊ⱼ)² / (pᵢ₊p₊ⱼ))) 
             λ = Nw²
             df = (r - 1)(c - 1)
             Power = 1 - F_ncx²(χ²_critical; df, λ)
+
         Three or more independent means (ANOVA) Sample Size Formula
             λ = Nf²
             df₁ = k - 1
@@ -301,8 +313,13 @@ Factors affect to choose Power analysis formula:
             Power = 1 - F_ncf(F_critical; df₁, df₂, λ)
 
     2.Alterbative hypothesis:
-        one-sided = Z_(1-α)
-        two-sided = Z_(1-α / 2)
+        Z-based:   
+            one-sided = Z_(1-α) 
+            two-sided = Z_(1-α / 2)
+        t-Based:
+            Righ-tailed:    Power = P(T_(v,λ) > t_(1-α,v))
+            Left-tailed:    Power = P(T_(v,λ) < t_(α,v))
+            Two-tailed:     Power = P(T_(v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
     
     3.Population variance:
         Population varince known:                           Normal/Z-based
@@ -310,13 +327,39 @@ Factors affect to choose Power analysis formula:
         Population variance unknown, historical SD known    Noncentral t-based using the historical SD as a planning estimate
 
     4.Equal vs Unequal Variances
-        equal variances: σ²_A = σ²_B = σ²       n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
-        equal variances: σ²_A ≠ σ²_B            n ≈ ((Z_(1-α/2) + Z_(1-β))²(σ²_A ≠ σ²_B )) / δ²
+        Z-based power analysis:
+            equal variances:   σ²_A = σ²_B = σ²       n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+            unequal variances: σ²_A ≠ σ²_B            n ≈ ((Z_(1-α/2) + Z_(1-β))²(σ²_A ≠ σ²_B )) / δ²
+
+        t-based power analysis:
+            equal variances(Pooled t-test):    σ_A² = σ_B² = σ²
+                                λ = (δ / σ) * √(n / 2)
+                                v = 2n - 2
+             two-sided power:   Power = P(T_v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
+            unequal variancees(Welch's t-test): 
+                                λ ≈ δ / √((σ_A² / n) + (σ_B² / n))
+                                v ≈ ((σ_A² / n) + (σ_B² / n))² / (((σ_A² / n)² / (n - 1)) + ((σ_B² / n)² / (n - 1)))
+             two-sided power:   Power ≈ P(T_(v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
 
     5.Group Allocation:
-        50/50 allocation: n_A = n_B
-        80/20 allocation: n_B = 0.25 * n_A 
-        n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1) / r) / δ²
+        Z-based:
+            50/50 allocation: n_A = n_B
+            80/20 allocation: n_B = 0.25 * n_A 
+            n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1 / r) / δ²
+        t-based: 
+            50/50 allocation: r = 1     |  λ = (δ / σ) * √(n_A / 2)     |  v = 2n_A - 2
+            80/20 allocation: r = 0.25  |  λ = (δ / σ) * √(n_A / 5)     |  v = 1.25n_A - 2
+
+Python calculation: 
+    Statistical scenario	    Main Power Analysis method	            Python approach
+    One-sample mean	            Noncentral t	                        TTestPower
+    Two independent means	    Noncentral t (pooled test)	            TTestIndPower
+    Paired means	            Noncentral t	                        TTestPower
+    One proportion	            Binomial or normal approximation	    NormalIndPower is not for one proportion; use an appropriate one-proportion method
+    Two independent proportions	Binomial or normal approximation	    NormalIndPower
+    Chi-square goodness-of-fit	Noncentral chi-square approximation	    GofChisquarePower
+    Chi-square independence	    Noncentral chi-square approximation	    Numerical calculation or simulation
+    ANOVA (3+ means)	        Noncentral F	                        FTestAnovaPower
 """
 
 # Relationships between MDE, Power, α, Variance, and n
