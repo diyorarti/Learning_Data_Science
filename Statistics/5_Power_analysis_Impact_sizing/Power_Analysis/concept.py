@@ -698,6 +698,5 @@ Sensitivity Analysis is a technique used to examine how changes in input assumpt
 # PRACTICAL POWER ANALYSIS IN PYTHON
 # TTestIndPower — Power analysis for comparing means
 """
- 
 """
 
