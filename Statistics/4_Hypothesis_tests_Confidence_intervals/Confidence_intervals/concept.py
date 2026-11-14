@@ -408,7 +408,7 @@ A One-propotion Confidence interval
                95% CI:              CI = p̂ ± Margin of Error = 0.12 ± 0.0248 = [0.0915, 0.1485] = [9.15%, 14.85% ]
       Limitation of Wald Confidence Interval:   
          example: Website Conversion rate:
-            number of visitors:         n = 20
+            number of visitors:         n = 20 
             number of conversions:      x = 2
             Confidence level:           CL = 95%
             sample proportion:          p̂ = 2 / 20 = 0.10
@@ -484,7 +484,45 @@ from each sample using the same valid method, approximately 95% of those interva
          we estimate that Group B's population mean spedning exceeds Group A's by between 5PLN and 25PLN   
 """
 
-#
+# CI containing zero
+"""
+A Confidence Interval containing zero means that zero is included among the plausible values of the population parameter being estimated
+   example: CI 95% = [-5, 10]
+   When the parameter represents a difference between two population means or proportions, zero represents no difference:
+      μ_B - μ_B = 0 -> μ_A = μ_B
+
+   example: A/B testing 
+      an e-commerce company runs an A/B test to determine whether a redesigned checkout page increases average customer spending.
+      Group A(Control): μ_A = 100PLN
+      Group B(Treatment): μ_B = 105PLN
+      Difference: 5PLN
+      95% CI = [-3, 13] PLN
+      Possible population difference	Interpretation
+      -3 PLN	                        Treatment reduces mean spending by 3 PLN
+      0 PLN	                           No difference in population mean spending
+      +13 PLN	                        Treatment increases mean spending by 13 PLN
+
+   Does Zero(0) always represents no effect?
+      Parameter                      No-effect value      Example
+      Difference between means             0              μ_B - μ_A = 0
+      Difference between proportions       0              p_B - p_A = 0
+      Linear regression slope              0              β₁ = 0
+      Log-odds coefficient                 0              β₁ = 0
+      Odds ratio (OR)                      1              OR = 1
+      Risk ratio (RR)                      1              RR = 1
+
+   Different types of Confidence intervals containing zero(0)
+      Case A: difference between two means: 95% CI = [-5, 15]PLN 
+         Interpretation: the data are compatible with a decrease, no difference or an increase in population mean spending.
+      Case B: difference between two proportions 95% CI = [-0.02, 0.06]
+         Intepretation: the population conversion-rate difference could be negative, zero, or positive within the estimated interval.
+      Case C: Linear regression coefficient: β̂₁ = 0.5  95% = [-0.2, 1.2]
+         Interpretation: The coefficient is not statistcally distinguishable from zero at the corresponding two-sided 5% significance level, under the 
+                         regression model assumptions.
+
 """
 
+# CI not containing zero
+"""
+s
 """
