@@ -8,6 +8,7 @@ Ordinary least squares Assumptions:
     Homoscedasticity
     Absence of severe multicollinearity
 
+Common techniques:
     Residual analysis
     Cook's distance
     Variance inflation factor (VIF)
