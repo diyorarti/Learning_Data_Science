@@ -91,36 +91,41 @@ class Student:
 
     # developer-friendly descriptio
     def __repr__(self):
-        return f"Student({self.name!r}, {self.student_id!r}, {self.age!r}, {self.gpa!r}, {self.__courses!r})"
+        return (
+            f"Student(student_id={self.student_id!r}, "
+            f"name={self.name!r}, "
+            f"age={self.age!r}, "
+            f"gpa={self.gpa!r})"
+        )
 
     # comparing students, they are equal when their student IDs match
     def __eq__(self, other):
         if not isinstance(other, Student):
-            return False
+            return NotImplemented
         return self.student_id == other.student_id
 
     # __lt__ compares that is current student's GPA less than other's GPA
     def __lt__(self, other):
         if not isinstance(other, Student):
-            return False
+            return NotImplemented
         return self.gpa < other.gpa
 
     # __gt__ compares that is current student's GPA greater than other's GPA
     def __gt__(self, other):
         if not isinstance(other, Student):
-            return False
+            return NotImplemented
         return self.gpa > other.gpa
 
     # less than or equal
     def __le__(self, other):
         if not isinstance(other, Student):
-            return False
+            return NotImplemented
         return self.gpa <= other.gpa
 
     # greater than or equal 
     def __ge__(self, other):
         if not isinstance(other, Student):
-            return False
+            return NotImplemented
         return self.gpa >= other.gpa
 
     # len ruturn number of completed courses 
@@ -148,4 +153,4 @@ student1.add_course("Python")
 student1.add_course("Statistics")
 student1.add_course("SQL")
 
-print(student1.__getitem__(1))
+print(student1.__lt__(student3))
