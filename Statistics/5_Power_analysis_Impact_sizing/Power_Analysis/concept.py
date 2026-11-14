@@ -90,7 +90,7 @@ Statistical Power is the probability of correctly rejecting the null hypothesis 
     For example, increasing desired power from 80% to 90% will generally increase the required sample size.
 
     Distinction between: Power vs Significance level
-        Significance Level (α)                              Statistical Power (β)
+        Significance Level (α)                              Statistical Power 
         --------------------------------------------------------------------------
         Probability of rejecting (H₀) when it is true	    Probability of rejecting (H₀) when a specified alternative is true
         Controls Type I error	                            Measures ability to detect a real effect
@@ -177,7 +177,6 @@ How Significance Level (α) effects Statistical power and Sample Size (n)
 # Variance and Standard Deviation
 """
 How Var/Std affects Statistical Power, Type II error and Required Sample size n.
-
     Relationship between Var/Std and Statistical Power.
         we want to keep sample size n fixed.
         Suppose an e-commerce company wants to determine whether a new recommendation system increases average customer spending.
@@ -224,7 +223,7 @@ Statistical significance
         That is where practical significance comes in.
     
 Practical Significance
-    Practical Significance refers to whether the magnitude of an ebserved effect is large enough to be meaningful or valuable in real-world context.
+    Practical Significance refers to whether the magnitude of an observed effect is large enough to be meaningful or valuable in real-world context.
     Example:
         α = 0.05
         p = 0.01
@@ -253,9 +252,9 @@ Statistical cases and Power Analysis:
     Case	                     Sample Size method                             Example
     One sample mean	             One-sample mean power calculation              Is average customer spending different from 100 PLN?
     Two independent sample means Two-independent-means power calculation        Is average spending different between users of website A and B?
+    Two dependent sample means	 Paired-mean power calculation                  Does average spending change for the same customers before and after an intervention?
     One sample proportion	     One-proportion power calculation               Is the conversion rate different from 10%?
     Two independent proportions	 Two-proportion power calculation               Is conversion rate different between checkout designs A and B?
-    Two dependent sample means	 Paired-mean power calculation                  Does average spending change for the same customers before and after an intervention?
     Categorical goodness-of-fit	 Chi-square goodness-of-fit power calculation   Do customers choose four payment methods in the expected proportions?
     Categorical independence	 Chi-square independence power calculation      Is payment method associated with device type?
     Three or more sample means	 ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
@@ -332,14 +331,15 @@ Factors affect to choose Power analysis formula:
             unequal variances: σ²_A ≠ σ²_B            n ≈ ((Z_(1-α/2) + Z_(1-β))²(σ²_A ≠ σ²_B )) / δ²
 
         t-based power analysis:
-            equal variances(Pooled t-test):    σ_A² = σ_B² = σ²
-                                λ = (δ / σ) * √(n / 2)
-                                v = 2n - 2
-             two-sided power:   Power = P(T_v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
+            equal variances(Pooled t-test):   
+                            σ_A² = σ_B² = σ²
+                            λ = (δ / σ) * √(n / 2)
+                            v = 2n - 2
+                            two-sided power: Power = P(T_v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
             unequal variancees(Welch's t-test): 
-                                λ ≈ δ / √((σ_A² / n) + (σ_B² / n))
-                                v ≈ ((σ_A² / n) + (σ_B² / n))² / (((σ_A² / n)² / (n - 1)) + ((σ_B² / n)² / (n - 1)))
-             two-sided power:   Power ≈ P(T_(v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
+                            λ ≈ δ / √((σ_A² / n) + (σ_B² / n))
+                            v ≈ ((σ_A² / n) + (σ_B² / n))² / (((σ_A² / n)² / (n - 1)) + ((σ_B² / n)² / (n - 1)))
+                            two-sided power:   Power ≈ P(T_(v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
 
     5.Group Allocation:
         Z-based:
@@ -634,7 +634,7 @@ General Procedure:
 Sensitivity Analysis is a technique used to examine how changes in input assumptions affect the result of a statistical analysis.
     In power analysis, it helps us understand how changes in parameters such as MDE, Var, α and power affect:
         required sample size
-        achievanle statistical power
+        achievable statistical power
         minimum detectable effect 
         feasibility of an experiment
     example: an e-commerce company wants to run A/B test to determine whether a new recommendation algorithm increases avera customer spending.
