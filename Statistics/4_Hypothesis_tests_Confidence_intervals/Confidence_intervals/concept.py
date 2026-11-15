@@ -40,7 +40,7 @@ VI. Bootstrap Confidence Intervals
    3. Percentile CI
    4. Mean CI
    5. Median CI
-   6. Group-difference CI
+   6. Group-difference CIf,,f,f,
 
 VII. Regression Confidence Intervals
    1. Linear regression coefficient CI
@@ -287,7 +287,7 @@ Confidence Interval Precision refers how narrowly we can estimate an unkwown pop
    Precision: How little an estimate fluctuates across repeated samples; reflected in CI width.
    Accuracy: How close an estimate is to the true population parameter.
 """
-
+ 
 
 # CONFIDENCE INTERVALS FOR MEANS
 # One-sample Z confidence interval
@@ -484,7 +484,7 @@ from each sample using the same valid method, approximately 95% of those interva
          we estimate that Group B's population mean spedning exceeds Group A's by between 5PLN and 25PLN   
 """
 
-# CI containing zero
+# CI containing and not containing zero
 """
 A Confidence Interval containing zero means that zero is included among the plausible values of the population parameter being estimated
    example: CI 95% = [-5, 10]
@@ -520,9 +520,54 @@ A Confidence Interval containing zero means that zero is included among the plau
          Interpretation: The coefficient is not statistcally distinguishable from zero at the corresponding two-sided 5% significance level, under the 
                          regression model assumptions.
 
+CI not containing zero
+   A Confidence Interval not containing zero means that zero is outside the range of plausible values for the population
+   parameter, according to the confidence interval.
+      example: 95% CI [3, 12] -> 0 ∉ [3, 12]
 """
 
-# CI not containing zero
+# Narrow vs wide intervals
 """
-s
+A Narrow Confidence Interval is an interval with a relatively small distance between its lower and upper bounds.
+   Narrow CI →   Higher precision  →    Less uncertainty
+   Wide CI   →   Lower precision   →    More uncertainty
+   example: Customer spending: x̄ = 100
+      Study-A Narrow CI = [95, 105]
+      Study-B Wide   CI = [75, 125]
+      Both studies have the same point estimate x̄ = 100
+      But Study A is more precise because it gives a narrower range of plausible values for the population mean.
+      Study B has more uncertainty.
+
+   There are three main factors that make CI wider or narrower?
+      1. Sample size(n):         n↑ ⇒ SE↓ ⇒ CI narrower
+      2. Standard deviation:     σ↑ ⇒ SE↑ ⇒ CI wider
+      3. Confidence level:       CL↑ ⇒ α↓ ⇒ CI wider
+"""
+
+# Statistical vs practical significance
+"""
+Statistical Significance indicates that the observed data provide sufficient evidenc against a null hypothesis H₀
+   at a choosen significance level (α), under the assumptions of the statiscal test.
+
+Practical Significance refers to whether the magnitude of a statistical effect is large enough to have meaningful real-world of 
+   business consequences.
+   Pratical Significance depends on:
+      1. Revenue improvement
+      2. Busniess costs
+      3. Customer experience
+      4. Operational efficiency
+      5. Risk associated with implementing a change
+   Example: A/B testing
+      an e-commerce company test a redesigned checkout page.
+      the company has decided that an improvement of at lest 2 percentage points in conversion rate would be meaningful.
+      δ_min = 2.0 percentage points
+      Experiment-1:
+         0.3 percentage points statistically significant
+         95% CI = [0.2, 0.4]pp, this interval excludes zero, but it's upper bound is below the company's 2.0 pp threshold.
+         Conclusion: statistically significant, but too small to meet the practical improvement target.
+      Experiment-2:
+         3.0 percentage points statistcally significant
+         95% CI = [-0.1, 7.0]pp, this interval includes zero, 
+
+
 """

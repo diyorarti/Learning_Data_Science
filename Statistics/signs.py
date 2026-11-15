@@ -36,4 +36,7 @@ F   = F statistic
 n   = sample size
 N   = total sample size
 df  = degrees of freedom
+
+∈   = belong to
+∉   = not belong to
 """
