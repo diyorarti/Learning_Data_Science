@@ -313,7 +313,7 @@ Factors affect to choose Power analysis formula:
 
     2.Alterbative hypothesis:
         Z-based:   
-            one-sided = Z_(1-α) 
+            one-sided = Z_(1-α)  
             two-sided = Z_(1-α / 2)
         t-Based:
             Righ-tailed:    Power = P(T_(v,λ) > t_(1-α,v))

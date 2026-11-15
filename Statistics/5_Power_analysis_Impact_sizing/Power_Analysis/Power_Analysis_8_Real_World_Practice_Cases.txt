@@ -11,7 +11,7 @@ Choose the correct statistical method and solve each case yourself.
 
 
 CASE 1 — ONE POPULATION MEAN 
-Company: QuickCart | Department: Operations Analytics
+Company: QuickCart | Department: Operations Analytics 
 Topic: Delivery Time Performance
 
 MESSAGE FROM THE OPERATIONS MANAGER:
