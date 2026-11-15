@@ -69,5 +69,28 @@ Create a stored procedure called: process_order_batch:
     
 5-step: LOOP:
     use basic LOOP ... END LOOP;
+    inside the loop, select one pending request:
+        "SELECT ...
+         INTO ...
+         WHERE batch_id = p_batch_id 
+           AND status = 'pending'
+         ORDER BY request_id
+         LIMIT 1
+        "
+        IF no pending request exists: EXIT the loop
+    SO:
+        LOOP → get one pending request → process it → get next → ... → nothing left → EXIT
+
+6-step: Non-critical validation + CONTINUE:
+    if quantity <= 0: this shouldn't cancel the whole batch
+    instead:
+        UPDATE request status → 'skipped'
+        INSERT report row
+        result → 'skipped - Invalid quantity'
+        CONTINUE
+
+7-step: Critical validation:
+    check whethe the request product exists.
+    USE "SELECT ... INTO "
     
 """;
