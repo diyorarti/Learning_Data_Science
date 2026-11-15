@@ -15,6 +15,13 @@ class Validator:
             raise ValueError(f"{field_name} must be greater than 0")
 
     @staticmethod
+    def validate_gpa(value, field_name):
+        if not isinstance(value, (int, float)):
+            raise TypeError(f"{field_name} must be a number")
+        if value < 0.0 or value > 5.0:
+            raise ValueError(f"{field_name} must be between than 0.0 and 5.0")
+
+    @staticmethod
     def validate_email(email):
         if email is None or str(email).strip() == "":
             raise ValueError("email can't be empty")
@@ -76,7 +83,7 @@ class Student:
 
     @gpa.setter
     def gpa(self, value):
-        Validator.validate_positive_number(value, "gpa")
+        Validator.validate_gpa(value, "gpa")
         self.__gpa = value
 
     def add_course(self, value):
