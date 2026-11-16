@@ -1,7 +1,5 @@
 # Confidence Intervals 
 """
-Confidence Intervals
-
 I. Fundamentals
    1. Point estimate vs interval estimate
    2. Confidence interval
@@ -29,12 +27,7 @@ IV. Interpretation
    4. Narrow vs wide intervals
    5. Statistical vs practical significance
 
-V. CI and Hypothesis Testing
-   1. α and confidence level
-   2. Null value inside/outside CI
-   3. Two-sided tests and CIs
-
-VI. Bootstrap Confidence Intervals
+V.Bootstrap Confidence Intervals
    1. Bootstrap resampling 
    2. Bootstrap distribution
    3. Percentile CI
@@ -42,13 +35,13 @@ VI. Bootstrap Confidence Intervals
    5. Median CI
    6. Group-difference CIf,,f,f,
 
-VII. Regression Confidence Intervals
+VI. Regression Confidence Intervals
    1. Linear regression coefficient CI
    2. Logistic regression coefficient CI
    3. Odds-ratio CI
    4. Confidence interval vs prediction interval
 
-VIII. Practical Applications
+VII. Practical Applications
    1. A/B test treatment effects
    2. Conversion rates
    3. Mean differences
@@ -289,6 +282,7 @@ Confidence Interval Precision refers how narrowly we can estimate an unkwown pop
 """
  
 
+
 # CONFIDENCE INTERVALS FOR MEANS
 # One-sample Z confidence interval
 """
@@ -456,6 +450,8 @@ A Two-proportions Confidence Interval
 
 """ 
 
+
+
 # INTERPRETATION
 # Correct interpretation of 95% CI
 """
@@ -562,12 +558,45 @@ Practical Significance refers to whether the magnitude of a statistical effect i
       the company has decided that an improvement of at lest 2 percentage points in conversion rate would be meaningful.
       δ_min = 2.0 percentage points
       Experiment-1:
-         0.3 percentage points statistically significant
+         Observed: 0.3 percentage points statistically significant
          95% CI = [0.2, 0.4]pp, this interval excludes zero, but it's upper bound is below the company's 2.0 pp threshold.
          Conclusion: statistically significant, but too small to meet the practical improvement target.
       Experiment-2:
-         3.0 percentage points statistcally significant
-         95% CI = [-0.1, 7.0]pp, this interval includes zero, 
+         Observed: 3.0 percentage points statistcally significant
+         95% CI = [-0.1, 7.0]pp, this interval exceeds the practical threshold(2.0pp), but includes zero and lower bound below 2.0 pp.
+         Conclusion: The estimated improvement is potentially valuable, but the evidence is too uncertain to establish a positive effect.
+      Experiement-3:
+         Observed: 3.0 percentage points statistically significant
+         95% CI = [2.5, 3.5] pp, this interval exceeds both zero and the company's practical threshold.
+         Conclusion: Statistically significant, with evidence that the improvement exceeds the practical target.
+"""
 
+
+
+# Bootstrap Confidence Intervals
+# Bootstrap resampling 
+"""
+Bootstrap is a statistical resampling method used to estimate the uncertainty of a sample statistic by 
+   repeatedly drawing new samples with replacement from the original observed sample.
+   Bootstap allows us to estimate how much a statistic, such as the sample mean, median, proportion might vary across samples
+   without repeatedly collecting new data from the population.
+
+   How does Bootstap work?
+      suppose an e-commerce company wants to estimate the population mean customer spending.
+      we have collected a random sample of 5 customers: X = [10, 20, 30, 40, 50]
+      The original sample mean: x̄ = (10 + 20 + 30 + 40 + 50)/5 = 30
+      Bootstap resampling process:
+         Randomly resample 5 values with replacement:
+         bootstap sample-1: [10, 20, 20, 40, 50]  x̄ = 28
+         bootstap sample-1: [30, 30, 40, 50, 50]  x̄ = 40
+         bootstap sample-1: [10, 10, 20, 30, 40]  x̄ = 22
+         ... repeating hundreds or thousands of times
+      Two important things:
+         1.each bootstap sample contains 5 observations, the sample size as the original sample
+         2.some values can appear mmore than once, and others might not appear at all.
+"""
+
+# Bootstrap distribution
+"""
 
 """
