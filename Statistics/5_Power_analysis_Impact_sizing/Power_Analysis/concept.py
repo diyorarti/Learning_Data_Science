@@ -52,6 +52,9 @@ Sample Size Determination
         6. Practical Assumptions and Limitations
         7. Estimating Experiment Duration in Python
 """
+
+
+
 # POWER ANALYSIS
 # Power Analysis 
 """
@@ -234,6 +237,8 @@ Practical Significance
         but the expected additional profit is only €20,000, the change may not be worth implementing.
 """
 
+
+
 # SAMPLE SIZE DETERMINATION
 # Required Sample Size (n)
 """
@@ -263,8 +268,8 @@ Factors affect to choose Power analysis formula:
     1. Statistical scenatior:              One mean, two-means, paired means, proportions,  ANOVA,  chi-square
     2. Alterbative hypothesis:             One sided, Two sided
     3. Population variance:                known, unknown
-    4. Group allocation:                   50/50, 80/20 etc.
-    5. Variance assumptions:               equal or unequal group variances
+    4. Variance assumptions:               equal or unequal group variances
+    5. Group allocation:                   50/50, 80/20 etc.
     6. statistical method and assumptions: Normal approximation, exact test, noncentral t, chi-square, F
 
     1.Statistical scenatiors:
@@ -276,7 +281,7 @@ Factors affect to choose Power analysis formula:
                                 
         Two Independent Means Sample Size Formula
             Z-based one-tailed:     n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
-            t-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v))
+            t-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v)) 
                                     λ = (μ_B - μ_A) / (σ * √((1 / n_A) + (1 / n_B)))
                                     v = n_A + n_B - 2
 
@@ -335,11 +340,11 @@ Factors affect to choose Power analysis formula:
                             σ_A² = σ_B² = σ²
                             λ = (δ / σ) * √(n / 2)
                             v = 2n - 2
-                            two-sided power: Power = P(T_v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
+                            two-sided power:    Power = P(T_v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
             unequal variancees(Welch's t-test): 
                             λ ≈ δ / √((σ_A² / n) + (σ_B² / n))
                             v ≈ ((σ_A² / n) + (σ_B² / n))² / (((σ_A² / n)² / (n - 1)) + ((σ_B² / n)² / (n - 1)))
-                            two-sided power:   Power ≈ P(T_(v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
+                            two-sided power:    Power ≈ P(T_(v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
 
     5.Group Allocation:
         Z-based:

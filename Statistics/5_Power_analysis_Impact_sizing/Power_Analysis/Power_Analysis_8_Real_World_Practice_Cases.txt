@@ -37,7 +37,7 @@ Two-sided test; independent delivery times; approximately normally
 distributed observations.
 
 
-CASE 2 — TWO INDEPENDENT POPULATIO N MEANS
+CASE 2 — TWO INDEPENDENT POPULATION MEANS
 Company: ShopNova | Department: Product Experimentation
 Topic: Recommendation Algorithm A/B Test
 
