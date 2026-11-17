@@ -1,100 +1,3 @@
--- Product Order Batch Processor
-"""
-Create a stored procedure called: process_order_batch:
-    it's jobs is to process all pending product orders belong to one batch
-    The key transaction rule:
-        if a critical problem occurs while processing the batch, all changes already made for that batch must be undone
-        with "ROLLBACK". If the whole batch finishes successfully, use "COMMIT"
-
-1-step: Practice tables:
-    products_invetory table:
-    "CREATE TABLE products_inventory (
-        product_id INTEGER PRIMARY KEY,
-        product_name TEXT,
-        stock_quantity INTEGER,
-        price NUMERIC(10,2)
-    );"
-
-    order_requests table:
-    "CREATE TABLE order_requests (
-        request_id BIGSERIAL PRIMARY KEY,
-        batch_id INTEGER,
-        product_id INTEGER,
-        quantity INTEGER,
-        status TEXT DEFAULT 'pending'
-    );"
-
-    reporting table:
-    "CREATE TABLE order_processing_report (
-        report_id BIGSERIAL PRIMARY KEY,
-        batch_id INTEGER,
-        request_id BIGINT,
-        product_id INTEGER,
-        quantity INTEGER,
-        total_value NUMERIC(12,2),
-        result TEXT,
-        processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );"
-
-    value:
-    "INSERT INTO products_inventory
-    VALUES
-        (1, 'Laptop', 10, 2500.00),
-        (2, 'Mouse', 50, 80.00),
-        (3, 'Keyboard', 20, 150.00);"
-
-2-step: Parameters:
-    the procedure should receive:
-        p_batch_id:         unique id for batch
-        p_chunk_size:       how many units of stock may be reduced during one WHILE iteration
-
-3-step: Variables:
-    current request
-    current product
-
-    product stock
-    product price
-
-    requested quantity
-    remaining quantity
-    current chunk
-
-    total order value
-
-    batch failed?
-    failure reason
-
-4-step: DELETE:
-    before processing the batch, delete the previous report for that batch
-    
-5-step: LOOP:
-    use basic LOOP ... END LOOP;
-    inside the loop, select one pending request:
-        "SELECT ...
-         INTO ...
-         WHERE batch_id = p_batch_id 
-           AND status = 'pending'
-         ORDER BY request_id
-         LIMIT 1
-        "
-        IF no pending request exists: EXIT the loop
-    SO:
-        LOOP → get one pending request → process it → get next → ... → nothing left → EXIT
-
-6-step: Non-critical validation + CONTINUE:
-    if quantity <= 0: this shouldn't cancel the whole batch
-    instead:
-        UPDATE request status → 'skipped'
-        INSERT report row
-        result → 'skipped - Invalid quantity'
-        CONTINUE
-
-7-step: Critical validation:
-    check whethe the request product exists.
-    USE "SELECT ... INTO "
-    
-""";
-
 -- creating practice tables
 CREATE TABLE products_inventory (
     product_id INTEGER PRIMARY KEY,
@@ -130,3 +33,19 @@ CREATE TABLE order_processing_report (
     processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE OR REPALCE PROCEDURE process_order_batch(
+    p_batch_id VARCHAR(50),
+    p_chunk_size INTEGER,
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_current_request VARCHAR(50);
+    v_current_product TEXT;
+
+    v_stock_stock INTEGER;
+    v_product_price NUMERIC(10, 2);
+
+    v_requested_quantity INTEGER;
+    v_remaining_quantity INTEGER;
+    v_current_chunk TEXT;

@@ -1,31 +1,29 @@
 # Linear Regression
 """
 Ordinary Least Squares
-Ordinary least squares Assumptions:
-    Linearity
-    Independenc of errors
-    Normality of errors
-    Homoscedasticity
-    Absence of severe multicollinearity
+    Ordinary least squares Assumptions:
+        Linearity
+        Independenc of errors
+        Normality of errors
+        Homoscedasticity
+        Absence of severe multicollinearity
+    Common techniques:
+        Residual analysis
+        Cook's distance
+        Variance inflation factor (VIF)
 
-Common techniques:
-    Residual analysis
-    Cook's distance
-    Variance inflation factor (VIF)
-
-Univariate Feature Selection:
-    F-test
-    Mututal Information
-    Chi-square
-
-Stepwise Feature Selection
-    Forward Selection   
-    Backward Elimination
-    Bidirectional Elimination
-
-Dimensionality Reduction:
-    PCA
-    SVD
+Feature Selection
+    Univariate Feature Selection:
+        F-test
+        Mututal Information
+        Chi-square 
+    Stepwise Feature Selection
+        Forward Selection   
+        Backward Elimination
+        Bidirectional Elimination
+    Dimensionality Reduction:
+        PCA
+        SVD
 
 Model Intepretation:
     Interpreting Coefficients:
@@ -35,18 +33,18 @@ Model Intepretation:
     Assesing the model fit:
         R-squared (Coefficient of determination)
         Adjusted R-squared
-        Root mean squared error RMSE
+        Root mean squared error (RMSE)
         F-statistic
         Akaike information criterion (AIC)
         Bayesion information criterion (BIC)
-    Overfitting
-    Bias variance tradeoff
+    Overfitting/Underfittinb
+        Bias variance tradeoff
         Bias
         Variance  
 """
 
-
-# Ordinary least squares and Key Assumptions
+# OLS | KEY ASSUMPTIONS | COMMON TECHNIQUES
+# Ordinary least squares 
 """
 Ordinary Least Squares is A Statistical method (algorithm) for choosing the best linear regression coefficients and intercept.
     Formula: 
@@ -56,110 +54,113 @@ Ordinary Least Squares is A Statistical method (algorithm) for choosing the best
             ŷ = X @ β̂
         3-step: SSE(sum of squared error)
             SSE(Sum of squared error) SSE = Σᵢ₌₁ⁿ eᵢ²
+"""
 
+#  Key Assumptions
+"""
+Key Assumptions of OLS 
+1. Linearity:
+    Means the relationship between the independet variables(features) and the dependent variable(target). 
+    Detection methods:
+        1. scatter plots (one features vs target)
+        2. Residual scatter plot (one feature vs residuals )
+    Treatement methods:
+        1. Tranform features by (Logarithmic, Square root, Box-Cox)
+        2. Add Polynomial features
 
-    Key Assumptions of OLS 
-        1. Linearity:
-            Means the relationship between the independet variables(features) and the dependent variable(target). 
-            Detection methods:
-                1. scatter plots (one features vs target)
-                2. Residual scatter plot (one feature vs residuals )
-            Treatement methods:
-                1. Tranform features by (Logarithmic, Square root, Box-Cox)
-                2. Add Polynomial features
+2. Independence of errors:
+    If one error helps predict another error, the errors are dependent/correlated.
+    If one error provides no information about another error, the errors are independent.
+    OLS generally requires independent—or at least uncorrelated—errors.
+    Dependent errors cause problems, especially for standard errors, p-values and confidence intervals.
 
-        2. Independence of errors:
-            If one error helps predict another error, the errors are dependent/correlated.
-            If one error provides no information about another error, the errors are independent.
-            OLS generally requires independent—or at least uncorrelated—errors.
-            Dependent errors cause problems, especially for standard errors, p-values and confidence intervals.
+    Detection methods:
+        1. Residuals vs observation order
+        2. Lag plot (comparing each residuals with previous residual)
+        3. Autocorrelation function (AFC)
+        4. Durbin-Watson statistic
+        5. Bruesch-Godfrey test
+        6. Ljuing-Box test
+    Treatment methods:
+        1. Add missing explanatory variables 
+        2. Add appropriate lagged variables
+        3. Newey-West/Hac standard errors
+        4. Cluster-robust standard Errors 
+        5. Generalized Least squares
 
-            Detection methods:
-                1. Residuals vs observation order
-                2. Lag plot (comparing each residuals with previous residual)
-                3. Autocorrelation function (AFC)
-                4. Durbin-Watson statistic
-                5. Bruesch-Godfrey test
-                6. Ljuing-Box test
-            Treatment methods:
-                1. Add missing explanatory variables 
-                2. Add appropriate lagged variables
-                3. Newey-West/Hac standard errors
-                4. Cluster-robust standard Errors 
-                5. Generalized Least squares
+3.Normality of errors
+    Measures the distribution of erros
+    Detection methods:
+        1. Histogram
+        2. Q-Q plot
+        3. Skewness
+        4. Kurtosis
+        5. Jarque-Bera test or Shapiro-Wilk test
 
-        3. Normality of errors
-                    Measures the distribution of erros
-                    Detection methods:
-                        1. Histogram
-                        2. Q-Q plot
-                        3. Skewness
-                        4. Kurtosis
-                        5. Jarque-Bera test or Shapiro-Wilk test
+4.Homoscedasticity -> measures how Residuals have approximately constant spread
+    The residual changes depending on the predicted value of feature value
+        Simple example: A hourse predictor model
+                        For cheaper houses: Predicted price: $100,000 -> Errors: -5,000, +3,000, -7,000, +4,000
+                        For expensive houses: Predicted price: $500,000 -> Errors: -60,000, +80,000, -90,000, +70,000
+                        Here the residuals are more spread about for expensive apartments
+        Visualizations: 
+            r   |                                  This residuals look like a random cloud around zero,
+            e + |     .  . .   . .  . .            the spread is approximately the same from left to right
+            s 0 |----------------------------      This is good case called Homoscedasticity
+            i - |   . .   . . .   .  .
+            d   |
+            u   |____________________________
+            l         predicted values
 
-        4. Homoscedasticity -> measures how Residuals have approximately constant spread
-            The residual changes depending on the predicted value of feature value
-                Simple example: A hourse predictor model
-                                For cheaper houses: Predicted price: $100,000 -> Errors: -5,000, +3,000, -7,000, +4,000
-                                For expensive houses: Predicted price: $500,000 -> Errors: -60,000, +80,000, -90,000, +70,000
-                                Here the residuals are more spread about for expensive apartments
-                Visualizations: 
-                    r   |                                  This residuals look like a random cloud around zero,
-                    e + |     .  . .   . .  . .            the spread is approximately the same from left to right
-                    s 0 |----------------------------      This is good case called Homoscedasticity
-                    i - |   . .   . . .   .  .
-                    d   |
-                    u   |____________________________
-                    l         predicted values
-                        residuals
-                              |
-                            + |                 .       .          This rediaduals from a funnel shape: at low predicted values, 
-                              |             .      .       .       residuals are close together, at high predicted values,
-                            0 |--------------------------------    residuals become more spread out 
-                              |       .   .      .        .        THis means the variance of residuals is not constant,
-                            - |   .             .       .          this is problem case called Heteroscedasticity
-                              |
-                              |_________________________________
-                                    predicted values
-                Detection Methods:
-                    1. Visualization: Scatter plot (residuals vs predicted values, 
-                                                    absolute residuals vs predicted values, 
-                                                    absolute residuals vs predicted values correlation)
-                    2. Statistical method: Breusch-Pagan Test: 
-                        Breusch-Pegat test answers the question: Does the variance/spread of residuals depend on the feature values ?
+                residuals
+                    |
+                   +|                 .       .          This rediaduals from a funnel shape: at low predicted values, 
+                    |             .      .       .       residuals are close together, at high predicted values,
+                   0|--------------------------------    residuals become more spread out 
+                    |       .   .      .        .        THis means the variance of residuals is not constant,
+                  - |   .             .       .          this is problem case called Heteroscedasticity
+                    |
+                    |_________________________________
+                            predicted values
+        Detection Methods:
+            1. Visualization: Scatter plot (residuals vs predicted values, 
+                                            absolute residuals vs predicted values, 
+                                            absolute residuals vs predicted values correlation)
+            2. Statistical method: Breusch-Pagan Test: 
+                Breusch-Pegat test answers the question: Does the variance/spread of residuals depend on the feature values ?
 
-        5. Absence of multicollinearity 
-            occurs when one predictor is strongly explained by several other predictors together   
-            Detection methods:
-                1. Correlation Heatmap plot
-                2. Variance inflation factor (VIF)
-                    Mearues: how much variance of a regression coefficients is increased beause the feature is linearly related to the other predictor variables.
-                    In Simple: VIF checks whether a feature contains enough unique information, or most of it's information is already contained in others
-                    VIF is diagnostic measure used to detect multicollinearity among the predictors in a regression model
-                        Formula:                      1
-                                            VIF = ──────────
-                                                    1 - R²
-                                        VIF = 1 / (1 - (1 - R²))
-                                        R² = residuals ** 2
-                        Interpretation 
-                            VIF ≈ 1 -> No multicollinearity problem
-                            VIF 1-5 -> Usually acceptable
-                            VIF 5-10 -> Moderate / concerning multicollinearity
-                            VIF > 10 -> Strong multicollinearity problem      
-                        Implementation steps:
-                            1. Choose a target feature
-                            2. Train a model
-                            3. Calculate R² (residuals ** 2)
-                            4. Calculate Tolerance (1 - R²)
-                            5. Calculate VIF  (1 / tolerance)
-                            6. Repeat this process for each feature
+5. Absence of multicollinearity 
+    occurs when one predictor is strongly explained by several other predictors together   
+    Detection methods:
+        1. Correlation Heatmap plot
+        2. Variance inflation factor (VIF)
+            Mearues: how much variance of a regression coefficients is increased beause the feature is linearly related to the other predictor variables.
+            In Simple: VIF checks whether a feature contains enough unique information, or most of it's information is already contained in others
+            VIF is diagnostic measure used to detect multicollinearity among the predictors in a regression model
+                Formula:                      1
+                                    VIF = ──────────
+                                            1 - R²
+                                VIF = 1 / (1 - (1 - R²))
+                                R² = residuals ** 2
+                Interpretation 
+                    VIF ≈ 1 -> No multicollinearity problem
+                    VIF 1-5 -> Usually acceptable
+                    VIF 5-10 -> Moderate / concerning multicollinearity
+                    VIF > 10 -> Strong multicollinearity problem      
+                Implementation steps:
+                    1. Choose a target feature
+                    2. Train a model
+                    3. Calculate R² (residuals ** 2)
+                    4. Calculate Tolerance (1 - R²)
+                    5. Calculate VIF  (1 / tolerance)
+                    6. Repeat this process for each feature
 
-                
-            Treatment methods:
-                1. Remove one of the redundant features
-                2. Combine strongly related features
-                3. Use Ridge Regression / Lasso Regression / Elastic Net
-                4. PCA - Principal Component Analysis 
+        
+    Treatment methods:
+        1. Remove one of the redundant features
+        2. Combine strongly related features
+        3. Use Ridge Regression / Lasso Regression / Elastic Net
+        4. PCA - Principal Component Analysis 
 
 """
 
@@ -228,6 +229,10 @@ Variance inflation factor (VIF)
     NOTE: The acutal target is not included.        
 """
 
+
+
+
+# FEATURE SELECTION
 # Univariate Feature Selection
 """
 Univariate Feature Selection 
@@ -571,6 +576,11 @@ Dimensionality Reduction means:
     SVD = mathematical matrix factorization method that can be used to implement PCA
 """ 
 
+
+
+
+
+# MODEL INTEPRETATION
 # Model Interpretation
 """
 Model interpretation means understanding what a trained model is telling us about the relationship between the input features and the target Y.
