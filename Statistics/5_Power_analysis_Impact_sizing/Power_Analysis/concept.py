@@ -286,7 +286,6 @@ Factors affect to choose Power analysis formula:
                                     v = n_A + n_B - 2
 
         Two dependent/Paired means Sample Size Formula
-            Z-based one-tailed:     n ≈ ((Z_(1-α) + Z_(1-β))² * σ_D²) / δ_D²
             T-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v))
                                     Dᵢ = X_after,i - X_before,i
                                     λ = (δ_D * √n) / σ_D
@@ -345,7 +344,7 @@ Factors affect to choose Power analysis formula:
                             λ ≈ δ / √((σ_A² / n) + (σ_B² / n))
                             v ≈ ((σ_A² / n) + (σ_B² / n))² / (((σ_A² / n)² / (n - 1)) + ((σ_B² / n)² / (n - 1)))
                             two-sided power:    Power ≈ P(T_(v,λ) < -t_(1-α/2,v)) + P(T_(v,λ) > t_(1-α/2,v))
-
+ 
     5.Group Allocation:
         Z-based:
             50/50 allocation: n_A = n_B

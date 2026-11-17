@@ -75,7 +75,7 @@ agents respond faster.
 We want to measure each agent's average response time before and after
 adopting the assistant. Our goal is to detect a reduction of at least
 2 minutes. Based on our pilot study, the standard deviation of the
-before-and-after differences is approximately 5 minutes.
+before-and-after differences is approximately 5 minutes. 
 
 We need 80% statistical power with a significance level of 0.05.
 How many support agents should participate in the study?"

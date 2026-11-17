@@ -39,7 +39,7 @@ class Validator:
         if name == "":
             raise ValueError("name can not be empty")
     
-    @staticmethod
+    @staticmethod 
     def validate_price(price):
         if price <= 0:
             raise ValueError("price must be greater than 0")
