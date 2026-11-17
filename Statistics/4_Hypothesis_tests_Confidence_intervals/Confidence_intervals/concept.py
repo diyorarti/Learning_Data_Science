@@ -598,5 +598,52 @@ Bootstrap is a statistical resampling method used to estimate the uncertainty of
 
 # Bootstrap distribution
 """
+We repeadely create bootstrap samples, calculate a statisitc (such as mean, median, proportion) from each sample and collect those 
+statistics into a distribution. This distribution helps us estimate how much a statistic might vary due to sampling uncertainty.
+   example: Customer spending
+      Original Sample: X = [10, 20, 30, 40, 50]
+      Original Sample Mean: X̄ = 30
+      Generating Bootstrap samples:
+         Bootstrap sample	Resampled observations	      Sample mean
+         1	               [10, 20, 20, 40, 50]	            28
+         2	               [30, 30, 40, 50, 50]	            40
+         3	               [10, 10, 20, 30, 40]	            22
+         4	               [20, 20, 30, 40, 50]	            32
+         5	               [10, 20, 30, 30, 40]	            26
+         usually we generate many more such as: 10000, 100000 ...
+      Collecting means: X̄* = [28, 40, 22, 32, 26]
+      Then, we visualize it (the bootstrap statistic (mean, std, var,))
+      This visualization tell us three important patten:
+         1.Center
+         2.Spread
+         3.Shape
+"""
+
+# Percentile Confidence Interval
+"""
+A percentile Confidence Interval is a confidence interval constructed using the lower and upper percentiles of a bootstrap distribution
+   Mathematical formula:
+      Percentaile CI = Q_(α/2)(θ̂*), Q_(1-α/2)(θ̂*)
+      θ̂* = boostrap statistics
+      Q = Quantile (percentile) of the bootstrap distribution
+      α = Significance level
+      CL = Confidence level
+      example:
+         X = [10, 20, 30, 40, 50]
+         Boostrap samples means: X̄ = [28, 40, 22, 32, 26, ...] 
+         B = 10,000
+         α = 0.05
+         CL = 0.95
+         LB = P_2.5(X̄*) = P_2.5 = 18
+         UB = P_97.5(X̄*) = P_97.5 = 42
+         95% CI = [18, 42]
+
+      Python Implemenation:
+         lower = np.percentile(bootstrap_means, 100 * alpha / 2)
+         upper = np.percentile(bootstrap_means, 100 * (1 - alpha / 2))  
+"""
+
+#
+"""
 
 """

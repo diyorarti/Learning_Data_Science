@@ -7,6 +7,7 @@
 δ   = delta
 λ   = lambda
 x̄   = x mean
+X̄   = 
 χ   = chi
 χ²  = chi-squared
 Σ   = capital sigma / summation
