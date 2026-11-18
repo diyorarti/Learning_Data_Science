@@ -328,7 +328,7 @@ Factors affect to choose Power analysis formula:
         Population varince known:                           Normal/Z-based
         Population variance unknown:                        Noncentral t-test
         Population variance unknown, historical SD known    Noncentral t-based using the historical SD as a planning estimate
-
+ 
     4.Equal vs Unequal Variances
         Z-based power analysis:
             equal variances:   σ²_A = σ²_B = σ²       n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
