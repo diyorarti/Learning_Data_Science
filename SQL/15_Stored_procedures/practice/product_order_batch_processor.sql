@@ -21,6 +21,8 @@ VALUES
     (2, 'Mouse', 50, 80.00),
     (3, 'Keyboard', 20, 150.00);
 
+
+
 -- report table
 CREATE TABLE order_processing_report (
     report_id BIGSERIAL PRIMARY KEY,
@@ -33,14 +35,15 @@ CREATE TABLE order_processing_report (
     processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE OR REPALCE PROCEDURE process_order_batch(
-    p_batch_id VARCHAR(50),
-    p_chunk_size INTEGER,
+
+CREATE OR REPLACE PROCEDURE process_order_batch(
+    p_batch_id INTEGER,
+    p_chunk_size INTEGER
 )
 LANGUAGE plpgsql
 AS $$
 DECLARE
-    v_current_request VARCHAR(50);
+    v_current_request RECORD; -- is a RECORD 
     v_current_product TEXT;
 
     v_stock_stock INTEGER;
@@ -48,4 +51,30 @@ DECLARE
 
     v_requested_quantity INTEGER;
     v_remaining_quantity INTEGER;
-    v_current_chunk TEXT;
+    v_current_chunk INTEGER;
+
+    v_total_order_value NUMERIC(10, 2);
+
+    v_batch_failed BOOLEAN: FALSE;
+    v_failure_reason TEXT;
+
+
+BEGIN
+    -- before processing the batch, delete the previous report for the batch
+    DELETE FROM order_processing_report
+    WHERE batch_id = p_batch_id
+
+    LOOP 
+        SELECT 
+            request_id,
+            product_id,
+            quantity
+        INTO 
+            v_current_request
+        FROM order_requests
+        WHERE batch_id = p_batch
+          AND status = 'pending'
+        LIMIT 1;
+
+    END LOOP;
+
