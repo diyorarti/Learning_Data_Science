@@ -628,22 +628,91 @@ A percentile Confidence Interval is a confidence interval constructed using the 
       Q = Quantile (percentile) of the bootstrap distribution
       α = Significance level
       CL = Confidence level
+
       example:
-         X = [10, 20, 30, 40, 50]
+         Orgingial sample:
+            X = [10, 20, 30, 40, 50]
+            X̄ = 30
          Boostrap samples means: X̄ = [28, 40, 22, 32, 26, ...] 
-         B = 10,000
-         α = 0.05
-         CL = 0.95
-         LB = P_2.5(X̄*) = P_2.5 = 18
-         UB = P_97.5(X̄*) = P_97.5 = 42
-         95% CI = [18, 42]
-
-      Python Implemenation:
-         lower = np.percentile(bootstrap_means, 100 * alpha / 2)
-         upper = np.percentile(bootstrap_means, 100 * (1 - alpha / 2))  
-"""
-
-#
-"""
+            B = 10,000
+            CL = 0.95
+            α = 1 - CL = 1 - 0.95 = 0.05
+            P_lower = (α / 2) * 100 = 0.025 * 100 = 2.5
+            P_upper = (1 - (α / 2)) * 100 = 0.975 * 100 = 97.5
+            LB = P_2.5(X̄*) = P_2.5 = 18
+            UB = P_97.5(X̄*) = P_97.5 = 42
+            95% CI = [18, 42]
 
 """
+
+# Mean and Median CI
+"""
+Mean CI 
+   A bootstrap Mean Confidence Interval is an interval used to estimate the true population mean (μ) by repeatedly resampling 
+   the original dataset with replacement, calculating a mean for each resample and using the resulting bootstrap distribution 
+   to construct confidence bounds.
+      Mathematical Formula:
+         CI bootstrap mean = [P_2.5(X̄*), P_97.5(X̄*)]
+         X̄* = Bootstrao sample mean
+         P_2.5 = 2.5th percentile of the bootstrap means
+         P_97.5th = 97.5th percentile of the bootstrap means
+
+      Example: e-commerce companys wants to estimate average customer spending
+         original-data 
+            N=10: 
+            X=[50,60,70,80,90,100,110,120,130,190]
+         original sample mean: 
+            X̄ = 100 PLN
+         1.generating bootstrap samples and calculating each samples means:
+               bootstrap sample means: X̄₁*, X̄₂*, ..., X̄₁₀₀₀₀* 
+         2. calculate the percentiles for 95% Confidence Level:
+            α = 1 - CL = 1 - 0.95 = 0.05
+            P_lower = (α / 2) * 100 =  0.025 * 100 = 2.5
+            P_upper = (1 - (α / 2)) * 100 = 97.5 
+            LB = P₂.₅(X̄*) = 76 and  UB = P₉₇.₅(X̄*) = 129
+            95% CI = [76, 129] PLN 
+         Based on our observed sample, we estimate the population mean customer spending to be between 76 PLN and 129 PLN, 
+         using a 95% percentile bootstrap confidence interval.
+
+Median CI
+   A Bootstrap Median Confidence Interval is an interval used to estimate the true population median by 
+   repeatedly resampling the original dataset with replacement, calculating the median of each bootstrap sample, 
+   and constructing a confidence interval from the resulting bootstrap distribution.
+   Matherical Formula:
+      CI bootstrap median =  [P_2.5(M*), P_97.5(M*)]
+
+""" 
+
+# Group-difference CI
+"""
+A bootstrap Group Difference Confidence Interval estimates the uncertainty around the difference between two population statistics
+by repeadly resampling observations  within each group and recalculating the difference.
+   Matheticmatically:
+      the difference between two population means: Δ̂ = X̄_B - X̄_A
+      for each bootstrap iteration: Δ̂_b* = X̄_B,b* - X̄_A,b*
+      after generating B bootstrap differencees, Construct 95% percentile Confidence Interval:  CI_Δ = [P₂.₅(Δ̂*), P₉₇.₅(Δ̂*)]
+
+   Example:
+      e-commerce company check a new checkout page:
+      Original Samples:
+         Group-A(Control): X_A = [80, 90, 100, 110, 120]    X̄_A = 100
+         Group-B(Treatment): X_B = [90, 110, 120, 130, 150]   X̄_B = 120 
+         Observed difference: Δ̂ = X̄_B - X̄_A = 20
+      generating bootstrap samples, calculates means and mean differences:
+         Iteration	Bootstrap Group A	         Bootstrap Group B           Mean_A*    Mean_B*     Difference(B* - A*)
+               1	   [80, 90, 90, 110, 120]	   [90, 110, 120, 120, 150]    98         118         20
+               2	   [90, 100, 100, 110, 120]	[110, 120, 130, 150, 150]   104        132         28
+               3	   [80, 80, 100, 110, 120]	   [90, 90, 110, 120, 130]     98         108         10
+         .... B(10000)
+      we have 10000 bootstrap samples calculated differences from two population means:
+         Δ̂₁*, Δ̂₂*, ..., Δ̂₁₀₀₀₀*
+      Calculating 95% CI
+         CL = 95
+         α = 1 - CL = 1 - 0.95 = 0.05
+         P_lower = (α / 2) * 100 = 2.5
+         P_upper = (1 - (α / 2)) * 100 = 97.5
+         95% CIΔ = [-2 , 40]
+      Based on the observed samples, we estimate that the population mean spending difference between 
+      treatment and control is between approximately 2 PLN and +40 PLN, using a 95% percentile bootstrap confidence interval.
+"""
+
