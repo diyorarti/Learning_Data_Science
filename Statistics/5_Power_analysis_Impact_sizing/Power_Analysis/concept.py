@@ -34,23 +34,14 @@ Sample Size Determination
         Allocation sensitivity
         Scenario-based planning
 
-    C. Practical Power Analysis in Python
-        1. TTestIndPower — Power analysis for comparing means
-        2. NormalIndPower — Power analysis using normal approximations
-        3. proportion_effectsize — Standardized effect size for proportions
-        4. Calculate Required Sample Size
-        5. Calculate Statistical Power for a Given Sample Size
-        6. Visualize Relationships between Power, Effect Size, and Sample Size
-        7. Interpret Results and Make Recommendations
-
-    D. Experiment Planning
-        1. Sample Size → Experiment Duration
-        2. Traffic / Data Collection Rate
-        3. Traffic Allocation Between Groups 
-        4. Seasonality and Business Cycles
-        5. Budget and Time Constraints
-        6. Practical Assumptions and Limitations
-        7. Estimating Experiment Duration in Python
+C.Experiment Planning
+    1. Sample Size → Experiment Duration
+    2. Traffic / Data Collection Rate
+    3. Traffic Allocation Between Groups 
+    4. Seasonality and Business Cycles
+    5. Budget and Time Constraints
+    6. Practical Assumptions and Limitations
+    7. Estimating Experiment Duration in Python
 """
 
 
@@ -265,7 +256,7 @@ Statistical cases and Power Analysis:
     Three or more sample means	 ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
 
 Factors affect to choose Power analysis formula:
-    1. Statistical scenatior:              One mean, two-means, paired means, proportions,  ANOVA,  chi-square
+    1. Statistical scenarios:              One mean, two-means, paired means, proportions,  ANOVA,  chi-square
     2. Alterbative hypothesis:             One sided, Two sided
     3. Population variance:                known, unknown
     4. Variance assumptions:               equal or unequal group variances
@@ -273,47 +264,156 @@ Factors affect to choose Power analysis formula:
     6. statistical method and assumptions: Normal approximation, exact test, noncentral t, chi-square, F
 
     1.Statistical scenatiors:
-        One-Sample Mean Sample Size Formula:
+        One-Sample Mean Power Analysis:
             Z-based one-tailed:   n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
             t-based right-tailed: Power = P(T_(v,λ) > t_(1-α,v))
                                   λ = δ * √n /  σ
                                   v = n - 1
+            Cases:
+                1. Alternative hypothesis: One-sided or two-sided
+                2. Population SD: Known or unknown
+                3. Python method:
+                    - Known population SD (Z-test): Normal/Z-based calculation
+                    - Unknown population SD (t-test): TTestPower
                                 
-        Two Independent Means Sample Size Formula
+        Two Independent Means Power Analysis:
             Z-based one-tailed:     n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
             t-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v)) 
                                     λ = (μ_B - μ_A) / (σ * √((1 / n_A) + (1 / n_B)))
                                     v = n_A + n_B - 2
+            Cases:
+                1. Alternative hypothesis:   One-sided or two-sided
+                2. Population SDs:           Known or unknown
+                3. Population variances:     Equal or unequal
+                4. Group allocation:         Equal (50/50) or unequal (80/20, etc.)
+                5. Python method:
+                    - Known population SDs:             Normal/Z-based calculation
+                    - Unknown SDs, equal variances:     TTestIndPower
+                    - Unknown SDs, unequal variances:   Welch-specific power calculation or simulation
 
         Two dependent/Paired means Sample Size Formula
             T-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v))
                                     Dᵢ = X_after,i - X_before,i
                                     λ = (δ_D * √n) / σ_D
                                     v = n - 1
+            Cases:
+                1. Alternative hypothesis:              One-sided or two-sided
+                2. Population SD of paired differences: Known or unknown
+                3. Pairing structure:                   Before/after or matched pairs
+                4. Python method:
+                    - Known SD of differences:      Normal/Z-based calculation
+                    - Unknown SD of differences:    TTestPower
+                    - Use SD of paired differences, not separate group SDs
+                5. Sample size:
+                    - n = Number of complete pairs
+                    - No independent-group allocation ratio
 
         One Sample Proportion Sample Size Formula
             one-tailed: n ≈ [Z_(1-α) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
+            Cases:
+                1. Alternative hypothesis: One-sided or two-sided
+                2. Null proportion (p0): Historical or benchmark proportion
+                3. Anticipated proportion (p1): Expected alternative proportion
+                4. Sample size and expected counts: Small/sparse or large
+                5. Python method:
+                    - Large-sample Z-test: Normal approximation (scipy.stats.norm)
+                    - Exact binomial test: Binomial power calculation
+                        (scipy.stats.binom, scipy.stats.binomtest)
+                6. Notes:
+                    - No separate known/unknown population SD choice
+                    - No group allocation ratio
+
 
         Two Independent Proportions Sample Size Formula
             one-tailed: n ≈ [Z_(1-α) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+            Cases:
+                1. Alternative hypothesis: One-sided or two-sided
+                2. Expected proportions: p_A and p_B
+                3. Group allocation: Equal (50/50) or unequal (80/20, etc.)
+                4. Statistical method: Normal approximation, score test,
+                    or exact binomial-based method
+                5. Python method:
+                    - Normal approximation: NormalIndPower
+                    - Exact or alternative tests: Test-specific calculation
+                        or simulation
+                6. Notes:
+                    - Group Bernoulli variances are p_A(1-p_A) and p_B(1-p_B)
+                    - No separate equal-variance assumption is required
 
         Categorical goodness-of-fit Sample Size Formula
             w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
             λ = nw²
             df = k - 1
             Power = 1 - F_ncx²(χ²_critical; df, λ)
+            Cases:
+                1. Alternative hypothesis:
+                    - At least one category probability differs from the null
+                    - Standard chi-square rejection region is right-tailed
+                2. Number of categories: k
+                3. Expected probabilities under H0: p_01, ..., p_0k
+                4. Anticipated probabilities under H1: p_11, ..., p_1k
+                5. Expected category counts: Sufficient or sparse
+                6. Python method:
+                    - Chi-square approximation: GofChisquarePower
+                    - Sparse expected counts: Exact multinomial method
+                        or simulation
+                7. Notes:
+                    - No conventional one-sided/two-sided selection
+                    - No separate treatment/control allocation ratio
 
         Categorical independence Sample Size Formula
             w = √(Σᵢ Σⱼ ((pᵢⱼ - pᵢ₊p₊ⱼ)² / (pᵢ₊p₊ⱼ))) 
             λ = Nw²
             df = (r - 1)(c - 1)
             Power = 1 - F_ncx²(χ²_critical; df, λ)
+            Cases:
+                1. Alternative hypothesis:
+                    - The two categorical variables are associated
+                    - Standard chi-square rejection region is right-tailed
+                2. Contingency table dimensions: r x c
+                3. Expected joint probabilities under H0
+                4. Anticipated joint probabilities under H1
+                5. Group allocation or sampling margins:
+                    - Depends on study design
+                6. Expected cell counts: Sufficient or sparse
+                7. Python method:
+                    - Noncentral chi-square approximation: scipy.stats.ncx2
+                    - Sparse tables or special designs: Exact methods
+                        or simulation
+                8. Notes:
+                    - Degrees of freedom = (r - 1) * (c - 1)
+                    - No conventional one-sided/two-sided selection
+
 
         Three or more independent means (ANOVA) Sample Size Formula
             λ = Nf²
             df₁ = k - 1
             df₂ = N - k
             Power = 1 - F_ncf(F_critical; df₁, df₂, λ)
+            Cases:
+                1. Alternative hypothesis:
+                    - At least one population mean differs
+                    - Standard omnibus F-test rejection region is right-tailed
+                2. Number of groups: k >= 3
+                3. Population variances: Equal or unequal
+                4. Group allocation: Balanced or unbalanced
+                5. Effect size: Cohen's f
+                    - Depends on anticipated group means and variability
+                6. Statistical method:
+                    - Equal variances: Classical one-way ANOVA
+                    - Unequal variances: Welch's ANOVA
+                7. Python method:
+                    - Equal variances, balanced groups: FTestAnovaPower
+                    - Equal variances, unbalanced groups:
+                        Noncentral F calculation with allocation weights
+                    - Unequal variances:
+                        Welch-specific power approximation or simulation
+                8. Notes:
+                    - Degrees of freedom for classical ANOVA:
+                        df1 = k - 1
+                        df2 = N - k
+                    - No conventional one-sided/two-sided selection
+
 
     2.Alterbative hypothesis:
         Z-based:   
@@ -364,6 +464,20 @@ Python calculation:
     Chi-square goodness-of-fit	Noncentral chi-square approximation	    GofChisquarePower
     Chi-square independence	    Noncentral chi-square approximation	    Numerical calculation or simulation
     ANOVA (3+ means)	        Noncentral F	                        FTestAnovaPower
+
+
+General Power Analysis Inputs (All Scenarios)
+    1. Significance level (alpha)
+    2. Desired statistical power (1 - beta)
+    3. Minimum detectable effect (MDE) or anticipated effect
+    4. Planning variability or probability assumptions
+    5. Statistical test and study design assumptions
+
+General Principle:
+    Changing alpha, power, MDE, or variability affects therequired sample size.
+    Changing the statistical scenario, test type, variance assumptions, or allocation design can change 
+        the power calculation method itself.
+
 """
 
 # Relationships between MDE, Power, α, Variance, and n
@@ -699,8 +813,5 @@ Sensitivity Analysis is a technique used to examine how changes in input assumpt
     Allocation sensitivity Analysis:
 """
 
-# PRACTICAL POWER ANALYSIS IN PYTHON
-# TTestIndPower — Power analysis for comparing means
-"""
-"""
+
 
