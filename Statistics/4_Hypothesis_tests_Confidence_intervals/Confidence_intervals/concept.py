@@ -48,7 +48,7 @@ VII. Practical Applications
    4. Reporting effect + CI
 """
  
-# Fundamentals
+# FUNDAMENTALS
 # Point estimate vs Interval estimate
 """
 Point Estimate 
@@ -716,3 +716,65 @@ by repeadly resampling observations  within each group and recalculating the dif
       treatment and control is between approximately 2 PLN and +40 PLN, using a 95% percentile bootstrap confidence interval.
 """
 
+
+
+
+# REGRESSION CONFIDENCE INTERVALS
+# Linear regression coefficient CI
+"""
+A Linear Regression Coefficient Interval estimate a range of plausible values for the true population regression coefficient βⱼ
+using sample data
+   Mathematically:
+      CI_βⱼ = β̂ⱼ ± t* × SE(β̂ⱼ)
+         β̂ⱼ = estimated regression coefficient
+         SE(β̂ⱼ) = standard error of the estimated coefficient
+         t* = Critical t-value
+         n = number of observations
+         k = number of predictors excluding the intercept
+         df = n - k - 1: residual degrees of freedom for full-rak model with an intercept
+
+   example: Advertising spending and revenue
+      a company wants to understand how advertising spending is associated with revenue.
+      We fit a linear regression model:
+         Revenue = β₀ + β₁(Advertising) + ε
+         assume the fitted model gives the following hypothetical results:
+            β̂₁ = 2.5
+            SE(β̂₁) = 0.6
+            n = 30, k = 1, CL = 95%
+            degress of freedom:  df = n - k - 1 = 28 
+            t critical value:    t* = 2.048
+            margin of error:     E = t* × SE(β̂₁) = 1.229
+            confidence interval: 95% CI_β₁ = 2.5 ± 1.229 = [1.271, 3.729]
+      Interpretation:
+         The point estimate suggests that a one-unit increase in advertising spending is associated 
+         with an expected increase of 2.5 units in revenue.
+         The confidence interval suggests the corresponding population coefficient lies 
+         between approximately 1.27 and 3.73, using a procedure with 95% long-run coverage.
+"""
+
+# Logistic regression coefficient CI
+"""
+A Logistic Regression Coefficient Confidence Interval estimates a range of plausible values for the true population 
+logistic regression coefficient βⱼ, based on the observed data.
+   Mathematically:
+      CI_βⱼ = β̂ⱼ ± z* × SE(β̂ⱼ)
+   
+   example: Customer churn prediction
+      a telecommunication company wants to understand the relationship between the number of customer support complaints and customer chunr.
+      We fit a logistic regression mode:
+         log(p / (1 - p)) = β₀ + β₁(complaints)
+         β̂₁ = 0.60
+         SE(β̂₁) = 0.20
+         CL = 95%
+         z-critical value:    z* = 1.96
+         margin of error:     E = z* × SE(β̂ⱼ) = 1.96 * 0.20 = 0.392 
+         Confidence interval: 95% CI = β̂ⱼ ± 0.392 = [0.208, 0.992]
+   Interpreation: 
+      The 95% Wald CI suggests that the true population log-odds coefficient is between 
+      approximately 0.208 and 0.992, under the model and large-sample assumptions.
+"""
+
+# Odds-ratio CI
+"""
+
+"""
