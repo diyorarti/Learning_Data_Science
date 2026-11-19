@@ -1,4 +1,193 @@
-# Exponent
+
+# Coursera 
+"""
+Linear Regression Part 1 (1)
+Linear Regression Part 2 (2)
+    Linear Regression is a supervised learning algorithm usef for Regression tasks
+        Regression means predicting a conituous numerical values
+            - hourse price
+            - salary
+            - temperature
+
+    The main idea of Linear Regression Algorithm:
+        Find the best stright line that describes the relationship between input features and the target value
+
+    For one Feature:
+        f(x)=wx+b
+            x = input feature
+            w = weight / slope /coefccient
+            b = bias / intercept
+            f(x) = pridected value
+
+Cost Function Formula (3)
+Cost Function Intuition (4)
+Visualizing Cost Function (5)
+Visualization examples of Cost Function (6)
+    THe model makes predictions, but thoses predictions are not always correct. So we need a way to measure: How wrong is the model ?
+        This is called the "Cost Function " 
+        For Linear Regression the most common used cost function is Mean Sqaured Error:
+            J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²
+                m = number of training examples
+                ŷ = predicted value
+                y = actual value
+                ŷ - y = error
+                Squared for punishing or penalizing large mistakes strongly
+
+Gradient Descent (7)
+Implementing Gradient Descent (8)
+Gradient Descent Intuition (9)
+    Gradient Descent is an optimization algorithm. It's jobs is to find the best values of parameters (w and b)
+    The idea:
+        Start with random or zero values for w and b, then slowly update them ro reduce the cost.
+        Imagine you are standing on a mountain and want to go down to the lowest point. You look at the slope and take small steps downward.
+        That is Gradient Descent 
+        THe update rule:
+            parameters = parameters - learning_rate * gradient 
+        
+        Gradient Descent Formula:
+            w := w - α * ∂ / ∂w * J(w, b)
+            b := b - α * ∂ / ∂b * J(w, b)
+        Where: 
+                α = learning rate
+                ∂ / ∂w * J(w, b) = Derivative  for w
+                ∂ / ∂b * J(w, b) = Derivative for b
+ 
+        Derivative:
+            ∂J(w, b)/∂w = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)x⁽ⁱ⁾
+            ∂J(w, b)/∂b = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
+
+Learning_rate(10)
+    The Learning_rate constrols how big each step is during Gradient Descent
+    it is usually writtent as -- α
+    if learning_rate is too small --> Gradeint Descent becomes very slow
+    if learning_rate is too large --> GRadient Descent may jump over the minimum and fail to converge
+
+NOTE: To solve many local minimums problem, we use Squared error Cost Function, because it has bowl-shape, so it always has one global minimum
+
+Gradient descent For Linear Regression (11)
+    Linear Regression:
+        ŷ = wx + b
+    Cost Function:
+        J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²
+    Gradient Descent:
+        w := w - α * ∂ / ∂w * J(w, b)
+        b := b - α * ∂ / ∂b * J(w, b)
+    Derivative:
+        ∂J(w, b)/∂w = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)x⁽ⁱ⁾
+        ∂J(w, b)/∂b = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
+
+    Repeat this process for n_iterations time, to find values of w and b with min J(w,b)
+
+Running Gradient Descent (12)
+Multiple Features (13)
+
+Vectorization part 1 (14)
+Vectorization part 2 (15)
+    Vectorization means replacing loops with matrix operations
+        instead of writing: 
+            for i in range(m):
+                y_pred[i] = weights[0] * X[i][0] + weights[1] * X[i][1] + bias
+        we write:
+            y_pred = np.dot(X, weights) + bias
+        Vectorization:
+            - fast
+            - clean code
+            - easier to scale
+            - use NumPy efficiently
+
+Gradient Descent For Multiple Linear Regression (16)
+    In real world, we usually have more than one feature
+    example:
+        House price prediction:
+            - size
+            - number of rooms
+            - location score
+            - age of house
+        ŷ = Xw + b
+            X = feature matrix
+            w = weight vector
+            b = bias
+            ŷ = predictions
+Feature Scaling (17)
+Feature Scaling (18)
+    Feature Scaling means putting features into a similar range
+        for example without scaling:
+            size: 50, 100, 200
+            rooms: 1, 2, 3
+            price: target
+        The size feature has much larger numbers than rooms.
+        THis can make gradient desceent slow becaue the cost function shape becomes stretech. 
+        Feature scaling helps Gradient Descent converge faster
+    Common Methods:
+        1. Max Normalization:
+            X_scaled = X / X_max
+
+        2. Normalization (MinMax Normalization):
+            X_scaled = (X- X_min) / (X_max - X_min)
+
+        3. Mean Normalization:
+            X_scaled = (X - Mean) / (X_max - X_min)
+
+        4. Standardization(Z-score):
+            X_scaled = (X- mean) / standard_deviation 
+        
+Checking Gradient Descent for Convergence (19)
+    Convergence means:
+        The cost function stops decreasing significantly
+        During training , you should store the cost at every interion:
+            Iteration 1: cost = 500
+            Iteration 2: cost = 400
+            Iteration 3: cost = 320
+            Iteration 4: cost = 280
+            ...
+            Iteration 1000: cost = 12.3
+        Cost decreases smoothly.
+
+        Bad Signs:
+            Cost increases.
+            Cost becomes NaN.
+            Cost jumps up and down. 
+            Cost does not change at all.
+
+Choosing Learning Rate (20):
+    Choosing lthe learning rate is very important 
+    Common value to try:
+        0.1
+        0.03
+        0.01
+        0.003
+        0.001
+        0.0003
+        0.0001
+    If cost decreases slowly, increase learning rate  0.0001 - 0.001 - 0.01 ...
+    IF cost increases or becomes unstable, decrease learning rate  - 0.1 → 0.01
+
+Feature Engineering (21)
+    Feature Engineering means creating new better input features to help the model make better predictions
+    For example:
+        size
+        number_of_rooms
+    After Feature Engineering:
+        price_per_room
+        size_per_room
+        house_age
+        is_new_house
+        distance_to_center
+
+Polynomial Regression (22)
+    Sometimes the relationship between X and y is not a stright line
+    for example:
+        Experience vs Salary
+        maybe salary grows slowly at first, then faster later
+        A simple linear model may not fit well
+        Polynomial Regression solves this by creating polynomial features
+            ŷ⁽ⁱ⁾ = w₁x⁽ⁱ⁾ + w₂(x⁽ⁱ⁾)² + w₃(x⁽ⁱ⁾)³ + ... + wₙ(x⁽ⁱ⁾)ⁿ + b
+"""
+
+
+
+
+ # Exponent
 """
 Training Methods:
     1. Batch Gradient Descent
@@ -8,7 +197,7 @@ Training Methods:
 Cost functions:
     1. Squared loss
     2. Absolute loss
-    3. Huber loss
+    3. Huber loss 
     4. R2-score
 
 Polynomical Features
@@ -129,190 +318,3 @@ Requirements on data to apply Linear Regression:
 R2-score 
     R2-score = Explained variation / total variation
 """
-
-# Coursera 
-"""
-Linear Regression Part 1 (1)
-Linear Regression Part 2 (2)
-    Linear Regression is a supervised learning algorithm usef for Regression tasks
-        Regression means predicting a conituous numerical values
-            - hourse price
-            - salary
-            - temperature
-
-    The main idea of Linear Regression Algorithm:
-        Find the best stright line that describes the relationship between input features and the target value
-
-    For one Feature:
-        f(x)=wx+b
-            x = input feature
-            w = weight / slope /coefccient
-            b = bias / intercept
-            f(x) = pridected value
-
-Cost Function Formula (3)
-Cost Function Intuition (4)
-Visualizing Cost Function (5)
-Visualization examples of Cost Function (6)
-    THe model makes predictions, but thoses predictions are not always correct. So we need a way to measure: How wrong is the model ?
-        This is called the "Cost Function " 
-        For Linear Regression the most common used cost function is Mean Sqaured Error:
-            J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²
-                m = number of training examples
-                ŷ = predicted value
-                y = actual value
-                ŷ - y = error
-                Squared for punishing or penalizing large mistakes strongly
-
-Gradient Descent (7)
-Implementing Gradient Descent (8)
-Gradient Descent Intuition (9)
-    Gradient Descent is an optimization algorithm. It's jobs is to find the best values of parameters (w and b)
-    The idea:
-        Start with random or zero values for w and b, then slowly update them ro reduce the cost.
-        Imagine you are standing on a mountain and want to go down to the lowest point. You look at the slope and take small steps downward.
-        That is Gradient Descent 
-        THe update rule:
-            parameters = parameters - learning_rate * gradient 
-        
-        Gradient Descent Formula:
-            w := w - α * ∂ / ∂w * J(w, b)
-            b := b - α * ∂ / ∂b * J(w, b)
-        Where: 
-                α = learning rate
-                ∂ / ∂w * J(w, b) = Derivative  for w
-                ∂ / ∂b * J(w, b) = Derivative for b
- 
-        Derivative:
-            ∂J(w, b)/∂w = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)x⁽ⁱ⁾
-            ∂J(w, b)/∂b = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
-
-Learning_rate(10)
-    The Learning_rate constrols how big each step is during Gradient Descent
-    it is usually writtent as -- α
-    if learning_rate is too small --> Gradeint Descent becomes very slow
-    if learning_rate is too large --> GRadient Descent may jump over the minimum and fail to converge
-
-NOTE: To solve many local minimums problem, we use Squared error Cost Function, because it has bowl-shape, so it always has one global minimum
-
-Gradient descent For Linear Regression (11)
-    Linear Regression:
-        ŷ = wx + b
-    Cost Function:
-        J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²
-    Gradient Descent:
-        w := w - α * ∂ / ∂w * J(w, b)
-        b := b - α * ∂ / ∂b * J(w, b)
-    Derivative:
-        ∂J(w, b)/∂w = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)x⁽ⁱ⁾
-        ∂J(w, b)/∂b = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
-
-    Repeat this process for n_iterations time, to find values of w and b with min J(w,b)
-
-Running GRadient Descent (12)
-Multiple Features (13)
-
-Vectorization part 1 (14)
-Vectorization part 2 (15)
-    Vectorization means replacing loops with matrix operations
-        instead of writing: 
-            for i in range(m):
-                y_pred[i] = weights[0] * X[i][0] + weights[1] * X[i][1] + bias
-        we write:
-            y_pred = np.dot(X, weights) + bias
-        Vectorization:
-            - fast
-            - clean code
-            - easier to scale
-            - use NumPy efficiently
-
-Gradient Descent For Multiple Linear Regression (16)
-    In real world, we usually have more than one feature
-    example:
-        House price prediction:
-            - size
-            - number of rooms
-            - location score
-            - age of house
-        ŷ = Xw + b
-            X = feature matrix
-            w = weight vector
-            b = bias
-            ŷ = predictions
-Feature Scaling (17)
-Feature Scaling (18)
-    Feature Scaling means putting features into a similar range
-        for example without scaling:
-            size: 50, 100, 200
-            rooms: 1, 2, 3
-            price: target
-        The size feature has much larger numbers than rooms.
-        THis can make gradient desceent slow becaue the cost function shape becomes stretech. 
-        Feature scaling helps Gradient Descent converge faster
-    Common Methods:
-        1. Max Normalization:
-            X_scaled = X / X_max
-
-        2. Normalization (MinMax Normalization):
-            X_scaled = (X- X_min) / (X_max - X_min)
-
-        3. Mean Normalization:
-            X_scaled = (X - Mean) / (X_max - X_min)
-
-        4. Standardization(Z-score):
-            X_scaled = (X- mean) / standard_deviation 
-        
-Checking Gradient Descent for Convergence (19)
-    Convergence means:
-        The cost function stops decreasing significantly
-        During training , you should store the cost at every interion:
-            Iteration 1: cost = 500
-            Iteration 2: cost = 400
-            Iteration 3: cost = 320
-            Iteration 4: cost = 280
-            ...
-            Iteration 1000: cost = 12.3
-        Cost decreases smoothly.
-
-        Bad Signs:
-            Cost increases.
-            Cost becomes NaN.
-            Cost jumps up and down. 
-            Cost does not change at all.
-
-Choosing Learning Rate (20):
-    Choosing lthe learning rate is very important 
-    Common value to try:
-        0.1
-        0.03
-        0.01
-        0.003
-        0.001
-        0.0003
-        0.0001
-    If cost decreases slowly, increase learning rate  0.0001 - 0.001 - 0.01 ...
-    IF cost increases or becomes unstable, decrease learning rate  - 0.1 → 0.01
-
-Feature Engineering (21)
-    Feature Engineering means creating new better input features to help the model make better predictions
-    For example:
-        size
-        number_of_rooms
-    After Feature Engineering:
-        price_per_room
-        size_per_room
-        house_age
-        is_new_house
-        distance_to_center
-
-Polynomial Regression (22)
-    Sometimes the relationship between X and y is not a stright line
-    for example:
-        Experience vs Salary
-        maybe salary grows slowly at first, then faster later
-        A simple linear model may not fit well
-        Polynomial Regression solves this by creating polynomial features
-            ŷ⁽ⁱ⁾ = w₁x⁽ⁱ⁾ + w₂(x⁽ⁱ⁾)² + w₃(x⁽ⁱ⁾)³ + ... + wₙ(x⁽ⁱ⁾)ⁿ + b
-"""
-
- 

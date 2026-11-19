@@ -43,20 +43,20 @@ CREATE OR REPLACE PROCEDURE process_order_batch(
 LANGUAGE plpgsql
 AS $$
 DECLARE
-    v_current_request RECORD; -- is a RECORD 
-    v_current_product TEXT;
+    v_current_request RECORD; -- Stores the information about the current order retrieved from order_requests
+    v_current_product RECORD; -- Stores the current product's information when you use a FOR loop at the end of the procedure
 
-    v_stock_stock INTEGER;
-    v_product_price NUMERIC(10, 2);
+    v_stock_stock INTEGER; -- stores the available stock of the requested product before processing
+    v_product_price NUMERIC(10, 2); -- stores the price of a single product 
 
-    v_requested_quantity INTEGER;
-    v_remaining_quantity INTEGER;
-    v_current_chunk INTEGER;
+    v_requested_quantity INTEGER; -- stores how many units the customer wants to buy
+    v_remaining_quantity INTEGER; -- track how many units still need to be deducted from ivertory
+    v_current_chunk INTEGER; -- stores the number of units deducted during the current WHILE interation
 
-    v_total_order_value NUMERIC(10, 2);
+    v_total_order_value NUMERIC(10, 2); -- stores the total monetary value of the order
 
-    v_batch_failed BOOLEAN: FALSE;
-    v_failure_reason TEXT;
+    v_batch_failed BOOLEAN: FALSE; -- tracks whether a critical error occured during batch processing
+    v_failure_reason TEXT; -- Stores the reason why batch processing failed
 
 
 BEGIN
