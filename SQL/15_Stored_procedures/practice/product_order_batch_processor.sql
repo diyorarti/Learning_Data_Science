@@ -55,14 +55,14 @@ DECLARE
 
     v_total_order_value NUMERIC(10, 2); -- stores the total monetary value of the order
 
-    v_batch_failed BOOLEAN: FALSE; -- tracks whether a critical error occured during batch processing
+    v_batch_failed BOOLEAN:= FALSE; -- tracks whether a critical error occured during batch processing
     v_failure_reason TEXT; -- Stores the reason why batch processing failed
 
 
 BEGIN
     -- before processing the batch, delete the previous report for the batch
     DELETE FROM order_processing_report
-    WHERE batch_id = p_batch_id
+    WHERE batch_id = p_batch_id;
 
     LOOP 
         SELECT 
@@ -72,9 +72,64 @@ BEGIN
         INTO 
             v_current_request
         FROM order_requests
-        WHERE batch_id = p_batch
+        WHERE batch_id = p_batch_id
           AND status = 'pending'
         LIMIT 1;
 
+        EXIT WHEN NOT FOUND;
+
+        -- Non-critical validation
+        IF v_current_request.quantity <= 0 THEN 
+            UPDATE order_requests
+            SET status = 'skipped'
+            WHERE request_id = v_current_request.request_id;
+
+            INSERT INTO order_processing_report (
+                batch_id,
+                request_id,
+                product_id,
+                quantity,
+                total_value,
+                result
+            )
+            VALUES (
+                p_batch_id,
+                v_current_request.request_id,
+                v_current_request.product_id,
+                v_current_request.quantity,
+                0,
+                'Skipped - Invalid quantity'
+            );
+            CONTINUE;
+        END IF;
+
+        -- Critical Validation
+        SELECT
+            stock_quantity,
+            price
+        INTO 
+            v_product_stock,
+            v_product_price
+        FROM product_inventory
+        WHERE product_id = v_current_request.product_id;
+
+        -- Check whether the product exists
+        IF NOT FOUND THEN
+            v_batch_failed := TRUE;
+            v_failure_reason := "Product does not exist";
+            EXIT;
+        END IF;
+
+        -- Check whether enough stock is available
+        IF v_current_request.quantity > v_product_stock THEN 
+            v_batch_failed := TRUE;
+            v_failure_reason := "Insufficient stock";
+            EXIT;
+        END IF;
+
+        -- Calculate total order value
+        v_total_order_value := v_current_request.quantity * v_product_price;
+        
     END LOOP;
+
 

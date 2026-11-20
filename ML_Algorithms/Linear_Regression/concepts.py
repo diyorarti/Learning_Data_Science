@@ -38,7 +38,7 @@ Implementing Gradient Descent (8)
 Gradient Descent Intuition (9)
     Gradient Descent is an optimization algorithm. It's jobs is to find the best values of parameters (w and b)
     The idea:
-        Start with random or zero values for w and b, then slowly update them ro reduce the cost.
+        Start with random or zero values for w and b, then slowly update them to reduce the cost.
         Imagine you are standing on a mountain and want to go down to the lowest point. You look at the slope and take small steps downward.
         That is Gradient Descent 
         THe update rule:
@@ -108,6 +108,7 @@ Gradient Descent For Multiple Linear Regression (16)
             w = weight vector
             b = bias
             ŷ = predictions
+
 Feature Scaling (17)
 Feature Scaling (18)
     Feature Scaling means putting features into a similar range
@@ -187,7 +188,8 @@ Polynomial Regression (22)
 
 
 
- # Exponent
+
+# Exponent
 """
 Training Methods:
     1. Batch Gradient Descent
@@ -318,3 +320,4 @@ Requirements on data to apply Linear Regression:
 R2-score 
     R2-score = Explained variation / total variation
 """
+
