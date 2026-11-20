@@ -106,9 +106,9 @@ Confidence Interval (CI) is a range of values calculated from sample data that e
       this is the meaning of a 95% confidence: the method produces intervals that capture the true parameter in 95% of repeated samples in the long run.
       General Formula:
          CI = Point Estimate ± Margin of Error or CI = θ̂ ± E
-         θ̂  = Point estimate of the population paramter
-         E = Margin of error
-         CI = Confidence Interval
+            θ̂  = Point estimate of the population paramter
+            E = Margin of error
+            CI = Confidence Interval
          in out example: CI = 600 ± 400 = [5,600, 6,400]
    Why do Data scientist use CI?
       Suppose, we conduct an A/B test and discover that a new website design increases conversion rate by 2% percentage points.
@@ -286,8 +286,9 @@ Confidence Interval Precision refers how narrowly we can estimate an unkwown pop
 # CONFIDENCE INTERVALS FOR MEANS
 # One-sample Z confidence interval
 """
-One-Sample Z Confidence interval is a statistical method used to estimate an unknown population mean(μ) from a single random sample when 
-population standard deviation (σ) is known
+One-Sample Z Confidence interval:
+   One-Sample Z Confidence interval is a statistical method used to estimate an unknown population mean(μ) from a single random sample when 
+   population standard deviation (σ) is known
    Example: Delivery Time
       A food delivery company wants to estimate the average delivery time of all it's orders
          historical population std σ = 8 minutes
@@ -312,9 +313,25 @@ population standard deviation (σ) is known
       The method used to construct this interval captures the true population mean in 95% of repeated random samples, 
       provided its assumptions hold.
 
-   One-sample t confidence interval:
-      A One-Sample t Confidence Interval is a statistical method used to estimate an unknown population mean(μ) 
-      from a single sample when the population standard deviation(σ)  is unknown.
+One-sample t confidence interval:
+   A One-Sample t Confidence Interval is a statistical method used to estimate an unknown population mean(μ) 
+   from a single sample when the population standard deviation(σ)  is unknown.
+
+   Mathematical formual 
+      CI = x̄ ± t* · s / √n
+         x̄ = sample mean
+         t* = t critical value
+         s = sample standard deviation
+         n = sample size
+      example:
+         given: x̄ = 100 | s = 20 | n = 25 | CL = 95%
+         alpha:               α = 1 - 0.95 = 0.05
+         degrees of freedom:  df = 25 - 1 = 24
+         t-critical value:    t* = 2.064
+         Standard error:      SE = 20 / √25 = 4
+         Margin of error:     E = 2.064 * 4 = 8.256
+         Confidence interval: CI = 100 ± 8.256 = [91.744, 108.256]
+   
 """
  
 # Two-independent means confidence interval
