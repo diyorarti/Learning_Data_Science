@@ -82,7 +82,10 @@ Interval Estimate
       a company has 10,000 employees, and we want to estimate average salary, but collecting salary information from everyone would be expensive.
       suppose, we calculate 95% CI = [5600, 6400] PLN
    Formula:
-      CI = x̄ ± z* · (σ / √n)
+      CI = x̄ ± z* · (σ / √n) or CI = x̄ ±  E
+      E = z* · SE 
+      SE = σ / √n
+
 """
 
 # Confidence Intervals
@@ -96,20 +99,17 @@ Confidence Interval (CI) is a range of values calculated from sample data that e
          95% CI = [5,600 PLN, 6,400 PLN]
       this CI tells us that values between 5,600 and 6,400 are plausible for the true population mean, according to this esimation method.
       95% CI doesn't mean that there is a 95% probability that the fixed true population mean lies inside the interval.
-   What does a 95% CI mean?
-      Suppose repeatig the same experiment above 1,000 times:
-         1.randomly select 200 employees
-         2.calculate the sample mean
-         3.construct a 95% CI
-         4.repeat the entire process 1,000 times
-      if statistical assumptions hold, approximately 950 of the 1,000 intervals would contain the true population mean.
-      this is the meaning of a 95% confidence: the method produces intervals that capture the true parameter in 95% of repeated samples in the long run.
-      General Formula:
-         CI = Point Estimate ± Margin of Error or CI = θ̂ ± E
-            θ̂  = Point estimate of the population paramter
-            E = Margin of error
-            CI = Confidence Interval
-         in out example: CI = 600 ± 400 = [5,600, 6,400]
+
+   General Formula:
+      CI = x̄ ± z* · (σ / √n) or CI = x̄ ±  E
+      E = z* · SE 
+      SE = σ / √n
+
+      CI = Point Estimate ± Margin of Error or CI = θ̂ ± E
+         θ̂  = Point estimate of the population paramter
+         E = Margin of error
+         CI = Confidence Interval
+      in out example: CI = 600 ± 400 = [5,600, 6,400]
    Why do Data scientist use CI?
       Suppose, we conduct an A/B test and discover that a new website design increases conversion rate by 2% percentage points.
       without CI, we only know the observed difference.
@@ -125,6 +125,7 @@ A Confidence Level is the long-run percentage of confidence intervals expected t
    we repeatedly collect samples and construct intervals using the same statistical procedure.
    Mathematically:
       Confidence Level = 1 - α
+
    For example:
       Confidence Level  α         Interpretation
       90%               0.10      About 90 out of 100 intervals contain the parameter
@@ -140,6 +141,15 @@ A Confidence Level is the long-run percentage of confidence intervals expected t
          Samole-4    [6,100 - 6,500]            No
          ...  
          So, 90 out of 100 intervals contain the true parameter.
+   
+   What does a 95% CI mean?
+         Suppose repeatig the same experiment 1,000 times:
+            1.randomly select 200 employees
+            2.calculate the sample mean
+            3.construct a 95% CI
+            4.repeat the entire process 1,000 times
+         if statistical assumptions hold, approximately 950 of the 1,000 intervals would contain the true population mean.
+         this is the meaning of a 95% confidence: the method produces intervals that capture the true parameter in 95% of repeated samples in the long run.
 
    The relationship between Confidence level and Significance level
       CL = 1 -  α
@@ -354,9 +364,9 @@ Two-independent means confidence interval:
    Two independent-samples Confidence interval formula: 
       CI = (x̄_B - x̄_A) ± Critical_value * SE
       They are three common methods for constructing this interval
-      1. Two-Samples Z CI     Both population variances are known
-      2. Welch's t CI         Population variances Unknown, equal variances not assumed
-      3. Pooled t CI          Population variances Unknown, equal population variances assumed
+         1. Two-Samples Z CI     Both population variances are known
+         2. Welch's t CI         Population variances Unknown, equal variances not assumed
+         3. Pooled t CI          Population variances Unknown, equal population variances assumed
       
       Method-1 Two-sample Z Confidence Interval
          we use a two-sample Z confidence interval when both population standard deviations(σ_A, σ_B) are knowm and 

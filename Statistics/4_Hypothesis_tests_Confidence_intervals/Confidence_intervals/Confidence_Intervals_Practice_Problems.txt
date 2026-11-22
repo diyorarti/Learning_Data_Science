@@ -1,0 +1,258 @@
+CONFIDENCE INTERVALS — PRACTICAL EXERCISES
+==========================================
+
+12 open-ended problems | Junior Data Scientist preparation
+
+INSTRUCTIONS
+------------
+Solve each problem independently. 
+Show your formula, calculations, Python implementation where appropriate, statistical assumptions, and interpretation. 
+Recommended tools: Python, NumPy, SciPy, statsmodels, matplotlib.
+Do not assume every result is statistically or practically significant.
+
+
+PART I — FUNDAMENTALS AND MEANS
+================================
+
+PROBLEM 1 — ONE-SAMPLE Z CONFIDENCE INTERVAL [Beginner]
+A delivery company wants to estimate the average delivery time of its orders.
+
+Given:
+    Sample mean:               32 minutes
+    Population SD (known):     12 minutes
+    Sample size:               144
+    Confidence level:          95%
+
+Tasks:
+    1. Calculate alpha, the critical Z-value, and standard error.
+    2. Calculate the margin of error.
+    3. Construct the 95% confidence interval.
+    4. Interpret the interval correctly.
+    5. Recalculate it for 99% confidence and compare interval widths.
+
+
+PROBLEM 2 — ONE-SAMPLE t CONFIDENCE INTERVAL [Beginner]
+A company samples 25 customers to estimate average monthly spending. The population standard deviation is unknown.
+
+Given:
+    Sample mean:               180 PLN
+    Sample SD:                 40 PLN
+    Sample size:               25
+    Confidence level:          95%
+
+Tasks:
+    1. Explain why a t CI is appropriate instead of a known-sigma Z CI.
+    2. Calculate degrees of freedom, critical t-value, SE, and margin of error.
+    3. Construct the 95% confidence interval.
+    4. Construct a one-sided 95% lower confidence bound.
+    5. State the assumptions needed for reliable inference.
+
+
+PROBLEM 3 — TWO INDEPENDENT MEANS [Intermediate]
+An e-commerce company compares customer spending across two independently randomized groups.
+
+Given:
+                            Control A       Treatment B
+    Sample size:            100             120
+    Sample mean:            200 PLN         218 PLN
+    Sample SD:              40 PLN          55 PLN
+    Confidence level:       95%
+
+Tasks:
+    1. Calculate the observed mean difference (B - A).
+    2. Choose between Welch's t CI and pooled t CI, explaining why.
+    3. Calculate SE and Welch degrees of freedom.
+    4. Construct the 95% CI.
+    5. Determine whether it excludes zero and interpret the result.
+
+
+PROBLEM 4 — PAIRED MEANS CONFIDENCE INTERVAL [Intermediate]
+A company measures task completion times for the SAME 10 employees before and after automation.
+
+Employee    Before (min)    After (min)
+   1             45             40
+   2             50             43
+   3             42             40
+   4             48             42
+   5             55             48
+   6             47             43
+   7             52             46
+   8             44             42
+   9             49             45
+  10             53             47
+
+Tasks:
+    1. Calculate paired differences as After - Before.
+    2. Calculate the mean and sample SD of the differences.
+    3. Construct a 95% paired t CI.
+    4. Explain whether the interval supports reduced completion time.
+    5. Explain why an independent two-sample CI is inappropriate.
+
+
+PART II — PROPORTIONS AND A/B TESTING
+=====================================
+
+PROBLEM 5 — WALD VS. WILSON CONFIDENCE INTERVAL
+A website receives 40 visitors, and 4 make a purchase.
+
+Given:
+    Visitors (n):              40
+    Conversions (x):            4
+    Confidence level:          95%
+
+Tasks:
+    1. Calculate the sample conversion rate.
+    2. Calculate the 95% Wald CI manually.
+    3. Calculate the 95% Wilson CI using statsmodels.
+    4. Compare the lower and upper bounds.
+    5. Explain which method you would prefer and why.
+
+
+PROBLEM 6 — DIFFERENCE BETWEEN TWO PROPORTIONS
+A company conducts an A/B test.
+
+Given:
+                            Control A       Treatment B
+    Visitors:               2,000           2,000
+    Purchases:              200             260
+    Confidence level:       95%
+
+Tasks:
+    1. Calculate both sample proportions.
+    2. Calculate the absolute difference in percentage points.
+    3. Calculate relative conversion uplift.
+    4. Construct a 95% Wald CI for p_B - p_A.
+    5. Determine statistical significance using the corresponding two-sided method.
+    6. The company requires at least a +2 percentage-point improvement.
+       Evaluate whether the CI establishes that target.
+
+
+PART III — BOOTSTRAP CONFIDENCE INTERVALS
+=========================================
+
+PROBLEM 7 — BOOTSTRAP MEAN AND MEDIAN CI
+A company records these order values (PLN):
+
+    orders = [45, 55, 60, 65, 70, 80, 85, 95, 110, 235]
+
+Tasks:
+    1. Calculate the original sample mean and median.
+    2. Generate 10,000 bootstrap resamples with replacement.
+    3. Construct separate 95% percentile bootstrap CIs for mean and median.
+    4. Calculate bootstrap SE for both statistics.
+    5. Visualize both bootstrap distributions with histograms.
+    6. Explain why the mean and median intervals may differ.
+
+Use np.random.default_rng(42) for reproducibility.
+
+
+PROBLEM 8 — BOOTSTRAP GROUP-DIFFERENCE CI
+Two independent customer groups have these spending values (PLN):
+
+    control   = [80, 90, 95, 100, 105, 110, 115, 120]
+    treatment = [90, 100, 110, 115, 120, 125, 135, 145]
+
+Tasks:
+    1. Calculate the observed mean difference (treatment - control).
+    2. Generate 10,000 bootstrap resamples separately for each group.
+    3. Calculate mean(treatment*) - mean(control*) in every iteration.
+    4. Construct the 95% percentile bootstrap CI.
+    5. Plot the bootstrap distribution of differences.
+    6. Interpret the interval, including whether it contains zero.
+    7. Explain why you should not pool the groups for this bootstrap CI.
+
+
+PART IV — REGRESSION CONFIDENCE INTERVALS
+=========================================
+
+PROBLEM 9 — LINEAR REGRESSION COEFFICIENT CI
+A company models revenue as a function of advertising spending using OLS regression.
+
+Given:
+    Estimated slope (beta_1):  3.2
+    Standard error:            0.8
+    Observations (n):          50
+    Predictors (excluding intercept): 1
+    Confidence level:          95%
+
+Tasks:
+    1. Calculate residual degrees of freedom.
+    2. Calculate critical t-value.
+    3. Construct the 95% coefficient CI.
+    4. Test H0: beta_1 = 0 using the corresponding t statistic.
+    5. Interpret the coefficient and CI in a business context.
+
+
+PROBLEM 10 — LOGISTIC REGRESSION COEFFICIENT AND ODDS-RATIO CI
+A logistic regression model predicts churn based on the number of complaints.
+
+Given:
+    Estimated coefficient:     0.50
+    Standard error:            0.15
+    Confidence level:          95%
+
+Tasks:
+    1. Construct the 95% Wald CI for the logistic coefficient.
+    2. Calculate its Z statistic.
+    3. Calculate the corresponding two-sided p-value.
+    4. Convert the coefficient to an odds ratio using exp(beta_hat).
+    5. Transform the coefficient CI into an odds-ratio CI.
+    6. Explain why the no-effect value is 0 for a coefficient but 1 for OR.
+
+
+PROBLEM 11 — CONFIDENCE INTERVAL VS. PREDICTION INTERVAL
+A linear regression model predicts spending for customers with 12 months of tenure.
+
+Given:
+    Predicted spending:                   200 PLN
+    95% CI for mean spending:            [185, 215] PLN
+    95% prediction interval:             [110, 290] PLN
+
+Tasks:
+    1. Interpret the confidence interval.
+    2. Interpret the prediction interval.
+    3. Explain why the prediction interval is wider.
+    4. Which interval estimates expected spending among customers with 12 months of tenure?
+    5. Which interval describes uncertainty for a new individual customer's spending?
+
+
+PART V — JUNIOR DATA SCIENTIST BUSINESS CHALLENGE
+=================================================
+
+PROBLEM 12 — E-COMMERCE EXPERIMENT ANALYSIS [Advanced]
+You are a junior Data Scientist at an e-commerce company. The product manager says:
+"We redesigned the checkout page. We want to know whether it improves conversion rates and whether the improvement is large enough to justify launching it."
+
+Given:
+                            Control A       Treatment B
+    Visitors:               5,000           5,000
+    Purchases:              500             575
+    Revenue:                50,000 PLN      60,375 PLN
+
+    Minimum practically important improvement: +1 percentage point conversion
+    Confidence level: 95%
+
+Tasks:
+    1. Calculate conversion rates for each group.
+    2. Calculate absolute conversion uplift in percentage points.
+    3. Calculate relative conversion uplift.
+    4. Calculate average revenue per visitor for each group.
+    5. Construct a 95% CI for the difference in conversion rates.
+    6. Determine whether improvement is statistically significant.
+    7. Determine whether the CI establishes improvement exceeding the practical threshold.
+    8. Write a short business recommendation: launch, collect more data, or reconsider?
+       Discuss uncertainty and information still needed before a final decision.
+
+
+HOW TO PRACTICE
+---------------
+Solve Problems 1–4 first, then proportions (5–6), bootstrap (7–8), regression (9–11), and the business challenge (12).
+For each problem, show:
+    - Selected statistical method and why
+    - Formula and assumptions
+    - Manual calculations where feasible
+    - Python implementation
+    - Confidence interval and interpretation
+    - Business implications when appropriate
+
+Solutions are intentionally omitted.
