@@ -129,6 +129,51 @@ BEGIN
 
         -- Calculate total order value
         v_total_order_value := v_current_request.quantity * v_product_price;
+
+        -- recude inventory using a WHILE Loop
+        v_remaining_quantity := v_current_request.quantity; -- assigning the requested quantity to v_remaining_quantity
+
+        WHILE v_remaining_quantity > 0 LOOP
+
+            -- Determine the current chunk
+            IF v_remaining_quantity >= p_chunk_size THEN
+                v_current_chunk := p_chunk_size;
+            ELSE
+                v_current_chunk := v_remaining_quantity;
+            END IF;
+
+            -- Update inventory
+            UPDATE products_inventory
+            SET stock_quantity  = stock_quantity - v_current_chunk
+            WHERE product_id = v_current_request.product_id;
+
+            -- Reduce remaining quantity
+            v_remaining_quantity := v_remaining_quantity - v_current_chunk
+
+        END LOOP;
+
+        -- Update Order Status and Insert Processing Report
+        UPDATE order_requests
+        SET status = 'processed'
+        WHERE request_id = v_current_request.request_id;
+
+        -- INSERT a processing report
+        INSERT INTO order_processing_report (
+            batch_id,
+            request_id,
+            product_id,
+            quantity,
+            total_value,
+            result
+        )
+        VALUES (
+            p_batch_id,
+            v_current_request.request_id,
+            v_current_request.product_id,
+            v_current_request.quantity,
+            v_total_order_value,
+            "Processed"
+        );
         
     END LOOP;
 
