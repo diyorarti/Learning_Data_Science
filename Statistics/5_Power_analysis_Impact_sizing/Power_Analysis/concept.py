@@ -255,25 +255,30 @@ Statistical cases and Power Analysis:
     Categorical independence	 Chi-square independence power calculation      Is payment method associated with device type?
     Three or more sample means	 ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
 
-Factors affect to choose Power analysis formula:
+Factors affect to calculate Power analysis:
     1. Statistical scenarios:              One mean, two-means, paired means, proportions,  ANOVA,  chi-square
     2. Alterbative hypothesis:             One sided, Two sided
     3. Population variance:                known, unknown
     4. Variance assumptions:               equal or unequal group variances
     5. Group allocation:                   50/50, 80/20 etc.
-    6. statistical method and assumptions: Normal approximation, exact test, noncentral t, chi-square, F
  
     1.Statistical scenatiors:
         One-Sample Mean Power Analysis:
-            Z-based one-tailed:   n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
-            t-based right-tailed: Power = P(T_(v,λ) > t_(1-α,v))
+            Implemenation steps: 
+                1. approximate sample size by Z-based formula
+                2. calculate power for the approximated sample size
+                3. increase sample size until to reach desired power
+            Sample size approximation formula: n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
+                Z-based two-tailed:     Power = Φ(-z_(1-α/2) - λ) + 1 - Φ(z_(1-α/2) - λ)
+                                        λ = ((μ₁ - μ₀) * √n) / σ
+                t-based right-tailed: Power = P(T_(v,λ) > t_(1-α,v))
                                   λ = δ * √n /  σ
                                   v = n - 1
             Cases:
-                1. Alternative hypothesis: One-sided or two-sided
+                1.Alternative hypothesis: One-sided or two-sided
                 2. Population SD: Known or unknown
                 3. Python method:
-                    - Known population SD (Z-test): Normal/Z-based calculation
+                    - Known population SD (Z-test):   scipy.stats.norm.cdf() and norm.sf()
                     - Unknown population SD (t-test): TTestPower
                                 
         Two Independent Means Power Analysis:
