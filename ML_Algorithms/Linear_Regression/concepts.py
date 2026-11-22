@@ -187,8 +187,6 @@ Polynomial Regression (22)
 
 
 
-
-
 # Exponent
 """
 Training Methods:
@@ -216,6 +214,21 @@ Requirements
     4. Homoscedasticity
     5. Similar scales
     6. Independence
+
+Limitions:
+
+Common questions:
+"""
+
+# Training Methods
+"""
+Gradient Descent is an iterative optimization algorithm used to find the model parameters (β₀, β₁, ..., βₚ)
+that minimize a loss function. Unlike solving OLS directly using matrix algebra, Gradient Descent starts 
+with initial coefficients and repeatedly updates them.
+
+Batch Gradient Descent:
+    
+
 """
 
 
