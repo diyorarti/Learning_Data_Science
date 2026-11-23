@@ -174,6 +174,38 @@ BEGIN
             v_total_order_value,
             "Processed"
         );
+
+        -- Transaction Control 
+        IF v_batch_failed = TRUE THEN 
+            ROLLBACK;
+            RAISE NOTICE 'Batch % rolled back. %', p_batch_id;
+            RAISE NOTICE 'Reason: %', v_failure_reason;
+        
+        ELSE
+            COMMIT;
+            RAISE NOTICE 'Batch % processed successfully.', p_batch_id;
+
+        END IF;
+
+        -- FOR Loop to Display Final Inventory
+        FOR v_current_product IN
+            SELECT
+                product_id,
+                product_name,
+                stock_quantity,
+                price
+            FROM products_inventory
+            ORDER BY product_id
+        LOOP
+
+            RAISE NOTICE
+                'Product ID: %, Name: %, Stock: %, Price: %',
+                v_current_product.product_id,
+                v_current_product.product_name,
+                v_current_product.stock_quantity,
+                v_current_product.price;
+
+        END LOOP;
         
     END LOOP;
 
