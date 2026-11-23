@@ -22,6 +22,7 @@ Given:
     Population SD (known):     12 minutes
     Sample size:               144
     Confidence level:          95%
+    Hypothesis:                two-sided test
 
 Tasks:
     1. Calculate alpha, the critical Z-value, and standard error.

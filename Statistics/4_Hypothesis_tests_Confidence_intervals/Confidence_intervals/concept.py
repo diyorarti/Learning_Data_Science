@@ -20,7 +20,7 @@ III. Confidence Intervals for Proportions
    2. two-proportions CI
    3. Wald vs Wilson CI
 
-IV. Interpretation
+IV. Interpretation 
    1. Correct interpretation of 95% CI
    2. CI containing zero
    3. CI not containing zero
@@ -297,7 +297,8 @@ Confidence Interval Precision refers how narrowly we can estimate an unkwown pop
 # One-sample Z confidence interval
 """
 One-Sample Z Confidence interval:
-   One-Sample Z Confidence interval is a statistical method used to estimate an unknown population mean(μ) from a single random sample when 
+   One-Sample Z Confidence interval is a statistical method used to estimate an unknown population mean(μ) 
+   from a single random sample when 
    population standard deviation (σ) is known
    Example: Delivery Time
       A food delivery company wants to estimate the average delivery time of all it's orders
@@ -744,7 +745,7 @@ by repeadly resampling observations  within each group and recalculating the dif
 """
 
 
-
+ 
 
 # REGRESSION CONFIDENCE INTERVALS
 # Linear regression coefficient CI
