@@ -264,11 +264,11 @@ Factors affect to calculate Power analysis:
  
     1.Statistical scenatiors:
         One-Sample Mean Power Analysis:
-            Implemenation steps: 
+            Implemenation steps:  
                 1. approximate sample size by Z-based formula
                 2. calculate power for the approximated sample size
                 3. increase sample size until to reach desired power
-            Sample size approximation formula: n ≈ ((Z_(1-α) + Z_(1-β))² * σ²) / δ²
+            Sample size approximation formula(two-tailed): n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
                 Z-based two-tailed:     Power = Φ(-z_(1-α/2) - λ) + 1 - Φ(z_(1-α/2) - λ)
                                         λ = ((μ₁ - μ₀) * √n) / σ
                 t-based right-tailed: Power = P(T_(v,λ) > t_(1-α,v))
@@ -282,19 +282,71 @@ Factors affect to calculate Power analysis:
                     - Unknown population SD (t-test): TTestPower
                                 
         Two Independent Means Power Analysis:
-            Z-based one-tailed:     n ≈ (2 * (Z_(1-α) + Z_(1-β))² * σ²) / δ²
-            t-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v)) 
-                                    λ = (μ_B - μ_A) / (σ * √((1 / n_A) + (1 / n_B)))
-                                    v = n_A + n_B - 2
-            Cases:
-                1. Alternative hypothesis:   One-sided or two-sided
-                2. Population SDs:           Known or unknown
-                3. Population variances:     Equal or unequal
-                4. Group allocation:         Equal (50/50) or unequal (80/20, etc.)
-                5. Python method:
-                    - Known population SDs:             Normal/Z-based calculation
-                    - Unknown SDs, equal variances:     TTestIndPower
-                    - Unknown SDs, unequal variances:   Welch-specific power calculation or simulation
+            Sample size apprixmation: 
+                two-sided | equal variances | equal allocation:
+                assuptions:
+                    hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
+                    equal variances :   σ_A² = σ_B²
+                    equal allocation:   n_A = n_B
+                    n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+
+                two-sided | equal variances | unequal allocation:
+                assuptions:
+                    hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
+                    equal variances :     σ_A² = σ_B²
+                    unequal allocation:   n_A ≠ n_B
+                    n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1 / r))  / δ²
+
+                two-sided | unequal variances | equal and unequal group allocation:
+                assuptions:
+                    hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
+                    equal variances :     σ_A² ≠ σ_B²
+                    unequal allocation:   n_A ≠ n_B | n_A = n_B
+                    n_A ≈ ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
+
+            Power Calculation
+                Z-based power analysis (population standard deviations are known):
+                    equal variances σ_A² = σ_B²: 
+                        Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
+                        group allocation:
+                            equal:    λ = δ / (σ√(2/n)) = (δ / σ)√(n/2)
+                            unequal:  λ = δ / (σ√((1/n_A) + (1/n_B)))
+
+                    unequal variances σ_A² ≠ σ_B²:
+                        Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
+                        group allocation:
+                            equal:
+                                SE = √((σ_A² + σ_B²) / n)
+                                λ = ((μ_B - μ_A)√n) / √(σ_A² + σ_B²)
+                            unequal:
+                                SE = √((σ_A² / n_A) + (σ_B² / n_B))
+                                λ = (μ_B - μ_A) / √((σ_A² / n_A) + (σ_B² / n_B))
+
+                t-based power analysis (population standard deviations are unknown):
+                    equal variances Pooled t-test: σ_A² = σ_B²:
+                        Power = P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
+                        Group allocation:       
+                            equal allocation:   SE = σ√(2/n)
+                            unequal allocation: SE = σ√((1/n_A) + (1/n_B))
+                        Noncentrality parameter:
+                            λ = (μ_B - μ_A) / (σ√((1/n_A) + (1/n_B)))
+                        Degrees of freedom:
+                            equal allocation:   df = 2 * n - 2
+                            unequal allocation: df = n_A + n_B - 2
+
+                    unequal variances Welch's t-test: σ_A² ≠ σ_B²:
+                        Power ≈ P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
+                        Standard error:  
+                            equal group allocation:   SE = √((σ_A² / n_A) / n))
+                            unequal group allocation: SE = √((σ_A² / n_A) + (σ_B² / n_B))
+                        Noncentrality: 
+                            equal group allocation:   λ = (μ_B - μ_A) / SE
+                            unequal group allocation: λ = (μ_B - μ_A) / SE
+                        Approximate degrees of freedom:
+                            equal group allocation:
+                                ν ≈ ((n - 1)(σ_A² + σ_B²)²) / (σ_A⁴ + σ_B⁴)
+                            unequal group allocation:
+                                df ≈ ((σ_A² / n_A) + (σ_B² / n_B))² / ((σ_A⁴ / (n_A²(n_A - 1))) +(σ_B⁴ / (n_B²(n_B - 1))))
 
         Two dependent/Paired means Sample Size Formula
             T-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v))
@@ -351,7 +403,7 @@ Factors affect to calculate Power analysis:
                     Cohen's f(effect size):
                         f = √(((1 / k) * Σᵢ₌₁ᵏ (μᵢ - μ̄  )²) / σ²)
                         μ̄ = (1 / k) * Σᵢ₌₁ᵏ μᵢ
-                    Noncentrality parameter: 
+                    Noncentrality parameter:  
                         λ = Nf²  |  N = kn
                     Degrees of freedom:
                         df_1 = k - 1   |  df_2 = N - k
