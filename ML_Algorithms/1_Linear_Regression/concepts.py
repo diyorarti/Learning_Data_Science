@@ -48,9 +48,9 @@ Gradient Descent Intuition (9)
             w := w - α * ∂ / ∂w * J(w, b)
             b := b - α * ∂ / ∂b * J(w, b)
         Where: 
-                α = learning rate
-                ∂ / ∂w * J(w, b) = Derivative  for w
-                ∂ / ∂b * J(w, b) = Derivative for b
+            α = learning rate
+            ∂ / ∂w * J(w, B) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾) * x⁽ⁱ⁾
+            ∂ / ∂b * J(w, b) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
  
         Derivative:
             ∂J(w, b)/∂w = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)x⁽ⁱ⁾
@@ -191,8 +191,8 @@ Polynomial Regression (22)
 """
 Training Methods:
     1. Batch Gradient Descent
-    2. Stochastic Gradient Descent
-    3. Mini-batch Gradient Descent
+    2. Mini-batch Gradient Descent
+    3. Stochastic Gradient Descent
 
 Cost functions:
     1. Squared loss
@@ -227,8 +227,55 @@ that minimize a loss function. Unlike solving OLS directly using matrix algebra,
 with initial coefficients and repeatedly updates them.
 
 Batch Gradient Descent:
-    
+    Batch Gradient Descent is an iterative optimzation algorithm that uses the entire training dataset to caculate the gradient 
+    before updating the Linear regression model's coefficients.
 
+    mathematically:
+        Gradient Descent Formula:
+            w := w - α * ∂ / ∂w * J(w, b)
+            b := b - α * ∂ / ∂b * J(w, b)
+        Where: 
+            α = learning rate
+            ∂ / ∂w * J(w, b): Derivative  for w
+            ∂ / ∂b * J(w, b):  Derivative for b
+    
+        Derivative:            
+            ∂ / ∂w * J(w, B) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾) * x⁽ⁱ⁾
+            ∂ / ∂b * J(w, b) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
+
+        Const Function:
+            J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²: Cost function
+
+    Advantages:
+        1. Uses the exact full-dataset gradient rather than a sampled approximation
+        2. stable and reproducible for fixed data, initialization, and learning rate
+        3. easy to implement using vectorized NumPy operations
+        4. For Linear Regression with MSE, optimizes a convex objective
+
+    Disadvantages:
+        1. Each update requires processing the entire dataset.
+        2. Can be expensive when the dataset is extremely large.
+        3. A poorly chosen learning rate can cause slow convergence or divergence.
+
+Mini-batch Gradient Descent
+    Mini-Batch Gradient Descent is an iterative optimization algorithm that divides the training dataset into 
+    small batches and calculates the gradient using one batch at a time before updating the model's coefficients.
+
+    mathematically:
+        Gradient Descent Formula:
+            w := w - α * ∂ / ∂w * J(w, b)
+            b := b - α * ∂ / ∂b * J(w, b)
+        Where: 
+            α = learning rate
+            ∂ / ∂w * J(w, b): Derivative  for w
+            ∂ / ∂b * J(w, b):  Derivative for b
+    
+        Derivative:            
+            ∂ / ∂w * J(w, B) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾) * x⁽ⁱ⁾
+            ∂ / ∂b * J(w, b) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
+
+        Const Function:
+            J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²: Cost function
 """
 
 
