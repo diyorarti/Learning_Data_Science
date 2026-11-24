@@ -262,108 +262,145 @@ Factors affect to calculate Power analysis:
     4. Variance assumptions:               equal or unequal group variances
     5. Group allocation:                   50/50, 80/20 etc.
  
-    1.Statistical scenatiors:
-        One-Sample Mean Power Analysis:
-            Implemenation steps:  
-                1. approximate sample size by Z-based formula
-                2. calculate power for the approximated sample size
-                3. increase sample size until to reach desired power
-            Sample size approximation formula(two-tailed): n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
-                Z-based two-tailed:     Power = Φ(-z_(1-α/2) - λ) + 1 - Φ(z_(1-α/2) - λ)
-                                        λ = ((μ₁ - μ₀) * √n) / σ
-                t-based right-tailed: Power = P(T_(v,λ) > t_(1-α,v))
-                                  λ = δ * √n /  σ
-                                  v = n - 1
-            Cases:
-                1.Alternative hypothesis: One-sided or two-sided
-                2. Population SD: Known or unknown
-                3. Python method:
-                    - Known population SD (Z-test):   scipy.stats.norm.cdf() and norm.sf()
-                    - Unknown population SD (t-test): TTestPower
-                                
-        Two Independent Means Power Analysis:
-            Sample size apprixmation: 
-                two-sided | equal variances | equal allocation:
-                assuptions:
-                    hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
-                    equal variances :   σ_A² = σ_B²
-                    equal allocation:   n_A = n_B
-                    n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+Statistical scenaiors:
+    One-Sample Mean Power Analysis:
+        Implemenation steps:  
+            1. approximate sample size by Z-based formula
+            2. calculate power for the approximated sample size
+            3. increase sample size until to reach desired power
+        
+        Sample size approximation formula(two-tailed): 
+            n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
 
-                two-sided | equal variances | unequal allocation:
-                assuptions:
-                    hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
-                    equal variances :     σ_A² = σ_B²
-                    unequal allocation:   n_A ≠ n_B
-                    n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1 / r))  / δ²
+        Power Calculation:
+            Z-based two-tailed:
+                Power = Φ(-z_(1-α/2) - λ) + 1 - Φ(z_(1-α/2) - λ)
+                λ = ((μ₁ - μ₀) * √n) / σ
+            t-based right-tailed: 
+                Power = P(T_(v,λ) > t_(1-α,v))
+                λ = δ * √n /  σ
+                v = n - 1
+        Cases:
+            1.Alternative hypothesis: One-sided or two-sided
+            2. Population SD: Known or unknown
+            3. Python method:
+                - Known population SD (Z-test):   scipy.stats.norm.cdf() and norm.sf()
+                - Unknown population SD (t-test): TTestPower
+                            
+    Two Independent Means Power Analysis:
+        Sample size apprixmation: 
+            two-sided | equal variances | equal allocation:
+            assuptions:
+                hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
+                equal variances :   σ_A² = σ_B²
+                equal allocation:   n_A = n_B
+                n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
 
-                two-sided | unequal variances | equal and unequal group allocation:
-                assuptions:
-                    hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
-                    equal variances :     σ_A² ≠ σ_B²
-                    unequal allocation:   n_A ≠ n_B | n_A = n_B
-                    n_A ≈ ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
+            two-sided | equal variances | unequal allocation:
+            assuptions:
+                hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
+                equal variances :     σ_A² = σ_B²
+                unequal allocation:   n_A ≠ n_B
+                n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1 / r))  / δ²
 
-            Power Calculation
-                Z-based power analysis (population standard deviations are known):
-                    equal variances σ_A² = σ_B²: 
-                        Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
-                        group allocation:
-                            equal:    λ = δ / (σ√(2/n)) = (δ / σ)√(n/2)
-                            unequal:  λ = δ / (σ√((1/n_A) + (1/n_B)))
+            two-sided | unequal variances | equal and unequal group allocation:
+            assuptions:
+                hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
+                equal variances :     σ_A² ≠ σ_B²
+                unequal allocation:   n_A ≠ n_B | n_A = n_B
+                n_A ≈ ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
 
-                    unequal variances σ_A² ≠ σ_B²:
-                        Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
-                        group allocation:
-                            equal:
-                                SE = √((σ_A² + σ_B²) / n)
-                                λ = ((μ_B - μ_A)√n) / √(σ_A² + σ_B²)
-                            unequal:
-                                SE = √((σ_A² / n_A) + (σ_B² / n_B))
-                                λ = (μ_B - μ_A) / √((σ_A² / n_A) + (σ_B² / n_B))
+        Power Calculation
+            Z-based power analysis (population standard deviations are known):
+                equal variances σ_A² = σ_B²: 
+                    Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
+                    group allocation:
+                        equal:    λ = δ / (σ√(2/n)) = (δ / σ)√(n/2)
+                        unequal:  λ = δ / (σ√((1/n_A) + (1/n_B)))
 
-                t-based power analysis (population standard deviations are unknown):
-                    equal variances Pooled t-test: σ_A² = σ_B²:
-                        Power = P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
-                        Group allocation:       
-                            equal allocation:   SE = σ√(2/n)
-                            unequal allocation: SE = σ√((1/n_A) + (1/n_B))
-                        Noncentrality parameter:
-                            λ = (μ_B - μ_A) / (σ√((1/n_A) + (1/n_B)))
-                        Degrees of freedom:
-                            equal allocation:   df = 2 * n - 2
-                            unequal allocation: df = n_A + n_B - 2
+                unequal variances σ_A² ≠ σ_B²:
+                    Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
+                    group allocation:
+                        equal:
+                            SE = √((σ_A² + σ_B²) / n)
+                            λ = ((μ_B - μ_A)√n) / √(σ_A² + σ_B²)
+                        unequal:
+                            SE = √((σ_A² / n_A) + (σ_B² / n_B))
+                            λ = (μ_B - μ_A) / √((σ_A² / n_A) + (σ_B² / n_B))
 
-                    unequal variances Welch's t-test: σ_A² ≠ σ_B²:
-                        Power ≈ P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
-                        Standard error:  
-                            equal group allocation:   SE = √((σ_A² / n_A) / n))
-                            unequal group allocation: SE = √((σ_A² / n_A) + (σ_B² / n_B))
-                        Noncentrality: 
-                            equal group allocation:   λ = (μ_B - μ_A) / SE
-                            unequal group allocation: λ = (μ_B - μ_A) / SE
-                        Approximate degrees of freedom:
-                            equal group allocation:
-                                ν ≈ ((n - 1)(σ_A² + σ_B²)²) / (σ_A⁴ + σ_B⁴)
-                            unequal group allocation:
-                                df ≈ ((σ_A² / n_A) + (σ_B² / n_B))² / ((σ_A⁴ / (n_A²(n_A - 1))) +(σ_B⁴ / (n_B²(n_B - 1))))
+            t-based power analysis (population standard deviations are unknown):
+                equal variances Pooled t-test: σ_A² = σ_B²:
+                    Power = P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
+                    Group allocation:       
+                        equal allocation:   SE = σ√(2/n)
+                        unequal allocation: SE = σ√((1/n_A) + (1/n_B))
+                    Noncentrality parameter:
+                        λ = (μ_B - μ_A) / (σ√((1/n_A) + (1/n_B)))
+                    Degrees of freedom:
+                        equal allocation:   df = 2 * n - 2
+                        unequal allocation: df = n_A + n_B - 2
 
-        Two dependent/Paired means Sample Size Formula
-            T-based right-tailed:   Power = P(T_(v,λ) > t_(1-α,v))
-                                    Dᵢ = X_after,i - X_before,i
-                                    λ = (δ_D * √n) / σ_D
-                                    v = n - 1
-            Cases:
-                1. Alternative hypothesis:              One-sided or two-sided
-                2. Population SD of paired differences: Known or unknown
-                3. Pairing structure:                   Before/after or matched pairs
-                4. Python method:
-                    - Known SD of differences:      Normal/Z-based calculation
-                    - Unknown SD of differences:    TTestPower
-                    - Use SD of paired differences, not separate group SDs
-                5. Sample size:
-                    - n = Number of complete pairs
-                    - No independent-group allocation ratio
+                unequal variances Welch's t-test: σ_A² ≠ σ_B²:
+                    Power ≈ P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
+                    Standard error:  
+                        equal group allocation:   SE = √((σ_A² / n_A) / n))
+                        unequal group allocation: SE = √((σ_A² / n_A) + (σ_B² / n_B))
+                    Noncentrality: 
+                        equal group allocation:   λ = (μ_B - μ_A) / SE
+                        unequal group allocation: λ = (μ_B - μ_A) / SE
+                    Approximate degrees of freedom:
+                        equal group allocation:
+                            ν ≈ ((n - 1)(σ_A² + σ_B²)²) / (σ_A⁴ + σ_B⁴)
+                        unequal group allocation:
+                            df ≈ ((σ_A² / n_A) + (σ_B² / n_B))² / ((σ_A⁴ / (n_A²(n_A - 1))) +(σ_B⁴ / (n_B²(n_B - 1))))
+
+    Two dependent/Paired means Power Analysis:
+        Unlike two independent means, paired means do not require equal population variances or group allocation assumptions.
+
+        Sample size approximation(two-tailed): 
+            n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ_D²) / δ_D²
+                δ_D = anticipated absolute mean difference
+                σ_D = planning standard deviation of the paired differences
+        
+        Power Calculation:
+            Two-sided:   Hₐ: μ_D ≠ 0    Power = P(T_(df,λ) < -t_c) + P(T_(df,λ) > t_c)
+            Right-sided: Hₐ: μ_D > 0    Power = P(T_(df,λ) > t_(1-α,df))
+            Left-sided:  Hₐ: μ_D < 0    Power = P(T_(df,λ) < t_(α,df))
+            paired difference:          D_i = after_i - before_i
+            Noncentrality parameter:    λ = (μ_D * √n) / σ_D
+            Defgrees of freedom:        df = n - 1
+
+    Three or more independent means (ANOVA) Power Analysis:
+        Three or more indpendent means is always right tailed.
+        Classical ANOVA estimates variance from the sample.
+        Population variances: equal or unequal
+        Group allocation: equal or unequal
+        Number of groups: 3 or more
+
+        Sample size approximation:
+            Equal variances and balanced allocation:
+                Conhen's f: f = √(Σᵢ₌₁ᵏ (μᵢ - μ̄)² / (kσ²))
+                            μ̄ = (Σᵢ₌₁ᵏ μᵢ) / k
+                Noncentrality parameter: λ = knf²
+                Degrees of freedom: df₁ = k - 1
+                                    df₂ = kn - k
+                Minimum required sample size:
+                    n_min = min{n ≥ 2 : P(F_(k-1, kn-k, knf²) > F_critical) ≥ 1 - β}
+                    F_critical = F⁻¹(1 - α; k - 1, kn - k)
+                Total sample size: N = kn
+    
+            Equal variances + unbalanced allocation:
+                Specify allocation proportions: pᵢ = nᵢ / N,    Σᵢ₌₁ᵏ pᵢ = 1
+                Calculate weighted mean:        μ_w = Σᵢ₌₁ᵏ pᵢμᵢ
+                Calculate noncentrality:        λ = [N * Σᵢ₌₁ᵏ pᵢ(μᵢ - μ_w)²] / σ²
+                Degrees of freedom: df₁ = k - 1
+                                    df₂ = N - k
+                Find the required total sample size:
+                    N_min = min{N : P(F_(k-1, N-k, λ(N)) > F_critical) ≥ 1 - β}
+                The candidate (N) must produce feasible integer group sizes under the chosen allocation proportions:
+                    nᵢ ≈ pᵢN
+
+
 
         One Sample Proportion Sample Size Formula
             one-tailed: n ≈ [Z_(1-α) * √(p₀(1-p₀)) + Z_(1-β) * √(p₁(1-p₁))]² / (p₁ - p₀)²
@@ -447,8 +484,8 @@ Factors affect to calculate Power analysis:
                 Python method:
                     - Equal sample sizes and Equal variances:      FTestAnovaPower
                     - Equal sample sizes and unequal variances:    Welch's one-way ANOVA
-                    - Unequal variances and balanced groups:    Welch ANOVA power approximation or Monte Carlo simulation
-                    - Unequal variances and unbalanced groups:  Welch ANOVA power approximation or Monte Carlo simulation
+                    - Unequal variances and balanced groups:       Welch ANOVA power approximation or Monte Carlo simulation
+                    - Unequal variances and unbalanced groups:     Welch ANOVA power approximation or Monte Carlo simulation
 
 
     2.Alterbative hypothesis:
