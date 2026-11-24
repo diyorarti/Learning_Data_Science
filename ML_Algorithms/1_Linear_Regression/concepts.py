@@ -261,7 +261,54 @@ Mini-batch Gradient Descent
     Mini-Batch Gradient Descent is an iterative optimization algorithm that divides the training dataset into 
     small batches and calculates the gradient using one batch at a time before updating the model's coefficients.
 
-    mathematically:
+    How Mini-Batch Gradient Descent works:
+        Training observations: m = 1000
+        Batch size: B = 100
+        Epochs: 10
+        Updates per epoch: m / B = 1000 / 100 = 10 updates per epoch
+        Total updates: 10 * 10 = 100 
+
+        mathematical implemenation the same:
+            Gradient Descent Formula:
+                w := w - α * ∂ / ∂w * J(w, b)
+                b := b - α * ∂ / ∂b * J(w, b)
+            Where: 
+                α = learning rate
+                ∂ / ∂w * J(w, b): Derivative  for w
+                ∂ / ∂b * J(w, b):  Derivative for b
+        
+            Derivative:            
+                ∂ / ∂w * J(w, B) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾) * x⁽ⁱ⁾
+                ∂ / ∂b * J(w, b) = 1/m * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
+
+            Const Function:
+                J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²: Cost function
+    Advantages
+        1. More frequent parameter updates than Batch Gradient Descent.
+        2. Requires less memory per gradient calculation.
+        3. Supports efficient vectorized and parallel computation.
+        4. Often offers a good balance between training speed and gradient stability.
+        5. Suitable for large-scale ML and deep learning.
+
+    Disadvantages
+        1. Gradients are noisier than full-batch gradients.
+        2. Requires choosing a batch size.
+        3. Loss can fluctuate between updates.
+        4. Still requires tuning the learning rate.
+        5. Very small batches may underutilize hardware, while very large batches can require substantial memory.
+
+Stochastic Gradient Descent
+    Stochastic Gradient Descent (SGD) is an iterative optimization algorithm that uses one training 
+    observation at a time to calculate the gradient and update the Linear Regression model's coefficients.
+
+    How Stochastic Gradient Descent works:
+        Training observations: m = 1000
+        Batch size: B = 1
+        Epochs: 10 
+        Updates per epoch: m = 1000 updates per epoch
+        Total updates: 1000 * 10 = 10000 
+
+    mathematical implemenation the same:
         Gradient Descent Formula:
             w := w - α * ∂ / ∂w * J(w, b)
             b := b - α * ∂ / ∂b * J(w, b)
@@ -276,8 +323,26 @@ Mini-batch Gradient Descent
 
         Const Function:
             J(w, b) = 1/(2m) * Σᵢ₌₁ᵐ (ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)²: Cost function
+    
+    Advantages
+        1. Frequent coefficient updates: Updates parameters after each observation.
+        2. Low memory requirements: Processes only one observation per update.
+        3. Suitable for large datasets: Does not require calculating a full-dataset gradient before updating.
+        4. Online learning: Can update models as new observations arrive.
+        5. Computationally cheap individual updates: Each update uses only one sample.
+
+    Disadvantages
+        1. Noisy gradients: Individual observations produce gradients that differ from the full-dataset gradient.
+        2. Unstable convergence path: The cost may fluctuate between updates.
+        3. Learning rate sensitivity: An inappropriate learning rate can cause divergence.
+        4. May oscillate near the optimum: Especially with a constant learning rate.
+        5. Limited vectorization per update: One-observation updates may be inefficient on modern parallel hardware.
 """
 
+# Cost functions
+"""
+
+"""
 
 # Requirements on data to apply Linear Regression:
 """
