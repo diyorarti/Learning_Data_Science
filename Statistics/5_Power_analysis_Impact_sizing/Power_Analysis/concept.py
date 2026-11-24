@@ -399,7 +399,7 @@ Statistical scenaiors:
                     N_min = min{N : P(F_(k-1, N-k, λ(N)) > F_critical) ≥ 1 - β}
                 The candidate (N) must produce feasible integer group sizes under the chosen allocation proportions:
                     nᵢ ≈ pᵢN
-
+            
 
 
         One Sample Proportion Sample Size Formula

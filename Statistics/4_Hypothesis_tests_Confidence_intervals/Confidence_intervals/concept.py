@@ -600,7 +600,6 @@ Practical Significance refers to whether the magnitude of a statistical effect i
 """
 
 
-
 # Bootstrap Confidence Intervals
 # Bootstrap resampling 
 """
