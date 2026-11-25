@@ -269,13 +269,18 @@ Margin of Error tells us how far the lower and upper bounds of a symmetric confi
 
 # Critical values
 """
-Critical Value tells us how many standard erros we need to move away from the point estimate to cunstruc a confidence interval at a choosen 
-confidence level.
+Critical Value tells us how many standard erros we need to move away from the point estimate to cunstruc 
+a confidence interval at a choosen confidence level.
    the role of critical values in Confidence Interval is slightly different than Hypothesis testing.
       CI = Point Estimate ± (Critical Value × SE)
       E = Critical Value × SE
    for example: 95% Z-based confidence interval uses the critical value: z* ≈ 1.96
    this means that Confidence interval extends 1.96 standard erros below and above the point estimate.
+ 
+Critical values calculations:
+   two-sided:                             z* = Φ⁻¹(1 - α/2)    CI = X̄ ± z*SE
+   One-sided lower (right-tailed test):   z* = Φ⁻¹(1 - α)      CI = [X̄ - z*SE, +∞)
+   One-sided upper (left-tailed test):    z* = Φ⁻¹(1 - α)      CI = (-∞, X̄ + z*SE]
 """
 
 # CI width and precision
@@ -291,7 +296,7 @@ Confidence Interval Precision refers how narrowly we can estimate an unkwown pop
    Accuracy: How close an estimate is to the true population parameter.
 """
  
-
+ 
 
 # CONFIDENCE INTERVALS FOR MEANS
 # One-sample Z confidence interval

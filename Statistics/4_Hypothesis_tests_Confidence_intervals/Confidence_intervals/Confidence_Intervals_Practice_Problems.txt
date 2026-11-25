@@ -57,7 +57,7 @@ Given:
     Sample size:            100             120
     Sample mean:            200 PLN         218 PLN
     Sample SD:              40 PLN          55 PLN
-    Confidence level:       95%
+    Confidence level:       95% 
 
 Tasks:
     1. Calculate the observed mean difference (B - A).
