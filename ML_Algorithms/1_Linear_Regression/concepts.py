@@ -341,7 +341,37 @@ Stochastic Gradient Descent
 
 # Cost functions
 """
+Cost function measures how far the model's predictions are from the actual target values. 
+During training, the model attempts to minimize this cost by adjusting it's coefficients w and b.
 
+Squared Loss(L2 Loss)
+    Squared Loss is a loss function that measures the squared difference between the actual value and the predicted value.
+    It is commonly used to train Linear Regression models because it penalizes large prediction errors more heavily than small errors.
+
+    Mathematically:
+        Single observation squared loss:        L(y⁽ⁱ⁾, ŷ⁽ⁱ⁾) = (y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)²
+        Entire dataset mean squared error:      J(w, b) = (1 / m) * Σᵢ₌₁ᵐ (y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)²
+        Half-MSE used in Gradient Descent:      J(w, b) = (1 / (2 * m)) * Σᵢ₌₁ᵐ (y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)²
+    
+    Root Mean Squared Error(RMSE): 
+        RMSE = √MSE
+    
+    Advantages:
+        1. Easy to understand and implement
+        2. Differentiable everywhere
+        3. Convex objective for Linear Regression
+        4. Works naturally with Gradient Descent
+        5. Strongly penalizes large errors
+    
+    Disadvantages:
+        1. sensitive to outliers
+        2. large errors can dominate the cost
+        3. can be affected by noisy and incorrect target values
+        4. MSE is expressed in squared target units
+        5. May not be suitable when robustness is the priority
+
+Absolute Loss(L1 Loss)
+    
 """
 
 # Requirements on data to apply Linear Regression:
