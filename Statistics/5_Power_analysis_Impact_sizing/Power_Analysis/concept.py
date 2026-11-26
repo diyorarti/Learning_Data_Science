@@ -397,7 +397,7 @@ Three or more independent means (ANOVA) Power Analysis:
         Group allocation: equal or unequal
         Number of groups: 3 or more
 
-    Sample size approximation:
+    Sample size approximation: 
         Equal variances and balanced allocation:
             Conhen's f: f = √(Σᵢ₌₁ᵏ (μᵢ - μ̄)² / (kσ²))
                         μ̄ = (Σᵢ₌₁ᵏ μᵢ) / k
@@ -500,44 +500,65 @@ One Sample Proportion Power Analysis
 
 # Two Independent Proportions power analysis
 """
-        Two Independent Proportions Sample Size Formula
-            one-tailed: n ≈ [Z_(1-α) * √(2p̄(1-p̄)) + Z_(1-β) * √(p_A(1-p_A) + p_B(1-p_B))]² / (p_B - p_A)²
+Two independent Proportions power Analysis
+    Assumptions:
+        Alternative hypothesis:     one-tailed or two-tailed
+        Group allocation:           Equal or Unequal
+        population variances:       not a seperate method 
+        equal or unequal variances: not a seperate method
+    
+    Sample size approximation:
+        equal group allocation: 
+            n ≈ [Z_(1-α/2) * √(2p̄(1 - p̄)) + Z_(1-β) * √(p_A(1 - p_A) + p_B(1 - p_B))]² / (p_B - p_A)²
+            total sample size: N = 2n
+        unequal group allocation: 
+            n_A ≈ [Z_(1-α/2) * √(p̄(1 - p̄)(1 + 1/r)) + Z_(1-β) * √(p_A(1 - p_A) + p_B(1 - p_B)/r)]² / (p_B - p_A)²
+            n_B ≈ r * n_A
+            N = n_A + n_B
 
+    Power Calculation:
+        equal group allocation:
+            Standard Error:
+                Under the null hypothesis:        SE₀ = √((2p̄(1 - p̄)) / n)
+                Under the alternative hypothesis: SE₁ = √((p_A(1 - p_A) + p_B(1 - p_B)) / n)
+            expected difference: δ = p_B - p_A
+            Power ≈ Φ((-Z_(1-α/2)SE₀ - δ) / SE₁) + 1 - Φ((Z_(1-α/2)SE₀ - δ) / SE₁)
+
+        unequal group allocation:
+            Standard Error:
+                Under the null hypothesis:        SE₀ = √(p̄(1 - p̄) * ((1 / n_A) + (1 / n_B)))
+                Under the alternative hypothesis: SE₁ = √((p_A(1 - p_A) / n_A) + (p_B(1 - p_B) / n_B))
+            Expected difference: δ = p_B - p_A
+            Power ≈ Φ((-Z_(1-α/2)SE₀ - δ) / SE₁) + 1 - Φ((Z_(1-α/2)SE₀ - δ) / SE₁)
 """
 
 # Categorical goodness-of-fit power analysis
 """
-        Categorical goodness-of-fit Sample Size Formula
-            w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
-            λ = nw²
-            df = k - 1
-            Power = 1 - F_ncx²(χ²_critical; df, λ)
-
+Categorical goodness-of-fit power analysis
+    Assumptions:
+        alternative hypothesis:                         not a seperate choise 
+        population variances known or unknown:          not a seperate choise
+        equal vs unequal population variances:          not a seperate choise 
+        group allocation equal or unequal:              not a seperate choise
+        number of categories(k):                        affects, determines degrees of freedom
+        expected and anticipated category proportions:  affects, determines effect size
+    
+    Implementation:
+        Calculate Cohen's w:        w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
+        noncentrality parameter:    λ = nw²
+        degrees of freedom:         df = k - 1
+        Statistical Power:          Power = P(χ²_(df, λ) > χ²_critical)
+                                    χ²_critical = χ²_(1-α, df)
+        Required sample size:       n_min = min{n : P(χ²_(k-1, nw²) > χ²_(1-α, k-1)) ≥ 1 - β}
 """
 
 # Categorical independence Power analysis
 """
-        Categorical independence Sample Size Formula
-            w = √(Σᵢ Σⱼ ((pᵢⱼ - pᵢ₊p₊ⱼ)² / (pᵢ₊p₊ⱼ))) 
-            λ = Nw²
-            df = (r - 1)(c - 1)
-            Power = 1 - F_ncx²(χ²_critical; df, λ)
-
-
-
-
-General Power Analysis Inputs (All Scenarios)
-    1. Significance level (alpha)
-    2. Desired statistical power (1 - beta)
-    3. Minimum detectable effect (MDE) or anticipated effect
-    4. Planning variability or probability assumptions
-    5. Statistical test and study design assumptions
-
-General Principle:
-    Changing alpha, power, MDE, or variability affects the required sample size.
-    Changing the statistical scenario, test type, variance assumptions, or allocation design can change 
-        the power calculation method itself.
-
+Categorical independence Power analysis
+    Assumptions:
+        Group allocation:           Category proportions affect effect size and sample size
+        Number of categories:   	Determines degrees of freedom
+        Strength of association: 	Determines Cohen's w
 """
 
 # Relationships between MDE, Power, α, Variance, and n
