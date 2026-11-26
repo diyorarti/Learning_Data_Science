@@ -385,13 +385,16 @@ Two-independent means confidence interval:
          A Welch's t Confidence Interval estimates the difference between two independent population means 
          when their population variances are unknown and are not assumed equal.
          The Formula:
-            CI = (x̄_B - x̄_A) ± t* · √((s_A² / n_A) + (s_B² / n_B))
+            degrees of freedom:
+               df = ((s_A² / n_A) + (s_B² / n_B))² / (((s_A² / n_A)² / (n_A - 1)) +((s_B² / n_B)² / (n_B - 1)))
+            Confidence Interval:
+               CI = (x̄_B - x̄_A) ± t* · √((s_A² / n_A) + (s_B² / n_B))
 
       Method-3 Pooled t CI
          The pooled t method assumes the two populations have equal variances σ²_A = σ²_B:
-         We estimate a common variance using: s_p² = ((n_A - 1)s_A² + (n_B - 1)s_B²) / (n_A + n_B - 2)
-         Its standard error is: SE_p = s_p * √((1 / n_A) + (1 / n_B))
-         degress of freedom: df = n_A + n_B - 2
+         We estimate a common variance using:   s_p² = ((n_A - 1)s_A² + (n_B - 1)s_B²) / (n_A + n_B - 2)
+         Its standard error is:                 SE_p = s_p * √((1 / n_A) + (1 / n_B))
+         degress of freedom:                    df = n_A + n_B - 2
          CI = (x̄_B - x̄_A) ± t* · SE_p
 """
 
