@@ -198,7 +198,12 @@ Cost functions:
     1. Squared loss
     2. Absolute loss
     3. Huber loss 
-    4. R2-score
+
+Evaluation metrics:
+    1. R2-score
+    2. Adjusted R2-score
+    3. Akaike Information Criterion (AIC)
+    4. Bayesian Information Criterion (BIC)
 
 Polynomical Features
 
@@ -393,8 +398,47 @@ Absolute Loss(L1 Loss)
         5. May be less suitable when large prediction errors are especially costly.
 
 Huber loss 
+    Huber loss is a loss function that combines the characteristics of Squared Loss(L2) and Absolute Loss(L1)
+        For small prediction erros, it behaves like Squared Loss (L2)
+        For large prediction erros, it behaves like Absolute Loss (L1)
+    
+    Mathematically: 
+        single observation: eⁱ = ŷⁱ - yⁱ
+        Huber loss Function: L_δ(e) = { (1/2)e²,         |e| ≤ δ
+                                      { δ(|e| - (1/2)δ), |e| > δ 
+            e = prediction error
+            δ = hyperparameter controlling when the loss changes from quadratic to linear
+            L_δ = Huber loss for one observation
+        Cost function for entire dataset: J(w, b) = (1 / m) * Σᵢ₌₁ᵐ L_δ(ŷ⁽ⁱ⁾ - y⁽ⁱ⁾)
+
+    Advantages:
+        1. Less sensitive to outliers than Squared Loss
+        2. Differentiable everywhere
+        3. Combines quadratic and linear error penalties.
+        4. Convex for Linear Regression
+        5. Useful for datasets containing occasional extreme target values
+    
+    Disadvantages:
+        1. Requires choosing δ.
+        2. Performance depends on the chosen threshold.
+        3. More complex than MSE or MAE.
+        4. Does not completely eliminate the influence of outliers, particularly high-leverage feature outliers.
+        5. May not be appropriate when very large prediction errors must receive especially strong penalties.
+"""
+
+# Evaluation Metrics
+"""    
+R2-score
+    R² is a regression evaluation metric that measures how well a model explains the variation in the target 
+    compared  with a baseline model that always predicts the mean target value.
+
+    Mathematically:
+        R² = 1 - (SS_res / SS_tot)
+            SS_res = Residual Sum of Squares(SSE or RSS):   SS_res = Σᵢ₌₁ᵐ (y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)²
+            SS_total = Total Sum of Squares (SST):          SS_tot = Σᵢ₌₁ᵐ (y⁽ⁱ⁾ - ȳ)²
 
 """
+
 
 # Requirements on data to apply Linear Regression:
 """
