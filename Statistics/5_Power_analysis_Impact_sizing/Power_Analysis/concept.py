@@ -281,12 +281,16 @@ One-Sample Mean Power Analysis:
         4. Group allocation equal or unequal:                there is only one sample
 
     Sample size approximation formula(two-tailed): 
+        Alternative hypothesis: two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(1-α)
         n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
 
     Power Calculation:
+        Alternative hypothesis: two-sided:Z_(1-α/2) | left-sided:Z_(α) | right-sided:Z_(1-α)
         Z-based two-tailed:
             Power = Φ(-z_(1-α/2) - λ) + 1 - Φ(z_(1-α/2) - λ)
             λ = ((μ₁ - μ₀) * √n) / σ
+
+        Alternative hypothesis: two-sided:t_(1-α/2) | left-sided:t_(α) | right-sided:t_(1-α)
         t-based right-tailed: 
             Power = P(T_(v,λ) > t_(1-α,v))
             λ = δ * √n /  σ

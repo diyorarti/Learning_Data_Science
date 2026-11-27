@@ -9,11 +9,15 @@ I. Fundamentals
    6. Critical values
    7. CI width and precision
 
-II. Confidence Intervals for Means 
-   1. One-sample Z confidence interval
-   2. One-sample t confidence interval
-   3. Two independent means confidence interval  
-   4. Two dependent/Paired means confidence interval
+II. Confidence Intervals for statistical scenarios 
+   1. One-sample confidence interval
+   2. Two independent means confidence interval  
+   3. Two dependent/Paired means confidence interval
+   4. One proportion confidence interval
+   5. Two proportions confidence interval
+   6. Three or more means (ANOVA) confidence interval
+   7. Categorical goodness-of-fit confidence interval
+   8. Categorical independence confidence interval
 
 III. Confidence Intervals for Proportions
    1. One-proportion CI
@@ -160,7 +164,7 @@ A Confidence Level is the long-run percentage of confidence intervals expected t
       The general Formula:
          Confidence Level:
             CI = x̄ ± z* · (σ / √n)
-            x̄ = sample mena
+            x̄ = sample mean
             z* = critical z-value
             σ = population standard deviation
             n = sample size
@@ -269,7 +273,7 @@ Margin of Error tells us how far the lower and upper bounds of a symmetric confi
 
 # Critical values
 """
-Critical Value tells us how many standard erros we need to move away from the point estimate to cunstruc 
+Critical Value tells us how many standard erros we need to move away from the point estimate to cunstruct 
 a confidence interval at a choosen confidence level.
    the role of critical values in Confidence Interval is slightly different than Hypothesis testing.
       CI = Point Estimate ± (Critical Value × SE)
@@ -281,6 +285,13 @@ Critical values calculations:
    two-sided:                             z* = Φ⁻¹(1 - α/2)    CI = X̄ ± z*SE
    One-sided lower (right-tailed test):   z* = Φ⁻¹(1 - α)      CI = [X̄ - z*SE, +∞)
    One-sided upper (left-tailed test):    z* = Φ⁻¹(1 - α)      CI = (-∞, X̄ + z*SE]
+
+   Alternative hypothesis Z-based test: two-sided:    Z_(1-α/2) 
+                                        left-sided:   Z_(1-α) 
+                                        right-sided:  Z_(1-α)
+   Alternative hypothesis t-based test: two-sided:    t_(1-α/2, df) 
+                                        left-sided:   t_(1-α, df) 
+                                        right-sided:  t_(1-α, df)
 """
 
 # CI width and precision
@@ -371,7 +382,7 @@ Two-independent means confidence interval:
       CI = (x̄_B - x̄_A) ± Critical_value * SE
       They are three common methods for constructing this interval
          1. Two-Samples Z CI     Both population variances are known
-         2. Welch's t CI         Population variances Unknown, equal variances not assumed
+         2. Welch's t CI         Population variances Unknown, unequal population variances assumed
          3. Pooled t CI          Population variances Unknown, equal population variances assumed
       
       Method-1 Two-sample Z Confidence Interval
@@ -381,7 +392,7 @@ Two-independent means confidence interval:
             CI = (x̄_B - x̄_A) ± z* · √((σ_A² / n_A) + (σ_B² / n_B))
             SE = √((σ_A² / n_A) + (σ_B² / n_B))
 
-      Method-2 Welch's t CI
+      Method-2 Welch's t CI 
          A Welch's t Confidence Interval estimates the difference between two independent population means 
          when their population variances are unknown and are not assumed equal.
          The Formula:
@@ -402,21 +413,33 @@ Two-independent means confidence interval:
 """
 A two-depdenent/Paried Means Confidence Interval is a statistical method used to estimate the population mean differences 
 μ_d between two related mesurements. μ_d = μ_after - μ_before
-   Mathematical Formua:
-      CI = d̄ ± t* · (s_d / √n)
-      d̄ = (Σᵢ₌₁ⁿ dᵢ) / n
-      s_d = √(Σᵢ₌₁ⁿ (dᵢ - d̄)² / (n - 1))
-      SE(d̄) = s_d / √n
-   example:
-      paired differences: d = [15, 10, 10, 20, 15]
-      we want 95% Confidence Interval
-      Mean difference: d̄ = (15 + 10 + 10 + 20 + 15) / 5= 14
-      the sample standard deviation of differences: s_d = √(15 - 14)² + (10 - 14)² + (10 - 14)² + (20 - 14)² + (15 - 14)² / n - 1 = 4.183
-      significance level alpha: α  = 1 - Confidence level = 1 - 0.95 = 0.05
-      Critical t-value: t* = ±Φ⁻¹(1 - α/2) = 2.776
-      Standard Error: SE s_d / √n = 1.871
-      Margin of Error: E = t* * SE = 5.19
-      CI = d̄ ± t* = 14 ± 5.19 = [8.81, 19.19]
+
+   Z-based Confidence Interval
+      population varainces are known
+      Mathematical Formua:
+            CI = d̄ ± Z* · (σ_d / √n)
+               d̄ = sample mean of paried differences
+               σ_d = known population standard deviation of paired difference
+               n = number of pairs
+               Z* = Critical Z-value
+
+   t-based Confidence Interval 
+      population variances are unknown
+      Mathematical Formua:
+         CI = d̄ ± t* · (s_d / √n)
+         d̄ = (Σᵢ₌₁ⁿ dᵢ) / n
+         s_d = √(Σᵢ₌₁ⁿ (dᵢ - d̄)² / (n - 1))
+         SE(d̄) = s_d / √n
+         example:
+            paired differences: d = [15, 10, 10, 20, 15]
+            we want 95% Confidence Interval
+            Mean difference: d̄ = (15 + 10 + 10 + 20 + 15) / 5= 14
+            the sample standard deviation of differences: s_d = √(15 - 14)² + (10 - 14)² + (10 - 14)² + (20 - 14)² + (15 - 14)² / n - 1 = 4.183
+            significance level alpha: α  = 1 - Confidence level = 1 - 0.95 = 0.05
+            Critical t-value: t* = ±Φ⁻¹(1 - α/2) = 2.776
+            Standard Error: SE s_d / √n = 1.871
+            Margin of Error: E = t* * SE = 5.19
+            CI = d̄ ± t* = 14 ± 5.19 = [8.81, 19.19]
 """
 
 # Confidence interval for proportions 
