@@ -371,7 +371,29 @@ Squared Loss(L2 Loss)
         5. May not be suitable when robustness is the priority
 
 Absolute Loss(L1 Loss)
-    
+    Absolute Loss is a loss function that measures the absolute difference between the actual value and the predicted value.
+    Unlike Squared Loss (L2) which squares prediction errors, Absolute Loss(L1) penalizes errors linearly.
+
+    Mathematically:
+        Single observation absolute loss:        L(y⁽ⁱ⁾, ŷ⁽ⁱ⁾) = (y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)
+        entire dataset mean abolute Error(MAE):  J(w, b) = (1 / m) * Σᵢ₌₁ᵐ (y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)
+
+    Advantages:
+        1. Less sensitive to extreme prediction errors than Squared Loss
+        2. Easy to interpret because MAE uses the same units as the target.
+        3. Penalizes prediction errors proportionally to their magnitude
+        4. Produces a convex objective for Linear Regression
+        5. Useful for robust Regressiom when the dataset contains outliers
+
+    Disadvantages:
+        1. Not differentiable at zero error.
+        2. Requires subgradient methods or other suitable optimization algorithms.
+        3. Does not penalize large errors as strongly as Squared Loss.
+        4. Gradient-based training can converge less smoothly.
+        5. May be less suitable when large prediction errors are especially costly.
+
+Huber loss 
+
 """
 
 # Requirements on data to apply Linear Regression:
@@ -468,11 +490,5 @@ Requirements on data to apply Linear Regression:
     
     5. Similar Scales
         Features should be on a comparable numeric scale.
-"""
-
-# Cost functions
-"""
-R2-score 
-    R2-score = Explained variation / total variation
 """
 

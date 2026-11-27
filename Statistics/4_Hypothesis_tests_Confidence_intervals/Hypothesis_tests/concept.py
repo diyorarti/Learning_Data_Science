@@ -71,7 +71,7 @@ Hypothesis testing is a statistical method used to make an inference about a pop
 
     Hypothesis testing doesn't prove that a hypothesis is true or false.
         Reject H₀ → it doesn't mean "proved H₀ is false"
-        Fail to rehect H₀ → it doesn't mean "proved H₀ is true"
+        Fail to reject H₀ → it doesn't mean "proved H₀ is true"
     
     Example:
         A website currently has a conversion rate of 10%. A new design is tested.
@@ -267,7 +267,8 @@ Sampling distribution vs Population distribution
 
 # Critical value and critical region
 """
-The critical value and critical region are the boundaries we use to decide whether a test statistic is extreme enough to reject H₀ null hypothesis.
+The critical value and critical region are the boundaries we use to decide whether 
+a test statistic is extreme enough to reject H₀ null hypothesis.
 
 Critical Value: this is a cutoff. 
     two-tailed Z-test with α = 0.05

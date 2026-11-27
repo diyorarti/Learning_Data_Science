@@ -80,7 +80,8 @@ Statistical Power is the probability of correctly rejecting the null hypothesis 
         H₀ is true	        Type I Error(α) 	Correct decision
         H₀ is false	        Power(1-β)	        Type II Error (β)
 
-    higher statistical power is generally desirable, but achieving it usually requires a larger sample size, assuming everything else remains constant.
+    higher statistical power is generally desirable, but achieving it usually requires a larger sample size, 
+    assuming everything else remains constant.
     For example, increasing desired power from 80% to 90% will generally increase the required sample size.
 
     Distinction between: Power vs Significance level
@@ -182,8 +183,9 @@ How Var/Std affects Statistical Power, Type II error and Required Sample size n.
             Sample size	        100 per group	100 per group
         but variablity of customer spending differs. 
         in experiment A, the spending values are relatively concentrated around their population means.
-        in experiment B, the spending values are much more spread out. True improvement is 10pln, but it is hard to distinguish from random variation.
-            ↑Var/Std ⇒ ↓Power ⇒ ↑β
+        in experiment B, the spending values are much more spread out. True improvement is 10pln, 
+            but it is hard to distinguish from random variation.
+        ↑Var/Std ⇒ ↓Power ⇒ ↑β
         In other words, higher variance increases the probability of missing a real effect when sample size is fixed
 
     Relationship between Variance and Required Sample Size.
@@ -217,7 +219,8 @@ Statistical significance
         That is where practical significance comes in.
     
 Practical Significance
-    Practical Significance refers to whether the magnitude of an observed effect is large enough to be meaningful or valuable in real-world context.
+    Practical Significance refers to whether the magnitude of an observed effect is large enough to be meaningful or valuable 
+    in real-world context.
     Example:
         α = 0.05
         p = 0.01
@@ -238,22 +241,22 @@ Required Sample Size (n)
     a desired statistical power and significance level, under the assumed statistical model.
 
     The four key inputs required sample depends on.
-        Input	                 Meaning	                                                Example
-        Effect Size / MDE	     Smallest effect we want to detect	                        +2 percentage points
-        Statistical Power(1-β)	 Desired probability of detecting the specified effect	    80%
-        Significance Level(α)	 Allowed Type I error probability	                        0.05
-        Variance(σ²)	         Variability of the outcome metric	                        Estimated from historical data
+        Input	                     Meaning	                                                Example
+        1. Effect Size / MDE	     Smallest effect we want to detect	                        +2 percentage points
+        2. Statistical Power(1-β)	 Desired probability of detecting the specified effect	    80%
+        3. Significance Level(α)	 Allowed Type I error probability	                        0.05
+        4. Variance(σ²)	             Variability of the outcome metric	                        Estimated from historical data
             
 Statistical cases and Power Analysis:
     Case	                     Sample Size method                             Example
     One sample mean	             One-sample mean power calculation              Is average customer spending different from 100 PLN?
     Two independent sample means Two-independent-means power calculation        Is average spending different between users of website A and B?
     Two dependent sample means	 Paired-mean power calculation                  Does average spending change for the same customers before and after an intervention?
+    Three or more sample means	 ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
     One sample proportion	     One-proportion power calculation               Is the conversion rate different from 10%?
     Two independent proportions	 Two-proportion power calculation               Is conversion rate different between checkout designs A and B?
     Categorical goodness-of-fit	 Chi-square goodness-of-fit power calculation   Do customers choose four payment methods in the expected proportions?
     Categorical independence	 Chi-square independence power calculation      Is payment method associated with device type?
-    Three or more sample means	 ANOVA power calculation                        Does average spending differ among three recommendation algorithms?
 
 Factors affect to calculate Power analysis:
     1. Statistical scenarios:              One mean, two-means, paired means, proportions,  ANOVA,  chi-square
@@ -274,8 +277,8 @@ One-Sample Mean Power Analysis:
     Assumptions:
         1. Alterbative Hypothesis One-tailed and two-tailed: affacts calculation
         2. Population variances Known or unknown:            affects only power calculation   
-        3. Population variances equal or unequal:            Does not affact 
-        4. Group allocation equal or unequal:                Does not affact 
+        3. Population variances equal or unequal:            there is only one sample 
+        4. Group allocation equal or unequal:                there is only one sample
 
     Sample size approximation formula(two-tailed): 
         n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
@@ -294,73 +297,75 @@ One-Sample Mean Power Analysis:
 """              
 Two Independent Means Power Analysis:
     Assumptions:
-        1.
+        1. Alternative hypothesis: one-sided or two-sided
+        2. Population variances:   known or unknown 
+        3. Population variances:   equal or unequal
+        4. Group allocation:       equal or unequal
 
     Sample size apprixmation: 
-        two-sided | equal variances | equal allocation:
-        assuptions:
-            hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
-            equal variances :   σ_A² = σ_B²
-            equal allocation:   n_A = n_B
-            n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
+        known or unknown population variances don't affact
+        Alternative hypothesis: two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(1-α)
+            equal variances 
+            equal allocation:
+                n ≈ (2 * (Z_(1-α/2) + Z_(1-β))² * σ²) / δ²
 
-        two-sided | equal variances | unequal allocation:
-        assuptions:
-            hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
-            equal variances :     σ_A² = σ_B²
-            unequal allocation:   n_A ≠ n_B
-            n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1 / r))  / δ²
+            equal variances 
+            unequal allocation:
+                n_a ≈ ((Z_(1-α/2) + Z_(1-β))² * σ² * (1 + 1 / r))  / δ²
+                n_b ≈ r * n_a
 
-        two-sided | unequal variances | equal and unequal group allocation:
-        assuptions:
-            hypthesis:       two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(α)
-            equal variances :     σ_A² ≠ σ_B²
-            unequal allocation:   n_A ≠ n_B | n_A = n_B
-            n_A ≈ ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
+            unequal variances
+            equal and unequal group allocation:
+                n_A ≈ ((Z_(1-α/2) + Z_(1-β))² * (σ_A² + σ_B² / r)) / δ²
+                n_B = r * n_A
 
     Power Calculation
-        Z-based power analysis (population standard deviations are known):
-            equal variances σ_A² = σ_B²: 
-                Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
-                group allocation:
-                    equal:    λ = δ / (σ√(2/n)) = (δ / σ)√(n/2)
-                    unequal:  λ = δ / (σ√((1/n_A) + (1/n_B)))
+        Z-based power analysis:
+            population vrainces are known:
+            Alternative hypothesis: two-sided:Z_(1-α/2) | left-sided:Z_(α) | right-sided:Z_(1-α)
+                equal variances σ_A² = σ_B²: 
+                    Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
+                    group allocation:
+                        equal:    λ = δ / (σ√(2/n)) = (δ / σ)√(n/2)
+                        unequal:  λ = δ / (σ√((1/n_A) + (1/n_B)))
 
-            unequal variances σ_A² ≠ σ_B²:
-                Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
-                group allocation:
-                    equal:
-                        SE = √((σ_A² + σ_B²) / n)
-                        λ = ((μ_B - μ_A)√n) / √(σ_A² + σ_B²)
-                    unequal:
-                        SE = √((σ_A² / n_A) + (σ_B² / n_B))
-                        λ = (μ_B - μ_A) / √((σ_A² / n_A) + (σ_B² / n_B))
+                unequal variances σ_A² ≠ σ_B²:
+                    Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
+                    group allocation:
+                        equal:
+                            SE = √((σ_A² + σ_B²) / n)
+                            λ = ((μ_B - μ_A)√n) / √(σ_A² + σ_B²)
+                        unequal:
+                            SE = √((σ_A² / n_A) + (σ_B² / n_B))
+                            λ = (μ_B - μ_A) / √((σ_A² / n_A) + (σ_B² / n_B))
 
-        t-based power analysis (population standard deviations are unknown):
-            equal variances Pooled t-test: σ_A² = σ_B²:
-                Power = P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
-                Group allocation:       
-                    equal allocation:   SE = σ√(2/n)
-                    unequal allocation: SE = σ√((1/n_A) + (1/n_B))
-                Noncentrality parameter:
-                    λ = (μ_B - μ_A) / (σ√((1/n_A) + (1/n_B)))
-                Degrees of freedom:
-                    equal allocation:   df = 2 * n - 2
-                    unequal allocation: df = n_A + n_B - 2
+        t-based power analysis 
+            population standard deviations are unknown:
+            Alternative hypothesis: two-sided:t_(1-α/2, df) | left-sided:t_(α, df) | right-sided:t_(1-α, df)
+                equal variances Pooled t-test: σ_A² = σ_B²:
+                    Power = P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
+                    Group allocation:       
+                        equal allocation:   SE = σ√(2/n)
+                        unequal allocation: SE = σ√((1/n_A) + (1/n_B))
+                    Noncentrality parameter:
+                        λ = (μ_B - μ_A) / (σ√((1/n_A) + (1/n_B)))
+                    Degrees of freedom:
+                        equal allocation:   df = 2 * n - 2
+                        unequal allocation: df = n_A + n_B - 2
 
-            unequal variances Welch's t-test: σ_A² ≠ σ_B²:
-                Power ≈ P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
-                Standard error:  
-                    equal group allocation:   SE = √((σ_A² / n_A) / n))
-                    unequal group allocation: SE = √((σ_A² / n_A) + (σ_B² / n_B))
-                Noncentrality: 
-                    equal group allocation:   λ = (μ_B - μ_A) / SE
-                    unequal group allocation: λ = (μ_B - μ_A) / SE
-                Approximate degrees of freedom:
-                    equal group allocation:
-                        ν ≈ ((n - 1)(σ_A² + σ_B²)²) / (σ_A⁴ + σ_B⁴)
-                    unequal group allocation:
-                        df ≈ ((σ_A² / n_A) + (σ_B² / n_B))² / ((σ_A⁴ / (n_A²(n_A - 1))) +(σ_B⁴ / (n_B²(n_B - 1))))
+                unequal variances Welch's t-test: σ_A² ≠ σ_B²:
+                    Power ≈ P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
+                    Standard error:  
+                        equal group allocation:   SE = √((σ_A² + σ_B²) / n))
+                        unequal group allocation: SE = √((σ_A² / n_A) + (σ_B² / n_B))
+                    Noncentrality: 
+                        equal group allocation:   λ = (μ_B - μ_A) / SE
+                        unequal group allocation: λ = (μ_B - μ_A) / SE
+                    Approximate degrees of freedom:
+                        equal group allocation:
+                            ν ≈ ((n - 1)(σ_A² + σ_B²)²) / (σ_A⁴ + σ_B⁴)
+                        unequal group allocation:
+                            df ≈ ((σ_A² / n_A) + (σ_B² / n_B))² / ((σ_A⁴ / (n_A²(n_A - 1))) +(σ_B⁴ / (n_B²(n_B - 1))))
 
 """
 
@@ -368,34 +373,45 @@ Two Independent Means Power Analysis:
 """
 Two dependent/Paired means Power Analysis:
     Assumptions:
-        1.
-
-    Unlike two independent means, paired means do not require equal population variances or group allocation assumptions.
+        1. Alterbative hypothesis: One-sided or two-sided       affects 
+        2. Population variance: known or unknown                affects on power calculation
+        3. Population variance assumptions: equal or unequal    no effect
+        4. Group allocation: equal or unequal                   no effect
 
     Sample size approximation(two-tailed): 
+        Alternative hypothesis: two-sided:Z_(1-α/2) | left-sided:Z_(1-α) | right-sided:Z_(1-α)
         n ≈ ((Z_(1-α/2) + Z_(1-β))² * σ_D²) / δ_D²
             δ_D = anticipated absolute mean difference
             σ_D = planning standard deviation of the paired differences
     
     Power Calculation:
-        Two-sided:   Hₐ: μ_D ≠ 0    Power = P(T_(df,λ) < -t_c) + P(T_(df,λ) > t_c)
-        Right-sided: Hₐ: μ_D > 0    Power = P(T_(df,λ) > t_(1-α,df))
-        Left-sided:  Hₐ: μ_D < 0    Power = P(T_(df,λ) < t_(α,df))
-        paired difference:          D_i = after_i - before_i
-        Noncentrality parameter:    λ = (μ_D * √n) / σ_D
-        Defgrees of freedom:        df = n - 1
-
+        Population variances are known:
+        Z-based formula:
+            Two-sided:   Hₐ: μ_D ≠ 0    Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
+            Right-sided: Hₐ: μ_D > 0    Power = 1 - Φ(Z_(1-α) - λ)
+            Left-sided:  Hₐ: μ_D < 0    Power = Φ(Z_α - λ)
+            paired difference:          D_i = after_i - before_i
+            Noncentrality parameter     λ = (μ_D * √n) / σ_D
+            
+        Population variances are unknown:
+        t-based formula:
+            Two-sided:   Hₐ: μ_D ≠ 0    Power = P(T_(df,λ) < -t_c) + P(T_(df,λ) > t_c)
+            Right-sided: Hₐ: μ_D > 0    Power = P(T_(df,λ) > t_(1-α,df))
+            Left-sided:  Hₐ: μ_D < 0    Power = P(T_(df,λ) < t_(α,df))
+            paired difference:          D_i = after_i - before_i
+            Noncentrality parameter:    λ = (μ_D * √n) / σ_D
+            Defgrees of freedom:        df = n - 1
 """
 
 # Three or more independent means (ANOVA) Power Analysis
 """
 Three or more independent means (ANOVA) Power Analysis:
     Assumptions: 
-        Three or more indpendent means is always right tailed.
-        Classical ANOVA estimates variance from the sample.
-        Population variances: equal or unequal
-        Group allocation: equal or unequal
-        Number of groups: 3 or more
+        1. Alternative hypothesis: Three or more indpendent means is always right tailed. 
+        2. Classical ANOVA estimates variance from the sample.
+        3. Population variances: equal or unequal
+        4. Group allocation: equal or unequal
+        5. Number of groups: 3 or more
 
     Sample size approximation: 
         Equal variances and balanced allocation:
@@ -560,6 +576,9 @@ Categorical independence Power analysis
         Number of categories:   	Determines degrees of freedom
         Strength of association: 	Determines Cohen's w
 """
+
+
+
 
 # Relationships between MDE, Power, α, Variance, and n
 """
@@ -893,6 +912,4 @@ Sensitivity Analysis is a technique used to examine how changes in input assumpt
 
     Allocation sensitivity Analysis:
 """
-
-
 
