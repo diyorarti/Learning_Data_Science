@@ -14,7 +14,8 @@ DECIMAL(p, s) / NUMERIC
 
 FLOAT / DOUBLE 
     approximiate numbers (scientific calculations)
-"""
+""";
+
 
 -- String
 """

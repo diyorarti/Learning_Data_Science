@@ -1,12 +1,12 @@
 # Topics
 
-"""
+""" 
 1. SQL Fundamentals
  ------------------------------------------------------------
     SELECT
     FROM
     WHERE
-    DISTINCT
+    DISTINCT 
     ORDER BY
     LIMIT
     Aliases
