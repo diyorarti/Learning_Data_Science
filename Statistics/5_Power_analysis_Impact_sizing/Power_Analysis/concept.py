@@ -286,15 +286,31 @@ One-Sample Mean Power Analysis:
 
     Power Calculation:
         Alternative hypothesis: two-sided:Z_(1-α/2) | left-sided:Z_(α) | right-sided:Z_(1-α)
-        Z-based two-tailed:
-            Power = Φ(-z_(1-α/2) - λ) + 1 - Φ(z_(1-α/2) - λ)
-            λ = ((μ₁ - μ₀) * √n) / σ
+        Z-based 
+            two-tailed:   Power = Φ(-z_(1-α/2) - λ) + 1 - Φ(z_(1-α/2) - λ)
+            left-tailed:  Power = Φ(z_(α) - λ)
+            right-tailed: Power = 1- Φ(z_(1-α) - λ)
+                          λ = ((μ₁ - μ₀) * √n) / σ
 
-        Alternative hypothesis: two-sided:t_(1-α/2) | left-sided:t_(α) | right-sided:t_(1-α)
-        t-based right-tailed: 
-            Power = P(T_(v,λ) > t_(1-α,v))
-            λ = δ * √n /  σ
-            v = n - 1
+        Alternative hypothesis: two-sided:t_(1-α/2) | right-sided:t_(1-α) | left-sided:t_(α)
+        t-based:
+            two-tailed:   Power = P(T_(ν,λ) < -t_c) + P(T_(ν,λ) > t_c)
+            right-tailed: Power = P(T_(v,λ) > t_(1-α,v))
+            left-tailed:  Power = P(T_(v,λ) < t_(α,v))
+                          λ = δ * √n /  σ
+                          v = n - 1
+
+    Library Implementation:
+        known population standard deviation:
+            from scipy.stats import norm
+            norm.cdf() left-sided test
+            norm.sf()  right-sided test
+
+        unknown population standard deviation:
+            from statsmodels.stats.power import TTestPower
+            analysis = TTestPower()
+            analysis.solve_power() approximate sample size
+            analysis.power() calculate the power for approximated sample size
 """ 
 
 # Two Independent Means Power Analysis
@@ -325,7 +341,7 @@ Two Independent Means Power Analysis:
 
     Power Calculation
         Z-based power analysis:
-            population vrainces are known:
+            population variances are known:
             Alternative hypothesis: two-sided:Z_(1-α/2) | left-sided:Z_(α) | right-sided:Z_(1-α)
                 equal variances σ_A² = σ_B²: 
                     Power = Φ(-Z_(1-α/2) - λ) + 1 - Φ(Z_(1-α/2) - λ)
@@ -344,32 +360,32 @@ Two Independent Means Power Analysis:
                             λ = (μ_B - μ_A) / √((σ_A² / n_A) + (σ_B² / n_B))
 
         t-based power analysis 
-            population standard deviations are unknown:
+            population variances are unknown:
             Alternative hypothesis: two-sided:t_(1-α/2, df) | left-sided:t_(α, df) | right-sided:t_(1-α, df)
                 equal variances Pooled t-test: σ_A² = σ_B²:
                     Power = P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
-                    Group allocation:       
-                        equal allocation:   SE = σ√(2/n)
-                        unequal allocation: SE = σ√((1/n_A) + (1/n_B))
-                    Noncentrality parameter:
-                        λ = (μ_B - μ_A) / (σ√((1/n_A) + (1/n_B)))
-                    Degrees of freedom:
-                        equal allocation:   df = 2 * n - 2
-                        unequal allocation: df = n_A + n_B - 2
+                        Group allocation:       
+                            equal allocation:   SE = σ√(2/n)
+                            unequal allocation: SE = σ√((1/n_A) + (1/n_B))
+                        Noncentrality parameter:
+                            λ = (μ_B - μ_A) / (σ√((1/n_A) + (1/n_B)))
+                        Degrees of freedom:
+                            equal allocation:   df = 2 * n - 2
+                            unequal allocation: df = n_A + n_B - 2
 
                 unequal variances Welch's t-test: σ_A² ≠ σ_B²:
                     Power ≈ P(T_(df,λ) < -t_critical) + P(T_(df,λ) > t_critical)
-                    Standard error:  
-                        equal group allocation:   SE = √((σ_A² + σ_B²) / n))
-                        unequal group allocation: SE = √((σ_A² / n_A) + (σ_B² / n_B))
-                    Noncentrality: 
-                        equal group allocation:   λ = (μ_B - μ_A) / SE
-                        unequal group allocation: λ = (μ_B - μ_A) / SE
-                    Approximate degrees of freedom:
-                        equal group allocation:
-                            ν ≈ ((n - 1)(σ_A² + σ_B²)²) / (σ_A⁴ + σ_B⁴)
-                        unequal group allocation:
-                            df ≈ ((σ_A² / n_A) + (σ_B² / n_B))² / ((σ_A⁴ / (n_A²(n_A - 1))) +(σ_B⁴ / (n_B²(n_B - 1))))
+                        Standard error:  
+                            equal group allocation:   SE = √((σ_A² + σ_B²) / n))
+                            unequal group allocation: SE = √((σ_A² / n_A) + (σ_B² / n_B))
+                        Noncentrality: 
+                            equal group allocation:   λ = (μ_B - μ_A) / SE
+                            unequal group allocation: λ = (μ_B - μ_A) / SE
+                        Approximate degrees of freedom:
+                            equal group allocation:
+                                ν ≈ ((n - 1)(σ_A² + σ_B²)²) / (σ_A⁴ + σ_B⁴)
+                            unequal group allocation:
+                                df ≈ ((σ_A² / n_A) + (σ_B² / n_B))² / ((σ_A⁴ / (n_A²(n_A - 1))) +(σ_B⁴ / (n_B²(n_B - 1))))
 
 """
 
@@ -522,10 +538,10 @@ One Sample Proportion Power Analysis
 """
 Two independent Proportions power Analysis
     Assumptions:
-        Alternative hypothesis:     one-tailed or two-tailed
-        Group allocation:           Equal or Unequal
-        population variances:       not a seperate method 
-        equal or unequal variances: not a seperate method
+        1. Alternative hypothesis:     one-tailed or two-tailed
+        2. Group allocation:           Equal or Unequal
+        3. population variances:       not a seperate method 
+        4. equal or unequal variances: not a seperate method
     
     Sample size approximation:
         equal group allocation: 
@@ -556,12 +572,12 @@ Two independent Proportions power Analysis
 """
 Categorical goodness-of-fit power analysis
     Assumptions:
-        alternative hypothesis:                         not a seperate choise 
-        population variances known or unknown:          not a seperate choise
-        equal vs unequal population variances:          not a seperate choise 
-        group allocation equal or unequal:              not a seperate choise
-        number of categories(k):                        affects, determines degrees of freedom
-        expected and anticipated category proportions:  affects, determines effect size
+        1. alternative hypothesis:                         not a seperate choise 
+        2. population variances known or unknown:          not a seperate choise
+        3. equal vs unequal population variances:          not a seperate choise 
+        4. group allocation equal or unequal:              not a seperate choise
+        5. number of categories(k):                        affects, determines degrees of freedom
+        6. expected and anticipated category proportions:  affects, determines effect size
     
     Implementation:
         Calculate Cohen's w:        w = √(Σᵢ₌₁ᵏ ((p₁ᵢ - p₀ᵢ)² / p₀ᵢ))
