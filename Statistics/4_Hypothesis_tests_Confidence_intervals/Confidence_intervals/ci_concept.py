@@ -509,7 +509,20 @@ A Two-proportions Confidence Interval
 
 """ 
 
+# Three or more means (ANOVA) confidence interval
+"""
 
+"""
+
+# Categorical goodness-of-fit confidence interval
+"""
+
+"""
+
+# Categorical independence confidence interval
+"""
+
+"""
 
 # INTERPRETATION
 # Correct interpretation of 95% CI
