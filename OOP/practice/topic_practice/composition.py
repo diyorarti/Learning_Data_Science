@@ -13,6 +13,11 @@ class Validator:
         if value <= 0:
             raise ValueError(f"{field_name} must be greater than 0")
 
+    @staticmethod
+    def validate_instance(obj, class_type, field_name):
+        if not isinstance(obj, class_type):
+            raise TypeError(f"{field_name} must be an instance of {class_type.__name__}")
+
         
 class Product:
     def __init__(self, product_id:str, name:str, price:float, stock:int):
@@ -53,5 +58,33 @@ class Product:
         if self.__stock < quantity:
             return ValueError("not enough stcok")
         self.__stock -= quantity
+
+class CardIten:
+    def __init__(self, product, quantity):
+        self.__product = None
+        self.__quantity = None
+
+        self.product = product
+        self.quantity = quantity
+
+    @property
+    def product(self):
+        return self.__product
+
+    @product.setter
+    def product(self, product):
+        Validator.validate_instance(product, Product, "product")
+        self.__product = product
+
+    @property
+    def quantity(self):
+        return self.__quantity
+
+    @quantity.setter
+    def quantity(self, quantity):
+        Validator.validate_positive_number(quantity, "quantity")
+        self.__quantity = quantity
+
+    
 
 
