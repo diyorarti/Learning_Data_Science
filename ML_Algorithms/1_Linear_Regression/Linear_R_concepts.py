@@ -437,6 +437,73 @@ R2-score
             SS_res = Residual Sum of Squares(SSE or RSS):   SS_res = Σᵢ₌₁ᵐ (y⁽ⁱ⁾ - ŷ⁽ⁱ⁾)²
             SS_total = Total Sum of Squares (SST):          SS_tot = Σᵢ₌₁ᵐ (y⁽ⁱ⁾ - ȳ)²
 
+    The problem in R²:
+        The mean problem with R² is that it doesn't penalize adding unncecassary features(predictors) to Linear Regression Model.
+        an example:
+            Model-1: - Features: house_size                                         R²=0.80         Adjusted-R²=0.79
+            Model-2: - Features: house_size, bedrooms                               R²=0.85         Adjusted-R²=0.84
+            Model-1: - Features: house_size, bedrooms, +10 inrrelevant features     R²=0.87         Adjusted-R²=0.85
+        adding a new feature to model always increase R² or leaves R² unchanged on the training dataset.
+        it never decreases.
+
+Adjusted R²
+    It is a regression evaluation metric that measures how well a model explains variantion in the target variable 
+    while accounting for the number of predictors(independent variables) used in the model.
+    Unlike regular R², which cannot decrease when additional predictors are added to an ordinary least-squares model 
+    fitted with an intercept, Adjusted R² penalizes unnecessary predictors.
+
+    mathematical formula:
+        R²_adj = 1 - (1 - R²) * ((m - 1) / (m - p - 1))
+
+
+Akaike information criterion (AIC) 
+    It is used to compare regression models.
+    It answers: Which model gives a good fit without being unnecessarily complex ?
+    It balances two things: Goot fit vs Model complexity
+    The formula:
+        AIC = 2k - 2ln(L)
+        k = number of estimated parameters in the model
+        L = maximum likelhood of the model
+        ln(L) = measures how well the model fits the observed data 
+    Intuition:
+        AIC = fit penalty + complexity penalty
+    The key rule:
+        Lower AIC is better
+    Example:
+        | Model   | Features                                                  |  AIC |
+        | Model A | area                                                      | 1250 |
+        | Model B | area + age                                                | 1180 |
+        | Model C | area + age + rooms + floor + elevator + 10 other features | 1195 |
+        Model B is the best model
+        Because the extra features may improve the fit only slightly, while increasing model complexity.
+        Adding features is worth it only if they improve the fit enough to justify the extra complexity.
+
+Bayesian information criterion (BIC)
+    It is used to compare regression models.
+    It balances model fit vs model complexity
+    The formula:
+        BIC = kln(n) - 2ln(L)
+        k = number of estimated parameters
+        n = number of observations
+        L = likelihood of the fitted model
+    Example:
+        | Model   | Features                       |  BIC |
+        | Model A | area                           | 1300 |
+        | Model B | area + age                     | 1220 |
+        | Model C | area + age + 12 other features | 1250 |
+        BIC prefers Model B
+
+    AIC vs BIC
+        AIC -> AIC = 2k - 2ln(L)
+        BIC -> BIC = kln(n) - 2ln(L)
+
+        Both have -2ln(L) which represents model fit
+
+        Complexity penalty is different:
+            AIC: 2k
+            BIC: kln(n)
+            So BIC penalizes additional parameters more strongly than AIC.
+        BIC usualy favors simpler models than more stronyly than AIC.
 """
 
 
@@ -536,3 +603,4 @@ Requirements on data to apply Linear Regression:
         Features should be on a comparable numeric scale.
 """
 
+ 
